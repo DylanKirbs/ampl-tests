@@ -4,7 +4,6 @@ Utilities for the test module.
 
 import os
 import subprocess
-import sys
 
 from termcolor import cprint
 from enum import Enum
@@ -48,6 +47,12 @@ def compile_test_module(module, src = f'{os.getcwd()}/../src') -> bool:
     """
 
     cprint(f'Compiling {module}...', 'blue')
+    subprocess.call(
+        [f'make clean'],
+        shell=True,
+        cwd=src,
+        stdout=subprocess.DEVNULL
+    )
     res = subprocess.call(
         [f'make test{module}'],
         shell=True,
