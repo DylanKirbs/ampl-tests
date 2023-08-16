@@ -40,14 +40,23 @@ from utils import compile_test_module
 def execute_test(module, test_number: int, cwd: str = os.getcwd()):
 
     with open(f'temp/{test_number}.out', 'w') as f_out, open(f'temp/{test_number}.err', 'w') as f_err:
-        subprocess.call(
+        
+        proccess = subprocess.Popen(
             [f'../bin/test{module} tests/{test_number}.ampl'],
             shell=True,
             cwd=cwd,
             stdout=f_out,
             stderr=f_err,
-            timeout=5 # seconds
         )
+        try:
+            proccess.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            # End the process if it takes too long
+            cprint(f'Test {test_number} timed out.', 'red')
+            proccess.kill()
+            out, err = proccess.communicate()
+            cprint(f'Output: {out}', 'red')
+            cprint(f'Error: {err}', 'red')
 
 def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
     """
@@ -125,11 +134,14 @@ if __name__ == '__main__':
 
     # Create temp directory
     if os.path.exists('temp'):
-        subprocess.call(
+        res = subprocess.call(
             ['rm -rf temp'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
+        if res != 0:
+            cprint('Error: Could not remove temp directory.', 'red')
+            exit(1)
     os.mkdir('temp')
 
     # Compile and run the tests
