@@ -45,7 +45,8 @@ def execute_test(module, test_number: int, cwd: str = os.getcwd()):
             shell=True,
             cwd=cwd,
             stdout=f.out,
-            stderr=f.err
+            stderr=f.err,
+            timeout=10 # 10 second timeout
         )
 
 def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
@@ -133,8 +134,12 @@ if __name__ == '__main__':
 
 
     for module in modules:
-        if compile_test_module(module):
-            run_test(module, test_numbers)
+        try:
+            if compile_test_module(module):
+                run_test(module, test_numbers)
+        except Exception as e:
+            cprint(f'Error: {e}', 'red')
+            break
 
     if args['--save'] is not None:
         subprocess.call(
