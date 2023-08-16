@@ -25,7 +25,7 @@ The differences will be displayed on the console.
 
 Author: Dylan Kirby - 25853805
 Date: 2023-08-13
-Version: 1.4
+Version: 1.5.0
 """
 from __future__ import annotations
 
@@ -34,18 +34,18 @@ import subprocess
 
 from docopt import docopt
 from termcolor import cprint
-from utils import compile_test_module, RedirectedStreams
+from utils import compile_test_module
 
 
 def execute_test(module, test_number: int, cwd: str = os.getcwd()):
 
-    with RedirectedStreams({"out":f"temp/{test_number}.out", "err":f"temp/{test_number}.err"}, "w") as f:
+    with open(f'temp/{test_number}.out', 'w') as f_out, open(f'temp/{test_number}.err', 'w') as f_err:
         subprocess.call(
             [f'../bin/test{module} tests/{test_number}.ampl'],
             shell=True,
             cwd=cwd,
-            stdout=f.out,
-            stderr=f.err,
+            stdout=f_out,
+            stderr=f_err,
             timeout=5 # seconds
         )
 
@@ -95,35 +95,35 @@ def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
         cprint(f'Tests {failed} failed for {module}.', 'red')
         return False
         
+MODULE_MAPPING = {
+    '--scanner': ['scanner'],
+    '--hashtable': ['hashtable'],
+    '--symboltable': ['symboltable'],
+    '--all': ['scanner', 'hashtable', 'symboltable']
+}
 
 if __name__ == '__main__':
-    args = docopt(__doc__)
+    args = docopt(__doc__, version='1.5.0')
 
-    if args['--scanner']:
-        module = 'scanner'
-    elif args['--hashtable']:
-        module = 'hashtable'
-    elif args['--symboltable']:
-        module = 'symboltable'
-    elif args['--all']:
-        module = 'all'
-    else:
-        raise Exception("No module specified.")
+    modules = []
+    test_cases = range(0, 50+1)
 
-    if module == 'all':
-        modules = ['scanner', 'hashtable', 'symboltable']
-    else:
-        modules = [module]
+    # Get the module to test
+    for module in MODULE_MAPPING.keys():
+        if args[module]:
+            modules = MODULE_MAPPING[module]
+            break
 
-    test_numbers = range(0, 10+1)
+    # Parse the test cases
     if len(args['<tests>']) != 0:
         temp = args['<tests>']
         if ".." in temp[0]:
             temp = temp[0].split("..")
-            test_numbers = range(int(temp[0]), int(temp[1])+1)
+            test_cases = range(int(temp[0]), int(temp[1])+1)
         else:
-            test_numbers = [int(i) for i in temp]      
+            test_cases = [int(i) for i in temp]      
 
+    # Create temp directory
     if os.path.exists('temp'):
         subprocess.call(
             ['rm -rf temp'],
@@ -132,15 +132,16 @@ if __name__ == '__main__':
         )
     os.mkdir('temp')
 
-
+    # Compile and run the tests
     for module in modules:
         try:
             if compile_test_module(module):
-                run_test(module, test_numbers)
+                run_test(module, test_cases)
         except Exception as e:
             cprint(f'Error: {e}', 'red')
             break
 
+    # Clean up and save the results
     if args['--save'] is not None:
         subprocess.call(
             [f'mv temp {args["--save"]}'],
@@ -153,5 +154,5 @@ if __name__ == '__main__':
             shell=True,
             cwd=f'{os.getcwd()}'
         )
-        
 
+    cprint('Done.', 'blue')
