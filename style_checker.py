@@ -59,6 +59,7 @@ ERROR_REGEXES = {
     # Lines
     "line_ends_in_space": re.compile(r"\s\n$"),
     "line_longer_80_chars": re.compile(r"^.{81,}$"),
+    "line_indented_using_spaces_not_tabs": re.compile(r"^(?!\t) +"),
 
 }
 
@@ -140,8 +141,8 @@ def check_file(file):
             warnings += 1
 
     # make sure eof is on a newline
-    if lines[-1] != "\n":
-        log_cprint(ErrCol.ERROR, "eof_not_on_newline", file, len(lines), lines[-1].strip())
+    if lines[-1] == "\n":
+        log_cprint(ErrCol.WARNING, "eof_on_newline", file, len(lines), lines[-1].strip())
         errors += 1
 
     return (errors, warnings)
