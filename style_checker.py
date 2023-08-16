@@ -4,11 +4,15 @@ It will automatically scan the `src/` directory, and should be executed from a s
 
 Usage:
     style_checker.py [options]
-    style_checker.py [options] <file>...
+    style_checker.py check [options] <file>...
 
 Options:
     -h, --help      Show this help message and exit
     -v, --verbose   Print verbose output
+
+Examples:
+    style_checker.py
+    style_checker.py ../src/scanner.c
 
 Author: Dylan Kirby - 25853805
 Date: 2023-08-16
@@ -18,20 +22,19 @@ Version: 2.0
 import os
 import re
 import sys
+from pprint import pprint
 
 from docopt import docopt
 from termcolor import cprint
-from pprint import pprint
+
+from utils import LogColours as ErrCol
+from utils import log_cprint
 
 # Precompile regexes
 ERROR_REGEXES = {
     # Control Statements
-    "control_statement_missing_space": re.compile(r"if\("),
-    "control_statement_missing_space": re.compile(r"for\("),
-    "control_statement_missing_space": re.compile(r"while\("),
-    "control_statement_missing_space": re.compile(r"switch\("),
-    "control_statement_missing_space": re.compile(r"case\w"),
-    "control_statement_missing_space": re.compile(r"(\}else)|(else\{)"),
+    "control_statement_missing_space": re.compile(r"(if|else|for|while|switch|case)[:\{\(]"),
+    "else_if_missing_space": re.compile(r"elseif"),
     "else_not_preceeded_by_closing_brace": re.compile(r"^\s*else"),
 
     # Operators
@@ -76,30 +79,6 @@ COMMENT_CHECKS = [
 IS_STRING_RE = re.compile(r"([\'\"])(.*?)\1")
 IS_POINTER_RE = re.compile(r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
 
-ERR_LEVELS = {
-    "ERROR": "red",
-    "WARNING": "yellow",
-    "POTENTIAL ERROR": "magenta"
-}
-
-def errprint(level, rule, file_name, line_num, line, match_group=None):
-    """
-    Prints an error message to the console.
-    :param level: The level of the error (0 = error, 1 = warning, 2 = potential error)
-    :param rule: The rule that was broken
-    :param file_name: The name of the file that the error occured in
-    :param line_num: The line number that the error occured on
-    :param line: The line that the error occured on
-    """
-
-    color = ERR_LEVELS.get(level, "red")
-
-    if match_group:
-        line = line.replace(match_group, f"\033[1m{match_group}\033[0m")
-
-    cprint(f"{level}: <{rule}> on line {line_num + 1} of {file_name}", color)
-    print(">", line)
-    print()
 
 def get_files():
     c_files = []
@@ -110,17 +89,20 @@ def get_files():
 
     return c_files
 
-def check_lines():
+def check_file(file):
+
+    with open(file, "r") as f:
+        lines = f.readlines()
 
     errors = 0
     warnings = 0
     for line_num, line in enumerate(lines):
 
         # Precompute certain checks
-        strp_line = line.strip()
-        is_comment = strp_line.startswith(("/*", "*"), 0, 2)
-        is_string = IS_STRING_RE.search(line)
-        is_pointer = IS_POINTER_RE.search(line)
+        stripped_line = line.strip()
+        is_comment = stripped_line.startswith(("/*", "*"), 0, 2)
+        string_match = IS_STRING_RE.search(line)
+        pointer_match = IS_POINTER_RE.search(line)
 
         for rule, regex in ERROR_REGEXES.items():
 
@@ -131,18 +113,18 @@ def check_lines():
             if not re_match:
                 continue
 
-            if is_pointer and rule == "invalid_multiplicative_spacing":
-                errprint("POTENTIAL ERROR", rule, file, line_num, strp_line, re_match.group()) if is_verbose else None
+            if pointer_match and rule == "invalid_multiplicative_spacing":
+                log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num, stripped_line, re_match.group()) if is_verbose else None
                 continue
             
-            if is_string and is_string.start() < re_match.start():
+            if string_match and string_match.start() < re_match.start():
                 if rule in COMMENT_CHECKS:
-                    errprint("ERROR", rule, file, line_num, strp_line, re_match.group())
+                    log_cprint(ErrCol.ERROR, rule, file, line_num, stripped_line, re_match.group())
                 elif is_verbose:
-                    errprint("POTENTIAL ERROR", rule, file, line_num, strp_line, re_match.group())
+                    log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num, stripped_line, re_match.group())
                 continue
                 
-            errprint("ERROR", rule, file, line_num, strp_line, re_match.group())
+            log_cprint(ErrCol.ERROR, rule, file, line_num, stripped_line, re_match.group())
             errors += 1
 
         for rule, regex in WARNING_REGEXES.items():
@@ -154,12 +136,12 @@ def check_lines():
             if not re_match:
                 continue
 
-            errprint("WARNING", rule, file, line_num, strp_line, re_match.group())
+            log_cprint(ErrCol.WARNING, rule, file, line_num, stripped_line, re_match.group())
             warnings += 1
 
     # make sure eof is on a newline
     if lines[-1] != "\n":
-        errprint("ERROR", "eof_not_on_newline", file, len(lines), lines[-1].strip())
+        log_cprint(ErrCol.ERROR, "eof_not_on_newline", file, len(lines), lines[-1].strip())
         errors += 1
 
     return (errors, warnings)
@@ -185,10 +167,7 @@ if __name__ == "__main__":
     total_errors = 0
     total_warnings = 0
     for file in c_files:
-        with open(file, "r") as f:
-            lines = f.readlines()
-
-        e, w = check_lines()
+        e, w = check_file(file)
         total_errors += e
         total_warnings += w
 
