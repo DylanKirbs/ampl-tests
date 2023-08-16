@@ -46,7 +46,7 @@ def execute_test(module, test_number: int, cwd: str = os.getcwd()):
             cwd=cwd,
             stdout=f.out,
             stderr=f.err,
-            timeout=10 # 10 second timeout
+            timeout=5 # seconds
         )
 
 def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
