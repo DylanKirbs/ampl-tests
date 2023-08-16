@@ -151,7 +151,7 @@ if __name__ == "__main__":
     args = docopt(__doc__, version="2.0")
     is_verbose = args["--verbose"]
 
-    cprint("Starting style check...", "blue")
+    cprint("Starting style check", "blue", attrs=["bold"])
 
     c_files = get_files() if not args["<file>"] else args["<file>"]
 
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         total_warnings += w
 
     c = "red" if total_errors else "yellow" if total_warnings else "green"
-    cprint(f"Check finished with {total_errors} errors and {total_warnings} warnings.", c)
+    cprint(f"Check finished with {total_errors} errors and {total_warnings} warnings.", c, attrs=["bold"])
 
     if total_errors:
         sys.exit(1)
