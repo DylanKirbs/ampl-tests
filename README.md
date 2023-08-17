@@ -10,27 +10,7 @@ This repository houses a collection of testing scripts tailored to the AMPL comp
 
 ## Setup
 
-### Requirements
-
-Before proceeding, ensure your system meets the following requirements:
-
-- [Python 3](https://www.python.org/)
-- [GCC](https://gcc.gnu.org/)
-- [Make](https://www.gnu.org/software/make/)
-
-You can install these dependencies using the following command:
-
-```bash
-sudo apt install gcc make python3 python3-pip
-```
-
-Additionally, install the required Python packages by running:
-
-```bash
-python3 -m pip install -r requirements.txt
-```
-
-## Repository Structure
+### Repository Structure
 
 To best utilize these testing scripts, adhere to the following directory structure:
 
@@ -82,6 +62,27 @@ Here's how you can set it up:
 Please note, when performing actions related to your AMPL version control, remember to operate from the `ampl/` directory rather than the `test/` directory to ensure smooth integration.
 
 By adhering to this approach, you can seamlessly maintain and utilize the latest test suite advancements while working with your AMPL compiler.
+
+### Requirements
+
+Before proceeding, ensure your system meets the following requirements:
+
+- [Python 3](https://www.python.org/)
+- [GCC](https://gcc.gnu.org/)
+- [Make](https://www.gnu.org/software/make/)
+
+You can install these dependencies using the following command:
+
+```bash
+sudo apt install gcc make python3 python3-pip
+```
+
+Additionally, install the required Python packages by running:
+
+```bash
+cd ampl/test
+python3 -m pip install -r requirements.txt
+```
 
 ## Usage
 
