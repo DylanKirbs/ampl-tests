@@ -100,9 +100,11 @@ For example, to run scanner tests:
 
 ```bash
 # Run scanner tests 0 through 30
-python3 test.py --scanner 0..30
+python3 test.py scanner 0..30
 # Run scanner tests 5 8 19 and 27
-python3 test.py --scanner 5 8 19 27
+python3 test.py scanner 5 8 19 27
+# Side by side comparison of scanner tests 0 and 1
+python3 test.py scanner --side-by-side 0 1 
 ```
 
 ```bash

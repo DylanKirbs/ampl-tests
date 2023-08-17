@@ -108,8 +108,8 @@ def run_test(
     """
 
     diff_flags = ''
-    if is_side_by_side and os.name != 'posix':
-        diff_flags = '--side-by-side --suppress-common-lines'
+    if is_side_by_side:
+        diff_flags += '--side-by-side --suppress-common-lines'
 
     cprint(f'Running tests for {module}...', 'blue')
 
