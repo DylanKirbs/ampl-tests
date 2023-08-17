@@ -25,7 +25,6 @@ The differences will be displayed on the console.
 
 Author: Dylan Kirby - 25853805
 Date: 2023-08-13
-Version: 1.5.0
 """
 from __future__ import annotations
 
@@ -176,7 +175,7 @@ MODULE_MAPPING = {
 }
 
 if __name__ == '__main__':
-    args = docopt(__doc__, version='1.5.0')
+    args = docopt(__doc__)
 
     modules = []
     test_cases = range(0, 50+1)
