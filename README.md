@@ -107,7 +107,6 @@ python3 test.py --scanner 5 8 19 27
 
 When the diff checker executes your output will be in the following format:
 ```
-{your line number}d{expected line number}
 < Your Output
 > Expected Output
 ```
