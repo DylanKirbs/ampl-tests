@@ -9,8 +9,11 @@ Standard: Auto
 # ------------ PERSONAL PREFERANCE ------------ #
 IndentCaseLabels: true
 AlignArrayOfStructures: Left
+MaxEmptyLinesToKeep: 1
 
-
+# Includes
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
 
 # ------------- REQUIRED SETTINGS ------------- #
 
@@ -22,7 +25,6 @@ LineEnding: LF
 
 # Line management
 ColumnLimit: 80
-InsertNewlineAtEOF: true
 
 # General Alignment
 PointerAlignment: Right
@@ -65,13 +67,8 @@ BraceWrapping:
 BreakBeforeBraces: Custom
 BreakBeforeTernaryOperators: true
 
-# Includes
-SortIncludes: CaseInsensitive
-IncludeBlocks: Regroup
-
 # Misc
 DerivePointerBinding: false
-MaxEmptyLinesToKeep: 1
 
 # Spacing
 SpaceAfterCStyleCast: true
