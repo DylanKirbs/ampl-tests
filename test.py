@@ -7,10 +7,10 @@ Usage:
     test.py --version
     
 Options:
-    -h, --help        Display this help screen
-    --version         Show version information
-    --side-by-side    Display the differences side by side
-    --save=<dir>      Save test output to the specified directory
+    -h, --help      Display this help screen
+    --version       Show version information
+    --side-by-side  Display the differences side by side
+    --save=<dir>    Save test output to the specified directory
 
 Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
@@ -25,12 +25,19 @@ Date: 2023-08-13
 """
 from __future__ import annotations
 
+import logging
 import os
-from subprocess import Popen, TimeoutExpired
+import shutil
+import signal
+import subprocess
 
 from docopt import docopt
 from termcolor import cprint
+
 from utils import compile_test_module
+
+# Basic logging configuration
+logging.basicConfig(level=logging.INFO)
 
 
 def execute_test(
@@ -38,8 +45,8 @@ def execute_test(
         test_number: int,
         bin_dir: str,
         test_dir: str = f'{os.getcwd()}/tests',
-        timeout:float=10
-    ) -> bool:
+        timeout: float = 10
+) -> bool:
     """
     Executes the test for the specified module and test number.
 
@@ -51,128 +58,143 @@ def execute_test(
     :return: True if the test executed, False otherwise
     """
 
-    with open(f'temp/{test_number}.out', 'w') as f_out, open(f'temp/{test_number}.err', 'w') as f_err:
-        
-        process = Popen(
-            [f'{bin_dir}/test{module} {test_dir}/{test_number}.ampl'],
-            shell=True,
+    stdout_path = f'temp/{test_number}.out'
+    stderr_path = f'temp/{test_number}.err'
+
+    with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
+
+        process = subprocess.Popen(
+            [f'{bin_dir}/test{module}', f'{test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
+            preexec_fn=os.setsid  # Create a new process group
         )
-        
+
         try:
             process.wait(timeout=timeout)
             return True
-        except TimeoutExpired:
-            cprint(f'Test {test_number} timed out after {timeout} seconds.', 'red')
+        except subprocess.TimeoutExpired:
+            cprint(
+                f'Test {test_number} timed out after {timeout} seconds.', 'red')
             handle_timeout(process, module)
             return False
 
 
-def handle_timeout(
-        process: Popen,
-        module: str,
-    ):
-    
-    process.terminate()
+def handle_timeout(process: subprocess.Popen, module: str):
 
-    # Wait for SIGTERM to be handled
-    # Q: What is a good timeout value here?
     try:
+        # Terminate the whole process group
+        os.killpg(os.getpgid(process.pid), signal.SIGTERM)
         process.wait(timeout=1)
-        return
-    except TimeoutExpired:
-        cprint(f'WARNING: The test{module} executable could not be terminated using SIGTERM, attempting SIGKILL.', 'red', attrs=['bold'])
-        process.kill()
-
-    # Wait for SIGKILL to be handled
-    try:
-        process.wait(timeout=1)
-        return
-    except TimeoutExpired:
-        cprint(f'CRITICAL: The test{module} executable could not be terminated using SIGKILL, manual intervention required.', 'red', attrs=['bold'])
-        exit(1)
+    except subprocess.TimeoutExpired:
+        logging.warning(
+            f'Test{module} process could not be terminated using SIGTERM, attempting SIGKILL.'
+        )
+        try:
+            os.killpg(os.getpgid(process.pid), signal.SIGKILL)
+            process.wait(timeout=1)
+        except subprocess.TimeoutExpired:
+            logging.error(
+                f'Test{module} process could not be terminated using SIGKILL. Manual intervention required.'
+            )
+            raise Exception("Test executable could not be terminated.")
 
 
 def run_test(
-        module,
-        test_numbers: range | list[int] = range(0, 10+1),
+        module: str,
+        test_numbers: list[int] = list(range(0, 10+1)),
         is_side_by_side: bool = False
-    ) -> bool:
+) -> bool:
     """
     Runs the tests for the specified module and test numbers.
 
     :param module: The module to test (scanner, hashtable, symboltable)
     :param test_numbers: The test numbers to execute (default: [0..10])
+    :param is_side_by_side: Whether to show side-by-side diff (default: False)
     :return: True if all tests passed, False otherwise
     """
 
-    diff_flags = ''
-    if is_side_by_side:
-        diff_flags += '--side-by-side --suppress-common-lines'
+    diff_flags = '--side-by-side --suppress-common-lines' if is_side_by_side else ''
 
     cprint(f'Running tests for {module}...', 'blue')
 
-    failed = []
-    for i in test_numbers:
-        
-        res = execute_test(module, i, f'{os.getcwd()}/../bin')
+    failed_tests = []
+
+    for test_number in test_numbers:
+        res = execute_test(module, test_number, f'{os.getcwd()}/../bin')
+
         if not res:
-            failed.append(i)
+            failed_tests.append(test_number)
             continue
-        
-        out_diff_proc = Popen(
-            [f'diff {diff_flags} temp/{i}.out {module}/{i}.out'],
-            shell=True,
-            cwd=f'{os.getcwd()}'
-        )
 
-        err_diff_proc = Popen(
-            [f'diff {diff_flags} temp/{i}.err {module}/{i}.err'],
-            shell=True,
-            cwd=f'{os.getcwd()}'
-        )
+        for output_type in ['out', 'err']:
+            diff_proc = subprocess.Popen(
+                [f'diff {diff_flags} temp/{test_number}.{output_type} {module}/{test_number}.{output_type}'],
+                shell=True,
+                cwd=os.getcwd()
+            )
+            diff_proc.wait()
 
-        out_diff_proc.wait()
-        err_diff_proc.wait()
-
-        if out_diff_proc.returncode != 0 or err_diff_proc.returncode != 0:
-            cprint(f'Test {i} failed.', 'red')
-            failed.append(i)
+            if diff_proc.returncode != 0:
+                cprint(f'Test {test_number} failed ({output_type}).', 'red')
+                failed_tests.append(test_number)
+                break
         else:
-            cprint(f'Test {i} passed.', 'green')
+            cprint(f'Test {test_number} passed.', 'green')
 
-    if len(failed) == 0:
+    if not failed_tests:
         cprint(f'All tests passed for {module}!', 'green')
         return True
     else:
-        cprint(f'Tests {failed} failed for {module}.', 'red')
+        cprint(f'Tests {failed_tests} failed for {module}.', 'red')
         return False
-    
+
+
 def rm_temp():
-    temp_dir_proc = Popen(
-        ['rm -r temp'],
-        shell=True,
-        cwd=f'{os.getcwd()}'
-    )
-    temp_dir_proc.wait()
+    """Removes the temp directory."""
 
-    if temp_dir_proc.returncode == 0:
-        return
-    
-    cprint('Warning: Could not remove temp directory.', 'yellow')
-    cprint('The temp directory may contain .nfs files, this is expected behaviour.', 'yellow')
+    temp_dir = os.path.join(os.getcwd(), 'temp')
+
+    try:
+        shutil.rmtree(temp_dir)
+        cprint('Temp directory removed successfully.', 'green')
+    except Exception as e:
+        cprint(f'Warning: Could not remove temp directory: {e}', 'yellow')
+        cprint(
+            'The temp directory may contain .nfs files, this is expected behavior.', 'yellow')
 
 
-        
+def parse_test_cases(test_args):
+    """
+    Parses the test cases from the command line.
+    Either a list of integers or a start..end range can be provided.
+    """
 
-if __name__ == '__main__':
+    if ".." in test_args[0]:
+        start, end = map(int, test_args[0].split(".."))
+        return list(range(start, end + 1))
+    return [int(i) for i in test_args]
+
+
+def compile_and_run_tests(module, test_cases, side_by_side):
+    """Compiles and runs the tests for the specified module."""
+
+    try:
+        if compile_test_module(module):
+            run_test(module, test_cases, side_by_side)
+    except Exception as e:
+        cprint(f'Error running tests: {e}', 'red')
+        logging.error(f'Error: {e}')
+        return False
+    return True
+
+
+def main():
     args = docopt(__doc__)
 
     modules = []
     test_cases = range(0, 50+1)
 
-    # Get the module to test
     if args['scanner']:
         modules.append('scanner')
     if args['hashtable']:
@@ -182,41 +204,29 @@ if __name__ == '__main__':
     if args['all']:
         modules = ['scanner', 'hashtable', 'symboltable']
 
-    # Parse the test cases
-    if len(args['<tests>']) != 0:
-        temp = args['<tests>']
-        if ".." in temp[0]:
-            temp = temp[0].split("..")
-            test_cases = range(int(temp[0]), int(temp[1])+1)
-        else:
-            test_cases = [int(i) for i in temp]      
+    test_cases = parse_test_cases(args['<tests>'])
 
-    # Create temp directory
     cprint('Executing Setup', 'yellow')
-    if os.path.exists('temp'):
-        rm_temp()
-    os.mkdir('temp') if not os.path.exists('temp') else None
+    os.makedirs('temp', exist_ok=True)
 
-    # Compile and run the tests
     for module in modules:
-        try:
-            if compile_test_module(module):
-                run_test(module, test_cases, args['--side-by-side'])
-        except Exception as e:
-            cprint(f'Error: {e}', 'red')
+        if not compile_and_run_tests(module, test_cases, args['--side-by-side']):
             break
 
-    # Clean up and save the results
     if args['--save'] is not None:
-        mv_proc = Popen(
-            [f'mv temp {args["--save"]}'],
-            shell=True,
-            cwd=f'{os.getcwd()}'
-        )
-        cprint(f'Saving test results to {args["--save"]}...', 'blue')
-        mv_proc.wait()
+        try:
+            shutil.move('temp', args['--save'])
+            cprint(f'Test results saved to {args["--save"]}!', 'green')
+            logging.info(f'Saving test results to {args["--save"]}...')
+        except Exception as e:
+            cprint(f'Error saving test results: {e}', 'red')
+            logging.error(f'Error saving test results: {e}')
     else:
         cprint('Cleaning up...', 'yellow')
         rm_temp()
 
     cprint('Done.', 'blue')
+
+
+if __name__ == '__main__':
+    main()
