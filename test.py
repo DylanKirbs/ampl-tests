@@ -5,7 +5,7 @@ Usage:
     test.py (scanner | hashtable | symboltable | all) [options] [<tests>...]
     test.py (-h | --help)
     test.py --version
-    
+
 Options:
     -h, --help      Display this help screen
     --version       Show version information
@@ -16,7 +16,7 @@ Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
     test.py hashtable --side-by-side 0..5       # Run hashtable tests 0 through 5
     test.py symboltable --save=results 0..10    # Run symboltable tests 0 through 10 and save the results to the results directory
-    
+
 There are a total of 30 tests. If no specific tests are provided, tests [0..10] will be executed by default.
 The differences will be displayed on the console.
 
@@ -30,7 +30,7 @@ import os
 import shutil
 import signal
 import subprocess
-
+from typing import List
 from docopt import docopt
 from termcolor import cprint
 
@@ -102,7 +102,7 @@ def handle_timeout(process: subprocess.Popen, module: str):
 
 def run_test(
         module: str,
-        test_numbers: list[int] = list(range(0, 10+1)),
+        test_numbers: List[int],
         is_side_by_side: bool = False
 ) -> bool:
     """
@@ -145,9 +145,9 @@ def run_test(
     if not failed_tests:
         cprint(f'All tests passed for {module}!', 'green')
         return True
-    else:
-        cprint(f'Tests {failed_tests} failed for {module}.', 'red')
-        return False
+
+    cprint(f'Tests {failed_tests} failed for {module}.', 'red')
+    return False
 
 
 def rm_temp():
