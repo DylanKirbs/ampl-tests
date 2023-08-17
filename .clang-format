@@ -30,7 +30,6 @@ ColumnLimit: 80
 PointerAlignment: Right
 ReferenceAlignment: Right
 AlignAfterOpenBracket: Align
-AlignArrayOfStructures: Left
 AlignConsecutiveAssignments: false # Visual appeal
 # Macros
 AlignConsecutiveMacros:
@@ -50,7 +49,7 @@ AllowShortBlocksOnASingleLine: Empty
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: false
 AllowShortEnumsOnASingleLine: false
-AllowShortIfStatementsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse # Prevent reformatting of else switch
 AllowShortLoopsOnASingleLine: false
 BinPackParameters: false
 
