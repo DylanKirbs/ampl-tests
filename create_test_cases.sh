@@ -25,7 +25,7 @@ fi
 
 
 cprint "blue" "Creating test cases for $1"
-python3 test.py --save=save_tests --$1 $2 2>&1> /dev/null
+python3 test.py --save=save_tests $1 $2 2>&1> /dev/null
 if [ $? -ne 0 ]; then
     cprint "red" "Error: Failed to create test cases"
     exit 1
