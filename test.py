@@ -107,8 +107,9 @@ def run_test(
     :return: True if all tests passed, False otherwise
     """
 
-
-    diff_flags = '--side-by-side' if os.name == 'posix' and is_side_by_side else ''
+    diff_flags = ''
+    if is_side_by_side and os.name != 'posix':
+        diff_flags = '--side-by-side --suppress-common-lines'
 
     cprint(f'Running tests for {module}...', 'blue')
 

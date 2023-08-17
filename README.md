@@ -105,17 +105,12 @@ python3 test.py --scanner 0..30
 python3 test.py --scanner 5 8 19 27
 ```
 
-When the diff checker executes your output will be in the following format:
+```bash
+# See the diff manual
+man diff
+# or
+info diff
 ```
-< Your Output
-> Expected Output
-```
-The diff of stdout will be above the diff of stderr.
-
-> **Remember** <br>
-> Arrows pointing < left are *your output* <br>
-> Arrows pointing > right are *expected output*
-
 
 ### Style Checking
 
