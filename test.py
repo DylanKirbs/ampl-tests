@@ -37,35 +37,77 @@ from termcolor import cprint
 from utils import compile_test_module
 
 
-def execute_test(module, test_number: int, cwd: str = os.getcwd()):
+def execute_test(
+        module,
+        test_number: int,
+        bin_dir: str,
+        test_dir: str = f'{os.getcwd()}/tests',
+        timeout:float=10
+    ) -> bool:
+    """
+    Executes the test for the specified module and test number.
+
+    :param module: The module to test (scanner, hashtable, symboltable)
+    :param test_number: The test number to execute
+    :param bin_dir: The directory containing the test executables
+    :param test_dir: The directory containing the test files (default: tests)
+    :param timeout: The timeout in seconds (default: 10)
+    :return: True if the test executed, False otherwise
+    """
 
     with open(f'temp/{test_number}.out', 'w') as f_out, open(f'temp/{test_number}.err', 'w') as f_err:
         
-        proccess = subprocess.Popen(
-            [f'../bin/test{module} tests/{test_number}.ampl'],
+        process = subprocess.Popen(
+            [f'{bin_dir}/test{module} {test_dir}/{test_number}.ampl'],
             shell=True,
-            cwd=cwd,
             stdout=f_out,
             stderr=f_err,
         )
+        
         try:
-            proccess.wait(timeout=10)
+            process.wait(timeout=timeout)
+            return True
         except subprocess.TimeoutExpired:
-            # End the process if it takes too long
-            cprint(f'Test {test_number} timed out.', 'red')
-            proccess.kill()
-            out, err = proccess.communicate()
-            cprint(f'Output: {out}', 'red')
-            cprint(f'Error: {err}', 'red')
+            cprint(f'Test {test_number} timed out after {timeout} seconds.', 'red')
+            handle_timeout(process, module)
+            return False
+        
 
-def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
+def handle_timeout(
+        process: subprocess.Popen,
+        module: str,
+    ):
+    
+    process.terminate()
+
+    # Wait for SIGTERM to be handled
+    # Q: What is a good timeout value here?
+    try:
+        process.wait(timeout=1)
+        return
+    except subprocess.TimeoutExpired:
+        cprint(f'WARNING: The test{module} executable could not be terminated using SIGTERM, attempting SIGKILL.', 'red')
+        process.kill()
+
+    # Wait for SIGKILL to be handled
+    try:
+        process.wait(timeout=1)
+        return
+    except subprocess.TimeoutExpired:
+        cprint(f'CRITICAL: The test{module} executable could not be terminated using SIGKILL, manual intervention required.', 'red')
+        exit(1)
+
+
+def run_test(
+        module,
+        test_numbers: range | list[int] = range(0, 10+1)
+    ) -> bool:
     """
-    Runs the tests for the specified module.
-    If no test numbers are specified, tests 0-10 are run by default.
+    Runs the tests for the specified module and test numbers.
 
-    The results of Diff are output to the console.
-
-    Returns True if all tests pass.
+    :param module: The module to test (scanner, hashtable, symboltable)
+    :param test_numbers: The test numbers to execute (default: [0..10])
+    :return: True if all tests passed, False otherwise
     """
 
     # Run: bin/{module} tests/{number}.ampl
@@ -77,7 +119,7 @@ def run_test(module, test_numbers: range | list[int] = range(0, 10+1)):
     failed = []
     for i in test_numbers:
         
-        execute_test(module, i)
+        execute_test(module, i, f'{os.getcwd()}/../bin')
         
         res_out = subprocess.call(
             [f'diff temp/{i}.out {module}/{i}.out'],
