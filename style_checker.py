@@ -104,7 +104,7 @@ def check_file(file):
         string_match = IS_STRING_RE.search(line)
         pointer_match = IS_POINTER_RE.search(line)
 
-        if line.startswith("  ", 0, 4):
+        if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
             log_cprint(ErrCol.ERROR, rule, file, line_num, line.replace('  ', '__'), "__")
 
