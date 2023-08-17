@@ -70,7 +70,7 @@ def execute_test(
             cprint(f'Test {test_number} timed out after {timeout} seconds.', 'red')
             handle_timeout(process, module)
             return False
-        
+
 
 def handle_timeout(
         process: Popen,
@@ -124,13 +124,13 @@ def run_test(
             continue
         
         out_diff_proc = Popen(
-            [f'diff temp/{i}.out {module}/{i}.out'],
+            [f'diff --color temp/{i}.out {module}/{i}.out'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
 
         err_diff_proc = Popen(
-            [f'diff temp/{i}.err {module}/{i}.err'],
+            [f'diff --color temp/{i}.err {module}/{i}.err'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
@@ -153,7 +153,7 @@ def run_test(
     
 def rm_temp():
     temp_dir_proc = Popen(
-        ['rm -rf temp'],
+        ['rm -r temp'],
         shell=True,
         cwd=f'{os.getcwd()}'
     )
