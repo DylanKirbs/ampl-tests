@@ -2,23 +2,20 @@
 Test Script for AMPL compiler.
 
 Usage:
-    test.py (--scanner | --hashtable | --symboltable | --all) [<tests>...]
-    test.py --save=<dir> (--scanner | --hashtable | --symboltable | --all) [<tests>...]
+    test.py (scanner | hashtable | symboltable | all) [options] [<tests>...]
     test.py (-h | --help)
     test.py --version
     
 Options:
     -h, --help        Display this help screen
     --version         Show version information
-    --scanner         Run scanner test suite
-    --hashtable       Run hashtable test suite
-    --symboltable     Run symbol table test suite
-    --all             Run all test suites
+    --side-by-side    Display the differences side by side
     --save=<dir>      Save test output to the specified directory
 
 Examples:
-    test.py --scanner 1 2 3       # Run scanner tests 1, 2, 3
-    test.py --hashtable 0..5      # Run hashtable tests 0 through 5
+    test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
+    test.py hashtable --side-by-side 0..5       # Run hashtable tests 0 through 5
+    test.py symboltable --save=results 0..10    # Run symboltable tests 0 through 10 and save the results to the results directory
     
 There are a total of 30 tests. If no specific tests are provided, tests [0..10] will be executed by default.
 The differences will be displayed on the console.
@@ -85,7 +82,7 @@ def handle_timeout(
         process.wait(timeout=1)
         return
     except TimeoutExpired:
-        cprint(f'WARNING: The test{module} executable could not be terminated using SIGTERM, attempting SIGKILL.', 'red')
+        cprint(f'WARNING: The test{module} executable could not be terminated using SIGTERM, attempting SIGKILL.', 'red', attrs=['bold'])
         process.kill()
 
     # Wait for SIGKILL to be handled
@@ -93,13 +90,14 @@ def handle_timeout(
         process.wait(timeout=1)
         return
     except TimeoutExpired:
-        cprint(f'CRITICAL: The test{module} executable could not be terminated using SIGKILL, manual intervention required.', 'red')
+        cprint(f'CRITICAL: The test{module} executable could not be terminated using SIGKILL, manual intervention required.', 'red', attrs=['bold'])
         exit(1)
 
 
 def run_test(
         module,
-        test_numbers: range | list[int] = range(0, 10+1)
+        test_numbers: range | list[int] = range(0, 10+1),
+        is_side_by_side: bool = False
     ) -> bool:
     """
     Runs the tests for the specified module and test numbers.
@@ -109,9 +107,8 @@ def run_test(
     :return: True if all tests passed, False otherwise
     """
 
-    # Run: bin/{module} tests/{number}.ampl
-    # Diff the output with {module}/{number}.out
-    # If diff is empty, test passes
+
+    diff_flags = '--side-by-side' if os.name == 'posix' and is_side_by_side else ''
 
     cprint(f'Running tests for {module}...', 'blue')
 
@@ -124,13 +121,13 @@ def run_test(
             continue
         
         out_diff_proc = Popen(
-            [f'diff --color temp/{i}.out {module}/{i}.out'],
+            [f'diff {diff_flags} temp/{i}.out {module}/{i}.out'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
 
         err_diff_proc = Popen(
-            [f'diff --color temp/{i}.err {module}/{i}.err'],
+            [f'diff {diff_flags} temp/{i}.err {module}/{i}.err'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
@@ -167,12 +164,6 @@ def rm_temp():
 
 
         
-MODULE_MAPPING = {
-    '--scanner': ['scanner'],
-    '--hashtable': ['hashtable'],
-    '--symboltable': ['symboltable'],
-    '--all': ['scanner', 'hashtable', 'symboltable']
-}
 
 if __name__ == '__main__':
     args = docopt(__doc__)
@@ -181,10 +172,14 @@ if __name__ == '__main__':
     test_cases = range(0, 50+1)
 
     # Get the module to test
-    for module in MODULE_MAPPING.keys():
-        if args[module]:
-            modules = MODULE_MAPPING[module]
-            break
+    if args['scanner']:
+        modules.append('scanner')
+    if args['hashtable']:
+        modules.append('hashtable')
+    if args['symboltable']:
+        modules.append('symboltable')
+    if args['all']:
+        modules = ['scanner', 'hashtable', 'symboltable']
 
     # Parse the test cases
     if len(args['<tests>']) != 0:
@@ -205,7 +200,7 @@ if __name__ == '__main__':
     for module in modules:
         try:
             if compile_test_module(module):
-                run_test(module, test_cases)
+                run_test(module, test_cases, args['--side-by-side'])
         except Exception as e:
             cprint(f'Error: {e}', 'red')
             break
