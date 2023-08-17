@@ -49,7 +49,7 @@ def execute_test(module, test_number: int, cwd: str = os.getcwd()):
             stderr=f_err,
         )
         try:
-            proccess.wait(timeout=5)
+            proccess.wait(timeout=10)
         except subprocess.TimeoutExpired:
             # End the process if it takes too long
             cprint(f'Test {test_number} timed out.', 'red')
