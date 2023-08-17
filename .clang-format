@@ -9,8 +9,11 @@ Standard: Auto
 # ------------ PERSONAL PREFERANCE ------------ #
 IndentCaseLabels: true
 AlignArrayOfStructures: Left
+MaxEmptyLinesToKeep: 1
 
-
+# Includes
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
 
 # ------------- REQUIRED SETTINGS ------------- #
 
@@ -22,13 +25,11 @@ LineEnding: LF
 
 # Line management
 ColumnLimit: 80
-InsertNewlineAtEOF: true
 
 # General Alignment
 PointerAlignment: Right
 ReferenceAlignment: Right
 AlignAfterOpenBracket: Align
-AlignArrayOfStructures: Left
 AlignConsecutiveAssignments: false # Visual appeal
 # Macros
 AlignConsecutiveMacros:
@@ -48,7 +49,7 @@ AllowShortBlocksOnASingleLine: Empty
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: false
 AllowShortEnumsOnASingleLine: false
-AllowShortIfStatementsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse # Prevent reformatting of else switch
 AllowShortLoopsOnASingleLine: false
 BinPackParameters: false
 
@@ -65,13 +66,8 @@ BraceWrapping:
 BreakBeforeBraces: Custom
 BreakBeforeTernaryOperators: true
 
-# Includes
-SortIncludes: CaseInsensitive
-IncludeBlocks: Regroup
-
 # Misc
 DerivePointerBinding: false
-MaxEmptyLinesToKeep: 1
 
 # Spacing
 SpaceAfterCStyleCast: true
