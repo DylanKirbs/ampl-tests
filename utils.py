@@ -3,7 +3,7 @@ Utilities for the test module.
 """
 
 import os
-import subprocess
+from subprocess import Popen, DEVNULL
 
 from termcolor import cprint
 from enum import Enum
@@ -47,22 +47,24 @@ def compile_test_module(module, src = f'{os.getcwd()}/../src') -> bool:
     """
 
     cprint(f'Compiling {module}...', 'blue')
-    subprocess.call(
+    clean_prco = Popen(
         [f'make clean'],
         shell=True,
         cwd=src,
-        stdout=subprocess.DEVNULL
+        stdout=DEVNULL
     )
-    res = subprocess.call(
+    clean_prco.wait()
+    comp_proc = Popen(
         [f'make test{module}'],
         shell=True,
         cwd=src,
-        stdout=subprocess.DEVNULL
+        stdout=DEVNULL
     )
+    comp_proc.wait()
 
-    if res == 0:
+    if comp_proc.returncode == 0:
         cprint(f'{module.capitalize()} compiled successfully!', 'green')
         return True
     else:
-        cprint(f'{module.capitalize()} failed to compile with error code {res}', 'red')
+        cprint(f'{module.capitalize()} failed to compile with error code {comp_proc}', 'red')
         return False

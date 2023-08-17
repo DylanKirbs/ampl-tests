@@ -30,7 +30,7 @@ Version: 1.5.0
 from __future__ import annotations
 
 import os
-import subprocess
+from subprocess import Popen, TimeoutExpired
 
 from docopt import docopt
 from termcolor import cprint
@@ -57,7 +57,7 @@ def execute_test(
 
     with open(f'temp/{test_number}.out', 'w') as f_out, open(f'temp/{test_number}.err', 'w') as f_err:
         
-        process = subprocess.Popen(
+        process = Popen(
             [f'{bin_dir}/test{module} {test_dir}/{test_number}.ampl'],
             shell=True,
             stdout=f_out,
@@ -67,14 +67,14 @@ def execute_test(
         try:
             process.wait(timeout=timeout)
             return True
-        except subprocess.TimeoutExpired:
+        except TimeoutExpired:
             cprint(f'Test {test_number} timed out after {timeout} seconds.', 'red')
             handle_timeout(process, module)
             return False
         
 
 def handle_timeout(
-        process: subprocess.Popen,
+        process: Popen,
         module: str,
     ):
     
@@ -85,7 +85,7 @@ def handle_timeout(
     try:
         process.wait(timeout=1)
         return
-    except subprocess.TimeoutExpired:
+    except TimeoutExpired:
         cprint(f'WARNING: The test{module} executable could not be terminated using SIGTERM, attempting SIGKILL.', 'red')
         process.kill()
 
@@ -93,7 +93,7 @@ def handle_timeout(
     try:
         process.wait(timeout=1)
         return
-    except subprocess.TimeoutExpired:
+    except TimeoutExpired:
         cprint(f'CRITICAL: The test{module} executable could not be terminated using SIGKILL, manual intervention required.', 'red')
         exit(1)
 
@@ -119,21 +119,27 @@ def run_test(
     failed = []
     for i in test_numbers:
         
-        execute_test(module, i, f'{os.getcwd()}/../bin')
+        res = execute_test(module, i, f'{os.getcwd()}/../bin')
+        if not res:
+            failed.append(i)
+            continue
         
-        res_out = subprocess.call(
+        out_diff_proc = Popen(
             [f'diff temp/{i}.out {module}/{i}.out'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
 
-        res_err = subprocess.call(
+        err_diff_proc = Popen(
             [f'diff temp/{i}.err {module}/{i}.err'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
 
-        if res_out != 0 or res_err != 0:
+        out_diff_proc.wait()
+        err_diff_proc.wait()
+
+        if out_diff_proc.returncode != 0 or err_diff_proc.returncode != 0:
             cprint(f'Test {i} failed.', 'red')
             failed.append(i)
         else:
@@ -145,6 +151,22 @@ def run_test(
     else:
         cprint(f'Tests {failed} failed for {module}.', 'red')
         return False
+    
+def rm_temp():
+    temp_dir_proc = Popen(
+        ['rm -rf temp'],
+        shell=True,
+        cwd=f'{os.getcwd()}'
+    )
+    temp_dir_proc.wait()
+
+    if temp_dir_proc.returncode == 0:
+        return
+    
+    cprint('Warning: Could not remove temp directory.', 'yellow')
+    cprint('The temp directory may contain .nfs files, this is expected behaviour.', 'yellow')
+
+
         
 MODULE_MAPPING = {
     '--scanner': ['scanner'],
@@ -175,16 +197,10 @@ if __name__ == '__main__':
             test_cases = [int(i) for i in temp]      
 
     # Create temp directory
+    cprint('Executing Setup', 'yellow')
     if os.path.exists('temp'):
-        res = subprocess.call(
-            ['rm -rf temp'],
-            shell=True,
-            cwd=f'{os.getcwd()}'
-        )
-        if res != 0:
-            cprint('Error: Could not remove temp directory.', 'red')
-            exit(1)
-    os.mkdir('temp')
+        rm_temp()
+    os.mkdir('temp') if not os.path.exists('temp') else None
 
     # Compile and run the tests
     for module in modules:
@@ -197,16 +213,15 @@ if __name__ == '__main__':
 
     # Clean up and save the results
     if args['--save'] is not None:
-        subprocess.call(
+        mv_proc = Popen(
             [f'mv temp {args["--save"]}'],
             shell=True,
             cwd=f'{os.getcwd()}'
         )
+        cprint(f'Saving test results to {args["--save"]}...', 'blue')
+        mv_proc.wait()
     else:
-        subprocess.call(
-            ['rm -rf temp'],
-            shell=True,
-            cwd=f'{os.getcwd()}'
-        )
+        cprint('Cleaning up...', 'yellow')
+        rm_temp()
 
     cprint('Done.', 'blue')
