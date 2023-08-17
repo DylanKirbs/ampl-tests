@@ -1,6 +1,6 @@
 program MaxNumberFinder:
     main:
-        array numbers[100];
+        int array numbers[100];
         int index = 0;
         let inputLine = input();
         

@@ -1,3 +1,4 @@
+{Comprehensive token test}
 this_is_an_identifier
 "This is a string\t\n\\\""
 2147483647

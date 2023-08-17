@@ -1,4 +1,4 @@
-program Joh:
+program mock_program:
 	Sa7(int  A7l) -> array:
 		arrayKri, Jus, Jor;
 		bool E9l, Be5, Mea, Ine, Bev, A6m;

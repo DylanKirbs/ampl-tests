@@ -1,5 +1,5 @@
 'program'
-Identifier: 'non_printable'
+Identifier: 'non_printable_string'
 ':'
 Identifier: 'greet'
 '('

@@ -1,3 +1,5 @@
+program vertical_tabs3:
+main:
 dxWtZm
 {      {   }}false
 "WXYIN0lHJtOYNpv7Um"
@@ -20,7 +22,8 @@ dxWtZm
  }}"x15dsO22D8cit4P9r"
 {}_MFV17A
 {}
-	/
+
+	/
 {    
      { 
  	 	 
@@ -30,7 +33,8 @@ bBoC6zJS9z
 
  {}"xCrNqrZz2el5Qbnzyd"
 	
-<=
+
+<=
 "Z8VV0Gkc5bITt1"
 {
 let
@@ -51,7 +55,8 @@ _mocAMaznZl
 "haAypYGQjhgYK"
 _5vEfJVMM2
 c4GgrI
-	 {      {   }}+
+	
+ {      {   }}+
 "xUPZ"
 }
 ;
@@ -64,19 +69,25 @@ _F1GDuMjrWu
 >=
 or
 not
-	 blVLFH
+	 
+
+blVLFH
 din1mkt
 daenr7
 if
 <=
-	and
+	
+and
 or
 
-cjCbM
+
+cjCbM
 	 
 "x"
 ..
-(
+
+
+(
 "UjzbLeL2JSO4qoIwo0"
 akQLxE
 5
@@ -104,10 +115,12 @@ input
 adu
 
 
-"k"
+
+"k"
 :
 bhBNKFVE0
-
+
+
 	{}c0Xgc
 ]
 4
@@ -124,7 +137,8 @@ _QmupljkW
 bYfyxYXr
 68
 >=
- 	 {}23
+ 	 
+{}23
 "pTHi63CFsySl"
 [
 81
@@ -132,9 +146,11 @@ bYfyxYXr
 {    
      { 
  	 	 
- }}	 {      {   }}{} 	"BWA"
+ }}
+	 {      {   }}{} 	"BWA"
 
- 
+
+ 
 "hBL1jjN HQ"
 [
 }
@@ -146,16 +162,24 @@ else
 {      {   }}7
 if
 98
-and
+
+
+
+
+and
 
 
 
 =
 let
 -
- 		87
+ 		
+87
 /=
-	_BAPsSzM
+
+	
+
+_BAPsSzM
 33
 "qmV05sO"
 a7U
@@ -176,7 +200,8 @@ aZGRvnu3hy
 94
 bqq
 38
-    {      {   }}"7N34Y4Kn ulrR enlA"
+ 
+   {      {   }}"7N34Y4Kn ulrR enlA"
 	
 
 and
@@ -198,15 +223,18 @@ a16R
 42
 "wA TJN Lf"
 b2piRz1g8
-	  input
+	 
+ input
 	
- 23
+ 
+23
 "BjHaop 4L6lSfQ4YjQSP"
 and
 {      {   }}{}bQOPy1t
 cuUNqUUf
 99
-	 
+	
+ 
 <
 {      {   }}let
 elif
@@ -225,7 +253,9 @@ elif
 cXgH
 99
 "OefETqqDg"
- 	 
+ 	
+
+ 
 		19
 and
 {} 

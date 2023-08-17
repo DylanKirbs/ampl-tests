@@ -1,11 +1,19 @@
+program vertical_tabs10:
+main:
 
 
-	<=
+
+	<=
 {}]
 .
-main
-_4n
- aGkV79
+
+main
+
+
+
+_4n
+
+ aGkV79
 "M"
 let
 *
@@ -22,7 +30,8 @@ _R
  }}_x2ySEvTRt
 -
 while
-		"lhgKaJwYGR6ssPWLJ6JH"
+
+		"lhgKaJwYGR6ssPWLJ6JH"
 input
 int
 {      {   }}"22kKdF"
@@ -45,8 +54,10 @@ asPWeZBO
 "f oo"
 let
 bool
-	 true
- 	/=
+	
+ true
+ 
+	/=
 bej8
 {    
      { 
@@ -64,10 +75,13 @@ bej8
 >
  
   	
- "Fgwdz8QPk6"
+ 
+"Fgwdz8QPk6"
 49
 	
-    "Q1XhB5Le"
+
+
+    "Q1XhB5Le"
 {}73
 -
 }
@@ -80,16 +94,21 @@ _r
 while
 
 
-	{}=
+
+	{}=
 *
-{} 	
-"jZ56aUPghaK1"
+{} 
+	
+
+"jZ56aUPghaK1"
 "X6anSoSixa1fLbhfZ4x"
- 
+
+ 
 
 "AHZNHM"
  
-)
+
+)
 _AuM
 66
 27
@@ -104,7 +123,8 @@ true
 79
 {      {   }}
  
-55
+
+55
 ]
 21
 "0h2ihs gx"

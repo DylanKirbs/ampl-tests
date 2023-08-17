@@ -1,5 +1,8 @@
+program vertical_tabs8:
+main:
 {}
-
+
+
 	or
 {      {   }}"G1gSEPEd"
 _T38VPSyV
@@ -23,7 +26,8 @@ or
 
 
 
-{}anGlpXy
+
+{}anGlpXy
 ct
 end
  
@@ -44,7 +48,8 @@ true
 46
  	32
 
- " fjRPJs"
+
+ " fjRPJs"
 "iNiQD226dTXHCYKY"
 {}52
 {}" EJjCTBHAHPY5 e1XxA3"
@@ -71,11 +76,17 @@ _aMdVpiq
 c0JWKLz
 35
 
- _v81lvY7Bu
+ 
+_v81lvY7Bu
 elif
 "EFluKVIeSJL"
-	"ngV1d56rgra9"
-	  64
+
+
+	"ngV1d56rgra9"
+
+
+	
+  64
 ..
 end
 82
@@ -85,12 +96,16 @@ dwp0g
 {    
      { 
  	 	 
- }} 81
+ }} 
+
+
+81
 cUuGmc
 "twlByPYoH"
 true
 
-		
+
+		
 
 
 b9Q
@@ -105,7 +120,9 @@ int
 
 {      {   }},
 {}"2peLmLX95Xj6aYG"
-	  c0DJqMV
+	
+  
+c0DJqMV
 61
 *
 dysbi
@@ -114,7 +131,8 @@ end
 )
 {}<=
 	
-	=
+	
+=
 1
 cEmKfRGAR
 82
@@ -122,15 +140,18 @@ cEmKfRGAR
 :
 "DEiOPP"
 33
-				 
-		
+		
+		 
+	
+	
 d1svW
 int
 /
 51
 {      {   }}let
 "JcR3aTV"
-	 	"mLJ2D"
+	 	
+"mLJ2D"
 b14Rx
 _P2xeD
 {    
@@ -159,7 +180,9 @@ chillax
 <
 {} 
   /
- 98
+ 
+
+98
 {}..
 {}]
 "1fP2LYZV7qFbylc7v7t"

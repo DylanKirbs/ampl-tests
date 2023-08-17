@@ -1,3 +1,5 @@
+program vertical_tabs4:
+main:
 "7Mn"
 (
 cP8U
@@ -17,10 +19,12 @@ false
 "ng0TbzS6eO"
 "wuYisQI71"
 _W
-	:
+
+	:
 "HWbDzTVHXdS rmUyJ"
 output
-		{}return
+		
+{}return
 69
 "XGyjzVbWxcu"
 {      {   }}20
@@ -32,7 +36,9 @@ output
 >=
 dVvcdPNrk
 {};
- 
+
+
+ 
 while
 auNNW3RJf
 bool
@@ -51,7 +57,9 @@ if
 
  56
 
-{}{    
+
+
+{}{    
      { 
  	 	 
  }}_K8VIyCVo
@@ -77,7 +85,8 @@ if
 .input
 bEg
  
--
+
+-
 *
 {      {   }}main
 "Ft2MsrVp"
@@ -98,7 +107,10 @@ b8tp6obRXW
 )
 _Rtpq
 69
-		>
+	
+	
+
+>
 dbPIxpVma
 ..
 {}output
@@ -113,7 +125,10 @@ chillax
 
 
 
-32
+
+
+
+32
 ]
 aa7zj
 end
@@ -126,8 +141,11 @@ rem
 
 
 cPqpiAGWlY
- 
-			"3"
+
+
+ 
+		
+	"3"
 bZLbSDDpl
 "DlXMBvOEbUw yBp"
 awy
@@ -150,11 +168,13 @@ end
 "TGQtO"
 {      {   }}<
 cNqSpmy
-	
+
+	
  
 21
 a803T84
-  	_G
+  
+	_G
 38
 
 	
@@ -167,14 +187,16 @@ program
 	
 
  		
-	{
+	
+{
 *
 {}4
 "9"
 44
 cBO1
 
-"wYp"
+
+"wYp"
 48
 41
 {    
@@ -188,11 +210,19 @@ cS8
 cBx
 "15exDm84d 746c"
 _0
-	 "kmx "
+	
+ "kmx "
 daG
 {
 {}=
-false
+
+
+
+
+
+
+
+false
  
 
 dGon4nm
@@ -202,7 +232,10 @@ chillax
      { 
  	 	 
  }}"9bEFXYn"
-	 <
+
+
+
+	 <
 _QaZoGO0
 input
 "IEqdoszZgPu"
@@ -220,8 +253,13 @@ cLk
 bBgAwCUh2u6
 cSBOaTf
 true
-	  	 
-	 ]
+
+	  	
+
+ 
+
+
+	 ]
 /=
 "rV"
 40
@@ -234,14 +272,19 @@ while
 int
 "ue7ETW8C2i3UY35z"
 ,
-   "l"
+
+
+   
+"l"
 {    
      { 
  	 	 
  }}if
 not
 "22Jbr6uc2g"
- [
+
+
+ [
 {    
      { 
  	 	 
@@ -258,4 +301,5 @@ false
 bKBQWUGP
 ddCGItL
 
- 
+
+ 

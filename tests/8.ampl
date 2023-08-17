@@ -1,4 +1,4 @@
-program number:
+program number_overflow:
 main:
     int x;
     let x = 2147483647 ; { All fine... }
