@@ -59,7 +59,6 @@ ERROR_REGEXES = {
     # Lines
     "line_ends_in_space": re.compile(r"\s\n$"),
     "line_longer_80_chars": re.compile(r"^.{81,}$"),
-    "line_indented_using_spaces_not_tabs": re.compile(r"^(?!\t) +"),
 
 }
 
@@ -104,6 +103,10 @@ def check_file(file):
         is_comment = stripped_line.startswith(("/*", "*"), 0, 2)
         string_match = IS_STRING_RE.search(line)
         pointer_match = IS_POINTER_RE.search(line)
+
+        if line.startswith("  ", 0, 4):
+            rule = "invalid_line_indent_with_spaces"
+            log_cprint(ErrCol.ERROR, rule, file, line_num, line.replace('  ', '__'), "__")
 
         for rule, regex in ERROR_REGEXES.items():
 
