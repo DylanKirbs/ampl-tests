@@ -1,4 +1,6 @@
-program while end 123 984 "This is { } a string" input 90 "test"
+program test26:
+main:
+while end 123 984 "This is { } a string" input 90 "test"
 if "stop漢\"" rem {skip}  not
 test {comment}
 67

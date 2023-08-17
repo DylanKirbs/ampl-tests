@@ -1,3 +1,5 @@
+program vertical_tabs:
+main:
 <
 {}elif
 aMY8V2my
@@ -12,7 +14,8 @@ or
  }}56
 >
 		
-bool
+
+bool
 "j"
 {      {   }}	
  
@@ -60,12 +63,15 @@ int
 dZ
 	 "O0ZF"
 8
-	output
+	
+
+output
 program
 _A789PDNjTn
 cacElmIN
 dx
-  ;
+  
+;
 "5pOkI3MddVNleeQA"
 {      {   }}=
 c8Ry
@@ -77,7 +83,11 @@ false
 +
 let
 cHr
-bYj
+
+
+
+
+bYj
 {      {   }}{    
      { 
  	 	 
@@ -124,7 +134,8 @@ main
  }};
 {}
 
-	{}{      {   }}>=
+
+	{}{      {   }}>=
 dvDH
 _Igu
 "fk9MPsPP5TR"
@@ -141,7 +152,8 @@ dN1
 
 
   
-	"hTTdqiXNC9iAeQly"
+
+	"hTTdqiXNC9iAeQly"
 an
 {} 	
  {    
@@ -149,13 +161,17 @@ an
  	 	 
  }}or
 <
-	 	
+	 
+	
 		bHK
 {    
      { 
  	 	 
  }}
- -
+
+
+
+ -
 =
 "MvDSoPJN Q5"
 83
@@ -164,10 +180,12 @@ an
  	 	 
  }}58
 bnh3FC3zR
- 		;
+
+ 		;
 or
 >
-	{      {   }}=
+	
+{      {   }}=
 92
 {    
      { 
@@ -181,7 +199,9 @@ bfRHzAPyXY
 
 
 ..
-  
+
+ 
+ 
 "ft2xHYRepRM9"
 3
 	
@@ -199,17 +219,23 @@ _E
 ]
 12
 
-  output
+
+
+  output
 97
-{}#	 	8
+{}#	 
+	8
 51
 if
 "M0Kwk"
 
 
-aHS
+
+
+aHS
 28
-  	 {}	
+  	 {}
+	
 	dtz3
 "Yr0li62 vIB2Z"
 cWZg
@@ -228,7 +254,8 @@ while
 c5a8z
 "zpPf"
 {      {   }}  
-"lyGCXPfwt4"
+
+"lyGCXPfwt4"
 >=
 /=
 22
@@ -237,7 +264,8 @@ c5a8z
 true
 64
 		
-	aCX
+	
+aCX
 and
 ;
 ]
@@ -300,7 +328,8 @@ or
 while
 <=
 
-	{      {   }}85
+	
+{      {   }}85
 "sZo 8ob"
 chillax
 )
@@ -312,7 +341,8 @@ while
      { 
  	 	 
  }}{      {   }}	 
- end
+ 
+end
 not
  			_uuzMhq
 -
@@ -323,8 +353,14 @@ at3
 }
 _D
  
-	true
- )
+
+
+	true
+
+
+
+
+ )
 "gTJCLNoJrU2"
 false
 {      {   }}20
@@ -346,7 +382,8 @@ be3aoJi2h
 a2myP
 {}
 
-	   return
+	
+   return
 true
 55
 79
@@ -355,7 +392,8 @@ true
  	 	 
  }}68
 "4w9ZhEHK2bVucd"
-	"PYOu6CaLV9oq"
+	
+"PYOu6CaLV9oq"
 {      {   }}{    
      { 
  	 	 

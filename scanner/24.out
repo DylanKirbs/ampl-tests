@@ -1,4 +1,8 @@
 'program'
+Identifier: 'test24'
+':'
+'main'
+':'
 'while'
 'end'
 Number: 123

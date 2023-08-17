@@ -1,4 +1,6 @@
-program while end 123 984 "This is { } a string" input 90 "test"
+program test24:
+main:
+while end 123 984 "This is { } a string" input 90 "test"
 if "stop\"" rem {skip}  not
 test {comment}
 67

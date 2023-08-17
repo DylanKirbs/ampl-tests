@@ -1,1 +1,1 @@
-testscanner: 26.ampl:2:9: error: non-printable character (ASCII #230) in string
+testscanner: 26.ampl:4:9: error: non-printable character (ASCII #230) in string

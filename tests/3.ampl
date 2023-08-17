@@ -1,4 +1,4 @@
-program illegal:
+program illegal_character:
 main:
-.. { This should not trigger }
-? { This should trigger }
+    .. { This should not trigger }
+    ?  { This should trigger }

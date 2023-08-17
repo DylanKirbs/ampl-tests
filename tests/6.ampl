@@ -1,4 +1,4 @@
-program non_printable:
+program non_printable_string:
 
 greet () :
     output "This is fine\n" ;

@@ -1,2 +1,6 @@
-Identifier: 'multi_line'
+'program'
+Identifier: 'multiline_comments2'
+':'
+'main'
+':'
 Identifier: 'comments'

@@ -1,3 +1,11 @@
+'program'
+Identifier: 'unclosed_comment2'
+':'
+'main'
+':'
+'let'
+Identifier: 'string'
+'='
 String: "hi there; {} }}}}"
 Identifier: 'however'
 '..'

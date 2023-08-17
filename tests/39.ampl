@@ -1,3 +1,5 @@
+program vertical_tabs9:
+main:
 rem
 "PSloPRFPfe"
 "Q2wao3p28jgJKB364"
@@ -10,14 +12,17 @@ or
 66
 55
 {      {   }}_raE9NvR1c4
- )
+ 
+)
 {}"PysrofQIOpVNp"
 
 	
-33
+
+33
 ]
 {      {   }}
-	 "Vf81wTK66T7WUIr"
+
+	 "Vf81wTK66T7WUIr"
 76
 {    
      { 
@@ -27,7 +32,8 @@ or
 {      {   }}18
 true
 {}
- 55
+ 
+55
 88
 ..
 	 output
@@ -39,7 +45,8 @@ true
 {      {   }}>=
 b1KBf2P
 64
-{      {   }}{}		 "l9s6JAoRAUk7wnL"
+{      {   }}{}		 
+"l9s6JAoRAUk7wnL"
 "7sN9"
 return
 "2iC"
@@ -50,16 +57,19 @@ return
 :
 
 
-bY4e
+
+bY4e
 {      {   }}"8e qlad5K"
 end
 51
 {      {   }}92
 77
- 	 
+ 
+	 
 _BrgP
 	
-5
+
+5
 cRmsGEE0X
 2
 _HVCfdrIS
@@ -68,15 +78,20 @@ _HVCfdrIS
 array
 cMJPlu
 /=
-{}		18
+{}	
+	
+18
 28
-		 >
+		 
+>
 {      {   }}input
 anjJCQ2kVDN
 {}a9daeT8Xjq
 bkHA
 chillax
-
+
+
+
 
 dJck166sr
 
@@ -95,7 +110,8 @@ program
 27
 {}cvLLuxtZpiF
 
- 	"HxGn5XFMBJFJRCS Kl"
+ 	
+"HxGn5XFMBJFJRCS Kl"
 10
 {      {   }};
 "UW58eB1fgECrkFDtQYL"
@@ -104,11 +120,14 @@ dgzZ28k
 
   {}<
 {}67
-	22
+	
+22
 int
 bool
 "46GIhNeXZuc42E"
- :
+ 
+
+:
 return
 )
 "JMzVLtB8Ezba8XtpaUI7"
@@ -127,7 +146,9 @@ return
 cD
 65
 5
- 		or
+
+
+ 		or
 98
 71
 bool
@@ -163,7 +184,8 @@ false
 64
 program
 dgi
-  _tsJ7nAu0
+
+  _tsJ7nAu0
 dfKq
 {}rem
 "Kq2KtSKRO "
@@ -186,8 +208,11 @@ return
 if
 45
 >=
-	
-  	/
+
+	
+
+  
+	/
 37
 >=
 bQ4
@@ -200,13 +225,17 @@ false
 80
 int
 
-	{      {   }}"vdshH"
-	  end
+	
+
+{      {   }}"vdshH"
+	
+  end
 {}true
 output
 "d2DUPR6780I5JC"
 {}
-	
+
+	
 ]
 or
 array
@@ -216,7 +245,8 @@ _1IOU
 { { 
 }dGzCVPva
 
-			ct6TdGmswC
+		
+	ct6TdGmswC
 55
 "r16Atr9bakoFqy"
 end
@@ -254,7 +284,8 @@ else
 "eiQZpVbqn0vpW5qj4tV"
 +
 
-	:
+
+	:
 not
  		b9Eq
 else
@@ -262,7 +293,8 @@ else
 "1G4BB8RJaDdE2vQe"
 "3laqSq"
 output
-  	{      {   }}{
+  	
+{      {   }}{
 let
 input
 "GvaH5Ty1lntZv XtAdu"
@@ -298,7 +330,8 @@ atptd8W
  	 	 
  }}dZ
 }
-	 /=
+	 
+/=
 cX5
 "HiE4UuA2USeId5c1u"
 >=
@@ -306,7 +339,9 @@ cX5
 while
  	
  	"CqtkCq6Wltw3ytWgr"
-	{}array
+
+	
+{}array
  
 
 {      {   }}96
@@ -332,20 +367,24 @@ false
 false
 56
 not
-{      {   }}
+{      {   }}
+
  "Pw01sVSH0QQ4M0"
 
- 	
+
+ 	
 )
 79
 bPq0A33SeP
  	:
 
-	"jFEfIqkEkXM"
+
+	"jFEfIqkEkXM"
 "48xK MfQn"
 {      {   }}61
 
-	 {      {   }}28
+
+	 {      {   }}28
 76
 dD5P
 
@@ -357,7 +396,9 @@ dD5P
 42
 "e9dNJwteVziShB0fcIPO"
 99
- 
+
+
+ 
 cpMJopg
 cfEO
 "HkDQZUxsTXLkLDbGJRt"
@@ -365,7 +406,8 @@ bIx3HUYn
 end
 not
 36
-			,
+			
+,
 {}{    
      { 
  	 	 
@@ -381,7 +423,8 @@ b2jYe
 bHuatHxpUCD
 52
 "f Qp"
-  
+
+  
 input
 while
 input
@@ -402,12 +445,15 @@ and
 program
 74
 >
-{} 
-{      {   }}63
+{}
+ 
+
+{      {   }}63
 {} 
 "4Ix1bLtijg7I9m"
 	
- 
+
+ 
 
  "vuqboylBb2kYy"
      and
@@ -430,7 +476,10 @@ false
 1
 else
 {}
-	 {      {   }}	83
+
+	 {      {   }}	
+
+83
 "psMYIfwzo"
 "bxrBf7H2NVUUqXRV"
 program
@@ -450,7 +499,9 @@ output
 ,
 {}{      {   }}{
  
-	"vpzGyO9f"
+	
+
+"vpzGyO9f"
 aQ0D
 
 	 	
@@ -462,7 +513,8 @@ aQ0D
  	 	 
  }}59
 {      {   }}elif
-	 {}program
+	 
+{}program
 {}"JrzifTg2hpB"
 "ZRJbcSbbe1BguvF6iMlC"
 :
@@ -472,7 +524,8 @@ aQ0D
 aVnU8y
 "k1xCqNHy"
 67
-	
+
+	
 	,
 cGjqIjb5cB
 "JSbMa"
@@ -483,11 +536,14 @@ let
 93
 "mBZ7i"
 "C988Z"
-	
+
+	
 ,
 ;
 "VNMgVY"
-{} :
+{} 
+
+:
 axMVO
 "3JGFTV6OKBXdy7U4N"
 _BWaIapWgT
@@ -495,7 +551,8 @@ _BWaIapWgT
 input
 _jyK5KO4NXU
 _Dq5kMbF
-{} 	
+{}
+ 	
  
 
  
@@ -509,12 +566,16 @@ elif
 ..
 {      {   }}array
 c9yiX
-		b4CT5sh
 
-	 	"xQEC"
+
+		b4CT5sh
+
+	 
+	"xQEC"
 >=
 {      {   }} 
-	/
+	
+/
 "prOVuK9eIpd3iwlF7Eu"
 output
 /=
@@ -522,7 +583,8 @@ program
 3
 :
  
- {      {   }}		19
+ {      {   }}	
+	19
 			
 35
 {      {   }}40
@@ -540,7 +602,9 @@ awhiBtG6yTD
  	 	 
  }}51
 
-
+
+
+
 at9p7B
 let
 "Le"
@@ -557,7 +621,8 @@ avbVhUEyZe9
 d2
 "CMxHBLqa2LXbGkGMc"
 [
- 	"uf8DWAvwRhL0 3Nvo5"
+
+ 	"uf8DWAvwRhL0 3Nvo5"
 or
 
 	
@@ -574,7 +639,8 @@ rem
      { 
  	 	 
  }}
-		63
+		
+63
 ;
 79
 or
@@ -590,7 +656,8 @@ or
 
 	"e1QT1wEEmTulF3lnzz9I"
 chillax
-	 	:
+	 
+	:
 	
 "xejWiVnmFiI9ZNVK"
 "9Jrvni8mYZBmSYC"
@@ -598,12 +665,16 @@ djkZY
 [
 70
 "4uxKpbaXhWQ8ZH"
- 
+
+
+ 
 "r"
 "AspHyq1k2jUn"
 let
 >=
- 	
+
+ 
+	
 dpQpIq
 ]
 {}53
@@ -620,7 +691,8 @@ da70aoX
 97
 58
 int
-{}{      {   }} 
+{}{      {   }} 
+
  output
 
 	 {}>

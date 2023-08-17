@@ -1,3 +1,5 @@
+program vertical_tabs7:
+main:
 main
 _EC0NyBq6w
 {}dJyxoYD
@@ -20,15 +22,19 @@ _L
 cyqSI
 26
 _HkdW
-
+
+
  17
 >
 ]
- aU7
+ 
+
+aU7
 end
 34
 {}
-
+
+
 	
 array
 while
@@ -41,7 +47,8 @@ _c2OcE
 "o9mi9xtsP620NDj8U4"
 56
 49
-			(
+		
+	(
 "A4"
 4
 67
@@ -65,14 +72,20 @@ bkz03IM
 [
 
 
-	"GwPOBLqUi7Cn78OAojN"
- {    
+	
+"GwPOBLqUi7Cn78OAojN"
+
+
+
+ {    
      { 
  	 	 
  }}_Dcs6zFC2ji
 not
  
-{      {   }}dNx4ARfR
+
+
+{      {   }}dNx4ARfR
 byBa0HGu
 "kuOUeiT99SZaOiP7mctV"
 "6V1eqiGHetvWBZMImG"
@@ -90,7 +103,8 @@ return
 cFNXrp
 program
 else
- 
+
+ 
 "lktrn1E0jXedW"
 46
 7
@@ -118,7 +132,8 @@ dP
 "0kbY1k3cxg"
 c74yaqF
 _4E62
-		
+
+		
 "zIqk70QdjlYgvUU d8k"
 
 
@@ -127,7 +142,9 @@ _4E62
  	 	 
  }}{}a9wzCT
 
-	{ { 
+
+	
+{ { 
 }{    
      { 
  	 	 
@@ -155,7 +172,8 @@ and
 {      {   }}output
 "vXWGqNKn7bBf5JoU"
 	
-{}29
+
+{}29
 )
 79
 	 56
@@ -190,7 +208,9 @@ cSHTjXTqe
 92
 output
   		52
- 
+
+
+ 
 {      {   }}"NNpuD7ISUfBE4z XX"
 <
 " HFk9rCDkhoSQXjKM "
@@ -198,7 +218,8 @@ output
 "iLFEEXpJO0Xz"
 let
 >
-
+
+
 {}"JWyxN"
 afSNfo3WLG
 3
@@ -224,7 +245,8 @@ brmqmkeP
 bEkY7IgWg
 	
 	
-not
+
+not
 82
 false
 
@@ -254,7 +276,9 @@ d21qy1fR
 chillax
 buz0WJMd
 {}58
- 	aIP6
+
+ 
+	aIP6
 {}not
 {}/
 cdx
@@ -291,6 +315,8 @@ not
 end
 "qcSWf"
 {}{      {   }}"VXMxoUJsV5gfflxCu2M9"
-		<=
+	
+	<=
 "Vzl"
-	  
+	
+  

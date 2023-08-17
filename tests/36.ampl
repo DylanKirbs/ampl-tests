@@ -1,5 +1,8 @@
+program vertical_tabs6:
+main:
 c9r604am
-		 43
+	
+	 43
 "mgiigrCqqbEcO"
 )
 not
@@ -15,7 +18,8 @@ else
 42
 	   c4neuFI74U
  	
- elif
+ 
+elif
 {    
      { 
  	 	 

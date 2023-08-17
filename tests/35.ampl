@@ -1,3 +1,5 @@
+program vertical_tabs5:
+main:
 _uwEpbm
 .b9TQP
 bi
@@ -29,7 +31,8 @@ _Yj
 main
 d0CjzdoCt99
 cLtBSH5Puc
- 
+
+ 
 98
 array
 _9J69
@@ -39,9 +42,12 @@ d74DLTsdn
 "Qv0XbWLr"
 "609ET40aIllYzEJyuGL4"
 "B2t6C0iQJtHiS9jWSi"
-46
+
+
+46
 "QpZtOFlL3Fh1"
-  
+ 
+ 
 "EjX79xJj9"
 _u
 bPITBW
