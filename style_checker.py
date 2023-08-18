@@ -49,10 +49,10 @@ ERROR_REGEXES = {
     "paren_with_inner_space": re.compile(r"(\(\s)|(\s\))"),
     "bracket_with_inner_space": re.compile(r"(\[\s)|(\s\])"),
     "paren_and_curly_without_seperation": re.compile(r"\)\{"),
-    
+
     # Function Calls
     "function_with_space": re.compile(r"\b(?!(if|for|while|switch|else|return|void|int|char|double)\b)[a-z]+\s\("),
-    
+
     # Comments
     "single_line_comment": re.compile(r"//"),
 
@@ -93,6 +93,9 @@ def check_file(file):
 
     with open(file, "r") as f:
         lines = f.readlines()
+
+    if len(lines) < 1:
+        log_cprint(ErrCol.WARNING, "empty_file", file, 0, "", "")
 
     errors = 0
     warnings = 0
