@@ -1,1 +1,1 @@
-testscanner: test114.ampl:1:32: error: illegal character '$' (ASCII #36)
+testscanner: 64.ampl:1:32: error: illegal character '$' (ASCII #36)

@@ -1,1 +1,1 @@
-testscanner: test119.ampl:1:41: error: illegal escape code '\b' in string
+testscanner: 69.ampl:1:41: error: illegal escape code '\b' in string

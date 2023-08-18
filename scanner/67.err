@@ -1,1 +1,1 @@
-testscanner: test117.ampl:2:26: error: non-printable character (ASCII #9) in string
+testscanner: 67.ampl:2:26: error: non-printable character (ASCII #9) in string
