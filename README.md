@@ -143,7 +143,7 @@ cp .clang-format ..
 3. Format your code using:
 
 ```bash
-clang-format -i src/*
+clang-format -i src/*.c
 ```
 
 **Note**: Be cautious, as auto-formatting may alter your code style. Always review changes using `git diff` before committing.
