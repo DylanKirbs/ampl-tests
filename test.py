@@ -139,11 +139,12 @@ def run_test(
 
             if diff_proc.returncode != 0:
                 cprint(f'Test {test_number} failed ({output_type}).', 'red')
-                failed_tests.append(test_number)
                 passed = False
 
         if passed:
             cprint(f'Test {test_number} passed.', 'green')
+        else:
+            failed_tests.append(test_number)
 
     if not failed_tests:
         cprint(f'All tests passed for {module}!', 'green')
