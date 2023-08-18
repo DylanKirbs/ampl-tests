@@ -1,0 +1,7 @@
+String: "AMPL's scanner doesn't know about negative numbers."
+'-'
+Number: 1
+'-'
+Number: 2357
+'-'
+Number: 7462395

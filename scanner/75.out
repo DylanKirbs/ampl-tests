@@ -1,0 +1,9 @@
+'program'
+Identifier: 'test125'
+':'
+'main'
+':'
+'output'
+'('
+String: "Hello, world!\n"
+')'
