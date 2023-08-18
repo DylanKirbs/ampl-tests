@@ -127,6 +127,7 @@ def run_test(
             failed_tests.append(test_number)
             continue
 
+        passed = True
         for output_type in ['out', 'err']:
             diff_proc = subprocess.Popen(
                 [f'diff {diff_flags} temp/{test_number}.{output_type} {module}/{test_number}.{output_type}'],
@@ -138,8 +139,9 @@ def run_test(
             if diff_proc.returncode != 0:
                 cprint(f'Test {test_number} failed ({output_type}).', 'red')
                 failed_tests.append(test_number)
-                break
-        else:
+                passed = False
+
+        if passed:
             cprint(f'Test {test_number} passed.', 'green')
 
     if not failed_tests:
