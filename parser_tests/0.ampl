@@ -1,3 +1,0 @@
-program trivial:
-main:
-    chillax
