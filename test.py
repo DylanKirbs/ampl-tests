@@ -214,6 +214,10 @@ def main():
 
     test_cases = parse_test_cases(args['<tests>'])
 
+    if len(modules) == 0:
+        cprint('Invalid modules specified.', 'red')
+        return
+
     cprint('Executing Setup', 'yellow')
     os.makedirs('temp', exist_ok=True)
 
