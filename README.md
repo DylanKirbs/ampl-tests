@@ -114,6 +114,22 @@ man diff
 info diff
 ```
 
+> **NOTE** <br>
+> The parser tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
+> ```Makefile
+> DFLAGS = # -DDEBUG_PARSER ...
+> ```
+> You must also ensure that all of your `parse_` methods have the appropriate `DBG_` calls. For example:
+> ```c
+> void parse_program(void)
+> {
+>     DBG_start("<program>");
+>     ...
+>     DBG_end("</program>");
+> }
+> ```
+> The tests can then be executed using the script as normal.
+
 ### Style Checking
 
 To maintain consistent coding style, you can utilize two style checking scripts: `styletest.py` and `style_checker.py`. For the latest and more comprehensive checks, use `style_checker.py`. Both scripts can be run as follows:

@@ -35,7 +35,6 @@ ERROR_REGEXES = {
     # Control Statements
     "control_statement_missing_space": re.compile(r"(if|else|for|while|switch|case)[:\{\(]"),
     "else_if_missing_space": re.compile(r"elseif"),
-    "else_not_preceeded_by_closing_brace": re.compile(r"^\s*else"),
 
     # Operators
     "invalid_multiplicative_spacing": re.compile(r"(([a-z0-9().]+\s+[*/][a-z0-9().]+)|([a-z0-9().]+[*/]\s+[a-z0-9().]+))"),
@@ -77,7 +76,8 @@ COMMENT_CHECKS = [
 ]
 
 IS_STRING_RE = re.compile(r"([\'\"])(.*?)\1")
-IS_POINTER_RE = re.compile(r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
+IS_POINTER_RE = re.compile(
+    r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
 
 
 def get_files():
@@ -88,6 +88,7 @@ def get_files():
                 c_files.append(os.path.join(root, file))
 
     return c_files
+
 
 def check_file(file):
 
@@ -109,7 +110,8 @@ def check_file(file):
 
         if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
-            log_cprint(ErrCol.ERROR, rule, file, line_num, line.replace('  ', '__'), "__")
+            log_cprint(ErrCol.ERROR, rule, file, line_num,
+                       line.replace('  ', '__'), "__")
 
         for rule, regex in ERROR_REGEXES.items():
 
@@ -121,17 +123,21 @@ def check_file(file):
                 continue
 
             if pointer_match and rule == "invalid_multiplicative_spacing":
-                log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num, stripped_line, re_match.group()) if is_verbose else None
+                log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num,
+                           stripped_line, re_match.group()) if is_verbose else None
                 continue
-            
+
             if string_match and string_match.start() < re_match.start():
                 if rule in COMMENT_CHECKS:
-                    log_cprint(ErrCol.ERROR, rule, file, line_num, stripped_line, re_match.group())
+                    log_cprint(ErrCol.ERROR, rule, file, line_num,
+                               stripped_line, re_match.group())
                 elif is_verbose:
-                    log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num, stripped_line, re_match.group())
+                    log_cprint(ErrCol.POTENTIAL_ERROR, rule, file,
+                               line_num, stripped_line, re_match.group())
                 continue
-                
-            log_cprint(ErrCol.ERROR, rule, file, line_num, stripped_line, re_match.group())
+
+            log_cprint(ErrCol.ERROR, rule, file, line_num,
+                       stripped_line, re_match.group())
             errors += 1
 
         for rule, regex in WARNING_REGEXES.items():
@@ -143,15 +149,18 @@ def check_file(file):
             if not re_match:
                 continue
 
-            log_cprint(ErrCol.WARNING, rule, file, line_num, stripped_line, re_match.group())
+            log_cprint(ErrCol.WARNING, rule, file, line_num,
+                       stripped_line, re_match.group())
             warnings += 1
 
     # make sure eof is on a newline
     if lines[-1] == "\n":
-        log_cprint(ErrCol.WARNING, "eof_on_newline", file, len(lines), lines[-1].strip())
+        log_cprint(ErrCol.WARNING, "eof_on_newline",
+                   file, len(lines), lines[-1].strip())
         errors += 1
 
     return (errors, warnings)
+
 
 if __name__ == "__main__":
 
@@ -179,7 +188,8 @@ if __name__ == "__main__":
         total_warnings += w
 
     c = "red" if total_errors else "yellow" if total_warnings else "green"
-    cprint(f"Check finished with {total_errors} errors and {total_warnings} warnings.", c, attrs=["bold"])
+    cprint(
+        f"Check finished with {total_errors} errors and {total_warnings} warnings.", c, attrs=["bold"])
 
     if total_errors:
         sys.exit(1)

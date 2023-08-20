@@ -16,14 +16,15 @@ class LogColours(Enum):
 
     def __repr__(self):
         return self.name.replace("_", " ")
-    
+
     def __str__(self):
         return self.__repr__()
-    
+
     def color(self):
         return self.value
-    
-def log_cprint(level:LogColours, rule, file_name, line_num, line, match_group=None):
+
+
+def log_cprint(level: LogColours, rule, file_name, line_num, line, match_group=None):
     """
     Prints an error message to the console.
     :param level: The level of the error
@@ -40,10 +41,15 @@ def log_cprint(level:LogColours, rule, file_name, line_num, line, match_group=No
     print(">", line)
     print()
 
-def compile_test_module(module, src = f'{os.getcwd()}/../src') -> bool:
+
+def compile_test_module(module, src=f'{os.getcwd()}/../src') -> bool:
     """
     Compiles the specified module and returns True if successful.
     Runs the command `make test{module}` in the src directory.
+
+    :param module: The module to run the test on
+    :param src: The src directory to compile from
+    :return: True if compilation was successful, False otherwise
     """
 
     cprint(f'Compiling {module}...', 'blue')
@@ -66,5 +72,6 @@ def compile_test_module(module, src = f'{os.getcwd()}/../src') -> bool:
         cprint(f'{module.capitalize()} compiled successfully!', 'green')
         return True
     else:
-        cprint(f'{module.capitalize()} failed to compile with error code {comp_proc}', 'red')
+        cprint(
+            f'{module.capitalize()} failed to compile with error code {comp_proc.returncode}', 'red')
         return False

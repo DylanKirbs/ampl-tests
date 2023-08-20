@@ -2,7 +2,7 @@
 Test Script for AMPL compiler.
 
 Usage:
-    test.py (scanner | hashtable | symboltable | all) [options] [<tests>...]
+    test.py (scanner | parser | hashtable | symboltable | typechecking | all) [options] [<tests>...]
     test.py (-h | --help)
     test.py --version
 
@@ -42,7 +42,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 def execute_test(
-        module,
+        bin_name: str,
         test_number: int,
         bin_dir: str,
         test_dir: str = f'{os.getcwd()}/tests',
@@ -51,7 +51,7 @@ def execute_test(
     """
     Executes the test for the specified module and test number.
 
-    :param module: The module to test (scanner, hashtable, symboltable)
+    :param bin_name: The binary file name of the module to test (testscanner, amplc, testhashtable, testsymboltable)
     :param test_number: The test number to execute
     :param bin_dir: The directory containing the test executables
     :param test_dir: The directory containing the test files (default: tests)
@@ -65,7 +65,7 @@ def execute_test(
     with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
 
         process = subprocess.Popen(
-            [f'{bin_dir}/test{module}', f'{test_dir}/{test_number}.ampl'],
+            [f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
             preexec_fn=os.setsid  # Create a new process group
@@ -77,7 +77,7 @@ def execute_test(
         except subprocess.TimeoutExpired:
             cprint(
                 f'Test {test_number} timed out after {timeout} seconds.', 'red')
-            handle_timeout(process, module)
+            handle_timeout(process, bin_name)
             return False
 
 
@@ -89,16 +89,42 @@ def handle_timeout(process: subprocess.Popen, module: str):
         process.wait(timeout=1)
     except subprocess.TimeoutExpired:
         logging.warning(
-            f'Test{module} process could not be terminated using SIGTERM, attempting SIGKILL.'
+            f'{module} process could not be terminated using SIGTERM, attempting SIGKILL.'
         )
         try:
             os.killpg(os.getpgid(process.pid), signal.SIGKILL)
             process.wait(timeout=1)
         except subprocess.TimeoutExpired:
             logging.error(
-                f'Test{module} process could not be terminated using SIGKILL. Manual intervention required.'
+                f'{module} process could not be terminated using SIGKILL. Manual intervention required.'
             )
             raise Exception("Test executable could not be terminated.")
+
+
+def diff_check(module: str, test_number: int, flags: str = '') -> bool:
+    """
+    Does a diff check on the out and err files.
+
+    :param module: The module to diff the output files on
+    :param test_number: The test number to diff
+    :param flags: The diff check flags
+    :return: True if both diffs passed, False otherwise
+    """
+
+    passed = True
+    for output_type in ['out', 'err']:
+        diff_proc = subprocess.Popen(
+            [f'diff {flags} temp/{test_number}.{output_type} {module}/{test_number}.{output_type}'],
+            shell=True,
+            cwd=os.getcwd()
+        )
+        diff_proc.wait()
+
+        if diff_proc.returncode != 0:
+            cprint(f'Test {test_number} failed ({output_type}).', 'red')
+            passed = False
+
+    return passed
 
 
 def run_test(
@@ -109,7 +135,7 @@ def run_test(
     """
     Runs the tests for the specified module and test numbers.
 
-    :param module: The module to test (scanner, hashtable, symboltable)
+    :param module: The module to test (scanner, parser, hashtable, symboltable)
     :param test_numbers: The test numbers to execute (default: [0..10])
     :param is_side_by_side: Whether to show side-by-side diff (default: False)
     :return: True if all tests passed, False otherwise
@@ -122,26 +148,14 @@ def run_test(
     failed_tests = []
 
     for test_number in test_numbers:
-        res = execute_test(module, test_number, f'{os.getcwd()}/../bin')
 
-        if not res:
+        module_bin_name = f'test{module}' if module != 'parser' else 'amplc'
+
+        if not execute_test(module_bin_name, test_number, f'{os.getcwd()}/../bin'):
             failed_tests.append(test_number)
             continue
 
-        passed = True
-        for output_type in ['out', 'err']:
-            diff_proc = subprocess.Popen(
-                [f'diff {diff_flags} temp/{test_number}.{output_type} {module}/{test_number}.{output_type}'],
-                shell=True,
-                cwd=os.getcwd()
-            )
-            diff_proc.wait()
-
-            if diff_proc.returncode != 0:
-                cprint(f'Test {test_number} failed ({output_type}).', 'red')
-                passed = False
-
-        if passed:
+        if diff_check(module, test_number, diff_flags):
             cprint(f'Test {test_number} passed.', 'green')
         else:
             failed_tests.append(test_number)
@@ -201,14 +215,20 @@ def main():
 
     if args['scanner']:
         modules.append('scanner')
+    if args['parser']:
+        modules.append('parser')
     if args['hashtable']:
         modules.append('hashtable')
     if args['symboltable']:
         modules.append('symboltable')
     if args['all']:
-        modules = ['scanner', 'hashtable', 'symboltable']
+        modules = ['scanner', 'parser', 'hashtable', 'symboltable']
 
     test_cases = parse_test_cases(args['<tests>'])
+
+    if len(modules) == 0:
+        cprint('Invalid modules specified.', 'red')
+        return
 
     cprint('Executing Setup', 'yellow')
     os.makedirs('temp', exist_ok=True)
