@@ -1,0 +1,32 @@
+<program> at 1:1.
+  <body> at 4:5.
+    <statements> at 4:5.
+      <statement> at 4:5.
+        <if> at 4:5.
+          <expr> at 4:8.
+            <simple> at 4:8.
+              <term> at 4:8.
+                <factor> at 4:8.
+                </factor> at 4:12.
+              </term> at 4:12.
+            </simple> at 4:12.
+          </expr> at 4:12.
+          <statements> at 6:9.
+            <statement> at 6:9.
+              <output> at 6:9.
+              </output> at 7:5.
+            </statement> at 7:5.
+          </statements> at 7:5.
+          <else> at 7:5.
+          <statements> at 9:9.
+            <statement> at 9:9.
+              <output> at 9:9.
+              </output> at 10:5.
+            </statement> at 10:5.
+          </statements> at 10:5.
+        </if> at 11:1.
+      </statement> at 11:1.
+    </statements> at 11:1.
+  </body> at 11:1.
+</program> at 11:1.
+Success!
