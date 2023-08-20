@@ -46,6 +46,10 @@ def compile_test_module(module, src=f'{os.getcwd()}/../src') -> bool:
     """
     Compiles the specified module and returns True if successful.
     Runs the command `make test{module}` in the src directory.
+
+    :param module: The module to run the test on
+    :param src: The src directory to compile from
+    :return: True if compilation was successful, False otherwise
     """
 
     cprint(f'Compiling {module}...', 'blue')
