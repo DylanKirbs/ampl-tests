@@ -241,8 +241,11 @@ def main():
 
     os.chdir(test_dir)
     if args['--save'] is not None:
-        try:
+
+        if os.path.exists(args['--save']):
             shutil.rmtree(args['--save'])
+
+        try:
             shutil.move('temp', args['--save'])
             cprint(
                 f'Test results saved to {args["--save"]} directory!', 'green')
