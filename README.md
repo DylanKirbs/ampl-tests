@@ -116,7 +116,7 @@ info diff
 
 > **NOTE** <br>
 > The parser tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
-> ```
+> ```Makefile
 > DFLAGS = # -DDEBUG_PARSER ...
 > ```
 > You must also ensure that all of your `parse_` methods have the appropriate `DBG_` calls. For example:
