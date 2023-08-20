@@ -209,6 +209,7 @@ def compile_and_run_tests(module, test_cases, side_by_side):
 
 def main():
     args = docopt(__doc__)
+    test_dir = os.getcwd()
 
     modules = []
     test_cases = range(0, 50+1)
@@ -231,15 +232,18 @@ def main():
         return
 
     cprint('Executing Setup', 'yellow')
+    os.chdir(test_dir)
     os.makedirs('temp', exist_ok=True)
 
     for module in modules:
         if not compile_and_run_tests(module, test_cases, args['--side-by-side']):
             break
 
+    os.chdir(test_dir)
     if args['--save'] is not None:
         try:
             shutil.rmtree(args['--save'])
+            os.makedirs(args['--save'])
             shutil.move('temp', args['--save'])
             cprint(
                 f'Test results saved to {args["--save"]} directory!', 'green')
