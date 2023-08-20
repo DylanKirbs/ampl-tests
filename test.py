@@ -243,7 +243,6 @@ def main():
     if args['--save'] is not None:
         try:
             shutil.rmtree(args['--save'])
-            os.makedirs(args['--save'])
             shutil.move('temp', args['--save'])
             cprint(
                 f'Test results saved to {args["--save"]} directory!', 'green')
