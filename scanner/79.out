@@ -1,0 +1,17 @@
+'program'
+Identifier: 'InfiniteLoopExample'
+':'
+'main'
+':'
+'while'
+'true'
+':'
+'output'
+'('
+String: "This loop will run forever!"
+')'
+'end'
+'output'
+'('
+String: "You shouldn't be here"
+')'
