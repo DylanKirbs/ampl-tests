@@ -1,0 +1,37 @@
+<program> at 1:1.
+  <subdef> at 1:17.
+    <type> at 1:31.
+    </type> at 1:35.
+    <type> at 1:41.
+    </type> at 1:52.
+    <type> at 2:8.
+    </type> at 2:12.
+    <body> at 2:14.
+      <statements> at 2:14.
+      </statements> at 3:1.
+    </body> at 3:1.
+  </subdef> at 3:1.
+  <body> at 4:5.
+    <vardef> at 4:5.
+      <type> at 4:5.
+      </type> at 4:9.
+    </vardef> at 4:19.
+    <statements> at 4:19.
+      <statement> at 4:19.
+        <call> at 4:19.
+          <arglist> at 4:27.
+            <expr> at 4:28.
+              <simple> at 4:28.
+                <term> at 4:28.
+                  <factor> at 4:28.
+                  </factor> at 4:32.
+                </term> at 4:32.
+              </simple> at 4:32.
+            </expr> at 4:32.
+          </arglist> at 5:1.
+        </call> at 5:1.
+      </statement> at 5:1.
+    </statements> at 5:1.
+  </body> at 5:1.
+</program> at 5:1.
+Success!
