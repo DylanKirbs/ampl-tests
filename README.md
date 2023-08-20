@@ -123,7 +123,7 @@ info diff
 > ```c
 > void parse_program(void)
 > {
->     DBG_start("<program");
+>     DBG_start("<program>");
 >     ...
 >     DBG_end("</program>");
 > }
