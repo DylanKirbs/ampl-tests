@@ -241,7 +241,8 @@ def main():
         try:
             shutil.rmtree(args['--save'])
             shutil.move('temp', args['--save'])
-            cprint(f'Test results saved to {args["--save"]}!', 'green')
+            cprint(
+                f'Test results saved to {args["--save"]} directory!', 'green')
             logging.info(f'Saving test results to {args["--save"]}...')
         except Exception as e:
             cprint(f'Error saving test results: {e}', 'red')
