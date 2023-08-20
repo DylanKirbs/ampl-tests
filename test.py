@@ -239,15 +239,16 @@ def main():
 
     if args['--save'] is not None:
         try:
-            shutil.move('temp/*', args['--save'])
+            shutil.rmtree(args['--save'])
+            shutil.move('temp', args['--save'])
             cprint(f'Test results saved to {args["--save"]}!', 'green')
             logging.info(f'Saving test results to {args["--save"]}...')
         except Exception as e:
             cprint(f'Error saving test results: {e}', 'red')
             logging.error(f'Error saving test results: {e}')
-
-    cprint('Cleaning up...', 'yellow')
-    rm_temp()
+    else:
+        cprint('Cleaning up...', 'yellow')
+        rm_temp()
 
     cprint('Done.', 'blue')
 
