@@ -1,1 +1,1 @@
-amplc:1:11: error: expected 'program', but found numeric literal
+amplc:1:1: error: expected 'program', but found numeric literal

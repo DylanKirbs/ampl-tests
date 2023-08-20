@@ -1,1 +1,1 @@
-amplc:1:54: error: expected 'program', but found string literal
+amplc:1:1: error: expected 'program', but found string literal

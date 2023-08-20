@@ -7,10 +7,10 @@
     <statements> at 4:5.
       <statement> at 4:5.
         <assign> at 4:5.
-          <expr> at 4:23.
-            <simple> at 4:23.
-              <term> at 4:23.
-                <factor> at 4:23.
+          <expr> at 4:13.
+            <simple> at 4:13.
+              <term> at 4:13.
+                <factor> at 4:13.
                 </factor> at 4:24.
               </term> at 4:24.
             </simple> at 4:24.

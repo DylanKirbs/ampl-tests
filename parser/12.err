@@ -1,1 +1,1 @@
-amplc:3:14: error: expected '(', but found '<='
+amplc:15:67: error: expected 'end', but found end-of-file

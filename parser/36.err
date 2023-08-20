@@ -1,1 +1,1 @@
-amplc:5:6: error: expected '(', but found numeric literal
+amplc:5:4: error: expected '(', but found numeric literal
