@@ -2,7 +2,7 @@
 Test Script for AMPL compiler.
 
 Usage:
-    test.py (scanner | hashtable | symboltable | all) [options] [<tests>...]
+    test.py (scanner | parser | hashtable | symboltable | typechecking | all) [options] [<tests>...]
     test.py (-h | --help)
     test.py --version
 
@@ -42,7 +42,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 def execute_test(
-        module,
+        module: str,
         test_number: int,
         bin_dir: str,
         test_dir: str = f'{os.getcwd()}/tests',
@@ -51,7 +51,7 @@ def execute_test(
     """
     Executes the test for the specified module and test number.
 
-    :param module: The module to test (scanner, hashtable, symboltable)
+    :param module: The module to test (testscanner, amplc, testhashtable, testsymboltable)
     :param test_number: The test number to execute
     :param bin_dir: The directory containing the test executables
     :param test_dir: The directory containing the test files (default: tests)
@@ -65,7 +65,7 @@ def execute_test(
     with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
 
         process = subprocess.Popen(
-            [f'{bin_dir}/test{module}', f'{test_dir}/{test_number}.ampl'],
+            [f'{bin_dir}/{module}', f'{test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
             preexec_fn=os.setsid  # Create a new process group
@@ -89,14 +89,14 @@ def handle_timeout(process: subprocess.Popen, module: str):
         process.wait(timeout=1)
     except subprocess.TimeoutExpired:
         logging.warning(
-            f'Test{module} process could not be terminated using SIGTERM, attempting SIGKILL.'
+            f'{module} process could not be terminated using SIGTERM, attempting SIGKILL.'
         )
         try:
             os.killpg(os.getpgid(process.pid), signal.SIGKILL)
             process.wait(timeout=1)
         except subprocess.TimeoutExpired:
             logging.error(
-                f'Test{module} process could not be terminated using SIGKILL. Manual intervention required.'
+                f'{module} process could not be terminated using SIGKILL. Manual intervention required.'
             )
             raise Exception("Test executable could not be terminated.")
 
@@ -109,7 +109,7 @@ def run_test(
     """
     Runs the tests for the specified module and test numbers.
 
-    :param module: The module to test (scanner, hashtable, symboltable)
+    :param module: The module to test (scanner, parser, hashtable, symboltable)
     :param test_numbers: The test numbers to execute (default: [0..10])
     :param is_side_by_side: Whether to show side-by-side diff (default: False)
     :return: True if all tests passed, False otherwise
@@ -122,7 +122,9 @@ def run_test(
     failed_tests = []
 
     for test_number in test_numbers:
-        res = execute_test(module, test_number, f'{os.getcwd()}/../bin')
+
+        test_module = f'test{module}' if module != 'parser' else 'amplc'
+        res = execute_test(test_module, test_number, f'{os.getcwd()}/../bin')
 
         if not res:
             failed_tests.append(test_number)
