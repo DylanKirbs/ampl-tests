@@ -203,12 +203,14 @@ def main():
 
     if args['scanner']:
         modules.append('scanner')
+    if args['parser']:
+        modules.append('parser')
     if args['hashtable']:
         modules.append('hashtable')
     if args['symboltable']:
         modules.append('symboltable')
     if args['all']:
-        modules = ['scanner', 'hashtable', 'symboltable']
+        modules = ['scanner', 'parser', 'hashtable', 'symboltable']
 
     test_cases = parse_test_cases(args['<tests>'])
 
