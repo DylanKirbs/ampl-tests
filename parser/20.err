@@ -1,1 +1,1 @@
-amplc:12:1: error: expected 'program', but found end-of-file
+amplc:11:12: error: expected 'program', but found end-of-file
