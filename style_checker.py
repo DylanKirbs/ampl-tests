@@ -33,7 +33,7 @@ from utils import log_cprint
 # Precompile regexes
 ERROR_REGEXES = {
     # Control Statements
-    "control_statement_missing_space": re.compile(r"(if|else|for|while|switch|case)[:\{\(]"),
+    "control_statement_missing_space": re.compile(r"\b(if|else|for|while|switch|case)\b[:\{\(]"),
     "else_if_missing_space": re.compile(r"elseif"),
 
     # Operators
