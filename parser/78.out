@@ -24,9 +24,10 @@
               </output> at 10:5.
             </statement> at 10:5.
           </statements> at 10:5.
-        </if> at 11:1.
-      </statement> at 11:1.
-    </statements> at 11:1.
-  </body> at 11:1.
-</program> at 11:1.
+          </else> at 10:5.
+        </if> at 10:9.
+      </statement> at 10:9.
+    </statements> at 10:9.
+  </body> at 10:9.
+</program> at 10:9.
 Success!
