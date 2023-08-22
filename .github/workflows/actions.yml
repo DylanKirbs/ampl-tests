@@ -12,4 +12,3 @@ jobs:
           regex: '^[a-z]+\/(scanner|parser|symboltable|hashtable|ampl|cases|scripts)\/[a-z0-9]+(-[a-z0-9]+)*$'
           ignore: master
           min_length: 5
-          max_length: 50
