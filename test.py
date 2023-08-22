@@ -74,7 +74,8 @@ def execute_test(
         try:
             process.wait(timeout=timeout)
             if process.returncode != 0:
-                cprint(f'Test {test_number} failed during execution.', 'red')
+                cprint(
+                    f'Test {test_number} failed during execution with return code {process.returncode}.', 'red')
                 return False
         except subprocess.TimeoutExpired:
             cprint(
