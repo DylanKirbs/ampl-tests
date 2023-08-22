@@ -207,7 +207,19 @@ def compile_and_run_tests(module, test_cases, side_by_side):
     return True
 
 
+def handle_keyboard_interrupt(sig, frame):
+    """Handles keyboard interrupts."""
+
+    cprint('Keyboard interrupt detected, cleaning up...', 'yellow')
+    cprint('Warning: Please kill any lingering test executables manually.', 'red')
+    rm_temp()
+    exit(0)
+
+
 def main():
+
+    signal.signal(signal.SIGINT, handle_keyboard_interrupt)
+
     args = docopt(__doc__)
     test_dir = os.getcwd()
 
