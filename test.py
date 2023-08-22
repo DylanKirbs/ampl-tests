@@ -225,7 +225,7 @@ def parse_test_cases(test_args):
     if not test_args:
         # get all the available tests
         count = len(os.listdir(os.path.join(os.getcwd(), 'tests')))
-        list(range(0, count + 1))
+        return list(range(0, count + 1))
 
     if ".." in test_args[0]:
         start, end = map(int, test_args[0].split(".."))
