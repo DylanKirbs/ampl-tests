@@ -12,4 +12,4 @@ jobs:
           regex: '(scanner|parser|symboltable|hashtable|ampl|scripts)\/[a-z]+(-[0-9])*$'
           ignore: master
           min_length: 5
-          max_length: 20
+          max_length: 50
