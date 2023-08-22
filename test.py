@@ -64,18 +64,8 @@ def execute_test(
 
     with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
 
-        """ old test execution code
         process = subprocess.Popen(
             [f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
-            stdout=f_out,
-            stderr=f_err,
-            preexec_fn=os.setsid  # Create a new process group
-        )
-        """
-
-        # execution with valgrind to check for memory leaks
-        process = subprocess.Popen(
-            [f'valgrind --leak-check=full --show-leak-kinds=all {bin_dir}/{bin_name} {test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
             preexec_fn=os.setsid  # Create a new process group
@@ -83,12 +73,34 @@ def execute_test(
 
         try:
             process.wait(timeout=timeout)
-            return True
+            if process.returncode != 0:
+                cprint(f'Test {test_number} failed during execution.', 'red')
+                return False
         except subprocess.TimeoutExpired:
             cprint(
                 f'Test {test_number} timed out after {timeout} seconds.', 'red')
             handle_timeout(process, bin_name)
             return False
+
+    # Check for leaks
+    valgrind_proc = subprocess.Popen(
+        ['valgrind', '--leak-check=full', '--error-exitcode=1',
+            f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        preexec_fn=os.setsid  # Create a new process group
+    )
+
+    try:
+        valgrind_proc.wait(timeout=timeout)
+        if valgrind_proc.returncode != 0:
+            cprint(f'Test {test_number} failed memory check', 'red')
+            return False
+    except subprocess.TimeoutExpired:
+        cprint(
+            f'Memory leak test {test_number} timed out after {timeout} seconds.', 'red')
+        handle_timeout(valgrind_proc, bin_name)
+        return False
 
 
 def handle_timeout(process: subprocess.Popen, module: str):
