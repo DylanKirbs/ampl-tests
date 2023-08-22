@@ -11,4 +11,3 @@ jobs:
           allowed_prefixes: 'feature,bugfix,refactor'
           regex: '^[a-z]+\/(scanner|parser|symboltable|hashtable|ampl|cases|scripts)\/[a-z0-9]+(-[a-z0-9]+)*$'
           ignore: master
-          min_length: 5
