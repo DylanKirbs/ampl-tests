@@ -1,0 +1,15 @@
+name: 'Assert Branch Naming Convention'
+on: pull_request
+
+jobs:
+  branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          # Branch Name: prefix/module/comment-issue-number
+          regex: '^[a-z]+\/(scanner|parser|symboltable|hashtable|ampl|scripts)\/[a-z]+-[0-9]+$'
+          allowed_prefixes: 'feature,bugfix,refactor'
+          ignore: master
+          min_length: 5
+          max_length: 20
