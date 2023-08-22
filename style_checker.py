@@ -30,8 +30,8 @@ from termcolor import cprint
 from utils import LogColours as ErrCol
 from utils import log_cprint
 
-# Precompile regexes
-ERROR_REGEXES = {
+# Precompile regexps
+ERROR_REGEXPS = {
     # Control Statements
     "control_statement_missing_space": re.compile(r"\b(if|else|for|while|switch|case)\b[:\{\(]"),
     "else_if_missing_space": re.compile(r"elseif"),
@@ -41,13 +41,13 @@ ERROR_REGEXES = {
     "invalid_additive_spacing": re.compile(r"(([a-z0-9().]+\s+[+-][a-z0-9().]+)|([a-z0-9().]+[+-]\s+[a-z0-9().]+))"),
     "preprocessor_not_flush_with_left_margin": re.compile(r"^\s+#"),
 
-    # Delimmiters
-    "no_space_after_delimmiter": re.compile(r"[,;]\w"),
+    # Delimiters
+    "no_space_after_delimiter": re.compile(r"[,;]\w"),
 
     # Braces
     "paren_with_inner_space": re.compile(r"(\(\s)|(\s\))"),
     "bracket_with_inner_space": re.compile(r"(\[\s)|(\s\])"),
-    "paren_and_curly_without_seperation": re.compile(r"\)\{"),
+    "paren_and_curly_without_separation": re.compile(r"\)\{"),
 
     # Function Calls
     "function_with_space": re.compile(r"\b(?!(if|for|while|switch|else|return|void|int|char|double)\b)[a-z]+\s\("),
@@ -61,12 +61,12 @@ ERROR_REGEXES = {
 
 }
 
-WARNING_REGEXES = {
+WARNING_REGEXPS = {
     "spaces_in_array_access": re.compile(r"\\w+\[\s*[a-z0-9]+(\s+[+-]\s*)|(\s*[+-]\s+)[a-z0-9]+\s*\]", re.IGNORECASE),
-    "viloation_of_one_true_brace_style": re.compile(r"\sfor[^\{]*\n"),
-    "viloation_of_one_true_brace_style": re.compile(r"\swhile[^\{]*\n"),
-    "viloation_of_one_true_brace_style": re.compile(r"\sif[^\{]*\n"),
-    "viloation_of_one_true_brace_style": re.compile(r"\selse[^\{]*\n"),
+    "violation_of_one_true_brace_style": re.compile(r"\sfor[^\{]*\n"),
+    "violation_of_one_true_brace_style": re.compile(r"\swhile[^\{]*\n"),
+    "violation_of_one_true_brace_style": re.compile(r"\sif[^\{]*\n"),
+    "violation_of_one_true_brace_style": re.compile(r"\selse[^\{]*\n"),
 }
 
 COMMENT_CHECKS = [
@@ -102,7 +102,7 @@ def check_file(file):
     warnings = 0
     for line_num, line in enumerate(lines):
 
-        # Precompute certain checks
+        # Pre-compute certain checks
         stripped_line = line.strip()
         is_comment = stripped_line.startswith(("/*", "*"), 0, 2)
         string_match = IS_STRING_RE.search(line)
@@ -113,7 +113,7 @@ def check_file(file):
             log_cprint(ErrCol.ERROR, rule, file, line_num,
                        line.replace('  ', '__'), "__")
 
-        for rule, regex in ERROR_REGEXES.items():
+        for rule, regex in ERROR_REGEXPS.items():
 
             if is_comment and rule not in COMMENT_CHECKS:
                 continue
@@ -140,7 +140,7 @@ def check_file(file):
                        stripped_line, re_match.group())
             errors += 1
 
-        for rule, regex in WARNING_REGEXES.items():
+        for rule, regex in WARNING_REGEXPS.items():
 
             if is_comment and rule not in COMMENT_CHECKS:
                 continue
@@ -175,9 +175,9 @@ if __name__ == "__main__":
         cprint(f"Checking files:", "blue")
         pprint(c_files, indent=4)
         cprint(f"Rules:", "blue")
-        pprint(ERROR_REGEXES, indent=2)
+        pprint(ERROR_REGEXPS, indent=2)
         cprint(f"Warnings:", "blue")
-        pprint(WARNING_REGEXES, indent=2)
+        pprint(WARNING_REGEXPS, indent=2)
         print()
 
     total_errors = 0
