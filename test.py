@@ -64,8 +64,18 @@ def execute_test(
 
     with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
 
+        """ old test execution code
         process = subprocess.Popen(
             [f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
+            stdout=f_out,
+            stderr=f_err,
+            preexec_fn=os.setsid  # Create a new process group
+        )
+        """
+
+        # execution with valgrind to check for memory leaks
+        process = subprocess.Popen(
+            [f'valgrind --leak-check=full --show-leak-kinds=all {bin_dir}/{bin_name} {test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
             preexec_fn=os.setsid  # Create a new process group
