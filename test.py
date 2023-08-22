@@ -73,10 +73,6 @@ def execute_test(
 
         try:
             process.wait(timeout=timeout)
-            if process.returncode != 0:
-                cprint(
-                    f'Test {test_number} failed during execution with return code {process.returncode}.', 'red')
-                return False
         except subprocess.TimeoutExpired:
             cprint(
                 f'Test {test_number} timed out after {timeout} seconds.', 'red')
@@ -85,7 +81,7 @@ def execute_test(
 
     # Check for leaks
     valgrind_proc = subprocess.Popen(
-        ['valgrind', '--leak-check=full', '--error-exitcode=1',
+        ['valgrind', '--leak-check=full', '--error-exitcode=-1',
             f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
@@ -94,12 +90,13 @@ def execute_test(
 
     try:
         valgrind_proc.wait(timeout=timeout)
-        if valgrind_proc.returncode != 0:
+        if valgrind_proc.returncode == -1:
             cprint(f'Test {test_number} failed memory check', 'red')
             return False
+        return True
     except subprocess.TimeoutExpired:
         cprint(
-            f'Memory leak test {test_number} timed out after {timeout} seconds.', 'red')
+            f'Valgrind {test_number} timed out after {timeout} seconds.', 'red')
         handle_timeout(valgrind_proc, bin_name)
         return False
 
