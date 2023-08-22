@@ -172,6 +172,30 @@ If you're contributing to the test suite, utilize the `create_test_cases.sh` scr
 
 We welcome contributions to this project! To get started, fork the repository, create a meaningful branch, and submit a pull request. Please avoid committing directly to the `master` branch.
 
+### Branch Naming Conventions
+
+The first section should indicate a broad category:
+| Category | Description      |
+| -------- | ---------------- |
+| bugfix   | Bug fixes        |
+| feature  | New features     |
+| refactor | Code refactoring |
+
+The second section should indicate the module:
+| Module                | Description                           |
+| --------------------- | ------------------------------------- |
+| scanner, parser, etc. | The module being changed              |
+| scripts               | The testing scripts, or style checker |
+| cases                 | The test cases                        |
+
+The third section should be a short description of the change, with each word separated by a hyphen.
+If the change is related to an issue, the issue number should be included at the end of the description.
+For example:
+- `bugfix/scripts/added-missing-dependency-issue-1`.
+- `feature/cases/added-cases-5-to-10`.
+
+PR's will no longer be merged if they do not follow this naming convention.
+
 ## Acknowledgments
 
 | Name              | Student Number |
