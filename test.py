@@ -4,11 +4,11 @@ Test Script for AMPL compiler.
 Usage:
     test.py (scanner | parser | hashtable | symboltable | typechecking | all) [options] [<tests>...]
     test.py (-h | --help)
-    test.py --version
 
 Options:
     -h, --help      Display this help screen
     --version       Show version information
+    --valgrind      Perform a memory check on the test executables
     --side-by-side  Display the differences side by side
     --save=<dir>    Save test output to the specified directory
 
@@ -16,6 +16,7 @@ Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
     test.py hashtable --side-by-side 0..5       # Run hashtable tests 0 through 5
     test.py symboltable --save=results 0..10    # Run symboltable tests 0 through 10 and save the results to the results directory
+    test.py all --valgrind                      # Run all tests with valgrind memory checks
 
 There are a total of 30 tests. If no specific tests are provided, tests [0..10] will be executed by default.
 The differences will be displayed on the console.
@@ -42,20 +43,23 @@ logging.basicConfig(level=logging.INFO)
 
 
 def execute_test(
-        bin_name: str,
+        exe_name: str,
         test_number: int,
         bin_dir: str,
-        test_dir: str = f'{os.getcwd()}/tests',
+        test_dir: str,
+        should_valgrind: bool = True,
         timeout: float = 10
 ) -> bool:
     """
     Executes the test for the specified module and test number.
 
-    :param bin_name: The binary file name of the module to test (testscanner, amplc, testhashtable, testsymboltable)
+    :param exe_name: The name of the module's binary file (testscanner, amplc, testhashtable, testsymboltable)
     :param test_number: The test number to execute
     :param bin_dir: The directory containing the test executables
-    :param test_dir: The directory containing the test files (default: tests)
+    :param test_dir: The directory containing the test files
+    :param should_valgrind: Whether to perform a memory check (default: True)
     :param timeout: The timeout in seconds (default: 10)
+
     :return: True if the test executed, False otherwise
     """
 
@@ -65,7 +69,7 @@ def execute_test(
     with open(stdout_path, 'w') as f_out, open(stderr_path, 'w') as f_err:
 
         process = subprocess.Popen(
-            [f'{bin_dir}/{bin_name}', f'{test_dir}/{test_number}.ampl'],
+            [f'{bin_dir}/{exe_name}', f'{test_dir}/{test_number}.ampl'],
             stdout=f_out,
             stderr=f_err,
             preexec_fn=os.setsid  # Create a new process group
@@ -73,12 +77,35 @@ def execute_test(
 
         try:
             process.wait(timeout=timeout)
-            return True
         except subprocess.TimeoutExpired:
             cprint(
                 f'Test {test_number} timed out after {timeout} seconds.', 'red')
-            handle_timeout(process, bin_name)
+            handle_timeout(process, exe_name)
             return False
+
+    if not should_valgrind:
+        return True
+
+    # Check for leaks
+    valgrind_proc = subprocess.Popen(
+        ['valgrind', '--leak-check=full', '--error-exitcode=-1',
+            f'{bin_dir}/{exe_name}', f'{test_dir}/{test_number}.ampl'],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        preexec_fn=os.setsid  # Create a new process group
+    )
+
+    try:
+        valgrind_proc.wait(timeout=timeout)
+        if valgrind_proc.returncode == -1:
+            cprint(f'Test {test_number} failed memory check', 'red')
+            return False
+        return True
+    except subprocess.TimeoutExpired:
+        cprint(
+            f'Valgrind {test_number} timed out after {timeout} seconds.', 'red')
+        handle_timeout(valgrind_proc, exe_name)
+        return False
 
 
 def handle_timeout(process: subprocess.Popen, module: str):
@@ -130,6 +157,7 @@ def diff_check(module: str, test_number: int, flags: str = '') -> bool:
 def run_test(
         module: str,
         test_numbers: List[int],
+        is_mem_check: bool = True,
         is_side_by_side: bool = False
 ) -> bool:
     """
@@ -137,11 +165,17 @@ def run_test(
 
     :param module: The module to test (scanner, parser, hashtable, symboltable)
     :param test_numbers: The test numbers to execute (default: [0..10])
+    :param is_mem_check: Whether to perform a memory check (default: True)
     :param is_side_by_side: Whether to show side-by-side diff (default: False)
+
     :return: True if all tests passed, False otherwise
     """
 
     diff_flags = '--side-by-side --suppress-common-lines' if is_side_by_side else ''
+
+    # Get the bin and test directories
+    bin_dir = os.path.join(os.getcwd(), '../bin')
+    test_dir = os.path.join(os.getcwd(), 'tests')
 
     cprint(f'Running tests for {module}...', 'blue')
 
@@ -149,9 +183,9 @@ def run_test(
 
     for test_number in test_numbers:
 
-        module_bin_name = f'test{module}' if module != 'parser' else 'amplc'
+        module_name = f'test{module}' if module != 'parser' else 'amplc'
 
-        if not execute_test(module_bin_name, test_number, f'{os.getcwd()}/../bin'):
+        if not execute_test(module_name, test_number, bin_dir,  test_dir, is_mem_check):
             failed_tests.append(test_number)
             continue
 
@@ -188,18 +222,23 @@ def parse_test_cases(test_args):
     Either a list of integers or a start..end range can be provided.
     """
 
+    if not test_args:
+        # get all the available tests
+        count = len(os.listdir(os.path.join(os.getcwd(), 'tests')))
+        return list(range(0, count + 1))
+
     if ".." in test_args[0]:
         start, end = map(int, test_args[0].split(".."))
         return list(range(start, end + 1))
     return [int(i) for i in test_args]
 
 
-def compile_and_run_tests(module, test_cases, side_by_side):
+def compile_and_run_tests(module, test_cases, is_mem_check, side_by_side):
     """Compiles and runs the tests for the specified module."""
 
     try:
         if compile_test_module(module):
-            run_test(module, test_cases, side_by_side)
+            run_test(module, test_cases, is_mem_check, side_by_side)
     except Exception as e:
         cprint(f'Error running tests: {e}', 'red')
         logging.error(f'Error: {e}')
@@ -248,7 +287,7 @@ def main():
     os.makedirs('temp', exist_ok=True)
 
     for module in modules:
-        if not compile_and_run_tests(module, test_cases, args['--side-by-side']):
+        if not compile_and_run_tests(module, test_cases, args['--valgrind'], args['--side-by-side']):
             break
 
     os.chdir(test_dir)
