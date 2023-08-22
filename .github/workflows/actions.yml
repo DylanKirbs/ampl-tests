@@ -9,7 +9,7 @@ jobs:
         with:
           # Branch Name: prefix/module/comment (and issue number if required)
           allowed_prefixes: 'feature,bugfix,refactor'
-          regex: '(scanner|parser|symboltable|hashtable|ampl|scripts)\/[a-z]+(-[0-9])*$'
+          regex: '^[a-z]+\/(scanner|parser|symboltable|hashtable|ampl|cases|scripts)\/[a-z0-9]+(-[a-z0-9]+)*$'
           ignore: master
           min_length: 5
           max_length: 50
