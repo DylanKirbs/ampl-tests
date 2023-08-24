@@ -357,7 +357,7 @@ def main():
 
     # Logging
     logger = logging.getLogger("Test Executor")
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
 
     ch = logging.StreamHandler()
     ch.setLevel(logging.DEBUG)
