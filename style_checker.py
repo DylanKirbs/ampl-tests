@@ -27,8 +27,41 @@ from pprint import pprint
 from docopt import docopt
 from termcolor import cprint
 
-from utils import LogColours as ErrCol
-from utils import log_cprint
+from enum import Enum
+
+
+class LogColours(Enum):
+    ERROR = "red"
+    WARNING = "yellow"
+    POTENTIAL_ERROR = "magenta"
+
+    def __repr__(self):
+        return self.name.replace("_", " ")
+
+    def __str__(self):
+        return self.__repr__()
+
+    def color(self):
+        return self.value
+
+
+def log_cprint(level: LogColours, rule, file_name, line_num, line, match_group=None):
+    """
+    Prints an error message to the console.
+    :param level: The level of the error
+    :param rule: The rule that was broken
+    :param file_name: The name of the file that the error occured in
+    :param line_num: The line number that the error occured on
+    :param line: The line that the error occured on
+    """
+
+    if match_group:
+        line = line.replace(match_group, f"\033[1m{match_group}\033[0m")
+
+    cprint(f"{level}: <{rule}> on line {line_num + 1} of {file_name}", level.color())
+    print(">", line)
+    print()
+
 
 # Precompile regexps
 ERROR_REGEXPS = {
@@ -96,7 +129,7 @@ def check_file(file):
         lines = f.readlines()
 
     if len(lines) < 1:
-        log_cprint(ErrCol.WARNING, "empty_file", file, 0, "", "")
+        log_cprint(LogColours.WARNING, "empty_file", file, 0, "", "")
 
     errors = 0
     warnings = 0
@@ -110,7 +143,7 @@ def check_file(file):
 
         if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
-            log_cprint(ErrCol.ERROR, rule, file, line_num,
+            log_cprint(LogColours.ERROR, rule, file, line_num,
                        line.replace('  ', '__'), "__")
 
         for rule, regex in ERROR_REGEXPS.items():
@@ -123,20 +156,20 @@ def check_file(file):
                 continue
 
             if pointer_match and rule == "invalid_multiplicative_spacing":
-                log_cprint(ErrCol.POTENTIAL_ERROR, rule, file, line_num,
+                log_cprint(LogColours.POTENTIAL_ERROR, rule, file, line_num,
                            stripped_line, re_match.group()) if is_verbose else None
                 continue
 
             if string_match and string_match.start() < re_match.start():
                 if rule in COMMENT_CHECKS:
-                    log_cprint(ErrCol.ERROR, rule, file, line_num,
+                    log_cprint(LogColours.ERROR, rule, file, line_num,
                                stripped_line, re_match.group())
                 elif is_verbose:
-                    log_cprint(ErrCol.POTENTIAL_ERROR, rule, file,
+                    log_cprint(LogColours.POTENTIAL_ERROR, rule, file,
                                line_num, stripped_line, re_match.group())
                 continue
 
-            log_cprint(ErrCol.ERROR, rule, file, line_num,
+            log_cprint(LogColours.ERROR, rule, file, line_num,
                        stripped_line, re_match.group())
             errors += 1
 
@@ -149,13 +182,13 @@ def check_file(file):
             if not re_match:
                 continue
 
-            log_cprint(ErrCol.WARNING, rule, file, line_num,
+            log_cprint(LogColours.WARNING, rule, file, line_num,
                        stripped_line, re_match.group())
             warnings += 1
 
     # make sure eof is on a newline
     if lines[-1] == "\n":
-        log_cprint(ErrCol.WARNING, "eof_on_newline",
+        log_cprint(LogColours.WARNING, "eof_on_newline",
                    file, len(lines), lines[-1].strip())
         errors += 1
 
