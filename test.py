@@ -370,13 +370,13 @@ def main():
 
     for module in modules:
         logging.info(f'Running {module} tests...')
-        # test = Test(module, args['--valgrind'], args['--side-by-side'])
-        # test.run(test_cases)
+        test = Test(module, args['--valgrind'], args['--side-by-side'])
+        test.run(test_cases)
 
-        # if args['--save'] is not None:
-        #     test.save_results(args['--save'])
-        # else:
-        #     test.rm_temp()
+        if args['--save'] is not None:
+            test.save_results(args['--save'])
+        else:
+            test.rm_temp()
 
     logging.info('Done.')
 
