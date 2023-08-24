@@ -4,6 +4,7 @@ Test Script for AMPL compiler.
 Usage:
     test.py (scanner | parser | hashtable | symboltable | typechecking | all) [options] [<tests>...]
     test.py (-h | --help)
+    test.py --version
 
 Options:
     -h, --help      Display this help screen
@@ -363,7 +364,7 @@ def main():
     logging.getLogger().handlers[0].setFormatter(CustomFormatter())
 
     # Argument parsing
-    args = docopt(__doc__)
+    args = docopt(__doc__, version='Version: 3.1.0')
     logging.debug(f'Arguments: {args}')
     modules = parse_modules(args)
     test_cases = parse_test_cases(args['<tests>'])
