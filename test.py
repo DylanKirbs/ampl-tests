@@ -343,8 +343,11 @@ def handle_keyboard_interrupt(sig, frame):
     """Handles keyboard interrupts."""
 
     logging.warning('Keyboard interrupt detected!')
-    # TODO: Terminate all processes
+    logging.warning('Ensure that all subprocesses are terminated.')
     sys.exit(0)
+
+
+CURRENT_TEST = None
 
 
 def main():
