@@ -35,9 +35,6 @@ import sys
 
 from docopt import docopt
 
-CWD = os.getcwd().replace(' ', '\\ ')
-"""The current working directory, formatted for use in shell commands."""
-
 
 class CustomFormatter(logging.Formatter):
     """
@@ -75,10 +72,10 @@ class Test:
         executable: str,
         perform_mem_check: bool = True,
         side_by_side: bool = False,
-        src_dir=f'{CWD}/../src',
-        bin_dir=f'{CWD}/../bin',
-        tests_dir=f'{CWD}/tests',
-        temp_dir=f'{CWD}/temp'
+        src_dir=f'{os.getcwd()}/../src',
+        bin_dir=f'{os.getcwd()}/../bin',
+        tests_dir=f'{os.getcwd()}/tests',
+        temp_dir=f'{os.getcwd()}/temp'
     ) -> None:
         """
         Creates a new test.
@@ -372,8 +369,10 @@ def main():
 
     # CWD and temp dir setup
     logging.info('Setting up')
-    os.chdir(CWD)
     logging.debug(f'Current working directory: {os.getcwd()}')
+    if ' ' in os.getcwd():
+        logging.error('Current working directory cannot contain spaces.')
+        sys.exit(1)
     os.makedirs('temp', exist_ok=True)
 
     for module in modules:
