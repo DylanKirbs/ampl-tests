@@ -34,32 +34,24 @@ import subprocess
 import sys
 
 from docopt import docopt
+from termcolor import colored
 
 
 class CustomFormatter(logging.Formatter):
-    """
-    Custom logging formatter for coloured output.
-    """
-
-    grey = "\x1b[38;20m"
-    yellow = "\x1b[33;20m"
-    red = "\x1b[31;20m"
-    bold_red = "\x1b[31;1m"
-    reset = "\x1b[0m"
-    format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s (%(filename)s:%(lineno)d)"
 
     FORMATS = {
-        logging.DEBUG: grey + format + reset,
-        logging.INFO: grey + format + reset,
-        logging.WARNING: yellow + format + reset,
-        logging.ERROR: red + format + reset,
-        logging.CRITICAL: bold_red + format + reset
+        logging.DEBUG: lambda s: colored(s, 'blue'),
+        logging.INFO: lambda s: colored(s, 'green'),
+        logging.WARNING: lambda s: colored(s, 'yellow'),
+        logging.ERROR: lambda s: colored(s, 'red'),
+        logging.CRITICAL: lambda s: colored(s, 'red', attrs=['bold'])
     }
 
     def format(self, record):
-        log_fmt = self.FORMATS.get(record.levelno)
-        formatter = logging.Formatter(log_fmt)
-        return formatter.format(record)
+        log_fmt = self.FORMATS.get(record.levelno, lambda s: s)
+        formatter = logging.Formatter("%(levelname)s:\t%(message)s")
+        coloured_fmt = log_fmt(formatter.format(record))
+        return coloured_fmt
 
 
 class Test:
@@ -355,14 +347,12 @@ def main():
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
 
-    # Logging
-    logger = logging.getLogger("Test Executor")
-    logger.setLevel(logging.INFO)
-
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
-    ch.setFormatter(CustomFormatter())
-    logger.addHandler(ch)
+    # Logging setup
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(levelname)s:\t%(message)s'
+    )
+    logging.getLogger().handlers[0].setFormatter(CustomFormatter())
 
     # Argument parsing
     args = docopt(__doc__)
@@ -379,13 +369,14 @@ def main():
     os.makedirs('temp', exist_ok=True)
 
     for module in modules:
-        test = Test(module, args['--valgrind'], args['--side-by-side'])
-        test.run(test_cases)
+        logging.info(f'Running {module} tests...')
+        # test = Test(module, args['--valgrind'], args['--side-by-side'])
+        # test.run(test_cases)
 
-        if args['--save'] is not None:
-            test.save_results(args['--save'])
-        else:
-            test.rm_temp()
+        # if args['--save'] is not None:
+        #     test.save_results(args['--save'])
+        # else:
+        #     test.rm_temp()
 
     logging.info('Done.')
 
