@@ -39,7 +39,7 @@ from termcolor import colored
 
 class CustomFormatter(logging.Formatter):
 
-    FORMATS = {
+    COLOURS = {
         logging.DEBUG: lambda s: colored(s, 'blue'),
         logging.INFO: lambda s: colored(s, 'green'),
         logging.WARNING: lambda s: colored(s, 'yellow'),
@@ -47,10 +47,18 @@ class CustomFormatter(logging.Formatter):
         logging.CRITICAL: lambda s: colored(s, 'red', attrs=['bold'])
     }
 
+    FORMATS = {
+        logging.INFO: "%(message)s",
+        logging.DEBUG: "%(levelname)s:\t%(module)s.%(funcName)s():\t%(message)s",
+    }
+
     def format(self, record):
-        log_fmt = self.FORMATS.get(record.levelno, lambda s: s)
-        formatter = logging.Formatter("%(levelname)s:\t%(message)s")
-        coloured_fmt = log_fmt(formatter.format(record))
+        colour = self.COLOURS.get(record.levelno, lambda s: s)
+        fmt_str = self.FORMATS.get(
+            record.levelno, "%(levelname)s:\t%(message)s")
+
+        formatter = logging.Formatter(fmt_str)
+        coloured_fmt = colour(formatter.format(record))
         return coloured_fmt
 
 
