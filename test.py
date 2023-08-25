@@ -266,6 +266,12 @@ class Test:
 
     def run(self, test_cases: list[int]) -> bool:
 
+        if len(test_cases) == 0:
+            # count all the .in file in the module directory (.in .out .err)
+            test_cases = list(
+                range(len(os.listdir(self._module_dir)) // 3)
+            )
+
         if not self.compile():
             return False
 
@@ -335,10 +341,7 @@ def parse_test_cases(test_args) -> list[int]:
     """
     cases = []
 
-    if not test_args:
-        count = len(os.listdir(os.path.join(os.getcwd(), 'tests')))
-        cases = list(range(0, count))
-    elif ".." in test_args[0]:
+    if ".." in test_args[0]:
         start, end = map(int, test_args[0].split(".."))
         cases = list(range(start, end + 1))
     else:
