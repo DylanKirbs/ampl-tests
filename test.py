@@ -9,6 +9,7 @@ Usage:
 Options:
     -h, --help      Display this help screen
     --version       Show version information
+    --verbose       Display verbose output, including debug messages
     --valgrind      Perform a memory check on the test executables
     --side-by-side  Display the differences side by side
     --save=<dir>    Save test output to the specified directory
@@ -36,6 +37,7 @@ import sys
 
 from docopt import docopt
 from termcolor import colored
+from pprint import pformat
 
 
 class CustomFormatter(logging.Formatter):
@@ -48,15 +50,9 @@ class CustomFormatter(logging.Formatter):
         logging.CRITICAL: lambda s: colored(s, 'red', attrs=['bold'])
     }
 
-    FORMATS = {
-        logging.INFO: "%(message)s",
-        logging.DEBUG: "%(levelname)s:\t%(module)s.%(funcName)s():\t%(message)s",
-    }
-
     def format(self, record):
         colour = self.COLOURS.get(record.levelno, lambda s: s)
-        fmt_str = self.FORMATS.get(
-            record.levelno, "%(levelname)s:\t%(message)s")
+        fmt_str = "%(message)s" if record.levelno == logging.INFO else "%(levelname)s:\t%(message)s"
 
         formatter = logging.Formatter(fmt_str)
         coloured_fmt = colour(formatter.format(record))
@@ -160,6 +156,7 @@ class Test:
                 stderr=f_err,
                 preexec_fn=os.setsid  # Create a new process group
             )
+            logging.debug(f'Process ID: {process.pid}')
 
             try:
                 process.wait(timeout=self._TIMEOUT)
@@ -180,6 +177,7 @@ class Test:
             stderr=subprocess.DEVNULL,
             preexec_fn=os.setsid  # Create a new process group
         )
+        logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
         try:
             valgrind_proc.wait(timeout=10)
@@ -194,6 +192,8 @@ class Test:
             return False
 
     def _handle_timeout(self, process: subprocess.Popen):
+
+        logging.debug(f'Terminating process {process.pid}...')
 
         try:
             # Terminate the whole process group
@@ -230,6 +230,7 @@ class Test:
                 shell=True,
                 cwd=os.getcwd()
             )
+            logging.debug(f'Diff Process ID: {diff_proc.pid}')
             diff_proc.wait()
 
             if diff_proc.returncode != 0:
@@ -315,7 +316,7 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
         logging.error('Invalid modules specified.')
         sys.exit(1)
 
-    logging.debug(f'Modules: {modules}')
+    logging.debug(f'Modules\n{pformat(modules, compact=True)}')
 
     return modules
 
@@ -336,7 +337,7 @@ def parse_test_cases(test_args) -> list[int]:
     else:
         cases = list(map(int, test_args))
 
-    logging.debug(f'Test cases: {cases}')
+    logging.debug(f'Test cases\n{pformat(cases, compact=True)}')
     return cases
 
 
@@ -350,26 +351,28 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
+    VERSION = '3.1.0'
+
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
 
+    args = docopt(__doc__, version=f'Version: {VERSION}')
     # Logging setup
     logging.basicConfig(
-        level=logging.INFO,
+        level=logging.INFO if not args['--verbose'] else logging.DEBUG,
         format='%(levelname)s:\t%(message)s'
     )
     logging.getLogger().handlers[0].setFormatter(CustomFormatter())
 
     # Argument parsing
-    args = docopt(__doc__, version='Version: 3.1.0')
-    logging.info(f'Running Test script version 3.1.0')
-    logging.debug(f'Arguments: {args}')
+    logging.info(f'Running Test script version {VERSION}')
+    logging.debug(f'Arguments\n{pformat(args)}')
     modules = parse_modules(args)
     test_cases = parse_test_cases(args['<tests>'])
 
     # CWD and temp dir setup
     logging.info('Setting up')
-    logging.debug(f'Current working directory: {os.getcwd()}')
+    logging.debug(f'CWD: {os.getcwd()}')
     if ' ' in os.getcwd():
         logging.error('Current working directory cannot contain spaces.')
         sys.exit(1)
