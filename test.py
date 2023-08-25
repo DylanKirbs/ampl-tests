@@ -171,7 +171,7 @@ class Test:
 
         # Check for leaks
         valgrind_proc = subprocess.Popen(
-            ['valgrind', '--leak-check=full', '--error-exitcode=-1',
+            ['valgrind', '--leak-check=full', '--error-exitcode=255',
                 f'{self._bin_dir}/{self._exe_name}', f'{self._temp_dir}/{test_number}.ampl'],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
@@ -181,7 +181,7 @@ class Test:
 
         try:
             valgrind_proc.wait(timeout=10)
-            if valgrind_proc.returncode == -1:
+            if valgrind_proc.returncode == 255:
                 logging.error(f'Test {test_number} failed memory check')
                 return False
             return True
