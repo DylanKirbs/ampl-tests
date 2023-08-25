@@ -270,12 +270,16 @@ class Test:
         if not self.compile():
             return False
 
-        passed = True
+        passed = []
         for test_number in test_cases:
             if not self.test_unit(test_number):
-                passed = False
+                passed.append(test_number)
 
-        return passed
+        if len(passed) > 0:
+            logging.error(f'Tests {passed} failed.')
+            return False
+
+        return True
 
     def save_results(self, save_dir) -> None:
 
