@@ -174,10 +174,6 @@ clang-format -i src/*.c
 
 **Note**: Be cautious, as auto-formatting may alter your code style. Always review changes using `git diff` before committing.
 
-### Creating Tests for a Module
-
-If you're contributing to the test suite, utilize the `create_test_cases.sh` script. This script saves executed code to the module directory, effectively overwriting the "expected out."
-
 ## Contributing
 
 We welcome contributions to this project! To get started, fork the repository, create a meaningful branch, and submit a pull request. Please avoid committing directly to the `master` branch.
@@ -205,8 +201,6 @@ For example:
 - `refactor/cases/added-comments-to-cases-9-and-10`.
 
 PR's will no longer be merged if they do not follow this naming convention.
-
-## Acknowledgments
 
 | Name              | Student Number |
 | ----------------- | -------------- |
