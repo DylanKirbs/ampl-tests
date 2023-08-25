@@ -1,1 +1,1 @@
-amplc: 50.ampl:1:1: error: expected 'program', but found 'and'
+amplc: 50.in:1:1: error: expected 'program', but found 'and'

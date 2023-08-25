@@ -1,1 +1,1 @@
-testscanner: 9.ampl:4:5: error: comment not closed
+testscanner: 9.in:4:5: error: comment not closed

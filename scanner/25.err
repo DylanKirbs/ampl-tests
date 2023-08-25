@@ -1,1 +1,1 @@
-testscanner: 25.ampl:1:1: error: illegal character 'ã' (ASCII #227)
+testscanner: 25.in:1:1: error: illegal character 'ã' (ASCII #227)

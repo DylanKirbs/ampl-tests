@@ -1,1 +1,1 @@
-testscanner: 4.ampl:6:1: error: identifier too long
+testscanner: 4.in:6:1: error: identifier too long

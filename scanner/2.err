@@ -1,1 +1,1 @@
-testscanner: 2.ampl:5:26: error: illegal escape code '\z' in string
+testscanner: 2.in:5:26: error: illegal escape code '\z' in string

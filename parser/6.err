@@ -1,1 +1,1 @@
-amplc: 6.ampl:3:8: error: expected type specifier, but found ')'
+amplc: 6.in:3:8: error: expected type specifier, but found ')'

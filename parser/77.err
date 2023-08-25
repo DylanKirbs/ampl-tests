@@ -1,1 +1,1 @@
-amplc: 77.ampl:23:9: error: expected statement, but found 'end'
+amplc: 77.in:23:9: error: expected statement, but found 'end'

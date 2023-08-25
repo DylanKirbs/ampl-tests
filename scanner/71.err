@@ -1,1 +1,1 @@
-testscanner: 71.ampl:1:60: error: non-printable character (ASCII #10) in string
+testscanner: 71.in:1:60: error: non-printable character (ASCII #10) in string

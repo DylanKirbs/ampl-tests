@@ -1,1 +1,1 @@
-amplc: 24.ampl:3:7: error: expected factor, but found 'end'
+amplc: 24.in:3:7: error: expected factor, but found 'end'

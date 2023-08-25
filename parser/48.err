@@ -1,1 +1,1 @@
-amplc: 48.ampl:1:1: error: expected 'program', but found 'false'
+amplc: 48.in:1:1: error: expected 'program', but found 'false'

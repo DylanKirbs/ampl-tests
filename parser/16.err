@@ -1,1 +1,1 @@
-amplc: 16.ampl:3:9: error: expected statement, but found 'array'
+amplc: 16.in:3:9: error: expected statement, but found 'array'

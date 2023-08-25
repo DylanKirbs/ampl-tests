@@ -1,1 +1,1 @@
-testscanner: 28.ampl:9:7: error: illegal character '}' (ASCII #125)
+testscanner: 28.in:9:7: error: illegal character '}' (ASCII #125)

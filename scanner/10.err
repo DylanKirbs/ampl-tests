@@ -1,1 +1,1 @@
-testscanner: 10.ampl:3:12: error: string not closed
+testscanner: 10.in:3:12: error: string not closed

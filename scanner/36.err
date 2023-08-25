@@ -1,1 +1,1 @@
-testscanner: 36.ampl:51:1: error: illegal character '.' (ASCII #46)
+testscanner: 36.in:51:1: error: illegal character '.' (ASCII #46)

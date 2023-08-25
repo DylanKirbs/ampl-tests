@@ -1,1 +1,1 @@
-amplc: 31.ampl:3:1: error: expected statement, but found '<'
+amplc: 31.in:3:1: error: expected statement, but found '<'

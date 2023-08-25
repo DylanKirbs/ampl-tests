@@ -1,1 +1,1 @@
-amplc: 15.ampl:2:19: error: expected type specifier, but found identifier
+amplc: 15.in:2:19: error: expected type specifier, but found identifier
