@@ -1,1 +1,1 @@
-amplc:15:66: error: expected 'end', but found end-of-file
+amplc: 12.ampl:15:66: error: expected 'end', but found end-of-file

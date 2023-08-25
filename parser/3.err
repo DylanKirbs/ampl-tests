@@ -1,1 +1,1 @@
-amplc:3:5: error: expected statement, but found '..'
+amplc: 3.ampl:3:5: error: expected statement, but found '..'

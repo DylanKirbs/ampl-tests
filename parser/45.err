@@ -1,1 +1,1 @@
-amplc:1:1: error: expected 'program', but found 'chillax'
+amplc: 45.ampl:1:1: error: expected 'program', but found 'chillax'
