@@ -348,9 +348,6 @@ def handle_keyboard_interrupt(sig, frame):
     sys.exit(0)
 
 
-CURRENT_TEST = None
-
-
 def main():
 
     # Interrupt handler
@@ -365,6 +362,7 @@ def main():
 
     # Argument parsing
     args = docopt(__doc__, version='Version: 3.1.0')
+    logging.info(f'Running Test script version 3.1.0')
     logging.debug(f'Arguments: {args}')
     modules = parse_modules(args)
     test_cases = parse_test_cases(args['<tests>'])
