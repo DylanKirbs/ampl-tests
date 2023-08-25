@@ -341,7 +341,9 @@ def parse_test_cases(test_args) -> list[int]:
     """
     cases = []
 
-    if ".." in test_args[0]:
+    if len(test_args) == 0:
+        pass
+    elif ".." in test_args[0]:
         start, end = map(int, test_args[0].split(".."))
         cases = list(range(start, end + 1))
     else:
