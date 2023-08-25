@@ -87,7 +87,6 @@ class Test:
         """
 
         # Name
-        self._formal_name = executable
         self._make_name = f'test{executable}'
         self._exe_name = f'test{executable}' if executable != 'parser' else 'amplc'
 
@@ -98,7 +97,7 @@ class Test:
         # Directories
         self._src_dir = src_dir
         self._bin_dir = bin_dir
-        self._tests_dir = tests_dir
+        self._module_dir = executable
         self._temp_dir = temp_dir
 
         # Constants
@@ -112,7 +111,7 @@ class Test:
             bool: True if compilation was successful, False otherwise
         """
 
-        logging.info(f'Compiling {self._formal_name}...')
+        logging.info(f'Compiling {self._module_dir.capitalize()}...')
         clean_proc = subprocess.Popen(
             ['make', 'clean'],
             cwd=self._src_dir,
@@ -129,11 +128,11 @@ class Test:
 
         if comp_proc.returncode == 0:
             logging.info(
-                f'{self._formal_name} compiled successfully!')
+                f'{self._module_dir.capitalize()} compiled successfully!')
             return True
 
         logging.error(
-            f'{self._formal_name} failed to compile with error code {comp_proc.returncode}')
+            f'{self._module_dir.capitalize()} failed to compile with error code {comp_proc.returncode}')
         return False
 
     def exec_unit(self, test_number: int) -> bool:
@@ -151,7 +150,7 @@ class Test:
 
             process = subprocess.Popen(
                 [f'{self._bin_dir}/{self._exe_name}',
-                    f'{self._tests_dir}/{test_number}.ampl'],
+                    f'{self._module_dir}/{test_number}.in'],
                 stdout=f_out,
                 stderr=f_err,
                 preexec_fn=os.setsid  # Create a new process group
@@ -173,7 +172,7 @@ class Test:
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
             valgrind_proc = subprocess.Popen(
                 ['valgrind', '--leak-check=full', '--error-exitcode=255',
-                    f'{self._bin_dir}/{self._exe_name}', f'{self._tests_dir}/{test_number}.ampl'],
+                    f'{self._bin_dir}/{self._exe_name}', f'{self._module_dir}/{test_number}.in'],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
                 preexec_fn=os.setsid  # Create a new process group
@@ -230,7 +229,7 @@ class Test:
         passed = True
         for output_type in ['out', 'err']:
             diff_proc = subprocess.Popen(
-                [f'diff {diff_flags} {self._temp_dir}/{test_number}.{output_type} {self._formal_name}/{test_number}.{output_type}'],
+                [f'diff {diff_flags} {self._temp_dir}/{test_number}.{output_type} {self._module_dir}/{test_number}.{output_type}'],
                 shell=True,
                 cwd=os.getcwd()
             )
