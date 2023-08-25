@@ -1,0 +1,12 @@
+<program> at 1:1.
+  <body> at 3:5.
+    <vardef> at 3:5.
+      <type> at 3:5.
+      </type> at 3:9.
+    </vardef> at 5:5.
+    <statements> at 5:5.
+      <statement> at 5:5.
+        <input> at 5:5.
+        </input> at 5:13.
+      </statement> at 5:13.
+      <statement> at 7:5.
