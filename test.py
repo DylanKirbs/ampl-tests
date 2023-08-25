@@ -170,19 +170,23 @@ class Test:
     def memory_check_unit(self, test_number: int) -> bool:
 
         # Check for leaks
-        valgrind_proc = subprocess.Popen(
-            ['valgrind', '--leak-check=full', '--error-exitcode=255',
-                f'{self._bin_dir}/{self._exe_name}', f'{self._temp_dir}/{test_number}.ampl'],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            preexec_fn=os.setsid  # Create a new process group
-        )
-        logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
+        with open(f'{self._temp_dir}/{test_number}.valgrind') as capture:
+            valgrind_proc = subprocess.Popen(
+                ['valgrind', '--leak-check=full', '--error-exitcode=255',
+                    f'{self._bin_dir}/{self._exe_name}', f'{self._temp_dir}/{test_number}.ampl'],
+                stdout=subprocess.PIPE,
+                stderr=capture,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+            logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
         try:
             valgrind_proc.wait(timeout=10)
+            print("TEMP: ", valgrind_proc.returncode)
             if valgrind_proc.returncode == 255:
                 logging.error(f'Test {test_number} failed memory check')
+                with open(f'{self._temp_dir}/{test_number}.valgrind') as f:
+                    logging.error(f.read())
                 return False
             return True
         except subprocess.TimeoutExpired:
