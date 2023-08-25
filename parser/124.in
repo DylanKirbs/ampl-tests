@@ -1,0 +1,5 @@
+program error238:
+main:
+    int array x;
+
+    let x[0] = x[x[x[x[x[x[x[x[x[x[x[x[x[x[1+x[]]]]]]]]]]]]]]

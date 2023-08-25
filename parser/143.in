@@ -1,0 +1,35 @@
+program test212:
+
+main:
+    bool b1, b2, b3, b4;
+
+    if b1:
+        if b2:
+            chillax
+        elif b3:
+            if b4:
+                chillax
+            elif b5:
+                chillax
+            elif b6:
+                chillax
+            else:
+                chillax
+            end
+        else:
+            if b6:
+                chillax
+            else:
+                chillax
+            end
+        end;
+        if b7:
+            chillax
+        elif b8:
+            chillax
+        end
+    end;
+
+    if b9:
+        chillax
+    end

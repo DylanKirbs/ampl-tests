@@ -1,0 +1,9 @@
+program test209:
+main:
+    int i, k;
+    bool b1, b2;
+
+    let j = 13;
+    let i = 107;
+    let b1 = ((i = 100) or (i <= j) and (7 > 10));
+    let b2 = (false)

@@ -1,0 +1,5 @@
+program error239:
+main:
+    int x;
+
+    output(x ..)

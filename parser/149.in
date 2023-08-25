@@ -1,0 +1,64 @@
+program test218:
+
+{ find minimum element in array L of length N, starting the search from
+  index i }
+findmin(int array L, int N, int i) -> int:
+    int j, min;
+
+    let j = i;
+    let min = i;
+    while j < N:
+        if L[j] > L[min]:
+            let min = j
+        end;
+        let j = j + 1
+    end;
+
+    return min
+
+{ perform selection sort on array L of length N }
+sort(int array L, int N):
+    int i, min, tmp;
+
+    let i = 0;
+    while i < N:
+        { find index of minimum element in unsorted sublist }
+        let min = findmin(L, N, i);
+
+        { swap elements }
+        let tmp = L[min];
+        let L[min] = L[i];
+        let L[i] = tmp;
+
+        { increment counter }
+        let i = i + 1
+    end
+
+{ driver program }
+main:
+    int i, N;
+    int array L;
+
+    { get length of and create array }
+    input(N);
+    let L = array N;
+
+    { get array elements }
+    let i = 0;
+    while i < N:
+        input(L[i]);
+        let i = i + 1
+    end;
+
+    { sort and print out }
+    sort(L, N);
+    output("[");
+    let i = 0;
+    while i < N:
+        output(L[i]);
+        let i = i + 1;
+        if i /= N:
+            output(", ")
+        end
+    end;
+    output("]\n")

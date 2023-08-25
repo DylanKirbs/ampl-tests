@@ -1,0 +1,38 @@
+program test219:
+
+reverse(int array L, int N):
+    int i, tmp, n, pos;
+
+    let n = N / 2;
+    let i = 0;
+    while i < n:
+        let pos = N - 1 - i;
+        let tmp = L[pos];
+        let L[pos] = L[i];
+        let L[i] = tmp;
+        let i = i + 1
+    end
+
+main:
+    int i, N;
+    int array L;
+
+    input(N);
+    let L = array N;
+    let i = 0;
+    while i < N:
+        input(L[i]);
+        let i = i + 1
+    end;
+
+    reverse(L, N);
+    output("[");
+    let i = 0;
+    while i < N:
+        output(L[i]);
+        let i = i + 1;
+        if i /= N:
+            output(", ")
+        end
+    end;
+    output("]\n")
