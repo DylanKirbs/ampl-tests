@@ -221,7 +221,7 @@ class Test:
         :return: True if both diffs passed, False otherwise
         """
 
-        diff_flags = '-side-by-side --suppress-common-lines' if self._side_by_side else ''
+        diff_flags = '--side-by-side --suppress-common-lines' if self._side_by_side else ''
 
         passed = True
         for output_type in ['out', 'err']:
