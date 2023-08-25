@@ -1,1 +1,1 @@
-testscanner: 72.ampl:1:38: error: illegal escape code '\N' in string
+testscanner: 72.in:1:38: error: illegal escape code '\N' in string

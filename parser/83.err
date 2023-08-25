@@ -1,1 +1,1 @@
-amplc: 83.ampl:2:8: error: expected expression or array allocation, but found end-of-file
+amplc: 83.in:2:8: error: expected expression or array allocation, but found end-of-file

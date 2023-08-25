@@ -1,1 +1,1 @@
-amplc: 37.ampl:3:1: error: expected statement, but found 'main'
+amplc: 37.in:3:1: error: expected statement, but found 'main'

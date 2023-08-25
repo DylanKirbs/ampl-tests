@@ -1,1 +1,1 @@
-testscanner: 3.ampl:4:5: error: illegal character '?' (ASCII #63)
+testscanner: 3.in:4:5: error: illegal character '?' (ASCII #63)

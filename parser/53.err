@@ -1,1 +1,1 @@
-amplc: 53.ampl:1:1: error: expected 'program', but found '->'
+amplc: 53.in:1:1: error: expected 'program', but found '->'

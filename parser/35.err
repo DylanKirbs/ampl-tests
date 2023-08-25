@@ -1,1 +1,1 @@
-amplc: 35.ampl:4:1: error: illegal character '.' (ASCII #46)
+amplc: 35.in:4:1: error: illegal character '.' (ASCII #46)

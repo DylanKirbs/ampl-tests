@@ -1,1 +1,1 @@
-amplc: 81.ampl:11:9: error: expected 'end', but found 'output'
+amplc: 81.in:11:9: error: expected 'end', but found 'output'

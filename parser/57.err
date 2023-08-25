@@ -1,1 +1,1 @@
-amplc: 57.ampl:2:1: error: expected 'program', but found identifier
+amplc: 57.in:2:1: error: expected 'program', but found identifier

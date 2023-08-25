@@ -1,1 +1,1 @@
-amplc: 38.ampl:6:2: error: expected statement, but found 'or'
+amplc: 38.in:6:2: error: expected statement, but found 'or'

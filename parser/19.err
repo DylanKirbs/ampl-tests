@@ -1,1 +1,1 @@
-amplc: 19.ampl:2:16: error: expected type specifier, but found 'array'
+amplc: 19.in:2:16: error: expected type specifier, but found 'array'
