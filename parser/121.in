@@ -1,0 +1,4 @@
+program error235:
+main:
+    output("Hello!\n");
+    chillax

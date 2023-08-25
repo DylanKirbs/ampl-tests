@@ -1,0 +1,10 @@
+program error244:
+
+inc(int i) -> :
+    return i + 1
+
+main:
+    int i;
+
+    let i = inc(i);
+    output(i)

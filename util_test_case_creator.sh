@@ -17,7 +17,7 @@ function cprint {
 }
 
 # Validate the arguments
-if [ $# < 2 ]; then
+if [ $# < 1 ]; then
     cprint "blue" "$0: Create test cases for a module"
     cprint "yellow" "Usage: $0 <module> <start..stop>"
     exit 1

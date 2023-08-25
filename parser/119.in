@@ -1,0 +1,6 @@
+program error233:
+main:
+    int array i;
+
+    output(i[)
+

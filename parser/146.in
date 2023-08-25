@@ -1,0 +1,7 @@
+program test215:
+main:
+    int i;
+
+    output("Please enter an integer: ");
+    input(i);
+    output("You entered " .. i .. "\n")

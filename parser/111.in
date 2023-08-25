@@ -1,0 +1,11 @@
+program error225:
+main:
+    int i;
+
+    input(i);
+
+    if :
+        output("positive")
+    else:
+        output("negative or zero")
+    end

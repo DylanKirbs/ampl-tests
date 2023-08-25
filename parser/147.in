@@ -1,0 +1,14 @@
+program test216:
+main:
+    int i;
+
+    output("Please enter a positive integer: ");
+    input(i);
+    if i > 0:
+        while i >= 0:
+            output("There are "..i-1.." repetitions left.\n");
+            let i = i - 1
+        end
+    else:
+        output(i .. " is not a positive integer!\n")
+    end

@@ -1,0 +1,5 @@
+program error215:
+main:
+    int array j;
+
+    let j[j[j[j[j[j[j[5]]]]]] = 7

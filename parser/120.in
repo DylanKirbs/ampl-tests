@@ -1,0 +1,4 @@
+program error234:
+main:
+    output(not)
+

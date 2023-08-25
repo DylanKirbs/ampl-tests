@@ -1,0 +1,7 @@
+program error248:
+
+inc(int i, int j) -> int:
+    return i + 1
+
+main:
+    output(inc(1, ))
