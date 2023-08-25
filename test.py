@@ -185,6 +185,9 @@ class Test:
             if valgrind_proc.returncode == 255:
                 logging.error(f'Test {test_number} failed memory check')
                 return False
+            elif valgrind_proc.returncode != 0:
+                logging.warning(
+                    "Unable to determine memory check status, execution returned non-zero exit status.")
             return True
         except subprocess.TimeoutExpired:
             logging.warning(
