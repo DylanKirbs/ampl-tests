@@ -130,6 +130,16 @@ info diff
 > ```
 > The tests can then be executed using the script as normal.
 
+> Test Script Changelog Overview <br>
+> - 1.0.0: Initial Release
+> - 2.0.0: Support for timeouts
+> - 2.1.0: Support for side-by-side comparison
+> - 2.2.0: Support for running all test numbers
+> - 3.0.0: Support for Valgrind and memory leak detection
+> - 3.1.0: Major internal refactoring and change of output format
+>
+> Note: The test script changelog is not exhaustive. For a full list of changes, please refer to the commit history.
+
 ### Style Checking
 
 To maintain consistent coding style, you can utilize two style checking scripts: `styletest.py` and `style_checker.py`. For the latest and more comprehensive checks, use `style_checker.py`. Both scripts can be run as follows:
