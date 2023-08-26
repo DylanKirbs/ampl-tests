@@ -18,6 +18,7 @@ Author: Dylan Kirby - 25853805
 Date: 2023-08-16
 Version: 2.0
 """
+from __future__ import annotations
 
 import os
 import re
