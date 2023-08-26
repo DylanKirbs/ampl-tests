@@ -198,7 +198,7 @@ def check_file(file) -> tuple[int, int]:
     if lines[-1] == "\n":
         log_cprint(LogColours.WARNING, "eof_on_newline",
                    file, len(lines), lines[-1].strip())
-        errors += 1
+        warnings += 1
 
     return (errors, warnings)
 
