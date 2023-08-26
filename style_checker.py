@@ -19,18 +19,15 @@ Date: 2023-08-16
 Version: 2.0
 """
 
-from math import exp, floor
 import os
 import re
 import sys
+from enum import Enum
+from math import exp, floor
 from pprint import pprint
 
 from docopt import docopt
 from termcolor import cprint
-
-import logging
-
-from enum import Enum
 
 
 class LogColours(Enum):
@@ -126,7 +123,13 @@ def get_files():
     return c_files
 
 
-def check_file(file):
+def check_file(file) -> tuple[int, int]:
+    """
+    Checks a file for style errors.
+
+    :param file: The file to check
+    :return: A tuple of the number of errors and warnings
+    """
 
     with open(file, "r") as f:
         lines = f.readlines()
@@ -147,6 +150,7 @@ def check_file(file):
 
         if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
+            errors += 1
             log_cprint(LogColours.ERROR, rule, file, line_num,
                        line.replace('  ', '__'), "__")
 
@@ -165,13 +169,12 @@ def check_file(file):
                 continue
 
             if string_match and string_match.start() < re_match.start():
-                if rule in COMMENT_CHECKS:
-                    log_cprint(LogColours.ERROR, rule, file, line_num,
-                               stripped_line, re_match.group())
+                if rule not in COMMENT_CHECKS:
+                    continue
                 elif is_verbose:
                     log_cprint(LogColours.POTENTIAL_ERROR, rule, file,
                                line_num, stripped_line, re_match.group())
-                continue
+                    continue
 
             log_cprint(LogColours.ERROR, rule, file, line_num,
                        stripped_line, re_match.group())
