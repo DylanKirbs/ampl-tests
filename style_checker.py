@@ -19,6 +19,7 @@ Date: 2023-08-16
 Version: 2.0
 """
 
+from math import exp, floor
 import os
 import re
 import sys
@@ -26,6 +27,8 @@ from pprint import pprint
 
 from docopt import docopt
 from termcolor import cprint
+
+import logging
 
 from enum import Enum
 
@@ -195,6 +198,13 @@ def check_file(file):
     return (errors, warnings)
 
 
+def score_func(errors, warnings):
+    x = floor(errors + warnings/5)
+    x /= 10.7
+
+    return floor(100 / exp(x))
+
+
 if __name__ == "__main__":
 
     args = docopt(__doc__, version="2.0")
@@ -223,6 +233,9 @@ if __name__ == "__main__":
     c = "red" if total_errors else "yellow" if total_warnings else "green"
     cprint(
         f"Check finished with {total_errors} errors and {total_warnings} warnings.", c, attrs=["bold"])
+
+    cprint(
+        f"Style Score: {score_func(total_errors, total_warnings)}%", "blue", attrs=["bold"])
 
     if total_errors:
         sys.exit(1)
