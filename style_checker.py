@@ -133,6 +133,7 @@ def check_file(file):
 
     if len(lines) < 1:
         log_cprint(LogColours.WARNING, "empty_file", file, 0, "", "")
+        return (0, 1)
 
     errors = 0
     warnings = 0
