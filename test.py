@@ -386,8 +386,7 @@ def main():
     logging.info('Setting up')
     logging.debug(f'CWD: {os.getcwd()}')
     if ' ' in os.getcwd():
-        logging.error('Current working directory cannot contain spaces.')
-        sys.exit(1)
+        logging.error('Current working directory should not contain spaces.')
     os.makedirs('temp', exist_ok=True)
 
     for module in modules:
