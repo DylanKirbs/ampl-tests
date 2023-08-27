@@ -149,21 +149,30 @@ class Test:
 
         cmd_args = [
             f'{self._bin_dir}/{self._exe_name}',
-            '<' if self._module_dir in self._REDIRECT_TESTS else 'REMOVE',
             f'{self._module_dir}/{test_number}.in'
         ]
-        cmd_args.remove('REMOVE') if 'REMOVE' in cmd_args else None
 
         logging.debug(f'Command: {cmd_args}')
 
         with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
 
-            process = subprocess.Popen(
-                cmd_args,
-                stdout=f_out,
-                stderr=f_err,
-                preexec_fn=os.setsid  # Create a new process group
-            )
+            if self._module_dir in self._REDIRECT_TESTS:
+                cmd_args.pop()
+                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
+                    process = subprocess.Popen(
+                        cmd_args,
+                        stdin=f_in,
+                        stdout=f_out,
+                        stderr=f_err,
+                        preexec_fn=os.setsid  # Create a new process group
+                    )
+            else:
+                process = subprocess.Popen(
+                    cmd_args,
+                    stdout=f_out,
+                    stderr=f_err,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
             logging.debug(f'Process ID: {process.pid}')
 
             try:
@@ -182,22 +191,31 @@ class Test:
             '--leak-check=full',
             '--error-exitcode=255',
             f'{self._bin_dir}/{self._exe_name}'
-            '<' if self._module_dir in self._REDIRECT_TESTS else 'REMOVE',
             f'{self._module_dir}/{test_number}.in'
         ]
-        cmd_args.remove('REMOVE') if 'REMOVE' in cmd_args else None
 
         logging.debug(f'Valgrind command: {cmd_args}')
 
         # Check for leaks
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
 
-            valgrind_proc = subprocess.Popen(
-                cmd_args,
-                stdout=subprocess.PIPE,
-                stderr=capture,
-                preexec_fn=os.setsid  # Create a new process group
-            )
+            if self._module_dir in self._REDIRECT_TESTS:
+                cmd_args.pop()
+                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
+                    valgrind_proc = subprocess.Popen(
+                        cmd_args,
+                        stdin=f_in,
+                        stdout=subprocess.PIPE,
+                        stderr=capture,
+                        preexec_fn=os.setsid  # Create a new process group
+                    )
+            else:
+                valgrind_proc = subprocess.Popen(
+                    cmd_args,
+                    stdout=subprocess.PIPE,
+                    stderr=capture,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
         try:
