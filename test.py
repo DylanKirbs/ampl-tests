@@ -152,12 +152,11 @@ class Test:
             f'{self._module_dir}/{test_number}.in'
         ]
 
-        logging.debug(f'Command: {cmd_args}')
-
         with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
 
             if self._module_dir in self._REDIRECT_TESTS:
                 cmd_args.pop()
+                logging.debug(f'Command: {cmd_args} with input file')
                 with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
                     process = subprocess.Popen(
                         cmd_args,
@@ -167,6 +166,7 @@ class Test:
                         preexec_fn=os.setsid  # Create a new process group
                     )
             else:
+                logging.debug(f'Command: {cmd_args}')
                 process = subprocess.Popen(
                     cmd_args,
                     stdout=f_out,
@@ -194,13 +194,12 @@ class Test:
             f'{self._module_dir}/{test_number}.in'
         ]
 
-        logging.debug(f'Valgrind command: {cmd_args}')
-
         # Check for leaks
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
 
             if self._module_dir in self._REDIRECT_TESTS:
                 cmd_args.pop()
+                logging.debug(f'Valgrind command: {cmd_args} with input file')
                 with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
                     valgrind_proc = subprocess.Popen(
                         cmd_args,
@@ -210,6 +209,7 @@ class Test:
                         preexec_fn=os.setsid  # Create a new process group
                     )
             else:
+                logging.debug(f'Valgrind command: {cmd_args}')
                 valgrind_proc = subprocess.Popen(
                     cmd_args,
                     stdout=subprocess.PIPE,
