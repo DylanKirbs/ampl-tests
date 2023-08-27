@@ -149,9 +149,10 @@ class Test:
 
         cmd_args = [
             f'{self._bin_dir}/{self._exe_name}',
-            '<' if self._module_dir in self._REDIRECT_TESTS else '',
+            '<' if self._module_dir in self._REDIRECT_TESTS else 'REMOVE',
             f'{self._module_dir}/{test_number}.in'
         ]
+        cmd_args.remove('REMOVE') if 'REMOVE' in cmd_args else None
 
         logging.debug(f'Command: {cmd_args}')
 
@@ -181,9 +182,10 @@ class Test:
             '--leak-check=full',
             '--error-exitcode=255',
             f'{self._bin_dir}/{self._exe_name}'
-            '<' if self._module_dir in self._REDIRECT_TESTS else '',
+            '<' if self._module_dir in self._REDIRECT_TESTS else 'REMOVE',
             f'{self._module_dir}/{test_number}.in'
         ]
+        cmd_args.remove('REMOVE') if 'REMOVE' in cmd_args else None
 
         logging.debug(f'Valgrind command: {cmd_args}')
 
