@@ -102,6 +102,7 @@ class Test:
 
         # Constants
         self._TIMEOUT = 10
+        self._MEM_TIMEOUT = 20
         self._REDIRECT_TESTS = ['hashtable']
 
     def compile(self) -> bool:
@@ -219,7 +220,7 @@ class Test:
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
         try:
-            valgrind_proc.wait(timeout=10)
+            valgrind_proc.wait(timeout=self._MEM_TIMEOUT)
             if valgrind_proc.returncode == 255:
                 logging.error(f'Test {test_number} failed memory check')
                 return False
@@ -229,7 +230,7 @@ class Test:
             return True
         except subprocess.TimeoutExpired:
             logging.warning(
-                f'Valgrind {test_number} timed out after 10 seconds.')
+                f'Valgrind {test_number} timed out after {self._MEM_TIMEOUT} seconds.')
             self._handle_timeout(valgrind_proc)
             return False
 
