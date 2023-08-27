@@ -157,7 +157,8 @@ class Test:
 
             if self._module_dir in self._REDIRECT_TESTS:
                 cmd_args.pop()
-                logging.debug(f'Command: {cmd_args} with input file')
+                logging.debug(f'Command: {cmd_args}')
+                logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
                 with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
                     process = subprocess.Popen(
                         cmd_args,
@@ -200,7 +201,8 @@ class Test:
 
             if self._module_dir in self._REDIRECT_TESTS:
                 cmd_args.pop()
-                logging.debug(f'Valgrind command: {cmd_args} with input file')
+                logging.debug(f'Valgrind command: {cmd_args}')
+                logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
                 with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
                     valgrind_proc = subprocess.Popen(
                         cmd_args,
