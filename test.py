@@ -149,7 +149,7 @@ class Test:
 
         cmd_args = [
             f'{self._bin_dir}/{self._exe_name}',
-            '<' if self._module_dir in self._REDIRECT_TESTS else None,
+            '<' if self._module_dir in self._REDIRECT_TESTS else '',
             f'{self._module_dir}/{test_number}.in'
         ]
 
@@ -181,7 +181,7 @@ class Test:
             '--leak-check=full',
             '--error-exitcode=255',
             f'{self._bin_dir}/{self._exe_name}'
-            '<' if self._module_dir in self._REDIRECT_TESTS else None,
+            '<' if self._module_dir in self._REDIRECT_TESTS else '',
             f'{self._module_dir}/{test_number}.in'
         ]
 
