@@ -406,7 +406,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '3.1.0'
+    VERSION = '3.2.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
