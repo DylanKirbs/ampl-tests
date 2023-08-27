@@ -311,6 +311,7 @@ class Test:
                 '.in'), os.listdir(self._module_dir)
             )
             test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
+            test_cases.sort()
 
         logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
 
