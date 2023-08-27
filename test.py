@@ -306,10 +306,11 @@ class Test:
     def run(self, test_cases: list[int]) -> bool:
 
         if len(test_cases) == 0:
-            # count all the .in file in the module directory (.in .out .err)
-            test_cases = list(
-                range(len(os.listdir(self._module_dir)) // 3)
+            # count all the .in file in the module directory
+            in_files = filter(lambda f: f.endswith(
+                '.in'), os.listdir(self._module_dir)
             )
+            test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
 
         if not self.compile():
             return False
