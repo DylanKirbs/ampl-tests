@@ -312,6 +312,8 @@ class Test:
             )
             test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
 
+        logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
+
         if not self.compile():
             return False
 
