@@ -1,0 +1,94 @@
+Type "search <Enter>" to stop inserting and start searching.
+>> Insert a with 1
+>> Insert b with 2
+>> Insert c with 3
+>> Insert d with 4
+>> Insert e with 5
+>> Insert f with 6
+>> Insert g with 7
+>> Insert h with 8
+>> Insert i with 9
+>> Insert j with 10
+>> Insert k with 11
+>> Insert l with 12
+>> Insert m with 13
+>> Insert n with 14
+>> Insert o with 15
+>> Insert p with 16
+>> Insert q with 17
+>> Insert r with 18
+>> Insert s with 19
+>> Insert t with 20
+>> Insert u with 21
+>> Insert v with 22
+>> Insert w with 23
+>> Insert x with 24
+>> Insert y with 25
+>> Insert z with 26
+>> bucket[ 0] --> z:[26] --> NULL
+bucket[ 1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+bucket[13] --> NULL
+bucket[14] --> NULL
+bucket[15] --> NULL
+bucket[16] --> NULL
+bucket[17] --> NULL
+bucket[18] --> NULL
+bucket[19] --> NULL
+bucket[20] --> NULL
+bucket[21] --> NULL
+bucket[22] --> NULL
+bucket[23] --> NULL
+bucket[24] --> NULL
+bucket[25] --> NULL
+bucket[26] --> NULL
+bucket[27] --> NULL
+bucket[28] --> NULL
+bucket[29] --> NULL
+bucket[30] --> NULL
+bucket[31] --> NULL
+bucket[32] --> NULL
+bucket[33] --> NULL
+bucket[34] --> NULL
+bucket[35] --> NULL
+bucket[36] --> a:[1] --> NULL
+bucket[37] --> b:[2] --> NULL
+bucket[38] --> c:[3] --> NULL
+bucket[39] --> d:[4] --> NULL
+bucket[40] --> e:[5] --> NULL
+bucket[41] --> f:[6] --> NULL
+bucket[42] --> g:[7] --> NULL
+bucket[43] --> h:[8] --> NULL
+bucket[44] --> i:[9] --> NULL
+bucket[45] --> j:[10] --> NULL
+bucket[46] --> k:[11] --> NULL
+bucket[47] --> l:[12] --> NULL
+bucket[48] --> m:[13] --> NULL
+bucket[49] --> n:[14] --> NULL
+bucket[50] --> o:[15] --> NULL
+bucket[51] --> p:[16] --> NULL
+bucket[52] --> q:[17] --> NULL
+bucket[53] --> r:[18] --> NULL
+bucket[54] --> s:[19] --> NULL
+bucket[55] --> t:[20] --> NULL
+bucket[56] --> u:[21] --> NULL
+bucket[57] --> v:[22] --> NULL
+bucket[58] --> w:[23] --> NULL
+bucket[59] --> x:[24] --> NULL
+bucket[60] --> y:[25] --> NULL
+Type "quit <Enter>" to exit.
+>> Found "a" with 1.
+>> Found "x" with 24.
+>> Found "h" with 8.
+>> Not found.
+>> 
