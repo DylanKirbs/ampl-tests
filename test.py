@@ -102,6 +102,7 @@ class Test:
 
         # Constants
         self._TIMEOUT = 10
+        self._REDIRECT_TESTS = ['hashtable']
 
     def compile(self) -> bool:
         """
@@ -146,15 +147,32 @@ class Test:
         temp_out = f'{self._temp_dir}/{test_number}.out'
         temp_err = f'{self._temp_dir}/{test_number}.err'
 
+        cmd_args = [
+            f'{self._bin_dir}/{self._exe_name}',
+            f'{self._module_dir}/{test_number}.in'
+        ]
+
         with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
 
-            process = subprocess.Popen(
-                [f'{self._bin_dir}/{self._exe_name}',
-                    f'{self._module_dir}/{test_number}.in'],
-                stdout=f_out,
-                stderr=f_err,
-                preexec_fn=os.setsid  # Create a new process group
-            )
+            if self._module_dir in self._REDIRECT_TESTS:
+                cmd_args.pop()
+                logging.debug(f'Command: {cmd_args} with input file')
+                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
+                    process = subprocess.Popen(
+                        cmd_args,
+                        stdin=f_in,
+                        stdout=f_out,
+                        stderr=f_err,
+                        preexec_fn=os.setsid  # Create a new process group
+                    )
+            else:
+                logging.debug(f'Command: {cmd_args}')
+                process = subprocess.Popen(
+                    cmd_args,
+                    stdout=f_out,
+                    stderr=f_err,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
             logging.debug(f'Process ID: {process.pid}')
 
             try:
@@ -168,15 +186,36 @@ class Test:
 
     def memory_check_unit(self, test_number: int) -> bool:
 
+        cmd_args = [
+            'valgrind',
+            '--leak-check=full',
+            '--error-exitcode=255',
+            f'{self._bin_dir}/{self._exe_name}',
+            f'{self._module_dir}/{test_number}.in'
+        ]
+
         # Check for leaks
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
-            valgrind_proc = subprocess.Popen(
-                ['valgrind', '--leak-check=full', '--error-exitcode=255',
-                    f'{self._bin_dir}/{self._exe_name}', f'{self._module_dir}/{test_number}.in'],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-                preexec_fn=os.setsid  # Create a new process group
-            )
+
+            if self._module_dir in self._REDIRECT_TESTS:
+                cmd_args.pop()
+                logging.debug(f'Valgrind command: {cmd_args} with input file')
+                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
+                    valgrind_proc = subprocess.Popen(
+                        cmd_args,
+                        stdin=f_in,
+                        stdout=subprocess.PIPE,
+                        stderr=capture,
+                        preexec_fn=os.setsid  # Create a new process group
+                    )
+            else:
+                logging.debug(f'Valgrind command: {cmd_args}')
+                valgrind_proc = subprocess.Popen(
+                    cmd_args,
+                    stdout=subprocess.PIPE,
+                    stderr=capture,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
         try:
@@ -267,10 +306,13 @@ class Test:
     def run(self, test_cases: list[int]) -> bool:
 
         if len(test_cases) == 0:
-            # count all the .in file in the module directory (.in .out .err)
-            test_cases = list(
-                range(len(os.listdir(self._module_dir)) // 3)
+            # count all the .in file in the module directory
+            in_files = filter(lambda f: f.endswith(
+                '.in'), os.listdir(self._module_dir)
             )
+            test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
+
+        logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
 
         if not self.compile():
             return False
