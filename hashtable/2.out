@@ -1212,15 +1212,15 @@ bucket[209] --> NULL
 bucket[210] --> me:[503] --> NULL
 bucket[211] --> do:[233] --> NULL
 bucket[212] --> as:[62] --> NULL
-bucket[213] --> of:[572] --> at:[65] --> NULL
+bucket[213] --> at:[65] --> of:[572] --> NULL
 bucket[214] --> go:[349] --> NULL
-bucket[215] --> oh:[579] --> in:[410] --> NULL
+bucket[215] --> in:[410] --> oh:[579] --> NULL
 bucket[216] --> NULL
 bucket[217] --> NULL
 bucket[218] --> ok:[581] --> NULL
 bucket[219] --> by:[122] --> NULL
 bucket[220] --> we:[950] --> NULL
-bucket[221] --> on:[583] --> no:[560] --> it:[430] --> NULL
+bucket[221] --> it:[430] --> no:[560] --> on:[583] --> NULL
 bucket[222] --> NULL
 bucket[223] --> NULL
 bucket[224] --> NULL
@@ -1305,45 +1305,45 @@ bucket[302] --> NULL
 bucket[303] --> NULL
 bucket[304] --> NULL
 bucket[305] --> NULL
-bucket[306] --> Mrs:[537] --> can:[126] --> big:[99] --> die:[222] --> NULL
+bucket[306] --> die:[222] --> big:[99] --> can:[126] --> Mrs:[537] --> NULL
 bucket[307] --> and:[44] --> NULL
 bucket[308] --> NULL
 bucket[309] --> bar:[81] --> NULL
 bucket[310] --> car:[130] --> NULL
-bucket[311] --> ago:[26] --> end:[260] --> NULL
-bucket[312] --> leg:[461] --> kid:[439] --> act:[10] --> NULL
-bucket[313] --> sea:[744] --> all:[31] --> far:[294] --> NULL
-bucket[314] --> lie:[467] --> dog:[235] --> eat:[248] --> NULL
-bucket[315] --> red:[702] --> off:[573] --> job:[434] --> gas:[342] --> NULL
-bucket[316] --> man:[492] --> air:[30] --> NULL
+bucket[311] --> end:[260] --> ago:[26] --> NULL
+bucket[312] --> act:[10] --> kid:[439] --> leg:[461] --> NULL
+bucket[313] --> far:[294] --> all:[31] --> sea:[744] --> NULL
+bucket[314] --> eat:[248] --> dog:[235] --> lie:[467] --> NULL
+bucket[315] --> gas:[342] --> job:[434] --> off:[573] --> red:[702] --> NULL
+bucket[316] --> air:[30] --> man:[492] --> NULL
 bucket[317] --> see:[750] --> NULL
-bucket[318] --> day:[202] --> him:[382] --> NULL
-bucket[319] --> old:[582] --> bit:[102] --> ask:[63] --> her:[378] --> NULL
-bucket[320] --> arm:[56] --> get:[345] --> she:[768] --> NULL
+bucket[318] --> him:[382] --> day:[202] --> NULL
+bucket[319] --> her:[378] --> ask:[63] --> bit:[102] --> old:[582] --> NULL
+bucket[320] --> she:[768] --> get:[345] --> arm:[56] --> NULL
 bucket[321] --> the:[873] --> NULL
-bucket[322] --> one:[585] --> few:[301] --> NULL
+bucket[322] --> few:[301] --> one:[585] --> NULL
 bucket[323] --> eye:[287] --> NULL
-bucket[324] --> oil:[580] --> law:[452] --> his:[384] --> NULL
-bucket[325] --> let:[464] --> hit:[386] --> NULL
+bucket[324] --> his:[384] --> law:[452] --> oil:[580] --> NULL
+bucket[325] --> hit:[386] --> let:[464] --> NULL
 bucket[326] --> lay:[454] --> NULL
-bucket[327] --> per:[621] --> may:[501] --> art:[59] --> for:[325] --> ten:[866] --> NULL
-bucket[328] --> any:[48] --> cup:[195] --> NULL
-bucket[329] --> key:[438] --> box:[111] --> NULL
-bucket[330] --> pay:[618] --> new:[554] --> boy:[112] --> gun:[360] --> war:[946] --> NULL
-bucket[331] --> hot:[391] --> but:[120] --> fly:[320] --> NULL
-bucket[332] --> set:[761] --> cut:[198] --> NULL
-bucket[333] --> say:[738] --> tax:[859] --> use:[931] --> NULL
-bucket[334] --> how:[395] --> who:[966] --> win:[974] --> NULL
-bucket[335] --> nor:[562] --> lot:[482] --> NULL
-bucket[336] --> sex:[764] --> its:[432] --> buy:[121] --> sit:[785] --> son:[803] --> NULL
-bucket[337] --> not:[564] --> way:[949] --> yes:[995] --> NULL
-bucket[338] --> low:[484] --> too:[901] --> yet:[996] --> NULL
+bucket[327] --> ten:[866] --> for:[325] --> art:[59] --> may:[501] --> per:[621] --> NULL
+bucket[328] --> cup:[195] --> any:[48] --> NULL
+bucket[329] --> box:[111] --> key:[438] --> NULL
+bucket[330] --> war:[946] --> gun:[360] --> boy:[112] --> new:[554] --> pay:[618] --> NULL
+bucket[331] --> fly:[320] --> but:[120] --> hot:[391] --> NULL
+bucket[332] --> cut:[198] --> set:[761] --> NULL
+bucket[333] --> use:[931] --> tax:[859] --> say:[738] --> NULL
+bucket[334] --> win:[974] --> who:[966] --> how:[395] --> NULL
+bucket[335] --> lot:[482] --> nor:[562] --> NULL
+bucket[336] --> son:[803] --> sit:[785] --> buy:[121] --> its:[432] --> sex:[764] --> NULL
+bucket[337] --> yes:[995] --> way:[949] --> not:[564] --> NULL
+bucket[338] --> yet:[996] --> too:[901] --> low:[484] --> NULL
 bucket[339] --> top:[902] --> NULL
-bucket[340] --> own:[601] --> now:[568] --> six:[788] --> NULL
-bucket[341] --> run:[734] --> guy:[361] --> NULL
+bucket[340] --> six:[788] --> now:[568] --> own:[601] --> NULL
+bucket[341] --> guy:[361] --> run:[734] --> NULL
 bucket[342] --> our:[597] --> NULL
 bucket[343] --> NULL
-bucket[344] --> out:[598] --> why:[970] --> NULL
+bucket[344] --> why:[970] --> out:[598] --> NULL
 bucket[345] --> put:[678] --> NULL
 bucket[346] --> two:[922] --> NULL
 bucket[347] --> NULL
@@ -1400,63 +1400,63 @@ bucket[397] --> NULL
 bucket[398] --> dead:[203] --> NULL
 bucket[399] --> face:[288] --> NULL
 bucket[400] --> NULL
-bucket[401] --> back:[76] --> each:[244] --> NULL
+bucket[401] --> each:[244] --> back:[76] --> NULL
 bucket[402] --> head:[371] --> NULL
 bucket[403] --> idea:[402] --> NULL
 bucket[404] --> able:[3] --> NULL
 bucket[405] --> edge:[251] --> NULL
-bucket[406] --> lead:[455] --> deal:[204] --> NULL
+bucket[406] --> deal:[204] --> lead:[455] --> NULL
 bucket[407] --> NULL
 bucket[408] --> NULL
 bucket[409] --> area:[54] --> NULL
-bucket[410] --> card:[131] --> data:[200] --> game:[340] --> NULL
-bucket[411] --> race:[683] --> care:[132] --> ball:[79] --> base:[82] --> half:[363] --> hand:[364] --> NULL
-bucket[412] --> read:[690] --> need:[551] --> case:[135] --> call:[123] --> bank:[80] --> beat:[84] --> fail:[291] --> feel:[299] --> NULL
+bucket[410] --> game:[340] --> data:[200] --> card:[131] --> NULL
+bucket[411] --> hand:[364] --> half:[363] --> base:[82] --> ball:[79] --> care:[132] --> race:[683] --> NULL
+bucket[412] --> feel:[299] --> fail:[291] --> beat:[84] --> bank:[80] --> call:[123] --> case:[135] --> need:[551] --> read:[690] --> NULL
 bucket[413] --> page:[603] --> NULL
-bucket[414] --> make:[491] --> baby:[75] --> deep:[210] --> fact:[289] --> fear:[297] --> hang:[365] --> NULL
-bucket[415] --> safe:[735] --> nice:[558] --> land:[445] --> fall:[292] --> hard:[368] --> NULL
-bucket[416] --> life:[468] --> cell:[138] --> hear:[373] --> high:[381] --> NULL
-bucket[417] --> name:[543] --> mean:[504] --> find:[310] --> NULL
-bucket[418] --> cold:[164] --> dark:[199] --> fine:[311] --> free:[333] --> heat:[375] --> NULL
-bucket[419] --> bill:[100] --> goal:[350] --> NULL
-bucket[420] --> real:[692] --> come:[168] --> hair:[362] --> have:[369] --> here:[379] --> NULL
-bucket[421] --> once:[584] --> main:[487] --> like:[470] --> keep:[437] --> side:[775] --> take:[856] --> NULL
-bucket[422] --> same:[736] --> road:[729] --> rich:[725] --> near:[548] --> late:[449] --> kind:[441] --> fire:[314] --> NULL
-bucket[423] --> pick:[630] --> hold:[387] --> fill:[305] --> team:[862] --> yeah:[993] --> NULL
-bucket[424] --> seek:[751] --> pain:[604] --> mind:[519] --> line:[472] --> blue:[105] --> film:[306] --> food:[323] --> NULL
-bucket[425] --> huge:[397] --> home:[388] --> else:[258] --> good:[351] --> help:[377] --> wide:[971] --> NULL
-bucket[426] --> send:[754] --> seem:[752] --> fish:[317] --> five:[318] --> NULL
-bucket[427] --> plan:[634] --> meet:[508] --> left:[460] --> book:[108] --> give:[347] --> tend:[867] --> than:[870] --> wife:[972] --> NULL
-bucket[428] --> rate:[687] --> kill:[440] --> hope:[389] --> talk:[857] --> week:[953] --> NULL
-bucket[429] --> seat:[746] --> much:[538] --> both:[110] --> east:[246] --> fund:[338] --> NULL
-bucket[430] --> body:[107] --> best:[95] --> draw:[238] --> even:[270] --> fast:[295] --> firm:[315] --> girl:[346] --> them:[875] --> NULL
-bucket[431] --> save:[737] --> rock:[730] --> item:[431] --> also:[37] --> then:[877] --> time:[896] --> walk:[943] --> wear:[952] --> NULL
-bucket[432] --> sell:[753] --> none:[561] --> long:[478] --> live:[476] --> join:[435] --> tree:[913] --> wall:[944] --> yard:[992] --> NULL
-bucket[433] --> born:[109] --> sign:[776] --> sing:[782] --> tell:[865] --> that:[872] --> year:[994] --> NULL
-bucket[434] --> role:[731] --> open:[588] --> away:[74] --> drug:[242] --> easy:[247] --> ever:[273] --> when:[960] --> wind:[975] --> NULL
-bucket[435] --> rise:[727] --> more:[528] --> lose:[480] --> full:[337] --> such:[846] --> task:[858] --> NULL
-bucket[436] --> last:[448] --> door:[236] --> form:[329] --> from:[335] --> some:[798] --> well:[955] --> what:[958] --> NULL
-bucket[437] --> many:[496] --> look:[479] --> drop:[241] --> site:[786] --> skin:[791] --> wait:[942] --> NULL
-bucket[438] --> play:[636] --> note:[565] --> love:[483] --> NULL
-bucket[439] --> pass:[614] --> part:[608] --> move:[533] --> less:[463] --> song:[804] --> NULL
-bucket[440] --> rule:[733] --> past:[615] --> down:[237] --> foot:[324] --> term:[868] --> this:[885] --> will:[973] --> NULL
-bucket[441] --> risk:[728] --> cost:[184] --> city:[156] --> NULL
-bucket[442] --> into:[426] --> star:[823] --> they:[881] --> want:[945] --> NULL
-bucket[443] --> size:[789] --> view:[937] --> whom:[968] --> wish:[977] --> NULL
-bucket[444] --> over:[600] --> miss:[521] --> list:[473] --> four:[332] --> step:[829] --> with:[978] --> word:[983] --> NULL
-bucket[445] --> room:[732] --> pull:[675] --> news:[555] --> NULL
-bucket[446] --> rest:[721] --> hour:[393] --> shot:[771] --> vote:[941] --> NULL
-bucket[447] --> next:[557] --> know:[443] --> grow:[357] --> soon:[805] --> sure:[852] --> trip:[915] --> NULL
-bucket[448] --> push:[677] --> poor:[644] --> onto:[587] --> test:[869] --> true:[917] --> unit:[926] --> NULL
-bucket[449] --> loss:[481] --> show:[774] --> stay:[828] --> NULL
-bucket[450] --> only:[586] --> type:[923] --> upon:[929] --> NULL
-bucket[451] --> most:[530] --> west:[956] --> work:[984] --> NULL
+bucket[414] --> hang:[365] --> fear:[297] --> fact:[289] --> deep:[210] --> baby:[75] --> make:[491] --> NULL
+bucket[415] --> hard:[368] --> fall:[292] --> land:[445] --> nice:[558] --> safe:[735] --> NULL
+bucket[416] --> high:[381] --> hear:[373] --> cell:[138] --> life:[468] --> NULL
+bucket[417] --> find:[310] --> mean:[504] --> name:[543] --> NULL
+bucket[418] --> heat:[375] --> free:[333] --> fine:[311] --> dark:[199] --> cold:[164] --> NULL
+bucket[419] --> goal:[350] --> bill:[100] --> NULL
+bucket[420] --> here:[379] --> have:[369] --> hair:[362] --> come:[168] --> real:[692] --> NULL
+bucket[421] --> take:[856] --> side:[775] --> keep:[437] --> like:[470] --> main:[487] --> once:[584] --> NULL
+bucket[422] --> fire:[314] --> kind:[441] --> late:[449] --> near:[548] --> rich:[725] --> road:[729] --> same:[736] --> NULL
+bucket[423] --> yeah:[993] --> team:[862] --> fill:[305] --> hold:[387] --> pick:[630] --> NULL
+bucket[424] --> food:[323] --> film:[306] --> blue:[105] --> line:[472] --> mind:[519] --> pain:[604] --> seek:[751] --> NULL
+bucket[425] --> wide:[971] --> help:[377] --> good:[351] --> else:[258] --> home:[388] --> huge:[397] --> NULL
+bucket[426] --> five:[318] --> fish:[317] --> seem:[752] --> send:[754] --> NULL
+bucket[427] --> wife:[972] --> than:[870] --> tend:[867] --> give:[347] --> book:[108] --> left:[460] --> meet:[508] --> plan:[634] --> NULL
+bucket[428] --> week:[953] --> talk:[857] --> hope:[389] --> kill:[440] --> rate:[687] --> NULL
+bucket[429] --> fund:[338] --> east:[246] --> both:[110] --> much:[538] --> seat:[746] --> NULL
+bucket[430] --> them:[875] --> girl:[346] --> firm:[315] --> fast:[295] --> even:[270] --> draw:[238] --> best:[95] --> body:[107] --> NULL
+bucket[431] --> wear:[952] --> walk:[943] --> time:[896] --> then:[877] --> also:[37] --> item:[431] --> rock:[730] --> save:[737] --> NULL
+bucket[432] --> yard:[992] --> wall:[944] --> tree:[913] --> join:[435] --> live:[476] --> long:[478] --> none:[561] --> sell:[753] --> NULL
+bucket[433] --> year:[994] --> that:[872] --> tell:[865] --> sing:[782] --> sign:[776] --> born:[109] --> NULL
+bucket[434] --> wind:[975] --> when:[960] --> ever:[273] --> easy:[247] --> drug:[242] --> away:[74] --> open:[588] --> role:[731] --> NULL
+bucket[435] --> task:[858] --> such:[846] --> full:[337] --> lose:[480] --> more:[528] --> rise:[727] --> NULL
+bucket[436] --> what:[958] --> well:[955] --> some:[798] --> from:[335] --> form:[329] --> door:[236] --> last:[448] --> NULL
+bucket[437] --> wait:[942] --> skin:[791] --> site:[786] --> drop:[241] --> look:[479] --> many:[496] --> NULL
+bucket[438] --> love:[483] --> note:[565] --> play:[636] --> NULL
+bucket[439] --> song:[804] --> less:[463] --> move:[533] --> part:[608] --> pass:[614] --> NULL
+bucket[440] --> will:[973] --> this:[885] --> term:[868] --> foot:[324] --> down:[237] --> past:[615] --> rule:[733] --> NULL
+bucket[441] --> city:[156] --> cost:[184] --> risk:[728] --> NULL
+bucket[442] --> want:[945] --> they:[881] --> star:[823] --> into:[426] --> NULL
+bucket[443] --> wish:[977] --> whom:[968] --> view:[937] --> size:[789] --> NULL
+bucket[444] --> word:[983] --> with:[978] --> step:[829] --> four:[332] --> list:[473] --> miss:[521] --> over:[600] --> NULL
+bucket[445] --> news:[555] --> pull:[675] --> room:[732] --> NULL
+bucket[446] --> vote:[941] --> shot:[771] --> hour:[393] --> rest:[721] --> NULL
+bucket[447] --> trip:[915] --> sure:[852] --> soon:[805] --> grow:[357] --> know:[443] --> next:[557] --> NULL
+bucket[448] --> unit:[926] --> true:[917] --> test:[869] --> onto:[587] --> poor:[644] --> push:[677] --> NULL
+bucket[449] --> stay:[828] --> show:[774] --> loss:[481] --> NULL
+bucket[450] --> upon:[929] --> type:[923] --> only:[586] --> NULL
+bucket[451] --> work:[984] --> west:[956] --> most:[530] --> NULL
 bucket[452] --> thus:[895] --> NULL
 bucket[453] --> NULL
-bucket[454] --> just:[436] --> stop:[832] --> very:[935] --> NULL
+bucket[454] --> very:[935] --> stop:[832] --> just:[436] --> NULL
 bucket[455] --> NULL
-bucket[456] --> sort:[806] --> town:[906] --> NULL
-bucket[457] --> must:[540] --> turn:[920] --> NULL
+bucket[456] --> town:[906] --> sort:[806] --> NULL
+bucket[457] --> turn:[920] --> must:[540] --> NULL
 bucket[458] --> NULL
 bucket[459] --> NULL
 bucket[460] --> NULL
@@ -1509,57 +1509,57 @@ bucket[506] --> NULL
 bucket[507] --> NULL
 bucket[508] --> NULL
 bucket[509] --> black:[103] --> NULL
-bucket[510] --> peace:[619] --> coach:[163] --> check:[150] --> NULL
+bucket[510] --> check:[150] --> coach:[163] --> peace:[619] --> NULL
 bucket[511] --> NULL
-bucket[512] --> media:[506] --> again:[21] --> NULL
+bucket[512] --> again:[21] --> media:[506] --> NULL
 bucket[513] --> NULL
 bucket[514] --> NULL
-bucket[515] --> reach:[689] --> image:[405] --> catch:[136] --> NULL
-bucket[516] --> child:[151] --> agree:[27] --> field:[302] --> NULL
-bucket[517] --> place:[633] --> legal:[462] --> break:[113] --> begin:[90] --> teach:[860] --> NULL
-bucket[518] --> piece:[632] --> claim:[158] --> death:[205] --> NULL
-bucket[519] --> clear:[160] --> chair:[144] --> NULL
-bucket[520] --> board:[106] --> table:[855] --> NULL
+bucket[515] --> catch:[136] --> image:[405] --> reach:[689] --> NULL
+bucket[516] --> field:[302] --> agree:[27] --> child:[151] --> NULL
+bucket[517] --> teach:[860] --> begin:[90] --> break:[113] --> legal:[462] --> place:[633] --> NULL
+bucket[518] --> death:[205] --> claim:[158] --> piece:[632] --> NULL
+bucket[519] --> chair:[144] --> clear:[160] --> NULL
+bucket[520] --> table:[855] --> board:[106] --> NULL
 bucket[521] --> dream:[239] --> NULL
 bucket[522] --> final:[307] --> NULL
-bucket[523] --> local:[477] --> large:[447] --> NULL
-bucket[524] --> shake:[766] --> space:[811] --> NULL
-bucket[525] --> range:[686] --> leave:[459] --> above:[5] --> NULL
-bucket[526] --> scene:[739] --> maybe:[502] --> NULL
-bucket[527] --> radio:[684] --> alone:[34] --> agent:[25] --> admit:[17] --> force:[326] --> NULL
-bucket[528] --> build:[117] --> blood:[104] --> crime:[192] --> trade:[907] --> NULL
-bucket[529] --> model:[523] --> laugh:[451] --> cause:[137] --> along:[35] --> eight:[255] --> green:[354] --> NULL
-bucket[530] --> offer:[574] --> learn:[457] --> bring:[114] --> among:[41] --> after:[20] --> fight:[303] --> since:[781] --> NULL
-bucket[531] --> price:[658] --> avoid:[73] --> great:[353] --> share:[767] --> which:[963] --> NULL
-bucket[532] --> raise:[685] --> argue:[55] --> heart:[374] --> speak:[812] --> staff:[819] --> stage:[820] --> NULL
+bucket[523] --> large:[447] --> local:[477] --> NULL
+bucket[524] --> space:[811] --> shake:[766] --> NULL
+bucket[525] --> above:[5] --> leave:[459] --> range:[686] --> NULL
+bucket[526] --> maybe:[502] --> scene:[739] --> NULL
+bucket[527] --> force:[326] --> admit:[17] --> agent:[25] --> alone:[34] --> radio:[684] --> NULL
+bucket[528] --> trade:[907] --> crime:[192] --> blood:[104] --> build:[117] --> NULL
+bucket[529] --> green:[354] --> eight:[255] --> along:[35] --> cause:[137] --> laugh:[451] --> model:[523] --> NULL
+bucket[530] --> since:[781] --> fight:[303] --> after:[20] --> among:[41] --> bring:[114] --> learn:[457] --> offer:[574] --> NULL
+bucket[531] --> which:[963] --> share:[767] --> great:[353] --> avoid:[73] --> price:[658] --> NULL
+bucket[532] --> stage:[820] --> staff:[819] --> speak:[812] --> heart:[374] --> argue:[55] --> raise:[685] --> NULL
 bucket[533] --> ready:[691] --> NULL
-bucket[534] --> close:[162] --> class:[159] --> thank:[871] --> voice:[940] --> NULL
-bucket[535] --> could:[185] --> civil:[157] --> watch:[947] --> NULL
-bucket[536] --> paper:[606] --> light:[469] --> level:[466] --> later:[450] --> there:[879] --> three:[891] --> NULL
-bucket[537] --> might:[516] --> major:[489] --> least:[458] --> human:[398] --> small:[792] --> these:[880] --> while:[964] --> NULL
-bucket[538] --> phone:[628] --> night:[559] --> adult:[18] --> drive:[240] --> glass:[348] --> smile:[793] --> spend:[816] --> stand:[821] --> thing:[882] --> NULL
-bucket[539] --> about:[4] --> third:[884] --> where:[961] --> NULL
-bucket[540] --> score:[743] --> order:[593] --> often:[578] --> occur:[571] --> hotel:[392] --> their:[874] --> trial:[914] --> NULL
-bucket[541] --> early:[245] --> heavy:[376] --> value:[933] --> NULL
-bucket[542] --> sense:[756] --> right:[726] --> enter:[264] --> think:[883] --> under:[924] --> NULL
-bucket[543] --> plant:[635] --> color:[167] --> allow:[32] --> cover:[190] --> skill:[790] --> whole:[967] --> NULL
-bucket[544] --> never:[553] --> movie:[535] --> focus:[321] --> treat:[911] --> NULL
-bucket[545] --> seven:[762] --> music:[539] --> carry:[134] --> state:[825] --> today:[898] --> white:[965] --> NULL
-bucket[546] --> other:[595] --> event:[272] --> floor:[319] --> happy:[367] --> woman:[981] --> NULL
-bucket[547] --> those:[886] --> water:[948] --> NULL
-bucket[548] --> house:[394] --> stock:[831] --> total:[903] --> NULL
-bucket[549] --> serve:[759] --> enjoy:[262] --> NULL
-bucket[550] --> month:[527] --> apply:[52] --> whose:[969] --> NULL
-bucket[551] --> guess:[359] --> tough:[904] --> NULL
-bucket[552] --> quite:[682] --> money:[526] --> first:[316] --> still:[830] --> stuff:[841] --> world:[986] --> NULL
-bucket[553] --> issue:[429] --> front:[336] --> sound:[807] --> NULL
+bucket[534] --> voice:[940] --> thank:[871] --> class:[159] --> close:[162] --> NULL
+bucket[535] --> watch:[947] --> civil:[157] --> could:[185] --> NULL
+bucket[536] --> three:[891] --> there:[879] --> later:[450] --> level:[466] --> light:[469] --> paper:[606] --> NULL
+bucket[537] --> while:[964] --> these:[880] --> small:[792] --> human:[398] --> least:[458] --> major:[489] --> might:[516] --> NULL
+bucket[538] --> thing:[882] --> stand:[821] --> spend:[816] --> smile:[793] --> glass:[348] --> drive:[240] --> adult:[18] --> night:[559] --> phone:[628] --> NULL
+bucket[539] --> where:[961] --> third:[884] --> about:[4] --> NULL
+bucket[540] --> trial:[914] --> their:[874] --> hotel:[392] --> occur:[571] --> often:[578] --> order:[593] --> score:[743] --> NULL
+bucket[541] --> value:[933] --> heavy:[376] --> early:[245] --> NULL
+bucket[542] --> under:[924] --> think:[883] --> enter:[264] --> right:[726] --> sense:[756] --> NULL
+bucket[543] --> whole:[967] --> skill:[790] --> cover:[190] --> allow:[32] --> color:[167] --> plant:[635] --> NULL
+bucket[544] --> treat:[911] --> focus:[321] --> movie:[535] --> never:[553] --> NULL
+bucket[545] --> white:[965] --> today:[898] --> state:[825] --> carry:[134] --> music:[539] --> seven:[762] --> NULL
+bucket[546] --> woman:[981] --> happy:[367] --> floor:[319] --> event:[272] --> other:[595] --> NULL
+bucket[547] --> water:[948] --> those:[886] --> NULL
+bucket[548] --> total:[903] --> stock:[831] --> house:[394] --> NULL
+bucket[549] --> enjoy:[262] --> serve:[759] --> NULL
+bucket[550] --> whose:[969] --> apply:[52] --> month:[527] --> NULL
+bucket[551] --> tough:[904] --> guess:[359] --> NULL
+bucket[552] --> world:[986] --> stuff:[841] --> still:[830] --> first:[316] --> money:[526] --> quite:[682] --> NULL
+bucket[553] --> sound:[807] --> front:[336] --> issue:[429] --> NULL
 bucket[554] --> point:[639] --> NULL
-bucket[555] --> owner:[602] --> north:[563] --> every:[274] --> would:[988] --> write:[989] --> NULL
-bucket[556] --> prove:[672] --> until:[927] --> NULL
-bucket[557] --> power:[650] --> mouth:[532] --> court:[189] --> exist:[282] --> group:[356] --> shoot:[769] --> store:[833] --> wrong:[991] --> NULL
+bucket[555] --> write:[989] --> would:[988] --> every:[274] --> north:[563] --> owner:[602] --> NULL
+bucket[556] --> until:[927] --> prove:[672] --> NULL
+bucket[557] --> wrong:[991] --> store:[833] --> shoot:[769] --> group:[356] --> exist:[282] --> court:[189] --> mouth:[532] --> power:[650] --> NULL
 bucket[558] --> start:[824] --> NULL
 bucket[559] --> visit:[939] --> NULL
-bucket[560] --> party:[613] --> short:[770] --> NULL
+bucket[560] --> short:[770] --> party:[613] --> NULL
 bucket[561] --> style:[842] --> NULL
 bucket[562] --> young:[998] --> NULL
 bucket[563] --> south:[809] --> NULL
@@ -1616,59 +1616,59 @@ bucket[613] --> debate:[206] --> NULL
 bucket[614] --> change:[147] --> NULL
 bucket[615] --> NULL
 bucket[616] --> NULL
-bucket[617] --> manage:[493] --> indeed:[414] --> camera:[124] --> affect:[19] --> NULL
-bucket[618] --> charge:[149] --> behind:[92] --> NULL
-bucket[619] --> choice:[152] --> become:[87] --> NULL
-bucket[620] --> office:[575] --> cancer:[127] --> degree:[212] --> NULL
-bucket[621] --> leader:[456] --> effect:[253] --> NULL
+bucket[617] --> affect:[19] --> camera:[124] --> indeed:[414] --> manage:[493] --> NULL
+bucket[618] --> behind:[92] --> charge:[149] --> NULL
+bucket[619] --> become:[87] --> choice:[152] --> NULL
+bucket[620] --> degree:[212] --> cancer:[127] --> office:[575] --> NULL
+bucket[621] --> effect:[253] --> leader:[456] --> NULL
 bucket[622] --> NULL
 bucket[623] --> middle:[515] --> NULL
 bucket[624] --> accept:[6] --> NULL
 bucket[625] --> garden:[341] --> NULL
-bucket[626] --> career:[133] --> animal:[45] --> NULL
-bucket[627] --> before:[89] --> detail:[218] --> NULL
+bucket[626] --> animal:[45] --> career:[133] --> NULL
+bucket[627] --> detail:[218] --> before:[89] --> NULL
 bucket[628] --> create:[191] --> NULL
 bucket[629] --> NULL
 bucket[630] --> health:[372] --> NULL
 bucket[631] --> agency:[24] --> NULL
-bucket[632] --> reduce:[703] --> member:[510] --> attack:[66] --> friend:[334] --> speech:[815] --> NULL
+bucket[632] --> speech:[815] --> friend:[334] --> attack:[66] --> member:[510] --> reduce:[703] --> NULL
 bucket[633] --> appear:[51] --> NULL
-bucket[634] --> design:[216] --> father:[296] --> NULL
-bucket[635] --> budget:[116] --> finger:[312] --> social:[795] --> NULL
-bucket[636] --> second:[747] --> remain:[709] --> police:[640] --> inside:[419] --> happen:[366] --> NULL
-bucket[637] --> relate:[706] --> church:[154] --> NULL
-bucket[638] --> impact:[407] --> action:[11] --> NULL
-bucket[639] --> reveal:[724] --> record:[701] --> public:[674] --> factor:[290] --> NULL
+bucket[634] --> father:[296] --> design:[216] --> NULL
+bucket[635] --> social:[795] --> finger:[312] --> budget:[116] --> NULL
+bucket[636] --> happen:[366] --> inside:[419] --> police:[640] --> remain:[709] --> second:[747] --> NULL
+bucket[637] --> church:[154] --> relate:[706] --> NULL
+bucket[638] --> action:[11] --> impact:[407] --> NULL
+bucket[639] --> factor:[290] --> public:[674] --> record:[701] --> reveal:[724] --> NULL
 bucket[640] --> dinner:[226] --> NULL
-bucket[641] --> recent:[698] --> method:[514] --> choose:[153] --> center:[139] --> beyond:[98] --> either:[256] --> finish:[313] --> NULL
-bucket[642] --> notice:[567] --> family:[293] --> figure:[304] --> single:[783] --> NULL
+bucket[641] --> finish:[313] --> either:[256] --> beyond:[98] --> center:[139] --> choose:[153] --> method:[514] --> recent:[698] --> NULL
+bucket[642] --> single:[783] --> figure:[304] --> family:[293] --> notice:[567] --> NULL
 bucket[643] --> period:[625] --> NULL
-bucket[644] --> region:[705] --> market:[497] --> NULL
-bucket[645] --> people:[620] --> modern:[524] --> NULL
-bucket[646] --> rather:[688] --> better:[96] --> effort:[254] --> enough:[263] --> NULL
-bucket[647] --> itself:[433] --> entire:[265] --> forget:[328] --> NULL
-bucket[648] --> school:[740] --> reason:[696] --> couple:[187] --> threat:[890] --> weight:[954] --> NULL
-bucket[649] --> season:[745] --> really:[695] --> number:[570] --> nation:[544] --> common:[170] --> around:[57] --> arrive:[58] --> during:[243] --> expect:[283] --> NULL
-bucket[650] --> parent:[607] --> likely:[471] --> anyone:[49] --> energy:[261] --> simple:[779] --> weapon:[951] --> NULL
-bucket[651] --> series:[757] --> nearly:[549] --> across:[9] --> doctor:[234] --> former:[330] --> suffer:[848] --> NULL
+bucket[644] --> market:[497] --> region:[705] --> NULL
+bucket[645] --> modern:[524] --> people:[620] --> NULL
+bucket[646] --> enough:[263] --> effort:[254] --> better:[96] --> rather:[688] --> NULL
+bucket[647] --> forget:[328] --> entire:[265] --> itself:[433] --> NULL
+bucket[648] --> weight:[954] --> threat:[890] --> couple:[187] --> reason:[696] --> school:[740] --> NULL
+bucket[649] --> expect:[283] --> during:[243] --> arrive:[58] --> around:[57] --> common:[170] --> nation:[544] --> number:[570] --> really:[695] --> season:[745] --> NULL
+bucket[650] --> weapon:[951] --> simple:[779] --> energy:[261] --> anyone:[49] --> likely:[471] --> parent:[607] --> NULL
+bucket[651] --> suffer:[848] --> former:[330] --> doctor:[234] --> across:[9] --> nearly:[549] --> series:[757] --> NULL
 bucket[652] --> victim:[936] --> NULL
-bucket[653] --> player:[637] --> matter:[500] --> NULL
-bucket[654] --> remove:[711] --> little:[475] --> assume:[64] --> travel:[910] --> NULL
-bucket[655] --> nature:[547] --> mother:[531] --> listen:[474] --> ground:[355] --> should:[772] --> though:[887] --> wonder:[982] --> NULL
-bucket[656] --> senior:[755] --> policy:[641] --> myself:[542] --> moment:[525] --> letter:[465] --> almost:[33] --> answer:[47] --> NULL
-bucket[657] --> course:[188] --> always:[39] --> source:[808] --> toward:[905] --> NULL
-bucket[658] --> sexual:[765] --> minute:[520] --> NULL
-bucket[659] --> author:[70] --> follow:[322] --> spring:[818] --> within:[979] --> NULL
-bucket[660] --> lawyer:[453] --> amount:[42] --> NULL
+bucket[653] --> matter:[500] --> player:[637] --> NULL
+bucket[654] --> travel:[910] --> assume:[64] --> little:[475] --> remove:[711] --> NULL
+bucket[655] --> wonder:[982] --> though:[887] --> should:[772] --> ground:[355] --> listen:[474] --> mother:[531] --> nature:[547] --> NULL
+bucket[656] --> answer:[47] --> almost:[33] --> letter:[465] --> moment:[525] --> myself:[542] --> policy:[641] --> senior:[755] --> NULL
+bucket[657] --> toward:[905] --> source:[808] --> always:[39] --> course:[188] --> NULL
+bucket[658] --> minute:[520] --> sexual:[765] --> NULL
+bucket[659] --> within:[979] --> spring:[818] --> follow:[322] --> author:[70] --> NULL
+bucket[660] --> amount:[42] --> lawyer:[453] --> NULL
 bucket[661] --> others:[596] --> NULL
 bucket[662] --> NULL
-bucket[663] --> person:[626] --> artist:[61] --> street:[836] --> NULL
-bucket[664] --> expert:[285] --> window:[976] --> NULL
-bucket[665] --> option:[591] --> memory:[511] --> summer:[850] --> NULL
-bucket[666] --> sister:[784] --> worker:[985] --> NULL
-bucket[667] --> future:[339] --> growth:[358] --> theory:[878] --> NULL
+bucket[663] --> street:[836] --> artist:[61] --> person:[626] --> NULL
+bucket[664] --> window:[976] --> expert:[285] --> NULL
+bucket[665] --> summer:[850] --> memory:[511] --> option:[591] --> NULL
+bucket[666] --> worker:[985] --> sister:[784] --> NULL
+bucket[667] --> theory:[878] --> growth:[358] --> future:[339] --> NULL
 bucket[668] --> report:[712] --> NULL
-bucket[669] --> strong:[837] --> writer:[990] --> NULL
+bucket[669] --> writer:[990] --> strong:[837] --> NULL
 bucket[670] --> simply:[780] --> NULL
 bucket[671] --> result:[722] --> NULL
 bucket[672] --> return:[723] --> NULL
@@ -1729,55 +1729,55 @@ bucket[726] --> NULL
 bucket[727] --> NULL
 bucket[728] --> because:[86] --> NULL
 bucket[729] --> NULL
-bucket[730] --> science:[741] --> imagine:[406] --> defense:[211] --> feeling:[300] --> NULL
-bucket[731] --> manager:[495] --> college:[166] --> NULL
-bucket[732] --> believe:[93] --> teacher:[861] --> NULL
+bucket[730] --> feeling:[300] --> defense:[211] --> imagine:[406] --> science:[741] --> NULL
+bucket[731] --> college:[166] --> manager:[495] --> NULL
+bucket[732] --> teacher:[861] --> believe:[93] --> NULL
 bucket[733] --> benefit:[94] --> NULL
-bucket[734] --> officer:[576] --> capital:[129] --> disease:[232] --> general:[343] --> NULL
+bucket[734] --> general:[343] --> disease:[232] --> capital:[129] --> officer:[576] --> NULL
 bucket[735] --> NULL
 bucket[736] --> NULL
 bucket[737] --> special:[813] --> NULL
 bucket[738] --> already:[36] --> NULL
 bucket[739] --> receive:[697] --> NULL
-bucket[740] --> include:[411] --> article:[60] --> NULL
-bucket[741] --> reflect:[704] --> message:[513] --> husband:[400] --> NULL
-bucket[742] --> kitchen:[442] --> certain:[142] --> address:[15] --> NULL
-bucket[743] --> compare:[173] --> against:[22] --> NULL
-bucket[744] --> instead:[420] --> himself:[383] --> concern:[175] --> NULL
-bucket[745] --> meeting:[509] --> central:[140] --> billion:[101] --> herself:[380] --> surface:[853] --> NULL
-bucket[746] --> hundred:[399] --> between:[97] --> foreign:[327] --> NULL
+bucket[740] --> article:[60] --> include:[411] --> NULL
+bucket[741] --> husband:[400] --> message:[513] --> reflect:[704] --> NULL
+bucket[742] --> address:[15] --> certain:[142] --> kitchen:[442] --> NULL
+bucket[743] --> against:[22] --> compare:[173] --> NULL
+bucket[744] --> concern:[175] --> himself:[383] --> instead:[420] --> NULL
+bucket[745] --> surface:[853] --> herself:[380] --> billion:[101] --> central:[140] --> meeting:[509] --> NULL
+bucket[746] --> foreign:[327] --> between:[97] --> hundred:[399] --> NULL
 bucket[747] --> NULL
-bucket[748] --> realize:[694] --> contain:[181] --> clearly:[161] --> evening:[271] --> example:[280] --> NULL
+bucket[748] --> example:[280] --> evening:[271] --> clearly:[161] --> contain:[181] --> realize:[694] --> NULL
 bucket[749] --> account:[8] --> NULL
-bucket[750] --> ability:[2] --> despite:[217] --> NULL
-bucket[751] --> prepare:[652] --> develop:[220] --> finally:[308] --> NULL
+bucket[750] --> despite:[217] --> ability:[2] --> NULL
+bucket[751] --> finally:[308] --> develop:[220] --> prepare:[652] --> NULL
 bucket[752] --> subject:[843] --> NULL
-bucket[753] --> service:[760] --> problem:[661] --> another:[46] --> explain:[286] --> similar:[778] --> NULL
-bucket[754] --> several:[763] --> produce:[663] --> measure:[505] --> soldier:[797] --> NULL
+bucket[753] --> similar:[778] --> explain:[286] --> another:[46] --> problem:[661] --> service:[760] --> NULL
+bucket[754] --> soldier:[797] --> measure:[505] --> produce:[663] --> several:[763] --> NULL
 bucket[755] --> perhaps:[624] --> NULL
 bucket[756] --> million:[518] --> NULL
-bucket[757] --> section:[748] --> patient:[616] --> forward:[331] --> NULL
-bucket[758] --> citizen:[155] --> brother:[115] --> someone:[800] --> NULL
-bucket[759] --> project:[669] --> nothing:[566] --> natural:[546] --> company:[172] --> whether:[962] --> NULL
+bucket[757] --> forward:[331] --> patient:[616] --> section:[748] --> NULL
+bucket[758] --> someone:[800] --> brother:[115] --> citizen:[155] --> NULL
+bucket[759] --> whether:[962] --> company:[172] --> natural:[546] --> nothing:[566] --> project:[669] --> NULL
 bucket[760] --> program:[668] --> NULL
-bucket[761] --> provide:[673] --> success:[844] --> NULL
-bucket[762] --> reality:[693] --> morning:[529] --> mention:[512] --> economy:[250] --> exactly:[279] --> NULL
-bucket[763] --> respond:[718] --> private:[659] --> perform:[622] --> NULL
-bucket[764] --> picture:[631] --> partner:[612] --> NULL
-bucket[765] --> require:[715] --> outside:[599] --> tonight:[900] --> trouble:[916] --> NULL
-bucket[766] --> pattern:[617] --> discuss:[230] --> NULL
+bucket[761] --> success:[844] --> provide:[673] --> NULL
+bucket[762] --> exactly:[279] --> economy:[250] --> mention:[512] --> morning:[529] --> reality:[693] --> NULL
+bucket[763] --> perform:[622] --> private:[659] --> respond:[718] --> NULL
+bucket[764] --> partner:[612] --> picture:[631] --> NULL
+bucket[765] --> trouble:[916] --> tonight:[900] --> outside:[599] --> require:[715] --> NULL
+bucket[766] --> discuss:[230] --> pattern:[617] --> NULL
 bucket[767] --> process:[662] --> NULL
-bucket[768] --> however:[396] --> society:[796] --> NULL
-bucket[769] --> protect:[671] --> product:[664] --> present:[653] --> control:[183] --> through:[892] --> NULL
-bucket[770] --> quickly:[681] --> mission:[522] --> improve:[409] --> station:[827] --> suggest:[849] --> NULL
-bucket[771] --> popular:[645] --> involve:[428] --> current:[196] --> thought:[888] --> NULL
-bucket[772] --> prevent:[657] --> culture:[194] --> NULL
+bucket[768] --> society:[796] --> however:[396] --> NULL
+bucket[769] --> through:[892] --> control:[183] --> present:[653] --> product:[664] --> protect:[671] --> NULL
+bucket[770] --> suggest:[849] --> station:[827] --> improve:[409] --> mission:[522] --> quickly:[681] --> NULL
+bucket[771] --> thought:[888] --> current:[196] --> involve:[428] --> popular:[645] --> NULL
+bucket[772] --> culture:[194] --> prevent:[657] --> NULL
 bucket[773] --> NULL
 bucket[774] --> NULL
 bucket[775] --> student:[839] --> NULL
 bucket[776] --> western:[957] --> NULL
-bucket[777] --> quality:[679] --> various:[934] --> NULL
-bucket[778] --> serious:[758] --> network:[552] --> century:[141] --> NULL
+bucket[777] --> various:[934] --> quality:[679] --> NULL
+bucket[778] --> century:[141] --> network:[552] --> serious:[758] --> NULL
 bucket[779] --> NULL
 bucket[780] --> NULL
 bucket[781] --> NULL
@@ -1787,7 +1787,7 @@ bucket[784] --> NULL
 bucket[785] --> NULL
 bucket[786] --> history:[385] --> NULL
 bucket[787] --> NULL
-bucket[788] --> country:[186] --> without:[980] --> NULL
+bucket[788] --> without:[980] --> country:[186] --> NULL
 bucket[789] --> NULL
 bucket[790] --> NULL
 bucket[791] --> NULL
@@ -1832,10 +1832,10 @@ bucket[829] --> official:[577] --> NULL
 bucket[830] --> audience:[69] --> NULL
 bucket[831] --> NULL
 bucket[832] --> campaign:[125] --> NULL
-bucket[833] --> indicate:[415] --> describe:[215] --> NULL
+bucket[833] --> describe:[215] --> indicate:[415] --> NULL
 bucket[834] --> NULL
 bucket[835] --> evidence:[278] --> NULL
-bucket[836] --> language:[446] --> Congress:[178] --> NULL
+bucket[836] --> Congress:[178] --> language:[446] --> NULL
 bucket[837] --> NULL
 bucket[838] --> specific:[814] --> NULL
 bucket[839] --> NULL
@@ -1844,11 +1844,11 @@ bucket[841] --> NULL
 bucket[842] --> increase:[413] --> NULL
 bucket[843] --> practice:[651] --> NULL
 bucket[844] --> magazine:[486] --> NULL
-bucket[845] --> research:[716] --> economic:[249] --> NULL
-bucket[846] --> building:[118] --> approach:[53] --> decision:[209] --> NULL
-bucket[847] --> remember:[710] --> material:[499] --> NULL
+bucket[845] --> economic:[249] --> research:[716] --> NULL
+bucket[846] --> decision:[209] --> approach:[53] --> building:[118] --> NULL
+bucket[847] --> material:[499] --> remember:[710] --> NULL
 bucket[848] --> behavior:[91] --> NULL
-bucket[849] --> maintain:[488] --> standard:[822] --> NULL
+bucket[849] --> standard:[822] --> maintain:[488] --> NULL
 bucket[850] --> NULL
 bucket[851] --> election:[257] --> NULL
 bucket[852] --> daughter:[201] --> NULL
@@ -1859,36 +1859,36 @@ bucket[856] --> NULL
 bucket[857] --> NULL
 bucket[858] --> painting:[605] --> NULL
 bucket[859] --> probably:[660] --> NULL
-bucket[860] --> identify:[403] --> although:[38] --> director:[228] --> training:[909] --> NULL
+bucket[860] --> training:[909] --> director:[228] --> although:[38] --> identify:[403] --> NULL
 bucket[861] --> physical:[629] --> NULL
 bucket[862] --> NULL
-bucket[863] --> actually:[13] --> discover:[229] --> NULL
+bucket[863] --> discover:[229] --> actually:[13] --> NULL
 bucket[864] --> employee:[259] --> NULL
 bucket[865] --> possible:[649] --> NULL
-bucket[866] --> anything:[50] --> somebody:[799] --> together:[899] --> NULL
+bucket[866] --> together:[899] --> somebody:[799] --> anything:[50] --> NULL
 bucket[867] --> NULL
-bucket[868] --> personal:[627] --> hospital:[390] --> analysis:[43] --> NULL
+bucket[868] --> analysis:[43] --> hospital:[390] --> personal:[627] --> NULL
 bucket[869] --> continue:[182] --> NULL
-bucket[870] --> recently:[699] --> shoulder:[773] --> thousand:[889] --> whatever:[959] --> NULL
+bucket[870] --> whatever:[959] --> thousand:[889] --> shoulder:[773] --> recently:[699] --> NULL
 bucket[871] --> politics:[643] --> NULL
-bucket[872] --> resource:[717] --> suddenly:[847] --> NULL
+bucket[872] --> suddenly:[847] --> resource:[717] --> NULL
 bucket[873] --> NULL
 bucket[874] --> NULL
-bucket[875] --> movement:[534] --> military:[517] --> NULL
-bucket[876] --> consumer:[180] --> business:[119] --> cultural:[193] --> NULL
-bucket[877] --> activity:[12] --> everyone:[276] --> NULL
+bucket[875] --> military:[517] --> movement:[534] --> NULL
+bucket[876] --> cultural:[193] --> business:[119] --> consumer:[180] --> NULL
+bucket[877] --> everyone:[276] --> activity:[12] --> NULL
 bucket[878] --> interest:[422] --> NULL
-bucket[879] --> response:[719] --> majority:[490] --> computer:[174] --> NULL
+bucket[879] --> computer:[174] --> majority:[490] --> response:[719] --> NULL
 bucket[880] --> NULL
 bucket[881] --> NULL
 bucket[882] --> customer:[197] --> NULL
-bucket[883] --> positive:[648] --> strategy:[835] --> NULL
+bucket[883] --> strategy:[835] --> positive:[648] --> NULL
 bucket[884] --> NULL
 bucket[885] --> position:[647] --> NULL
 bucket[886] --> attorney:[68] --> NULL
 bucket[887] --> NULL
-bucket[888] --> security:[749] --> question:[680] --> southern:[810] --> NULL
-bucket[889] --> pressure:[655] --> yourself:[1000] --> NULL
+bucket[888] --> southern:[810] --> question:[680] --> security:[749] --> NULL
+bucket[889] --> yourself:[1000] --> pressure:[655] --> NULL
 bucket[890] --> NULL
 bucket[891] --> NULL
 bucket[892] --> NULL
@@ -1956,11 +1956,11 @@ bucket[953] --> NULL
 bucket[954] --> difficult:[225] --> NULL
 bucket[955] --> NULL
 bucket[956] --> education:[252] --> NULL
-bucket[957] --> including:[412] --> determine:[219] --> NULL
+bucket[957] --> determine:[219] --> including:[412] --> NULL
 bucket[958] --> NULL
 bucket[959] --> establish:[269] --> NULL
 bucket[960] --> knowledge:[444] --> NULL
-bucket[961] --> political:[642] --> beautiful:[85] --> direction:[227] --> NULL
+bucket[961] --> direction:[227] --> beautiful:[85] --> political:[642] --> NULL
 bucket[962] --> NULL
 bucket[963] --> NULL
 bucket[964] --> NULL
@@ -1973,15 +1973,15 @@ bucket[970] --> NULL
 bucket[971] --> certainly:[143] --> NULL
 bucket[972] --> NULL
 bucket[973] --> necessary:[550] --> NULL
-bucket[974] --> president:[654] --> something:[801] --> NULL
+bucket[974] --> something:[801] --> president:[654] --> NULL
 bucket[975] --> NULL
 bucket[976] --> NULL
 bucket[977] --> operation:[589] --> NULL
 bucket[978] --> executive:[281] --> NULL
 bucket[979] --> religious:[708] --> NULL
 bucket[980] --> treatment:[912] --> NULL
-bucket[981] --> newspaper:[556] --> statement:[826] --> NULL
-bucket[982] --> scientist:[742] --> attention:[67] --> sometimes:[802] --> NULL
+bucket[981] --> statement:[826] --> newspaper:[556] --> NULL
+bucket[982] --> sometimes:[802] --> attention:[67] --> scientist:[742] --> NULL
 bucket[983] --> NULL
 bucket[984] --> represent:[713] --> NULL
 bucket[985] --> everybody:[275] --> NULL
@@ -2067,7 +2067,7 @@ bucket[1064] --> experience:[284] --> NULL
 bucket[1065] --> individual:[416] --> NULL
 bucket[1066] --> NULL
 bucket[1067] --> especially:[268] --> NULL
-bucket[1068] --> collection:[165] --> generation:[344] --> NULL
+bucket[1068] --> generation:[344] --> collection:[165] --> NULL
 bucket[1069] --> NULL
 bucket[1070] --> NULL
 bucket[1071] --> NULL
@@ -2087,12 +2087,12 @@ bucket[1084] --> technology:[863] --> NULL
 bucket[1085] --> NULL
 bucket[1086] --> NULL
 bucket[1087] --> NULL
-bucket[1088] --> successful:[845] --> themselves:[876] --> NULL
+bucket[1088] --> themselves:[876] --> successful:[845] --> NULL
 bucket[1089] --> NULL
 bucket[1090] --> television:[864] --> NULL
 bucket[1091] --> NULL
 bucket[1092] --> discussion:[231] --> NULL
-bucket[1093] --> everything:[277] --> government:[352] --> NULL
+bucket[1093] --> government:[352] --> everything:[277] --> NULL
 bucket[1094] --> NULL
 bucket[1095] --> production:[665] --> NULL
 bucket[1096] --> NULL
@@ -2300,7 +2300,7 @@ bucket[1297] --> NULL
 bucket[1298] --> relationship:[707] --> NULL
 bucket[1299] --> NULL
 bucket[1300] --> NULL
-bucket[1301] --> professional:[666] --> organization:[594] --> NULL
+bucket[1301] --> organization:[594] --> professional:[666] --> NULL
 bucket[1302] --> NULL
 bucket[1303] --> NULL
 bucket[1304] --> NULL
