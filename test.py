@@ -190,7 +190,7 @@ class Test:
             'valgrind',
             '--leak-check=full',
             '--error-exitcode=255',
-            f'{self._bin_dir}/{self._exe_name}'
+            f'{self._bin_dir}/{self._exe_name}',
             f'{self._module_dir}/{test_number}.in'
         ]
 
