@@ -274,8 +274,10 @@ class Test:
 
         passed = True
         for output_type in ['out', 'err']:
+            cmd_args = f'diff {diff_flags} {self._temp_dir}/{test_number}.{output_type} {self._module_dir}/{test_number}.{output_type}'
+            logging.debug(f'Diff command for std{output_type}: {cmd_args}')
             diff_proc = subprocess.Popen(
-                [f'diff {diff_flags} {self._temp_dir}/{test_number}.{output_type} {self._module_dir}/{test_number}.{output_type}'],
+                cmd_args,
                 shell=True,
                 cwd=os.getcwd()
             )
