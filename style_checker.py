@@ -77,6 +77,7 @@ ERROR_REGEXPS = {
 
     # Delimiters
     "no_space_after_delimiter": re.compile(r"[,;]\w"),
+    "more_than_one_statement_per_line": re.compile(r";[^;]+;"),
 
     # Braces
     "paren_with_inner_space": re.compile(r"(\(\s)|(\s\))"),
