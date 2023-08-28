@@ -208,16 +208,18 @@ class Test:
                     valgrind_proc = subprocess.Popen(
                         cmd_args,
                         stdin=f_in,
-                        stdout=subprocess.PIPE,
+                        stdout=subprocess.DEVNULL,
                         stderr=capture,
+                        shell=True,
                         preexec_fn=os.setsid  # Create a new process group
                     )
             else:
                 logging.debug(f'Valgrind command: {cmd_args}')
                 valgrind_proc = subprocess.Popen(
                     cmd_args,
-                    stdout=subprocess.PIPE,
+                    stdout=subprocess.DEVNULL,
                     stderr=capture,
+                    shell=True,
                     preexec_fn=os.setsid  # Create a new process group
                 )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
