@@ -103,6 +103,7 @@ class Test:
         # Constants
         self._TIMEOUT = 10
         self._MEM_TIMEOUT = 20
+        self._TIMEOUT_HANDLING_TIMEOUT = 1
         self._REDIRECT_TESTS = ['hashtable']
 
     def compile(self) -> bool:
@@ -243,14 +244,14 @@ class Test:
         try:
             # Terminate the whole process group
             os.killpg(os.getpgid(process.pid), signal.SIGTERM)
-            process.wait(timeout=1)
+            process.wait(timeout=self._TIMEOUT_HANDLING_TIMEOUT)
         except subprocess.TimeoutExpired:
             logging.warning(
                 f'{self._exe_name} process could not be terminated using SIGTERM, attempting SIGKILL.'
             )
             try:
                 os.killpg(os.getpgid(process.pid), signal.SIGKILL)
-                process.wait(timeout=1)
+                process.wait(timeout=self._TIMEOUT_HANDLING_TIMEOUT)
             except subprocess.TimeoutExpired:
                 logging.error(
                     f'{self._exe_name} process could not be terminated using SIGKILL. Manual intervention required.'
