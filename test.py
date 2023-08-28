@@ -203,25 +203,22 @@ class Test:
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
 
             if self._module_dir in self._REDIRECT_TESTS:
-                cmd_args.pop()
+                cmd_args.insert(-2, '<')
                 logging.debug(f'Valgrind command: {cmd_args}')
                 logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
-                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
-                    valgrind_proc = subprocess.Popen(
-                        cmd_args,
-                        stdin=f_in,
-                        stdout=subprocess.DEVNULL,
-                        stderr=capture,
-                        shell=True,
-                        preexec_fn=os.setsid  # Create a new process group
-                    )
+                valgrind_proc = subprocess.Popen(
+                    cmd_args,
+                    stdout=subprocess.DEVNULL,
+                    stderr=capture,
+                    shell=True,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
             else:
                 logging.debug(f'Valgrind command: {cmd_args}')
                 valgrind_proc = subprocess.Popen(
                     cmd_args,
                     stdout=subprocess.DEVNULL,
                     stderr=capture,
-                    shell=True,
                     preexec_fn=os.setsid  # Create a new process group
                 )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
