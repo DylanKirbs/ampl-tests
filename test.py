@@ -180,6 +180,8 @@ class Test:
 
             try:
                 process.wait(timeout=self._TIMEOUT)
+                logging.debug(
+                    f"Exited with {process.returncode} return code")
                 return True
             except subprocess.TimeoutExpired:
                 logging.warning(
@@ -226,6 +228,8 @@ class Test:
 
         try:
             valgrind_proc.wait(timeout=self._MEM_TIMEOUT)
+            logging.debug(
+                f"Exited with {valgrind_proc.returncode} return code")
             if valgrind_proc.returncode == 255:
                 logging.error(f'Test {test_number} failed memory check')
                 return False
