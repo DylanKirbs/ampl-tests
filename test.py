@@ -203,7 +203,8 @@ class Test:
         with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
 
             if self._module_dir in self._REDIRECT_TESTS:
-                cmd_args.insert(-2, '<')
+                cmd_args.insert(-1, '<')
+                cmd_args = ' '.join(cmd_args)
                 logging.debug(f'Valgrind command: {cmd_args}')
                 logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
                 valgrind_proc = subprocess.Popen(
