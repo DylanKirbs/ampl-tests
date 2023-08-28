@@ -206,12 +206,11 @@ class Test:
                 cmd_args.insert(-1, '<')
                 cmd_args = ' '.join(cmd_args)
                 logging.debug(f'Valgrind command: {cmd_args}')
-                logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
                 valgrind_proc = subprocess.Popen(
                     cmd_args,
                     stdout=subprocess.DEVNULL,
                     stderr=capture,
-                    shell=True,
+                    shell=True,           # Valgrind with redirection prefers shells
                     preexec_fn=os.setsid  # Create a new process group
                 )
             else:
