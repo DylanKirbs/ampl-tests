@@ -77,7 +77,7 @@ ERROR_REGEXPS = {
 
     # Delimiters
     "no_space_after_delimiter": re.compile(r"[,;]\w"),
-    "more_than_one_statement_per_line": re.compile(r";[^;]+;"),
+    "more_than_one_statement_per_line": re.compile(r"^(?!for|case);[^;]+;"),
 
     # Braces
     "paren_with_inner_space": re.compile(r"(\(\s)|(\s\))"),
@@ -113,6 +113,8 @@ COMMENT_CHECKS = [
 IS_STRING_RE = re.compile(r"([\'\"])(.*?)\1")
 IS_POINTER_RE = re.compile(
     r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
+IS_FUNCTION_DECLARATION_RE = re.compile(
+    r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\))")
 
 
 def get_files():
@@ -149,11 +151,24 @@ def check_file(file) -> tuple[int, int]:
         is_comment = stripped_line.startswith(("/*", "*"), 0, 2)
         string_match = IS_STRING_RE.search(line)
         pointer_match = IS_POINTER_RE.search(line)
+        function_match = IS_FUNCTION_DECLARATION_RE.search(line)
 
         if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
             errors += 1
             log_cprint(LogColours.ERROR, rule, file, line_num,
+                       line.replace('  ', '__'), "__")
+
+        if function_match and lines[line_num - 1] != "\n":
+            rule = "function_without_empty_line_above"
+            warnings += 1
+            log_cprint(LogColours.WARNING, rule, file, line_num,
+                       line.replace('  ', '__'), "__")
+
+        if function_match and not lines[line_num + 1].startswith("{"):
+            rule = "function_brace_not_on_line_below_declaration"
+            warnings += 1
+            log_cprint(LogColours.WARNING, rule, file, line_num,
                        line.replace('  ', '__'), "__")
 
         for rule, regex in ERROR_REGEXPS.items():
