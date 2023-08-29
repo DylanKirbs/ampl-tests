@@ -159,11 +159,14 @@ def check_file(file) -> tuple[int, int]:
             log_cprint(LogColours.ERROR, rule, file, line_num,
                        stripped_line, stripped_line)
 
-        if function_match and not (lines[line_num - 1] == "\n" or '*/' in lines[line_num - 1]):
-            rule = "function_without_empty_line_above"
-            errors += 1
-            log_cprint(LogColours.ERROR, rule, file,
-                       line_num, stripped_line, stripped_line)
+        if function_match and line_num > 0:
+            prev_line = lines[line_num - 1].strip()
+            comment_in_prev_line = "#" in prev_line or "//" in prev_line or "/*" in prev_line or "*/" in prev_line
+            if not comment_in_prev_line:
+                rule = "function_without_empty_line_above"
+                errors += 1
+                log_cprint(LogColours.ERROR, rule, file,
+                           line_num, stripped_line, stripped_line)
 
         if function_match and not lines[line_num + 1].startswith("{"):
             rule = "function_brace_not_on_line_below_declaration"
