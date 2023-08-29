@@ -148,48 +148,48 @@ bucket[93] --> NULL
 bucket[94] --> NULL
 bucket[95] --> NULL
 bucket[96] --> NULL
-bucket[97] --> a:[1] --> a:[4] --> NULL
-bucket[98] --> b:[2] --> b:[5] --> NULL
-bucket[99] --> c:[3] --> c:[6] --> NULL
-bucket[100] --> d:[12] --> d:[7] --> NULL
-bucket[101] --> e:[11] --> e:[8] --> NULL
-bucket[102] --> f:[9] --> f:[10] --> NULL
-bucket[103] --> g:[18] --> g:[13] --> NULL
-bucket[104] --> h:[17] --> h:[14] --> NULL
-bucket[105] --> i:[16] --> i:[15] --> NULL
-bucket[106] --> j:[24] --> j:[19] --> NULL
-bucket[107] --> k:[23] --> k:[20] --> NULL
-bucket[108] --> l:[22] --> l:[21] --> NULL
-bucket[109] --> m:[25] --> m:[30] --> NULL
-bucket[110] --> n:[26] --> n:[29] --> NULL
-bucket[111] --> o:[27] --> o:[28] --> NULL
-bucket[112] --> p:[31] --> p:[36] --> NULL
-bucket[113] --> q:[32] --> q:[35] --> NULL
-bucket[114] --> r:[33] --> r:[34] --> NULL
-bucket[115] --> s:[37] --> s:[42] --> NULL
-bucket[116] --> t:[38] --> t:[41] --> NULL
-bucket[117] --> u:[39] --> u:[40] --> NULL
-bucket[118] --> v:[48] --> v:[43] --> NULL
-bucket[119] --> w:[47] --> w:[44] --> NULL
-bucket[120] --> x:[45] --> x:[46] --> NULL
-bucket[121] --> y:[52] --> y:[49] --> NULL
-bucket[122] --> z:[51] --> z:[50] --> NULL
+bucket[97] --> a:[4] --> NULL
+bucket[98] --> b:[5] --> NULL
+bucket[99] --> c:[6] --> NULL
+bucket[100] --> d:[12] --> NULL
+bucket[101] --> e:[11] --> NULL
+bucket[102] --> f:[10] --> NULL
+bucket[103] --> g:[18] --> NULL
+bucket[104] --> h:[17] --> NULL
+bucket[105] --> i:[16] --> NULL
+bucket[106] --> j:[24] --> NULL
+bucket[107] --> k:[23] --> NULL
+bucket[108] --> l:[22] --> NULL
+bucket[109] --> m:[30] --> NULL
+bucket[110] --> n:[29] --> NULL
+bucket[111] --> o:[28] --> NULL
+bucket[112] --> p:[36] --> NULL
+bucket[113] --> q:[35] --> NULL
+bucket[114] --> r:[34] --> NULL
+bucket[115] --> s:[42] --> NULL
+bucket[116] --> t:[41] --> NULL
+bucket[117] --> u:[40] --> NULL
+bucket[118] --> v:[48] --> NULL
+bucket[119] --> w:[47] --> NULL
+bucket[120] --> x:[46] --> NULL
+bucket[121] --> y:[52] --> NULL
+bucket[122] --> z:[51] --> NULL
 bucket[123] --> NULL
 bucket[124] --> NULL
 bucket[125] --> NULL
 bucket[126] --> NULL
 Type "quit <Enter>" to exit.
->> Found "a" with 1.
+>> Found "a" with 4.
 >> Not found.
->> Found "b" with 2.
+>> Found "b" with 5.
 >> Not found.
->> Found "c" with 3.
+>> Found "c" with 6.
 >> Not found.
 >> Found "d" with 12.
 >> Not found.
 >> Found "e" with 11.
 >> Not found.
->> Found "f" with 9.
+>> Found "f" with 10.
 >> Not found.
 >> Found "g" with 18.
 >> Not found.
