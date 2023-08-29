@@ -157,14 +157,14 @@ def check_file(file) -> tuple[int, int]:
             rule = "invalid_line_indent_with_spaces"
             errors += 1
             log_cprint(LogColours.ERROR, rule, file, line_num,
-                       lines[line_num - 1], lines[line_num - 1])
+                       lines[line_num - 1].strip(), lines[line_num - 1].strip())
             print("> ", line)
 
         if function_match and (lines[line_num - 1] != "\n" or not lines[line_num - 1].endswith("*/\n")):
             rule = "function_without_empty_line_above"
             errors += 1
             log_cprint(LogColours.ERROR, rule, file, line_num,
-                       lines[line_num - 1], lines[line_num - 1])
+                       lines[line_num - 1].strip(), lines[line_num - 1].strip())
             print("> ", line)
 
         if function_match and not lines[line_num + 1].startswith("{"):
