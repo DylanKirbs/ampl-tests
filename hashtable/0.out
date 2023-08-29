@@ -1,13 +1,13 @@
 Type "search <Enter>" to stop inserting and start searching.
 >> Insert a with 1
->> Not inserted...! (-1)
+>> Insert a with 2
 >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> a:[1] --> NULL
+bucket[ 6] --> a:[2] --> a:[1] --> NULL
 bucket[ 7] --> NULL
 bucket[ 8] --> NULL
 bucket[ 9] --> NULL

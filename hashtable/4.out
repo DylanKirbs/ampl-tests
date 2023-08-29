@@ -1,91 +1,205 @@
 Type "search <Enter>" to stop inserting and start searching.
 >> Insert a with 1
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 2
+>> Insert a with 3
+>> Insert a with 4
+>> Insert a with 5
+>> Insert a with 6
+>> Insert a with 7
 >> Insert b with 8
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 9
+>> Insert a with 10
+>> Insert a with 11
+>> Insert a with 12
+>> Insert a with 13
+>> Insert a with 14
+>> Insert a with 15
+>> Insert a with 16
+>> Insert a with 17
+>> Insert a with 18
+>> Insert a with 19
+>> Insert a with 20
+>> Insert a with 21
+>> Insert a with 22
+>> Insert a with 23
+>> Insert a with 24
+>> Insert a with 25
+>> Insert a with 26
+>> Insert a with 27
+>> Insert a with 28
+>> Insert a with 29
+>> Insert a with 30
 >> Insert c with 31
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 32
+>> Insert a with 33
+>> Insert a with 34
+>> Insert a with 35
+>> Insert a with 36
+>> Insert a with 37
+>> Insert a with 38
+>> Insert a with 39
+>> Insert a with 40
+>> Insert a with 41
+>> Insert a with 42
+>> Insert a with 43
+>> Insert a with 44
+>> Insert a with 45
+>> Insert a with 46
 >> Insert d with 47
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 48
+>> Insert a with 49
+>> Insert a with 50
+>> Insert a with 51
+>> Insert a with 52
+>> Insert a with 53
+>> Insert a with 54
+>> Insert a with 55
+>> Insert a with 56
+>> Insert a with 57
+>> Insert a with 58
+>> Insert a with 59
+>> Insert a with 60
+>> Insert a with 61
+>> Insert a with 62
 >> Insert e with 63
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 64
+>> Insert a with 65
+>> Insert a with 66
+>> Insert a with 67
+>> Insert a with 68
+>> Insert a with 69
+>> Insert a with 70
+>> Insert a with 71
+>> Insert a with 72
 >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> a:[1] --> NULL
-bucket[ 7] --> b:[8] --> NULL
-bucket[ 8] --> c:[31] --> NULL
-bucket[ 9] --> d:[47] --> NULL
-bucket[10] --> e:[63] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
 bucket[11] --> NULL
 bucket[12] --> NULL
+bucket[13] --> NULL
+bucket[14] --> NULL
+bucket[15] --> NULL
+bucket[16] --> NULL
+bucket[17] --> NULL
+bucket[18] --> NULL
+bucket[19] --> NULL
+bucket[20] --> NULL
+bucket[21] --> NULL
+bucket[22] --> NULL
+bucket[23] --> NULL
+bucket[24] --> NULL
+bucket[25] --> NULL
+bucket[26] --> NULL
+bucket[27] --> NULL
+bucket[28] --> NULL
+bucket[29] --> NULL
+bucket[30] --> NULL
+bucket[31] --> NULL
+bucket[32] --> NULL
+bucket[33] --> NULL
+bucket[34] --> NULL
+bucket[35] --> NULL
+bucket[36] --> NULL
+bucket[37] --> NULL
+bucket[38] --> NULL
+bucket[39] --> NULL
+bucket[40] --> NULL
+bucket[41] --> NULL
+bucket[42] --> NULL
+bucket[43] --> NULL
+bucket[44] --> NULL
+bucket[45] --> NULL
+bucket[46] --> NULL
+bucket[47] --> NULL
+bucket[48] --> NULL
+bucket[49] --> NULL
+bucket[50] --> NULL
+bucket[51] --> NULL
+bucket[52] --> NULL
+bucket[53] --> NULL
+bucket[54] --> NULL
+bucket[55] --> NULL
+bucket[56] --> NULL
+bucket[57] --> NULL
+bucket[58] --> NULL
+bucket[59] --> NULL
+bucket[60] --> NULL
+bucket[61] --> NULL
+bucket[62] --> NULL
+bucket[63] --> NULL
+bucket[64] --> NULL
+bucket[65] --> NULL
+bucket[66] --> NULL
+bucket[67] --> NULL
+bucket[68] --> NULL
+bucket[69] --> NULL
+bucket[70] --> NULL
+bucket[71] --> NULL
+bucket[72] --> NULL
+bucket[73] --> NULL
+bucket[74] --> NULL
+bucket[75] --> NULL
+bucket[76] --> NULL
+bucket[77] --> NULL
+bucket[78] --> NULL
+bucket[79] --> NULL
+bucket[80] --> NULL
+bucket[81] --> NULL
+bucket[82] --> NULL
+bucket[83] --> NULL
+bucket[84] --> NULL
+bucket[85] --> NULL
+bucket[86] --> NULL
+bucket[87] --> NULL
+bucket[88] --> NULL
+bucket[89] --> NULL
+bucket[90] --> NULL
+bucket[91] --> NULL
+bucket[92] --> NULL
+bucket[93] --> NULL
+bucket[94] --> NULL
+bucket[95] --> NULL
+bucket[96] --> NULL
+bucket[97] --> a:[72] --> a:[71] --> a:[70] --> a:[69] --> a:[68] --> a:[67] --> a:[66] --> a:[65] --> a:[64] --> a:[62] --> a:[61] --> a:[60] --> a:[59] --> a:[58] --> a:[57] --> a:[56] --> a:[55] --> a:[54] --> a:[53] --> a:[52] --> a:[51] --> a:[50] --> a:[49] --> a:[48] --> a:[24] --> a:[23] --> a:[22] --> a:[21] --> a:[20] --> a:[19] --> a:[18] --> a:[17] --> a:[16] --> a:[15] --> a:[14] --> a:[13] --> a:[12] --> a:[11] --> a:[1] --> a:[2] --> a:[3] --> a:[4] --> a:[5] --> a:[6] --> a:[7] --> a:[9] --> a:[10] --> a:[25] --> a:[26] --> a:[27] --> a:[28] --> a:[29] --> a:[30] --> a:[32] --> a:[33] --> a:[34] --> a:[35] --> a:[36] --> a:[37] --> a:[38] --> a:[39] --> a:[40] --> a:[41] --> a:[42] --> a:[43] --> a:[44] --> a:[45] --> a:[46] --> NULL
+bucket[98] --> b:[8] --> NULL
+bucket[99] --> c:[31] --> NULL
+bucket[100] --> d:[47] --> NULL
+bucket[101] --> e:[63] --> NULL
+bucket[102] --> NULL
+bucket[103] --> NULL
+bucket[104] --> NULL
+bucket[105] --> NULL
+bucket[106] --> NULL
+bucket[107] --> NULL
+bucket[108] --> NULL
+bucket[109] --> NULL
+bucket[110] --> NULL
+bucket[111] --> NULL
+bucket[112] --> NULL
+bucket[113] --> NULL
+bucket[114] --> NULL
+bucket[115] --> NULL
+bucket[116] --> NULL
+bucket[117] --> NULL
+bucket[118] --> NULL
+bucket[119] --> NULL
+bucket[120] --> NULL
+bucket[121] --> NULL
+bucket[122] --> NULL
+bucket[123] --> NULL
+bucket[124] --> NULL
+bucket[125] --> NULL
+bucket[126] --> NULL
 Type "quit <Enter>" to exit.
->> Found "a" with 1.
+>> Found "a" with 72.
 >> Found "b" with 8.
 >> Found "c" with 31.
 >> Found "d" with 47.

@@ -2,56 +2,56 @@ Type "search <Enter>" to stop inserting and start searching.
 >> Insert a with 1
 >> Insert b with 2
 >> Insert c with 3
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert a with 4
+>> Insert b with 5
+>> Insert c with 6
 >> Insert d with 7
 >> Insert e with 8
 >> Insert f with 9
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert f with 10
+>> Insert e with 11
+>> Insert d with 12
 >> Insert g with 13
 >> Insert h with 14
 >> Insert i with 15
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert i with 16
+>> Insert h with 17
+>> Insert g with 18
 >> Insert j with 19
 >> Insert k with 20
 >> Insert l with 21
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert l with 22
+>> Insert k with 23
+>> Insert j with 24
 >> Insert m with 25
 >> Insert n with 26
 >> Insert o with 27
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert o with 28
+>> Insert n with 29
+>> Insert m with 30
 >> Insert p with 31
 >> Insert q with 32
 >> Insert r with 33
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert r with 34
+>> Insert q with 35
+>> Insert p with 36
 >> Insert s with 37
 >> Insert t with 38
 >> Insert u with 39
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert u with 40
+>> Insert t with 41
+>> Insert s with 42
 >> Insert v with 43
 >> Insert w with 44
 >> Insert x with 45
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert x with 46
+>> Insert w with 47
+>> Insert v with 48
 >> Insert y with 49
 >> Insert z with 50
->> Not inserted...! (-1)
->> Not inserted...! (-1)
->> bucket[ 0] --> z:[50] --> NULL
+>> Insert z with 51
+>> Insert y with 52
+>> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
@@ -87,31 +87,97 @@ bucket[32] --> NULL
 bucket[33] --> NULL
 bucket[34] --> NULL
 bucket[35] --> NULL
-bucket[36] --> a:[1] --> NULL
-bucket[37] --> b:[2] --> NULL
-bucket[38] --> c:[3] --> NULL
-bucket[39] --> d:[7] --> NULL
-bucket[40] --> e:[8] --> NULL
-bucket[41] --> f:[9] --> NULL
-bucket[42] --> g:[13] --> NULL
-bucket[43] --> h:[14] --> NULL
-bucket[44] --> i:[15] --> NULL
-bucket[45] --> j:[19] --> NULL
-bucket[46] --> k:[20] --> NULL
-bucket[47] --> l:[21] --> NULL
-bucket[48] --> m:[25] --> NULL
-bucket[49] --> n:[26] --> NULL
-bucket[50] --> o:[27] --> NULL
-bucket[51] --> p:[31] --> NULL
-bucket[52] --> q:[32] --> NULL
-bucket[53] --> r:[33] --> NULL
-bucket[54] --> s:[37] --> NULL
-bucket[55] --> t:[38] --> NULL
-bucket[56] --> u:[39] --> NULL
-bucket[57] --> v:[43] --> NULL
-bucket[58] --> w:[44] --> NULL
-bucket[59] --> x:[45] --> NULL
-bucket[60] --> y:[49] --> NULL
+bucket[36] --> NULL
+bucket[37] --> NULL
+bucket[38] --> NULL
+bucket[39] --> NULL
+bucket[40] --> NULL
+bucket[41] --> NULL
+bucket[42] --> NULL
+bucket[43] --> NULL
+bucket[44] --> NULL
+bucket[45] --> NULL
+bucket[46] --> NULL
+bucket[47] --> NULL
+bucket[48] --> NULL
+bucket[49] --> NULL
+bucket[50] --> NULL
+bucket[51] --> NULL
+bucket[52] --> NULL
+bucket[53] --> NULL
+bucket[54] --> NULL
+bucket[55] --> NULL
+bucket[56] --> NULL
+bucket[57] --> NULL
+bucket[58] --> NULL
+bucket[59] --> NULL
+bucket[60] --> NULL
+bucket[61] --> NULL
+bucket[62] --> NULL
+bucket[63] --> NULL
+bucket[64] --> NULL
+bucket[65] --> NULL
+bucket[66] --> NULL
+bucket[67] --> NULL
+bucket[68] --> NULL
+bucket[69] --> NULL
+bucket[70] --> NULL
+bucket[71] --> NULL
+bucket[72] --> NULL
+bucket[73] --> NULL
+bucket[74] --> NULL
+bucket[75] --> NULL
+bucket[76] --> NULL
+bucket[77] --> NULL
+bucket[78] --> NULL
+bucket[79] --> NULL
+bucket[80] --> NULL
+bucket[81] --> NULL
+bucket[82] --> NULL
+bucket[83] --> NULL
+bucket[84] --> NULL
+bucket[85] --> NULL
+bucket[86] --> NULL
+bucket[87] --> NULL
+bucket[88] --> NULL
+bucket[89] --> NULL
+bucket[90] --> NULL
+bucket[91] --> NULL
+bucket[92] --> NULL
+bucket[93] --> NULL
+bucket[94] --> NULL
+bucket[95] --> NULL
+bucket[96] --> NULL
+bucket[97] --> a:[1] --> a:[4] --> NULL
+bucket[98] --> b:[2] --> b:[5] --> NULL
+bucket[99] --> c:[3] --> c:[6] --> NULL
+bucket[100] --> d:[12] --> d:[7] --> NULL
+bucket[101] --> e:[11] --> e:[8] --> NULL
+bucket[102] --> f:[9] --> f:[10] --> NULL
+bucket[103] --> g:[18] --> g:[13] --> NULL
+bucket[104] --> h:[17] --> h:[14] --> NULL
+bucket[105] --> i:[16] --> i:[15] --> NULL
+bucket[106] --> j:[24] --> j:[19] --> NULL
+bucket[107] --> k:[23] --> k:[20] --> NULL
+bucket[108] --> l:[22] --> l:[21] --> NULL
+bucket[109] --> m:[25] --> m:[30] --> NULL
+bucket[110] --> n:[26] --> n:[29] --> NULL
+bucket[111] --> o:[27] --> o:[28] --> NULL
+bucket[112] --> p:[31] --> p:[36] --> NULL
+bucket[113] --> q:[32] --> q:[35] --> NULL
+bucket[114] --> r:[33] --> r:[34] --> NULL
+bucket[115] --> s:[37] --> s:[42] --> NULL
+bucket[116] --> t:[38] --> t:[41] --> NULL
+bucket[117] --> u:[39] --> u:[40] --> NULL
+bucket[118] --> v:[48] --> v:[43] --> NULL
+bucket[119] --> w:[47] --> w:[44] --> NULL
+bucket[120] --> x:[45] --> x:[46] --> NULL
+bucket[121] --> y:[52] --> y:[49] --> NULL
+bucket[122] --> z:[51] --> z:[50] --> NULL
+bucket[123] --> NULL
+bucket[124] --> NULL
+bucket[125] --> NULL
+bucket[126] --> NULL
 Type "quit <Enter>" to exit.
 >> Found "a" with 1.
 >> Not found.
@@ -119,12 +185,12 @@ Type "quit <Enter>" to exit.
 >> Not found.
 >> Found "c" with 3.
 >> Not found.
->> Found "d" with 7.
+>> Found "d" with 12.
 >> Not found.
->> Found "e" with 8.
+>> Found "e" with 11.
 >> Not found.
 >> Found "f" with 9.
 >> Not found.
->> Found "g" with 13.
+>> Found "g" with 18.
 >> Not found.
 >> 
