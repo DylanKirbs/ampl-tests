@@ -161,8 +161,12 @@ def check_file(file) -> tuple[int, int]:
 
         if function_match and line_num > 0:
             prev_line = lines[line_num - 1].strip()
-            comment_in_prev_line = "#" in prev_line or "//" in prev_line or "/*" in prev_line or "*/" in prev_line
-            if not comment_in_prev_line:
+            allowed_prev_line = prev_line == "\n"
+            allowed_prev_line |= "#" in prev_line
+            allowed_prev_line |= "//" in prev_line
+            allowed_prev_line |= "/*" in prev_line
+            allowed_prev_line |= "*/" in prev_line
+            if not allowed_prev_line:
                 rule = "function_without_empty_line_above"
                 errors += 1
                 log_cprint(LogColours.ERROR, rule, file,
