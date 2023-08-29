@@ -114,7 +114,7 @@ IS_STRING_RE = re.compile(r"([\'\"])(.*?)\1")
 IS_POINTER_RE = re.compile(
     r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
 IS_FUNCTION_DECLARATION_RE = re.compile(
-    r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\))")
+    r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\)).*[^;]$")
 
 
 def get_files():
