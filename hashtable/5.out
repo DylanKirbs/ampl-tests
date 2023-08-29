@@ -1,0 +1,354 @@
+Type "search <Enter>" to stop inserting and start searching.
+>> Insert 0 with 1
+>> Insert 1 with 2
+>> Insert 2 with 3
+>> Insert 3 with 4
+>> Insert 4 with 5
+>> Insert 5 with 6
+>> Insert 6 with 7
+>> Insert 7 with 8
+>> Insert 8 with 9
+>> Insert 9 with 10
+>> Insert 10 with 11
+>> Insert 11 with 12
+>> Insert 12 with 13
+>> Insert 13 with 14
+>> Insert 14 with 15
+>> Insert 15 with 16
+>> Insert 16 with 17
+>> Insert 17 with 18
+>> Insert 18 with 19
+>> Insert 19 with 20
+>> Insert 20 with 21
+>> Insert 21 with 22
+>> Insert 22 with 23
+>> Insert 23 with 24
+>> Insert 24 with 25
+>> Insert 25 with 26
+>> Insert 26 with 27
+>> Insert 27 with 28
+>> Insert 28 with 29
+>> Insert 29 with 30
+>> Insert 30 with 31
+>> Insert 31 with 32
+>> Insert 32 with 33
+>> Insert 33 with 34
+>> Insert 34 with 35
+>> Insert 35 with 36
+>> Insert 36 with 37
+>> Insert 37 with 38
+>> Insert 38 with 39
+>> Insert 39 with 40
+>> Insert 40 with 41
+>> Insert 41 with 42
+>> Insert 42 with 43
+>> Insert 43 with 44
+>> Insert 44 with 45
+>> Insert 45 with 46
+>> Insert 46 with 47
+>> Insert 47 with 48
+>> Insert 48 with 49
+>> Insert 49 with 50
+>> Insert 50 with 51
+>> Insert 51 with 52
+>> Insert 52 with 53
+>> Insert 53 with 54
+>> Insert 54 with 55
+>> Insert 55 with 56
+>> Insert 56 with 57
+>> Insert 57 with 58
+>> Insert 58 with 59
+>> Insert 59 with 60
+>> Insert 60 with 61
+>> Insert 61 with 62
+>> Insert 62 with 63
+>> Insert 63 with 64
+>> Insert 64 with 65
+>> Insert 65 with 66
+>> Insert 66 with 67
+>> Insert 67 with 68
+>> Insert 68 with 69
+>> Insert 69 with 70
+>> Insert 70 with 71
+>> Insert 71 with 72
+>> Insert 72 with 73
+>> Insert 73 with 74
+>> Insert 74 with 75
+>> Insert 75 with 76
+>> Insert 76 with 77
+>> Insert 77 with 78
+>> Insert 78 with 79
+>> Insert 79 with 80
+>> Insert 80 with 81
+>> Insert 81 with 82
+>> Insert 82 with 83
+>> Insert 83 with 84
+>> Insert 84 with 85
+>> Insert 85 with 86
+>> Insert 86 with 87
+>> Insert 87 with 88
+>> Insert 88 with 89
+>> Insert 89 with 90
+>> Insert 90 with 91
+>> Insert 91 with 92
+>> Insert 92 with 93
+>> Insert 93 with 94
+>> Insert 94 with 95
+>> Insert 95 with 96
+>> Insert 96 with 97
+>> Insert 97 with 98
+>> Insert 98 with 99
+>> Insert 99 with 100
+>> bucket[ 0] --> NULL
+bucket[ 1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+bucket[13] --> NULL
+bucket[14] --> NULL
+bucket[15] --> NULL
+bucket[16] --> NULL
+bucket[17] --> NULL
+bucket[18] --> NULL
+bucket[19] --> NULL
+bucket[20] --> NULL
+bucket[21] --> NULL
+bucket[22] --> NULL
+bucket[23] --> NULL
+bucket[24] --> NULL
+bucket[25] --> NULL
+bucket[26] --> NULL
+bucket[27] --> NULL
+bucket[28] --> NULL
+bucket[29] --> NULL
+bucket[30] --> NULL
+bucket[31] --> NULL
+bucket[32] --> NULL
+bucket[33] --> NULL
+bucket[34] --> NULL
+bucket[35] --> NULL
+bucket[36] --> NULL
+bucket[37] --> NULL
+bucket[38] --> NULL
+bucket[39] --> NULL
+bucket[40] --> NULL
+bucket[41] --> NULL
+bucket[42] --> NULL
+bucket[43] --> NULL
+bucket[44] --> NULL
+bucket[45] --> NULL
+bucket[46] --> NULL
+bucket[47] --> NULL
+bucket[48] --> 0:[1] --> NULL
+bucket[49] --> 1:[2] --> NULL
+bucket[50] --> 2:[3] --> NULL
+bucket[51] --> 3:[4] --> NULL
+bucket[52] --> 4:[5] --> NULL
+bucket[53] --> 5:[6] --> NULL
+bucket[54] --> 6:[7] --> NULL
+bucket[55] --> 7:[8] --> NULL
+bucket[56] --> 8:[9] --> NULL
+bucket[57] --> 9:[10] --> NULL
+bucket[58] --> NULL
+bucket[59] --> NULL
+bucket[60] --> NULL
+bucket[61] --> NULL
+bucket[62] --> NULL
+bucket[63] --> NULL
+bucket[64] --> NULL
+bucket[65] --> NULL
+bucket[66] --> NULL
+bucket[67] --> NULL
+bucket[68] --> NULL
+bucket[69] --> NULL
+bucket[70] --> NULL
+bucket[71] --> NULL
+bucket[72] --> NULL
+bucket[73] --> NULL
+bucket[74] --> NULL
+bucket[75] --> NULL
+bucket[76] --> NULL
+bucket[77] --> NULL
+bucket[78] --> NULL
+bucket[79] --> NULL
+bucket[80] --> NULL
+bucket[81] --> NULL
+bucket[82] --> NULL
+bucket[83] --> NULL
+bucket[84] --> NULL
+bucket[85] --> NULL
+bucket[86] --> NULL
+bucket[87] --> NULL
+bucket[88] --> NULL
+bucket[89] --> NULL
+bucket[90] --> NULL
+bucket[91] --> NULL
+bucket[92] --> NULL
+bucket[93] --> NULL
+bucket[94] --> NULL
+bucket[95] --> NULL
+bucket[96] --> NULL
+bucket[97] --> 10:[11] --> NULL
+bucket[98] --> 11:[12] --> 20:[21] --> NULL
+bucket[99] --> 30:[31] --> 12:[13] --> 21:[22] --> NULL
+bucket[100] --> 40:[41] --> 31:[32] --> 13:[14] --> 22:[23] --> NULL
+bucket[101] --> 41:[42] --> 32:[33] --> 14:[15] --> 23:[24] --> 50:[51] --> NULL
+bucket[102] --> 42:[43] --> 33:[34] --> 24:[25] --> 15:[16] --> 51:[52] --> 60:[61] --> NULL
+bucket[103] --> 43:[44] --> 34:[35] --> 25:[26] --> 16:[17] --> 52:[53] --> 61:[62] --> 70:[71] --> NULL
+bucket[104] --> 44:[45] --> 35:[36] --> 26:[27] --> 17:[18] --> 53:[54] --> 62:[63] --> 71:[72] --> 80:[81] --> NULL
+bucket[105] --> 45:[46] --> 36:[37] --> 27:[28] --> 18:[19] --> 54:[55] --> 63:[64] --> 72:[73] --> 81:[82] --> 90:[91] --> NULL
+bucket[106] --> 37:[38] --> 28:[29] --> 19:[20] --> 46:[47] --> 55:[56] --> 64:[65] --> 73:[74] --> 82:[83] --> 91:[92] --> NULL
+bucket[107] --> 38:[39] --> 29:[30] --> 47:[48] --> 56:[57] --> 65:[66] --> 74:[75] --> 83:[84] --> 92:[93] --> NULL
+bucket[108] --> 39:[40] --> 48:[49] --> 57:[58] --> 66:[67] --> 75:[76] --> 84:[85] --> 93:[94] --> NULL
+bucket[109] --> 49:[50] --> 58:[59] --> 67:[68] --> 76:[77] --> 85:[86] --> 94:[95] --> NULL
+bucket[110] --> 59:[60] --> 68:[69] --> 77:[78] --> 86:[87] --> 95:[96] --> NULL
+bucket[111] --> 96:[97] --> 69:[70] --> 78:[79] --> 87:[88] --> NULL
+bucket[112] --> 97:[98] --> 79:[80] --> 88:[89] --> NULL
+bucket[113] --> 98:[99] --> 89:[90] --> NULL
+bucket[114] --> 99:[100] --> NULL
+bucket[115] --> NULL
+bucket[116] --> NULL
+bucket[117] --> NULL
+bucket[118] --> NULL
+bucket[119] --> NULL
+bucket[120] --> NULL
+bucket[121] --> NULL
+bucket[122] --> NULL
+bucket[123] --> NULL
+bucket[124] --> NULL
+bucket[125] --> NULL
+bucket[126] --> NULL
+bucket[127] --> NULL
+bucket[128] --> NULL
+bucket[129] --> NULL
+bucket[130] --> NULL
+bucket[131] --> NULL
+bucket[132] --> NULL
+bucket[133] --> NULL
+bucket[134] --> NULL
+bucket[135] --> NULL
+bucket[136] --> NULL
+bucket[137] --> NULL
+bucket[138] --> NULL
+bucket[139] --> NULL
+bucket[140] --> NULL
+bucket[141] --> NULL
+bucket[142] --> NULL
+bucket[143] --> NULL
+bucket[144] --> NULL
+bucket[145] --> NULL
+bucket[146] --> NULL
+bucket[147] --> NULL
+bucket[148] --> NULL
+bucket[149] --> NULL
+bucket[150] --> NULL
+bucket[151] --> NULL
+bucket[152] --> NULL
+bucket[153] --> NULL
+bucket[154] --> NULL
+bucket[155] --> NULL
+bucket[156] --> NULL
+bucket[157] --> NULL
+bucket[158] --> NULL
+bucket[159] --> NULL
+bucket[160] --> NULL
+bucket[161] --> NULL
+bucket[162] --> NULL
+bucket[163] --> NULL
+bucket[164] --> NULL
+bucket[165] --> NULL
+bucket[166] --> NULL
+bucket[167] --> NULL
+bucket[168] --> NULL
+bucket[169] --> NULL
+bucket[170] --> NULL
+bucket[171] --> NULL
+bucket[172] --> NULL
+bucket[173] --> NULL
+bucket[174] --> NULL
+bucket[175] --> NULL
+bucket[176] --> NULL
+bucket[177] --> NULL
+bucket[178] --> NULL
+bucket[179] --> NULL
+bucket[180] --> NULL
+bucket[181] --> NULL
+bucket[182] --> NULL
+bucket[183] --> NULL
+bucket[184] --> NULL
+bucket[185] --> NULL
+bucket[186] --> NULL
+bucket[187] --> NULL
+bucket[188] --> NULL
+bucket[189] --> NULL
+bucket[190] --> NULL
+bucket[191] --> NULL
+bucket[192] --> NULL
+bucket[193] --> NULL
+bucket[194] --> NULL
+bucket[195] --> NULL
+bucket[196] --> NULL
+bucket[197] --> NULL
+bucket[198] --> NULL
+bucket[199] --> NULL
+bucket[200] --> NULL
+bucket[201] --> NULL
+bucket[202] --> NULL
+bucket[203] --> NULL
+bucket[204] --> NULL
+bucket[205] --> NULL
+bucket[206] --> NULL
+bucket[207] --> NULL
+bucket[208] --> NULL
+bucket[209] --> NULL
+bucket[210] --> NULL
+bucket[211] --> NULL
+bucket[212] --> NULL
+bucket[213] --> NULL
+bucket[214] --> NULL
+bucket[215] --> NULL
+bucket[216] --> NULL
+bucket[217] --> NULL
+bucket[218] --> NULL
+bucket[219] --> NULL
+bucket[220] --> NULL
+bucket[221] --> NULL
+bucket[222] --> NULL
+bucket[223] --> NULL
+bucket[224] --> NULL
+bucket[225] --> NULL
+bucket[226] --> NULL
+bucket[227] --> NULL
+bucket[228] --> NULL
+bucket[229] --> NULL
+bucket[230] --> NULL
+bucket[231] --> NULL
+bucket[232] --> NULL
+bucket[233] --> NULL
+bucket[234] --> NULL
+bucket[235] --> NULL
+bucket[236] --> NULL
+bucket[237] --> NULL
+bucket[238] --> NULL
+bucket[239] --> NULL
+bucket[240] --> NULL
+bucket[241] --> NULL
+bucket[242] --> NULL
+bucket[243] --> NULL
+bucket[244] --> NULL
+bucket[245] --> NULL
+bucket[246] --> NULL
+bucket[247] --> NULL
+bucket[248] --> NULL
+bucket[249] --> NULL
+bucket[250] --> NULL
+Type "quit <Enter>" to exit.
+>> 
