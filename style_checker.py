@@ -159,7 +159,7 @@ def check_file(file) -> tuple[int, int]:
             log_cprint(LogColours.ERROR, rule, file, line_num,
                        stripped_line, stripped_line)
 
-        if function_match and (lines[line_num - 1] != "\n" or not lines[line_num - 1].endswith("*/")):
+        if function_match and not (lines[line_num - 1] == "\n" or '*/' in lines[line_num - 1]):
             rule = "function_without_empty_line_above"
             errors += 1
             log_cprint(LogColours.ERROR, rule, file,
