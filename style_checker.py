@@ -161,7 +161,7 @@ def check_file(file) -> tuple[int, int]:
 
         if function_match and line_num > 0:
             prev_line = lines[line_num - 1].strip()
-            allowed_prev_line = prev_line == "\n"
+            allowed_prev_line = prev_line == ""
             allowed_prev_line |= "#" in prev_line
             allowed_prev_line |= "//" in prev_line
             allowed_prev_line |= "/*" in prev_line
