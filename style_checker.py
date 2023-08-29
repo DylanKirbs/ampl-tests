@@ -114,7 +114,7 @@ IS_STRING_RE = re.compile(r"([\'\"])(.*?)\1")
 IS_POINTER_RE = re.compile(
     r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
 IS_FUNCTION_DECLARATION_RE = re.compile(
-    r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\)).*[^;]$")
+    r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\))[^;]*$")
 
 
 def get_files():
@@ -161,8 +161,8 @@ def check_file(file) -> tuple[int, int]:
 
         if function_match and lines[line_num - 1] != "\n":
             rule = "function_without_empty_line_above"
-            warnings += 1
-            log_cprint(LogColours.WARNING, rule, file, line_num,
+            errors += 1
+            log_cprint(LogColours.ERROR, rule, file, line_num,
                        line.replace('  ', '__'), "__")
 
         if function_match and not lines[line_num + 1].startswith("{"):
