@@ -270,15 +270,26 @@ class Test:
         :return: True if both diffs passed, False otherwise
         """
 
-        diff_flags = '--side-by-side --suppress-common-lines' if self._side_by_side else ''
+        side_by_side_flags = [
+            '--side-by-side',
+            '--suppress-common-lines'
+        ]
 
         passed = True
         for output_type in ['out', 'err']:
-            cmd_args = f'diff {diff_flags} {self._temp_dir}/{test_number}.{output_type} {self._module_dir}/{test_number}.{output_type}'
+
+            cmd_args = [
+                'diff',
+                f'{self._temp_dir}/{test_number}.{output_type}',
+                f'{self._module_dir}/{test_number}.{output_type}'
+            ]
+
+            if self._side_by_side:
+                cmd_args = cmd_args[:1] + side_by_side_flags + cmd_args[1:]
+
             logging.debug(f'Diff command for std{output_type}: {cmd_args}')
             diff_proc = subprocess.Popen(
                 cmd_args,
-                shell=True,
                 cwd=os.getcwd()
             )
             logging.debug(f'Diff Process ID: {diff_proc.pid}')
