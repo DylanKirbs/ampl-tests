@@ -115,6 +115,7 @@ IS_POINTER_RE = re.compile(
     r"(\b(void|int|char|double|[A-Z]\w+)\s*\*[),]*\s*\w*)")
 IS_FUNCTION_DECLARATION_RE = re.compile(
     r"(\b(void|int|char|double|[A-Z]\w+)\s+\w+\s*\(([^;]+)\))[^;]*$")
+IS_NON_ASCII = re.compile(r"[^\x00-\x7F]")
 
 
 def get_files():
@@ -152,12 +153,19 @@ def check_file(file) -> tuple[int, int]:
         string_match = IS_STRING_RE.search(line)
         pointer_match = IS_POINTER_RE.search(line)
         function_match = IS_FUNCTION_DECLARATION_RE.search(line)
+        non_ascii_match = IS_NON_ASCII.search(line)
 
         if line.startswith("  ", 0, 4) and not line.startswith(chr(9)):
             rule = "invalid_line_indent_with_spaces"
             errors += 1
             log_cprint(LogColours.ERROR, rule, file, line_num,
                        stripped_line, stripped_line)
+
+        if non_ascii_match:
+            rule = "non_ascii_character"
+            errors += 1
+            log_cprint(LogColours.ERROR, rule, file, line_num,
+                       stripped_line, non_ascii_match.group())
 
         if function_match and line_num > 0:
             prev_line = lines[line_num - 1].strip()
