@@ -1,0 +1,50 @@
+type "search <Enter>" to stop inserting and start searching.
+Actions
+=======
+insert <id> -- insert <id> into current table
+find <id>   -- find <id> in current table
+open <id>   -- open subroutine <id> table
+close       -- close current subroutine table
+print       -- print current symbol table
+quit        -- quit program
+>> bucket[ 0] --> NULL
+bucket[ 1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+>> >> bucket[ 0] --> NULL
+bucket[ 1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+>> >> Identifier already exists ... not added.
+>> >> >> bucket[ 0] --> NULL
+bucket[ 1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> a@0[integer] --> NULL
+bucket[ 7] --> b@2[integer] --> NULL
+bucket[ 8] --> c@3[integer] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+>> >> Goodbye!

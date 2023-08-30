@@ -1,0 +1,10 @@
+print
+open a
+print
+insert a
+insert a
+insert b
+insert c
+print
+close
+quit
