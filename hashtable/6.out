@@ -1,50 +1,50 @@
 Type "search <Enter>" to stop inserting and start searching.
 >> Insert a with 1
->> Insert a with 2
->> Insert a with 3
->> Insert a with 4
->> Insert a with 5
->> Insert a with 6
->> Insert a with 7
->> Insert a with 8
->> Insert a with 9
->> Insert a with 10
->> Insert a with 11
->> Insert a with 12
->> Insert a with 13
->> Insert a with 14
->> Insert a with 15
->> Insert a with 16
->> Insert a with 17
->> Insert a with 18
->> Insert a with 19
->> Insert a with 20
->> Insert a with 21
->> Insert a with 22
->> Insert a with 23
->> Insert a with 24
->> Insert a with 25
->> Insert a with 26
->> Insert a with 27
->> Insert a with 28
->> Insert a with 29
->> Insert a with 30
->> Insert a with 31
->> Insert a with 32
->> Insert a with 33
->> Insert a with 34
->> Insert a with 35
->> Insert a with 36
->> Insert a with 37
->> Insert a with 38
->> Insert a with 39
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> a:[39] --> NULL
+bucket[ 6] --> a:[1] --> NULL
 bucket[ 7] --> NULL
 bucket[ 8] --> NULL
 bucket[ 9] --> NULL

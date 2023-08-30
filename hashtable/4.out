@@ -1,83 +1,83 @@
 Type "search <Enter>" to stop inserting and start searching.
 >> Insert a with 1
->> Insert a with 2
->> Insert a with 3
->> Insert a with 4
->> Insert a with 5
->> Insert a with 6
->> Insert a with 7
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> Insert b with 8
->> Insert a with 9
->> Insert a with 10
->> Insert a with 11
->> Insert a with 12
->> Insert a with 13
->> Insert a with 14
->> Insert a with 15
->> Insert a with 16
->> Insert a with 17
->> Insert a with 18
->> Insert a with 19
->> Insert a with 20
->> Insert a with 21
->> Insert a with 22
->> Insert a with 23
->> Insert a with 24
->> Insert a with 25
->> Insert a with 26
->> Insert a with 27
->> Insert a with 28
->> Insert a with 29
->> Insert a with 30
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> Insert c with 31
->> Insert a with 32
->> Insert a with 33
->> Insert a with 34
->> Insert a with 35
->> Insert a with 36
->> Insert a with 37
->> Insert a with 38
->> Insert a with 39
->> Insert a with 40
->> Insert a with 41
->> Insert a with 42
->> Insert a with 43
->> Insert a with 44
->> Insert a with 45
->> Insert a with 46
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> Insert d with 47
->> Insert a with 48
->> Insert a with 49
->> Insert a with 50
->> Insert a with 51
->> Insert a with 52
->> Insert a with 53
->> Insert a with 54
->> Insert a with 55
->> Insert a with 56
->> Insert a with 57
->> Insert a with 58
->> Insert a with 59
->> Insert a with 60
->> Insert a with 61
->> Insert a with 62
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> Insert e with 63
->> Insert a with 64
->> Insert a with 65
->> Insert a with 66
->> Insert a with 67
->> Insert a with 68
->> Insert a with 69
->> Insert a with 70
->> Insert a with 71
->> Insert a with 72
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
 >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> a:[72] --> NULL
+bucket[ 6] --> a:[1] --> NULL
 bucket[ 7] --> b:[8] --> NULL
 bucket[ 8] --> c:[31] --> NULL
 bucket[ 9] --> d:[47] --> NULL
@@ -85,7 +85,7 @@ bucket[10] --> e:[63] --> NULL
 bucket[11] --> NULL
 bucket[12] --> NULL
 Type "quit <Enter>" to exit.
->> Found "a" with 72.
+>> Found "a" with 1.
 >> Found "b" with 8.
 >> Found "c" with 31.
 >> Found "d" with 47.
