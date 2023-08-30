@@ -104,7 +104,7 @@ class Test:
         self._TIMEOUT = 10
         self._MEM_TIMEOUT = 20
         self._TIMEOUT_HANDLING_TIMEOUT = 1
-        self._REDIRECT_TESTS = ['hashtable']
+        self._REDIRECT_TESTS = ['hashtable', 'symboltable']
 
     def compile(self) -> bool:
         """

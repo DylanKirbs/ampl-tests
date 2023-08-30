@@ -1,0 +1,13 @@
+insert a
+insert b
+insert c
+open abc
+insert a
+insert q
+find a
+find q
+close
+find a
+find b
+find c
+quit
