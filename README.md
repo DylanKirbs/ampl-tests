@@ -130,6 +130,35 @@ info diff
 > ```
 > The tests can then be executed using the script as normal.
 
+> **NOTE** <br>
+> The  symbol table tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
+> ```Makefile
+> DFLAGS = # -DDEBUG_PARSER -DDEBUG_SYMBOL_TABLE ...
+> ```
+> You must also set up your ```shift_hash``` function in ```symboltable.c``` like this:
+> ```c
+> static unsigned int shift_hash(void *key, unsigned int size)
+> {
+> #ifdef DEBUG_SYMBOL_TABLE
+> 	char *keystr = (char *) key;
+> 	unsigned int i, hash, length;
+>
+> 	hash = 0;
+> 	length = strlen(keystr);
+> 	for (i = 0; i < length; i++) {
+> 		hash += keystr[i];
+> 	}
+>
+> 	return (hash % size);
+>
+> #else
+> 	/* TODO insert your actual hash function here */
+> #endif /* DEBUG_SYMBOL_TABLE */
+> }
+> ```
+>
+> You can then use the test script as normal, and whenever you want to switch back to using your own hash function you only need to re-comment the debug flags in the Makefile.
+
 > Test Script Changelog Overview <br>
 > - 1.0.0: Initial Release
 > - 2.0.0: Support for timeouts
