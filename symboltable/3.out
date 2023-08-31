@@ -1,0 +1,12 @@
+type "search <Enter>" to stop inserting and start searching.
+Actions
+=======
+insert <id> -- insert <id> into current table
+find <id>   -- find <id> in current table
+open <id>   -- open subroutine <id> table
+close       -- close current subroutine table
+print       -- print current symbol table
+quit        -- quit program
+>> >> Already in subroutine ... not added.
+>> Closed subroutine.
+Goodbye!
