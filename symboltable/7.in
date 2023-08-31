@@ -1,0 +1,12 @@
+insert abcde
+insert bcdea
+insert cdeab
+insert deabc
+insert eabcd
+insert abcde
+insert bcdea
+insert cdeab
+insert deabc
+insert eabcd
+print
+quit
