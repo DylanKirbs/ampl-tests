@@ -240,5 +240,6 @@ PR's will no longer be merged if they do not follow this naming convention.
 | Matthew Stein     | 25400800       |
 | Louis Wilkinson   | 25948873       |
 | Luke Leppan       | 25849611       |
+| Liam Bennett      | 26620863       |
 
 Your contributions make this project possible!
