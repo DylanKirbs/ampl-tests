@@ -1,0 +1,26 @@
+Type "search <Enter>" to stop inserting and start searching.
+>> Insert abcde with 1
+>> Insert bcdea with 2
+>> Insert cdeab with 3
+>> Insert deabc with 4
+>> Insert eabcd with 5
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> Not inserted...! (-1)
+>> bucket[ 0] --> NULL
+bucket[ 1] --> eabcd:[5] --> deabc:[4] --> cdeab:[3] --> bcdea:[2] --> abcde:[1] --> NULL
+bucket[ 2] --> NULL
+bucket[ 3] --> NULL
+bucket[ 4] --> NULL
+bucket[ 5] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> NULL
+bucket[ 8] --> NULL
+bucket[ 9] --> NULL
+bucket[10] --> NULL
+bucket[11] --> NULL
+bucket[12] --> NULL
+Type "quit <Enter>" to exit.
+>> 
