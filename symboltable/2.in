@@ -1,0 +1,8 @@
+open abc
+open def
+open ghi
+find a
+find q
+close
+find abc
+quit
