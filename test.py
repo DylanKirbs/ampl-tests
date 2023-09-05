@@ -88,7 +88,8 @@ class Test:
 
         # Name
         self._make_name = f'test{executable}'
-        self._exe_name = f'test{executable}' if executable in ['parser', 'typechecking'] else 'amplc'
+        self._exe_name = f'test{executable}' if executable not in [
+            'parser', 'typechecking'] else 'amplc'
 
         # Flags
         self._perform_mem_check = perform_mem_check
