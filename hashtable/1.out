@@ -52,7 +52,7 @@ bucket[23] --> NULL
 bucket[24] --> NULL
 bucket[25] --> NULL
 bucket[26] --> NULL
-bucket[27] --> x:[24] --> NULL
+bucket[27] --> NULL
 bucket[28] --> NULL
 bucket[29] --> NULL
 bucket[30] --> NULL
@@ -84,11 +84,11 @@ bucket[55] --> t:[20] --> NULL
 bucket[56] --> u:[21] --> NULL
 bucket[57] --> v:[22] --> NULL
 bucket[58] --> w:[23] --> NULL
-bucket[59] --> NULL
+bucket[59] --> x:[24] --> NULL
 bucket[60] --> y:[25] --> NULL
 Type "quit <Enter>" to exit.
 >> Found "a" with 1.
->> Not found.
+>> Found "x" with 24.
 >> Found "h" with 8.
 >> Not found.
 >> 
