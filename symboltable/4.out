@@ -29,7 +29,7 @@ bucket[18] --> NULL
 bucket[19] --> NULL
 bucket[20] --> should@770[integer] --> NULL
 bucket[21] --> NULL
-bucket[22] --> source@806[integer] --> since@779[integer] --> NULL
+bucket[22] --> since@779[integer] --> NULL
 bucket[23] --> sexual@763[integer] --> share@765[integer] --> NULL
 bucket[24] --> stage@818[integer] --> staff@817[integer] --> spring@816[integer] --> speak@810[integer] --> significant@775[integer] --> NULL
 bucket[25] --> NULL
@@ -54,7 +54,7 @@ bucket[43] --> NULL
 bucket[44] --> still@828[integer] --> NULL
 bucket[45] --> sound@805[integer] --> NULL
 bucket[46] --> NULL
-bucket[47] --> NULL
+bucket[47] --> source@806[integer] --> NULL
 bucket[48] --> NULL
 bucket[49] --> shoot@767[integer] --> NULL
 bucket[50] --> start@822[integer] --> NULL
@@ -63,7 +63,7 @@ bucket[52] --> short@768[integer] --> sing@780[integer] --> sign@774[integer] --
 bucket[53] --> NULL
 bucket[54] --> NULL
 bucket[55] --> south@807[integer] --> some@796[integer] --> NULL
-bucket[56] --> site@784[integer] --> skin@789[integer] --> NULL
+bucket[56] --> skin@789[integer] --> site@784[integer] --> NULL
 bucket[57] --> NULL
 bucket[58] --> song@802[integer] --> NULL
 bucket[59] --> NULL
@@ -454,7 +454,7 @@ bucket[314] --> eat@247[integer] --> dog@234[integer] --> lie@466[integer] --> N
 bucket[315] --> gas@341[integer] --> job@433[integer] --> off@572[integer] --> red@701[integer] --> NULL
 bucket[316] --> air@29[integer] --> man@491[integer] --> NULL
 bucket[317] --> see@749[integer] --> NULL
-bucket[318] --> him@381[integer] --> day@201[integer] --> NULL
+bucket[318] --> day@201[integer] --> him@381[integer] --> NULL
 bucket[319] --> her@377[integer] --> ask@62[integer] --> bit@101[integer] --> old@581[integer] --> NULL
 bucket[320] --> get@344[integer] --> arm@55[integer] --> NULL
 bucket[321] --> the@871[integer] --> NULL
@@ -799,7 +799,7 @@ bucket[659] --> within@977[integer] --> follow@321[integer] --> author@69[intege
 bucket[660] --> amount@41[integer] --> lawyer@452[integer] --> NULL
 bucket[661] --> others@595[integer] --> NULL
 bucket[662] --> NULL
-bucket[663] --> artist@60[integer] --> person@625[integer] --> street@834[integer] --> NULL
+bucket[663] --> street@834[integer] --> artist@60[integer] --> person@625[integer] --> NULL
 bucket[664] --> window@974[integer] --> expert@284[integer] --> NULL
 bucket[665] --> summer@848[integer] --> memory@510[integer] --> option@590[integer] --> NULL
 bucket[666] --> worker@983[integer] --> NULL

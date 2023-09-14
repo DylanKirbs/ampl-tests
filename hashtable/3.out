@@ -22,7 +22,7 @@ Type "search <Enter>" to stop inserting and start searching.
 >> Insert l with 21
 >> Not inserted...! (-1)
 >> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert j with 24
 >> Insert m with 25
 >> Insert n with 26
 >> Insert o with 27
@@ -45,7 +45,7 @@ Type "search <Enter>" to stop inserting and start searching.
 >> Insert w with 44
 >> Insert x with 45
 >> Not inserted...! (-1)
->> Not inserted...! (-1)
+>> Insert w with 47
 >> Not inserted...! (-1)
 >> Insert y with 49
 >> Insert z with 50
@@ -77,7 +77,7 @@ bucket[22] --> NULL
 bucket[23] --> NULL
 bucket[24] --> NULL
 bucket[25] --> NULL
-bucket[26] --> NULL
+bucket[26] --> w:[44] --> NULL
 bucket[27] --> NULL
 bucket[28] --> NULL
 bucket[29] --> NULL
@@ -96,7 +96,7 @@ bucket[41] --> f:[9] --> NULL
 bucket[42] --> g:[13] --> NULL
 bucket[43] --> h:[14] --> NULL
 bucket[44] --> i:[15] --> NULL
-bucket[45] --> j:[19] --> NULL
+bucket[45] --> j:[24] --> j:[19] --> NULL
 bucket[46] --> k:[20] --> NULL
 bucket[47] --> l:[21] --> NULL
 bucket[48] --> m:[25] --> NULL
@@ -109,7 +109,7 @@ bucket[54] --> s:[37] --> NULL
 bucket[55] --> t:[38] --> NULL
 bucket[56] --> u:[39] --> NULL
 bucket[57] --> v:[43] --> NULL
-bucket[58] --> w:[44] --> NULL
+bucket[58] --> w:[47] --> NULL
 bucket[59] --> x:[45] --> NULL
 bucket[60] --> y:[49] --> NULL
 Type "quit <Enter>" to exit.

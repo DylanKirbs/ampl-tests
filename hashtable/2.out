@@ -1317,7 +1317,7 @@ bucket[314] --> eat:[248] --> dog:[235] --> lie:[467] --> NULL
 bucket[315] --> gas:[342] --> job:[434] --> off:[573] --> red:[702] --> NULL
 bucket[316] --> air:[30] --> man:[492] --> NULL
 bucket[317] --> see:[750] --> NULL
-bucket[318] --> him:[382] --> day:[202] --> NULL
+bucket[318] --> day:[202] --> him:[382] --> NULL
 bucket[319] --> her:[378] --> ask:[63] --> bit:[102] --> old:[582] --> NULL
 bucket[320] --> she:[768] --> get:[345] --> arm:[56] --> NULL
 bucket[321] --> the:[873] --> NULL
