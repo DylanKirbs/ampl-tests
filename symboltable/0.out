@@ -7,9 +7,9 @@ open <id>   -- open subroutine <id> table
 close       -- close current subroutine table
 print       -- print current symbol table
 quit        -- quit program
->> >> >> >> >> >> >> "a" found at offset 3
->> "q" found at offset 4
->> >> "a" found at offset 0
->> "b" found at offset 1
->> "c" found at offset 2
+>> >> >> >> >> >> >> "a" found at offset 1
+>> "q" found at offset 2
+>> >> "a" found at offset 1
+>> "b" found at offset 2
+>> "c" found at offset 3
 >> Goodbye!
