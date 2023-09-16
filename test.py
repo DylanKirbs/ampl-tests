@@ -232,7 +232,7 @@ class Test:
                 logging.error(f'Test {test_number} failed memory check')
                 return False
             elif valgrind_proc.returncode != 0:
-                logging.warning(
+                logging.debug(
                     "Unable to determine memory check status, execution returned non-zero exit status.")
             return True
         except subprocess.TimeoutExpired:
