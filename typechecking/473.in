@@ -1,0 +1,14 @@
+program InvalidFunctionReturnType:
+    is_even(int x)->bool:
+        int array arr;
+        let arr = array 10;
+        if x * 2 = 0:
+            return true
+        elif arr[x] + x < arr[x] - x:
+        	return true
+        else:
+            return 5
+            end
+    main:
+        bool b;
+        let b = is_even(10)

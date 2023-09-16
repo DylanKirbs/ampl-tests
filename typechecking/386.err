@@ -1,0 +1,1 @@
+amplc: 386.in:5:12: error: incompatible types (expected boolean, found integer) for 'if' guard

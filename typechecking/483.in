@@ -1,0 +1,4 @@
+program TypeMismatch3:
+    main:
+        int array x;
+        let x = not x

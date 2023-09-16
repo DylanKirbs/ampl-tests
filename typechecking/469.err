@@ -1,0 +1,1 @@
+amplc: 469.in:5:16: error: incompatible types (expected integer, found boolean) for operator '<'

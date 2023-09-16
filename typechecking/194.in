@@ -1,0 +1,7 @@
+program error247:
+
+inc(int i) -> int:
+    return i + 1
+
+main:
+    output(inc())

@@ -1,0 +1,13 @@
+program TooManyArguments:
+    add(int x, int y) -> int:
+    int result;
+        let result = x + y;
+        return result
+
+    main:
+    int x, y, z;
+        let x = 78;
+        let y = 12;
+        let z = 5;
+        let z = add(x, y, z); {// Calling a function with too many arguments t}
+        chillax

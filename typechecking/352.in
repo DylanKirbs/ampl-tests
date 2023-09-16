@@ -1,0 +1,8 @@
+
+    program test :
+        main:
+        int x;
+        int array myArray;
+        let x = myArray + 1; # Error: Illegal array operation
+    
+    

@@ -1,0 +1,4 @@
+program NotAFunction2:
+    main:
+        int array arr;
+        arr(5);

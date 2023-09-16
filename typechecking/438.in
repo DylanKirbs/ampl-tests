@@ -1,0 +1,5 @@
+program AssignNewArray3:
+    main:
+        int array arr;
+        let arr[2] = 10;
+        let arr[2] = array 10;

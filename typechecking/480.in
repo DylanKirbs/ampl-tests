@@ -1,0 +1,22 @@
+program AddAndSubtract:
+    add(int x, int y) -> int: {change to int to test nesting of functions}
+    int result;
+    int add;
+        let result = x + y;
+        return result {mismatch here with bool and int but didnt catch it yet}
+
+    subtract(int x, int add) -> int:
+    	int result;
+        let result = x - y;
+        return result
+
+    main:
+    	int x, y, sum, difference;
+        let x = y;
+        let y = x;
+        input(x);
+        let sum = add(subtract(x, y), y);
+        let difference = subtract(x, y);
+        output("The sum of ".. x.. " and ".. y.. " is ".. sum);
+        output("The difference between ".. x.. " and ".. y.. " is ".. difference)
+        {Not valid 6:41: error: incompatible types}

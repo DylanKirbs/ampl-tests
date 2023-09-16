@@ -1,0 +1,11 @@
+program Factorial:
+    main:
+        int n, result,i;
+        input(n);
+        let result = 1;
+        let i = 1;
+        while i <= n:
+            let result = result * i;
+            let i = i + 1;
+        output("The factorial of ".. n.. " is ".. result)
+        end

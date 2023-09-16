@@ -1,0 +1,8 @@
+program AddTwoNumbers:
+    main:
+    int x, y, sum;
+        let x = 45;
+        let y = -true;
+        let sum = x + y;
+        output("The sum of ".. x.. " and ".. y.. " is ".. sum)
+        {Not valid code}

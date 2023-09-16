@@ -1,0 +1,5 @@
+program ArraySizeMustBeInt2:
+    main:
+    	int array arr1;
+        int array arr;
+        let arr = array arr1

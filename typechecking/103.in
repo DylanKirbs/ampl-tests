@@ -1,0 +1,26 @@
+program relop_test:
+  main:
+    output("Welcome to the Relational Operator Test!")
+    
+    let x = 10
+    let y = 5
+    
+    if x = y:
+      output("x is equal to y.")
+    
+    if x >= y:
+      output("x is greater than or equal to y.")
+    
+    if x > y:
+      output("x is greater than y.")
+    
+    if x <= y:
+      output("x is less than or equal to y.")
+    
+    if x < y:
+      output("x is less than y.")
+    
+    if x /= y:
+      output("x is not equal to y.")
+    
+    output("Relational operator testing complete!")

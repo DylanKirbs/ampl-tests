@@ -1,0 +1,9 @@
+program error224:
+main:
+    int i;
+
+    input(i);
+
+    else:
+        output("negative or zero")
+        end

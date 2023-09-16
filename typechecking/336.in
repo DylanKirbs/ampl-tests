@@ -1,0 +1,10 @@
+program test205:
+main:
+    int array i;
+
+    let i[0] = 2;
+    let i[1] = 3;
+    let i[2] = 5;
+    output(i[1]);
+    output(i[2]);
+    output(i[0])

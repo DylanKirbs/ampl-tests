@@ -1,0 +1,16 @@
+program error214:
+main:
+    int i;
+    int array a;
+
+    let i = -2;
+    while i + 2 < = 7:
+        let a[i+2] = i * 17;
+        let i = i + 1
+    end;
+
+    let i = 0;
+    while i < 7:
+        output(a[i];
+        let i = i + 1
+    end

@@ -1,0 +1,11 @@
+program TooFewArguments:
+    add(int x, int y) -> bool:
+    int result;
+        let result = x + y;
+        return true
+
+    main:
+    int x;
+    bool y;
+        let x = 76;
+        let x = add(x)  {Weird stuff if let is left out Calling ew arguments}

@@ -1,0 +1,10 @@
+<program> at 2:5.
+  <subdef> at 3:6.
+    <type> at 3:21.
+    </type> at 3:25.
+    <type> at 3:29.
+    </type> at 3:33.
+    <body> at 5:9.
+      <statements> at 5:9.
+        <statement> at 5:9.
+          <return> at 5:9.

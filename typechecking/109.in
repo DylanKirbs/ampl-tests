@@ -1,0 +1,18 @@
+program playful_jab_at_ampl:
+  main:
+    output("A Light-Hearted Nudge at AMPL, Our Loyal Language!")
+    
+    let language = "AMPL"
+    let complexity = "mind-boggling"
+    let syntax = "mysteriously logical"
+    
+    output("Ah, " .. language .. ", you and your " .. complexity .. " ways!")
+    output("Your syntax is as " .. syntax .. " as solving a puzzle in the dark.")
+    
+    output("It's like trying to find the 'exit' in a maze of variables and constraints.")
+    output("But hey, who needs straightforward when we have " .. language .. "!")
+    
+    output("Keep on puzzling, " .. language .. "! We'll figure you out eventually.")
+    
+    output("Playful jab at " .. language .. " complete!")
+

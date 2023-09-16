@@ -1,0 +1,23 @@
+program chillax_coding:
+  main:
+    output("Hey there, coding enthusiast! Ready to chillax and code?")
+    output("Let's embark on a serene coding journey.")
+    
+    let task_count = input("How many tasks are on your coding horizon? ")
+    
+    let tasks_completed = 0
+    let current_task = 1
+    
+    while current_task <= task_count:
+      output("Task number " .. current_task .. ":")
+      
+      let task_description = input("Lay out the lowdown on this coding endeavor: ")
+      
+      output("Chillax and code: " .. task_description)
+      let tasks_completed = tasks_completed + 1
+      let current_task = current_task + 1
+    end
+    
+    output("Coding journey complete. Time to kick back and relish the tranquility!")
+    output("You've successfully chillaxed your way through " .. tasks_completed .. " tasks.")
+

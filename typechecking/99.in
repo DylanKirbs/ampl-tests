@@ -1,0 +1,24 @@
+program variable_adventure:
+  main:
+    output("Welcome to the Variable Adventure!")
+    
+    let a = 5
+    let b = 7
+    let result = a * b + 2
+    
+    output("Initial values: a = " .. a .. ", b = " .. b)
+    output("Result of a * b + 2: " .. result)
+    
+    let choice = input("Choose 1 to add, 2 to subtract: ")
+    
+    if choice == 1:
+      let c = a + b
+      output("Result of adding a and b: " .. c)
+    else if choice == 2:
+      let d = a - b
+      output("Result of subtracting b from a: " .. d)
+    else:
+      output("Invalid choice. Please choose 1 or 2.")
+    
+    output("Thank you for your variable adventure!")
+

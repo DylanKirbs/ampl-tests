@@ -1,0 +1,5 @@
+program ScalarVariableExpected3:
+    main:
+        int array arr;
+        int array arr2;
+        let arr[5] = arr2

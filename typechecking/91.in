@@ -1,0 +1,26 @@
+program quiz_game:
+  main:
+    output("Welcome to the Quiz Game!")
+    let score = 0
+    
+    let num_questions = input("Enter the number of questions: ")
+    
+    let i = 0
+    while i < num_questions:
+      output("Question " .. i + 1 .. ":")
+      let answer = input("Enter your answer: ")
+      
+      if answer == "open sesame":
+        output("Correct! You found the magic answer!")
+        let score = score + 10
+      else:
+        output("Oops, that's not the right answer.")
+      
+      let i = i + 1
+    end
+    
+    output("Quiz complete! Your final score is: " .. score)
+    if score == num_questions * 10:
+      output("Congratulations! You got all the answers right!")
+    else:
+      output("Better luck next time!")

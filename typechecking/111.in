@@ -1,0 +1,41 @@
+program nested_statements_demo:
+  main:
+    output("Welcome to the Nested Statements Demo!")
+    
+    let num = 10
+    if num > 5:
+      output("Number is greater than 5.")
+      
+      if num > 8:
+        output("Number is also greater than 8.")
+      else:
+        output("Number is not greater than 8.")
+      
+      let condition = true
+      while condition:
+        output("Inside the inner while loop.")
+        if num < 15:
+          output("Number is less than 15.")
+        else:
+          output("Number is not less than 15.")
+        
+        let inner_var = num / 2
+        if inner_var % 2 = 0:
+          output("Inner variable is even.")
+        else:
+          output("Inner variable is odd.")
+        
+        let inner_counter = 0
+        while inner_counter < 3:
+          output("Inside inner while loop #" .. inner_counter)
+          let inner_counter = inner_counter + 1
+        end
+        
+        let condition = false
+      
+      output("Exited the inner while loop.")
+    else:
+      output("Number is not greater than 5.")
+    
+    output("Nested statements demo complete!")
+

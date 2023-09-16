@@ -1,0 +1,5 @@
+program NotAVariable2:
+add(int x, int y) -> int:
+	return x
+    main:
+        input(add);

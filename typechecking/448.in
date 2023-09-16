@@ -1,0 +1,4 @@
+program LogicalOperatorTypeMismatch3:
+    main:
+        bool b;
+        let b = not 5;

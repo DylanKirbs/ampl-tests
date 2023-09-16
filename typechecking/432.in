@@ -1,0 +1,4 @@
+program ArraySizeMustBeInt1:
+    main:
+        int array arr;
+        let arr = array true;

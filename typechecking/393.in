@@ -1,0 +1,7 @@
+program NotAFunction:
+    main:
+    int x, y, z;
+        let x = 5;
+        let y = 10;
+        let z = x(y);  {Attempting to call a function on an integer variable}
+        output("The value of z is ".. z)

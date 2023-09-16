@@ -1,0 +1,9 @@
+<program> at 1:1.
+  <body> at 3:1.
+    <statements> at 3:1.
+      <statement> at 3:1.
+        <while> at 3:1.
+          <expr> at 3:7.
+            <simple> at 3:7.
+              <term> at 3:7.
+                <factor> at 3:7.

@@ -1,0 +1,4 @@
+program NotAProcedure2:
+    main:
+        int array arr;
+        arr();

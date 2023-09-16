@@ -1,0 +1,1 @@
+amplc: 178.in:8:19: error: incompatible types (expected integer, found boolean) for operator '+'

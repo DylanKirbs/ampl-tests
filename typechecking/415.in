@@ -1,0 +1,4 @@
+program MultipleDefinitions2:
+    main:
+        int x;
+        int array x;

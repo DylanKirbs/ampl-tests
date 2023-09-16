@@ -1,0 +1,6 @@
+
+    program test :main :
+        int myVar;
+        bool myVar; # Error: Multiple definition of 'myVar'
+    :
+    

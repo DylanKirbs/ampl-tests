@@ -1,0 +1,12 @@
+program error_demo:
+  main:
+    output("Welcome to the Error Demo!")
+    
+    let a = 10
+    let b = c + 5
+    
+    output("The value of a: " .. a)
+    output("The value of b: " .. b)
+    
+    output("Thank you for exploring the error demo!")
+

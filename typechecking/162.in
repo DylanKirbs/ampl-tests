@@ -1,0 +1,6 @@
+
+    program test:main:
+        int array myArray;
+        input(myArray) # Error: Expected scalar variable instead of 'myArray'
+    
+    

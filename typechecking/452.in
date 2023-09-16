@@ -1,0 +1,5 @@
+program EqualityOperatorTypeMismatch1:
+    main:
+        bool b;
+        int array arr;
+        let b = 5 = arr

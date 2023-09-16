@@ -1,0 +1,1 @@
+amplc: 441.in:7:28: error: incompatible types (expected integer, found integer array) for argument 2 of call to 'add'

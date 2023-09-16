@@ -1,0 +1,13 @@
+program TypeMismatchFunctionCall:
+     add(int x,int y) -> int:
+     	int result;
+        let result = x + y;
+        return result
+
+    main:
+    int x,sum;
+    bool y;
+        let x = 89;
+        let y = true;  {Attempting to pass a string value as an argument to add()}
+        let sum = add(x, y);  {Attempting to call add() with arguments of the wrong type}
+        output("The sum of ".. x.. " and ".. y.. " is ".. sum)

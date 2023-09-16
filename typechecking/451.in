@@ -1,0 +1,4 @@
+program ArithmeticOperatorTypeMismatch3:
+    main:
+        int x;
+        let x = 5 * true;

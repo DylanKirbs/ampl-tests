@@ -1,0 +1,6 @@
+program error216:
+main:
+    int i;
+    int array j;
+
+    let j[i < 2] = 13

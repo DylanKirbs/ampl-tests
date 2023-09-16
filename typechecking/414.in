@@ -1,0 +1,4 @@
+program MultipleDefinitions1:
+    main:
+        int x;
+        int x;

@@ -1,0 +1,16 @@
+program test208:
+main:
+    int int_var1, var_int2_;
+    bool boolean1, C, x;
+
+    let var_int2_ = 13;
+    let int_var1 = 107;
+    let boolean1 = int_var1 = 10;
+    let boolean1 = int_var1 < 10;
+    let boolean1 = (int_var1 = 100) or (int_var1 <= var_int2_) and (7 > 10);
+    let boolean1 = (int_var1 = 10)
+                   or not ((int_var1 /= var_int2_)
+                   and not (20 >= 30));
+    let C = (false);
+    let boolean1 = x or not b;
+    let C = boolean1 and true

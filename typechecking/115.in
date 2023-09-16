@@ -1,0 +1,5 @@
+program error220:
+main:
+    int i;
+
+    let i 0

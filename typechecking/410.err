@@ -1,0 +1,1 @@
+amplc: 410.in:5:22: error: incompatible types (expected integer, found integer array) for assignment to 'arr'

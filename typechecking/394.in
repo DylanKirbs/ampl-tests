@@ -1,0 +1,11 @@
+program NotAProcedure:
+    add(int x, int y) -> int:
+    int result;
+        let result = x + y;
+        return result
+
+    main:
+    int x, y;
+        let x = 67;
+        let y = 00;
+        add(x, y)  {Attempting to call a function using the "call" production}

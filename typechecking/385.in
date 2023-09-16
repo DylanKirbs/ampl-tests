@@ -1,0 +1,7 @@
+program TypeMismatchAssign:
+    main:
+    int x,y;
+        let x = 10 {Something weird happens here if the semi olon is left out,, unreachabale code}
+        let y = true;  { Attempting to assign a string value to an integer variable}
+        let z = x + y;    { Attempting to add a string value to an integer variable}
+        output("The value of z is ".. z)

@@ -1,0 +1,1 @@
+amplc: 461.in:10:24: error: incompatible types (expected boolean, found integer) for argument 2 of call to 'add'

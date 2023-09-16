@@ -1,0 +1,26 @@
+program cs244_gathering:
+  main:
+    output("Welcome to the CS244 Student Gathering!")
+    output("Today, we're discussing our favorite programming languages.")
+    
+    let num_students = input("Enter the number of students attending: ")
+    
+    let i = 0
+    while i < num_students:
+      output("Student " .. i + 1 .. ", please introduce yourself:")
+      let name = input("Name: ")
+      let favorite_lang = input("Favorite programming language: ")
+      
+      output("Thank you, " .. name .. "! It's great to know you love " .. favorite_lang)
+      let i = i + 1
+    end
+    
+    output("Discussion complete! Here's a summary:")
+    let i = 0
+    while i < num_students:
+      output("Student " .. i + 1 .. " loves " .. favorite_lang)
+      let i = i + 1
+    end
+    
+    output("Keep coding and exploring languages, CS244 students!")
+

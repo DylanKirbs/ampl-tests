@@ -1,0 +1,6 @@
+
+    program test: main :
+       int notFunction, x;
+        let x = notFunction(); # Error: 'notFunction' is not a function
+    
+    

@@ -1,0 +1,40 @@
+{ extensive test{{ /* //1 */ (((( HIC SVNT DRACONES ******}} }
+program test213:
+main:
+    int i, j, k, l, m, n, o, p;
+    bool array b1, b2, b3, b4, b5;
+    int array i1, i2, i3, i4, i5, i6, i7, i8, i9;
+    int a, b, c, d, e, f, g, h;
+
+    { input test }
+    input(i);
+    input(h);
+    input(b1[12]);
+
+    output((a * b + c >=7 ) = true);
+    output(i1[i4[p]]);
+
+    while (b1[6] or false) and (a * i9[12] /= 15):
+        input(b4[7]);
+        output(8);
+        if not true and (false or false and true):
+            let b2[e] = (false or true and (not (7 > 5) or (5 < 7) or (7 > 9)
+                        and (4 <= 4) or not (5 >= 7)));
+            output(b2[e]);
+            while true and false:
+                chillax
+            end
+        elif false:
+            chillax
+        elif true and true:
+            input(i);
+            let a = ((i - i*5) / 0)
+        else:
+            chillax
+        end
+    end;
+
+    let i1[o] = -i1[i2[i3[i4[i5[i6[i7[i8[o]]]]]]]];
+    let i2[b] = i1[o] * 5 / 7 - 5 + 2
+
+    { Have a nice day! :) }

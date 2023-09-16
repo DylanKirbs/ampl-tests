@@ -1,0 +1,9 @@
+
+program ReturnStatements:
+
+sampleFunction(int i) -> int:
+    return true; { Error: Incompatible types (expected int, found bool) for 'return' statement}
+
+main:
+    chillax
+    

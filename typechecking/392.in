@@ -1,0 +1,6 @@
+program ScalarVariableExpected:
+    main:
+    int array arr;
+        let arr = array 10;
+        input(arr);  {Attempting to read directly into an array variable need fixing}
+        output("The value of arr is ".. arr) {printing out arr direclty ask about what msg should be displayed}

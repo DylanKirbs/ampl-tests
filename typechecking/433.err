@@ -1,0 +1,1 @@
+amplc: 433.in:5:25: error: incompatible types (expected integer, found integer array) for array size of 'arr'

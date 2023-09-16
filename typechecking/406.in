@@ -1,0 +1,5 @@
+program IllegalArrayOperation2:
+    main:
+        int x;
+        int array arr;
+        let x = arr[5] + true;

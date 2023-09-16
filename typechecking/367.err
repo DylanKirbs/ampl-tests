@@ -1,0 +1,1 @@
+amplc: 367.in:8:20: error: incompatible types (expected integer, found boolean) for argument 1 of call to 'sampleFunction'

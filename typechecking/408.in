@@ -1,0 +1,4 @@
+program ScalarVariableExpected1:
+    main:
+        int array arr;
+        input(arr)

@@ -1,0 +1,6 @@
+program NotAnArray:
+    main:
+    int x, y;
+        let x = 5;
+        let y = x[0] ;{Attempting to index into a scalar variable}
+        output("The value of y is ".. y)

@@ -1,0 +1,10 @@
+
+    program test:
+    sampleFunction(int a, int b, int c) :
+        chillax
+    
+
+    main :
+        sampleFunction(5,4); # Error: Too few arguments for call to 'sampleFunction'
+    
+    

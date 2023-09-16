@@ -1,0 +1,39 @@
+program comprehensive_test:
+  main:
+    output("Welcome to the Comprehensive Test!")
+    
+    let result = call_test(7, 3)
+    output("The result of the call_test function: " .. result)
+    
+    let value = simple_test(10, 3)
+    output("The value of the simple_test function: " .. value)
+    
+    let returned_value = return_test(5, 2)
+    output("The returned value from return_test function: " .. returned_value)
+    
+    output("Thank you for the comprehensive test!")
+    
+def call_test(a int, b int) int:
+  output("Inside the call_test function.")
+  let sum = a + b
+  return sum
+
+def simple_test(x int, y int) int:
+  output("Inside the simple_test function.")
+  let product = x * y
+  let subtracted = x - y
+  let sum = x + y
+  if sum > 15:
+    return product
+  else:
+    return subtracted
+
+def return_test(p int, q int) int:
+  if q > 0:
+    return p / q
+  else:
+    return 0
+
+output("Program end.")
+
+

@@ -1,0 +1,19 @@
+program appreciation_for_dylan:
+  main:
+    output("A Shoutout to Dylan Kirby, Our Stellar Class Rep!")
+    
+    let dylan = "Dylan Kirby"
+    let effort_level = "phenomenal"
+    let leadership = "inspiring"
+    
+    output("Hey there, " .. dylan .. "!")
+    output("We just wanted to take a moment to appreciate your hard work as our class representative.")
+    
+    output("Your dedication and effort have been nothing short of " .. effort_level .. ".")
+    output("Your leadership qualities are truly " .. leadership .. ". You've kept our class united and motivated!")
+    
+    output("Here's to all the behind-the-scenes work you've put in and the positive atmosphere you've created.")
+    output("Thank you, " .. dylan .. ", for being an exceptional class rep!")
+    
+    output("Appreciation program for Dylan Kirby complete!")
+

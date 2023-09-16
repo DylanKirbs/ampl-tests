@@ -1,0 +1,13 @@
+program FunctionWithoutReturn:
+    add(int x, int y) -> int:
+    	int result;
+        let result = x + y;
+        return
+        { No leave expression in this function}
+
+    main:
+    int x, y, sum;
+        let x = 45;
+        let y = 887;
+        let sum = add(x, y);
+        output("The sum of ".. x.. " and ".. y.. " is ".. sum)

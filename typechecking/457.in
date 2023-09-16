@@ -1,0 +1,5 @@
+program InvalidArrayAssignment:
+    main:
+        int array arr1;
+        int array arr2;
+        let arr1 = arr2

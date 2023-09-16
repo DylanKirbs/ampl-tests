@@ -1,0 +1,8 @@
+program NonBooleanIf:
+    main:
+    	int x;
+        let x = 76;
+        if x:  { Attempting to use a non-boolean expression in an "if" statement}
+            output("x is true")
+        else:
+            output("x is false")

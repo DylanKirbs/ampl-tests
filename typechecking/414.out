@@ -1,0 +1,9 @@
+<program> at 1:1.
+  <body> at 3:9.
+    <vardef> at 3:9.
+      <type> at 3:9.
+      </type> at 3:13.
+    </vardef> at 4:9.
+    <vardef> at 4:9.
+      <type> at 4:9.
+      </type> at 4:13.

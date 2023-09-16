@@ -1,0 +1,11 @@
+program NonIntegerArraySize:
+    main:
+    	int size;
+    	int array arr;
+    	let arr = array 4;
+        let size = 98;
+        let arr[4] = array 4;
+        let arr[0] = arr[0];
+        output("Array created successfully!")
+        
+        {ArrayAllocation}

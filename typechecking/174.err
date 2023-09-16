@@ -1,0 +1,1 @@
+amplc: 174.in:6:25: error: incompatible types (expected integer, found boolean) for array size of 'Myarray'

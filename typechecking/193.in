@@ -1,0 +1,7 @@
+program error246:
+    inc(int i);
+        -> int:
+        return i + 1
+
+main:
+    output(inc(2))

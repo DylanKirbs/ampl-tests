@@ -1,0 +1,5 @@
+program EqualityOperatorTypeMismatch3:
+    main:
+        bool b;
+        int true;
+        let true = 5 = 10

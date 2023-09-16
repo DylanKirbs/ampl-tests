@@ -1,0 +1,8 @@
+program NonBooleanWhile:
+    main:
+    	int x;
+        let x = 56;
+        while x:  {// Attempting to use a non-boolean expression in a "while" loop}
+            output("x is true");
+            let x = x - 1
+        end

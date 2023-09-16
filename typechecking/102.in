@@ -1,0 +1,23 @@
+program factor_test:
+  main:
+    output("Welcome to the Factor Test!")
+    
+    let var_id = "variable_id"
+    let array_var = "array_variable"
+    let num_value = 42
+    let true_val = true
+    let false_val = false
+    
+    let expr_result = (num_value * 2) + 5
+    let not_val = not true_val
+    
+    output("Testing id without index or arglist: " .. var_id)
+    output("Testing id with index: " .. array_var[2])
+    output("Testing num: " .. num_value)
+    output("Testing (expr): " .. expr_result)
+    output("Testing not factor: " .. not_val)
+    output("Testing true: " .. true_val)
+    output("Testing false: " .. false_val)
+    
+    output("Factor testing complete!")
+

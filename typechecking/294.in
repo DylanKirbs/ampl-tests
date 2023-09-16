@@ -1,0 +1,6 @@
+program error208:
+main:
+    int i, j
+    bool a, b, c
+
+    chillax

@@ -1,0 +1,12 @@
+program test217:
+
+sum(int sum, int b) -> int:
+
+	return 5
+
+main:
+	int a;
+	int array b;
+
+	let a = -b
+	return

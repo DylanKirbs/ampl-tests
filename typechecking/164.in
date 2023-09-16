@@ -1,0 +1,6 @@
+
+    program test: main :
+        int notProcedure;
+        notProcedure(); # Error: 'notProcedure' is not a procedure
+    
+    

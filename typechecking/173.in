@@ -1,0 +1,8 @@
+
+program ArrayIndices:
+
+main:
+    int x;
+    int array myArray;
+    let x = myArray[true]; # Error: Incompatible types (expected int, found bool) for array index of 'myArray'
+    

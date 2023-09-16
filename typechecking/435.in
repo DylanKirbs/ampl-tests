@@ -1,0 +1,4 @@
+program TypeMismatch3:
+    main:
+        int x;
+        let x = add(5, 10);

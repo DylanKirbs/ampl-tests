@@ -1,0 +1,7 @@
+program UnknownIdentifier:
+    main:
+    int x,y;
+        let x = 5;
+        input(hello);
+        let y = z;  // Using an undefined variable
+        output("The value of y is ".. y)

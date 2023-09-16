@@ -1,0 +1,14 @@
+program InvalidFunctionReturnType:
+    is_even(int x)->bool:
+    int y;
+    let y = 5;
+        if x * 2 = 0:
+            return true
+        elif y + x:
+        	return true
+        else:
+            return 5
+            end
+    main:
+        bool b;
+        let b = is_even(10)

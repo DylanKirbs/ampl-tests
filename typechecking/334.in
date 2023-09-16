@@ -1,0 +1,9 @@
+program test203:
+main:
+    int i;
+    bool b;
+
+    let b = false;
+    let i = 0;
+    let b = true;
+    let i = 32767

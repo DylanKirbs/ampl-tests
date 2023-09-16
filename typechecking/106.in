@@ -1,0 +1,16 @@
+program array_demo:
+  main:
+    output("Welcome to the Array Demo!")
+    
+    let numbers array int = [5, 10, 15, 20, 25]
+    let names array string = ["Alice", "Bob", "Charlie", "David"]
+    
+    output("Numbers array: " .. numbers)
+    output("Names array: " .. names)
+    
+    let index = input("Enter an index for the numbers array (0 to 4): ")
+    let selected_number = numbers[index]
+    output("Selected number: " .. selected_number)
+    
+    output("Thank you for exploring the array demo!")
+

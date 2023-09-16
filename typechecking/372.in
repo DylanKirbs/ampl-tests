@@ -1,0 +1,6 @@
+program test219:
+main:
+	int array arr;
+	int x;
+
+	output(arr)

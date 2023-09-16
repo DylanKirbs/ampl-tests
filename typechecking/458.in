@@ -1,0 +1,10 @@
+program InvalidFunctionReturnType:
+    is_even(int x)->bool:
+        if x * 2 = 0:
+            return true
+        else:
+            return 5
+            end
+    main:
+        bool b;
+        let b = is_even(10)

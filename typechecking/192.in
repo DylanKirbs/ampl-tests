@@ -1,0 +1,5 @@
+program error210:
+main:
+    int i;
+
+    i = 0;

@@ -1,0 +1,7 @@
+program error206:
+main:
+    int i, ;
+    bool a, b, c;
+
+    chillax
+

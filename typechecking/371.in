@@ -1,0 +1,8 @@
+
+program Negation:
+
+main:
+    int myInt;
+    int x;
+    let x = not myInt; {Error: Incompatible types (expected bool, found int) for 'not'}
+    

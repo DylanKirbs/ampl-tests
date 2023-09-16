@@ -1,0 +1,4 @@
+program NotAnArray1:
+    main:
+        int xyz;
+        let xyz[5] = 10;

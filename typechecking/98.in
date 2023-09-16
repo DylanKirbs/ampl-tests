@@ -1,0 +1,19 @@
+program branching_scenario:
+  main:
+    output("Welcome to the Branching Scenario!")
+    let num_cases = input("Enter a number between 1 and 5: ")
+    
+    if num_cases == 1:
+      output("You chose the first case!")
+    else if num_cases == 2:
+      output("You opted for the second case!")
+    else if num_cases == 3:
+      output("You selected the third case!")
+    else if num_cases == 4:
+      output("You went with the fourth case!")
+    else if num_cases == 5:
+      output("You decided on the fifth case!")
+    else:
+      output("That's not a valid choice. Please enter a number between 1 and 5.")
+    
+    output("Thank you for participating in the branching scenario!")

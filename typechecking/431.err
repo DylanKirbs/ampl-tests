@@ -1,0 +1,1 @@
+amplc: 431.in:4:17: error: incompatible types (expected integer, found boolean) for array index of 'arr'

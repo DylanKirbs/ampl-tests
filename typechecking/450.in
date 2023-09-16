@@ -1,0 +1,5 @@
+program ArithmeticOperatorTypeMismatch2:
+    main:
+        int x;
+        int array arr;
+        let x = 5 - 5 - 4 - 8 - arr;

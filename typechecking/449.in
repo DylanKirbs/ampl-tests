@@ -1,0 +1,4 @@
+program ArithmeticOperatorTypeMismatch1:
+    main:
+        int x;
+        let x = 5 + 7 + true;

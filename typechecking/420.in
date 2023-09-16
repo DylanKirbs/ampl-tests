@@ -1,0 +1,5 @@
+program NotAProcedure1:
+    main:
+        int x;
+        let x = 5;
+        x();

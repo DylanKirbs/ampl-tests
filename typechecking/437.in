@@ -1,0 +1,4 @@
+program AssignNewArray2:
+    main:
+        int array arr;
+        let arr = array 10

@@ -1,0 +1,45 @@
+program chess_simulation:
+  main:
+    output("Welcome to the Chess Simulation!")
+    
+    let board = [
+      ["R", "N", "B", "Q", "K", "B", "N", "R"],
+      ["P", "P", "P", "P", "P", "P", "P", "P"],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["", "", "", "", "", "", "", ""],
+      ["p", "p", "p", "p", "p", "p", "p", "p"],
+      ["r", "n", "b", "q", "k", "b", "n", "r"]
+    ]
+    
+    let player1 = "Player 1"
+    let player2 = "Player 2"
+    let current_player = player1
+    
+    output("Starting the chess game between " .. player1 .. " and " .. player2)
+    
+    let game_over = false
+    while not game_over:
+      output(current_player .. "'s turn:")
+      let from_square = input("Enter the source square (e.g., 'e2'): ")
+      let to_square = input("Enter the target square (e.g., 'e4'): ")
+      
+      // Simulate moving the piece (basic example, not actual chess rules)
+      let piece = board[from_square[2]][from_square[1]]
+      board[to_square[2]][to_square[1]] = piece
+      board[from_square[2]][from_square[1]] = ""
+      
+      // Switch players
+      if current_player == player1:
+        let current_player = player2
+      else:
+        let current_player = player1
+      
+      // Simulate end of game after a few turns (basic example)
+      if num_turns > 10:
+        let game_over = true
+        output("Game over! The simulation has ended.")
+    
+    output("Thank you for playing the chess simulation!")
+

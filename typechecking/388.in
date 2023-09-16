@@ -1,0 +1,10 @@
+program NonIntegerArrayIndex:
+    main:
+    bool index;
+    int value;
+    int array arr;
+    
+        let arr = array 10;
+        let index = true;  {// Attempting to use a non-integer value as an array index}
+        let value = arr[index]; {test with  let value = arr[index + 2 * 3 + arr];}
+        output("The value of arr[", index, "] is ".. value)

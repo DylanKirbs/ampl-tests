@@ -1,0 +1,6 @@
+program InvalidFunctionArgumentType:
+    add(int a, int b):
+        return
+    main:
+        int array arr;
+        add(arr, 10)

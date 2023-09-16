@@ -1,0 +1,9 @@
+
+program Parameters:
+
+sampleFunction(int a):
+    chillax
+
+main:
+    sampleFunction(true); {Error: Incompatible types (expected int, found bool) for argument 1 of call to 'sampleFunction'}
+    

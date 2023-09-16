@@ -1,0 +1,13 @@
+program test217:
+
+sum(int a, int b) -> int:
+
+	return 5
+
+main:
+	int a;
+	int array b;
+
+	let a = b + 5
+
+	return

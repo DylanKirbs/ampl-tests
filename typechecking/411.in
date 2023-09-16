@@ -1,0 +1,6 @@
+program NotAFunction1:
+    main:
+        int x;
+        let x = 5;
+        let x(10) = 3
+        chillax

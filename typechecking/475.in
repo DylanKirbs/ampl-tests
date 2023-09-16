@@ -1,0 +1,9 @@
+program AddAndSubtract:
+    add(int x, int y) -> bool: 
+        int result;
+        int add;  {error should be here}
+        add(x, y)
+        return true
+   main:
+        int x;{be carefull error should not be here as there is an earlier error}
+        chillax

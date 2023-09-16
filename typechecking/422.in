@@ -1,0 +1,5 @@
+program NotAProcedure3:
+    main:
+        int x, y;
+        let x = 5;
+        let y = x();

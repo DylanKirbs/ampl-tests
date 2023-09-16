@@ -1,0 +1,29 @@
+program whimsical_adventure:
+  main:
+    output("Greetings, fellow seekers of the arcane and whimsical!")
+    let spell_count = input("Quantify the number of mystical spells within your grasp: ")
+    
+    let conjuration_index = 0
+    let enchantment_tally = 0
+    
+    while conjuration_index < spell_count:
+      output("Spell index " .. conjuration_index + 1 .. ":")
+      
+      let incantation = input("Utter the enchanting incantation: ")
+      
+      if "abracadabra" in incantation:
+        output("A classic choice, invoking the essence of old enchantment!")
+        let enchantment_tally = enchantment_tally + 1
+      else:
+        output("Ah, a mystifying twist in the linguistic labyrinth.")
+      
+      let conjuration_index = conjuration_index + 1
+    end
+    
+    output("Exquisite! Your adventure in the whimsical realms concludes.")
+    
+    if enchantment_tally > 0:
+      output("You've mastered " .. enchantment_tally .. " enchanting incantations!")
+    else:
+      output("Alas, not a single incantation was worthy of the ethereal.")
+

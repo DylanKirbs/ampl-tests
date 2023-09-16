@@ -1,0 +1,8 @@
+program MultipleDefinitions:
+  
+main:
+	int xer;
+    int zule, xer;  {Declaring the same variable twice in the same context}
+
+        x = 78;
+        output("The value of x is ".. x)

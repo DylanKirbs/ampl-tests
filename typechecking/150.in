@@ -1,0 +1,12 @@
+program test210:
+main:
+    int i;
+
+    let i = 7;
+    if i < 10:
+        output(-1)
+    elif i > 0:
+        output(1)
+    else:
+        output(0)
+    end

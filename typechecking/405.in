@@ -1,0 +1,10 @@
+program Z_von_Ludwig : RWC2023(int win, bool SpringBoks) -> bool:
+    bool yes;
+    let yes = true = false;
+    let yes = true;
+    return true
+main:
+    int test;
+    let test = 34;
+    output(RWC2023(23,true))
+    {valid code}

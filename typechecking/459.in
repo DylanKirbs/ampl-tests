@@ -1,0 +1,6 @@
+program InvalidFunctionParameter:
+    add(int a, int b, int c) -> int:
+        return a + b + c
+    main:
+        int x;
+        let x = add(5, 10,add())

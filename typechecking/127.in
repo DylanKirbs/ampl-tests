@@ -1,0 +1,6 @@
+program error232:
+main:
+    int array i;
+
+    output(i[1)
+

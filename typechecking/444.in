@@ -1,0 +1,4 @@
+program RelationalOperatorTypeMismatch1:
+    main:
+        bool b;
+        let b = true > 5;

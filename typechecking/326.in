@@ -1,0 +1,10 @@
+program error240:
+
+inc int i) -> int:
+    return i + 1
+
+main:
+    int i;
+
+    let i = inc(i);
+    output(i)

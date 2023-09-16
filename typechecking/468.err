@@ -1,0 +1,1 @@
+amplc: 468.in:8:20: error: incompatible types (expected boolean array, found integer array) for 'return' statement

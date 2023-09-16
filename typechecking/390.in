@@ -1,0 +1,8 @@
+program IllegalArrayOperation:
+    main:
+    int array arr;
+    int x,y;
+        let arr = array 10;
+        let x = arr;  {Attempting to assign an array to a scalar variable needs fixing}
+        let y = x + 1;  {Attempting to use an unindexed array variable in an expression}
+        output("The value of y is ".. y)

@@ -1,0 +1,6 @@
+program NotAVariable4:
+	add(int x, int y) -> int:
+	return x
+    main:
+    int x;
+        let x = add + 15;

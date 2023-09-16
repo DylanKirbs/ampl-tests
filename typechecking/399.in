@@ -1,0 +1,7 @@
+program ProcedureWithReturn:
+    print_message(bool i):
+        output(i);
+        return 1 + 67  {Procedures must not have return expressions}
+
+    main:
+        print_message(true)

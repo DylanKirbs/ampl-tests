@@ -1,0 +1,8 @@
+
+program UnaryMinus:
+
+main:
+    bool myBool;
+    int x ;
+    let x = -myBool; { Error: Incompatible types (expected int, found bool) for unary minus}
+    

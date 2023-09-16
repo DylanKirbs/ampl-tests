@@ -1,0 +1,5 @@
+program error228:
+main:
+    int i;
+    while i < 0:
+    end

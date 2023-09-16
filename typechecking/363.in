@@ -1,0 +1,8 @@
+
+program TypeMismatch:
+
+main:
+    int myInt;
+    bool myBool;
+    let myInt = myBool; # Error: Incompatible types (expected int, found bool) for assignment to 'myInt'
+    

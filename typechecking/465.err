@@ -1,0 +1,1 @@
+amplc: 465.in:11:20: error: incompatible types (expected boolean array, found integer array) for assignment to 'arr2'

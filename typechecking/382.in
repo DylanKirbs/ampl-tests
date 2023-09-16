@@ -1,0 +1,15 @@
+program TypeMatchingTest:
+    { Define a function that takes two integers as arguments }
+   add(int x, int y) -> int:
+   int result;
+        let result = x + y;
+        return result
+
+    main:
+    int x, y, sum;
+    bool z;
+        let x = 67;
+        let y = 89;
+        let z = true;
+        let sum = add(x, z);
+        output("The sum of ".. x.. " and ".. z.. " is ".. sum)

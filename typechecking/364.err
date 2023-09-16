@@ -1,0 +1,1 @@
+amplc: 364.in:7:21: error: incompatible types (expected integer, found boolean) for array index of 'myArray'

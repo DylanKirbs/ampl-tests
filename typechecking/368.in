@@ -1,0 +1,9 @@
+
+program GuardConditionExpressions:
+
+main:
+    int condition;
+    if condition: { Error: Incompatible types (expected bool, found int) for 'if' guard }
+        chillax
+    end
+    

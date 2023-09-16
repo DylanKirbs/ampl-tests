@@ -1,0 +1,5 @@
+program NotAFunction3:
+    main:
+        int x, y;
+        let x = 5;
+        let y = x(10);

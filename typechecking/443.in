@@ -1,0 +1,6 @@
+program ArgumentTypeMismatch3:
+    add(int x, int array arr) -> int:
+        return x + arr[0];
+    main:
+        int result;
+        let result = add(5, 10);

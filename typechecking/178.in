@@ -1,0 +1,9 @@
+
+program BinaryOperators:
+
+main:
+    int myInt;
+    bool myBool;
+    int x;
+    let x = myInt + myBool; { Error: Incompatible types (expected int, found bool) for operator '+'}
+    

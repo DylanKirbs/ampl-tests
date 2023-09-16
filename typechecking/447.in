@@ -1,0 +1,4 @@
+program LogicalOperatorTypeMismatch2:
+    main:
+        bool b;
+        let b = true or 6;

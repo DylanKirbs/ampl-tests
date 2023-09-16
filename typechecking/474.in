@@ -1,0 +1,16 @@
+program InvalidFunctionReturnType:
+    is_even(int x)->int:
+        int array arr;
+        let arr = array 10;
+        if x * 2 = 0:
+            return 5
+        elif true:
+        	return 23
+        elif is_even(3):
+        	return 32
+        else:
+            return 5
+            end
+    main:
+        bool b;
+        let b = is_even(10)

@@ -1,0 +1,8 @@
+
+    program test:
+    sampleProcedure(int i) :
+        return 5 {# Error: A return expression is not allowed for a procedure}
+    
+    main :
+     chillax
+    

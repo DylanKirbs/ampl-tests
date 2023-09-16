@@ -1,0 +1,5 @@
+program ArrayIndexMustBeInt2:
+    main:
+        int array arr;
+        int array arr1;
+        let arr[arr1[3]] = 5 {also broken for let arr[arr1[2]] = 5; as that is valid}

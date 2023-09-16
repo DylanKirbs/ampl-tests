@@ -1,0 +1,6 @@
+
+    program test: main :
+        int notArray,x;
+        let x = notArray[2]; # Error: 'notArray' is not an array
+    
+    

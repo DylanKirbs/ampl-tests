@@ -1,0 +1,1 @@
+amplc: 403.in:7:22: error: incompatible types (expected integer array, found integer) for allocation to indexed array 'arr'

@@ -1,0 +1,17 @@
+program test220:
+
+fib(int cur) -> int:
+    int prev1, prev2;
+    if (cur = 0) or (cur = 1):
+        return 1
+    else:
+        let prev1 = cur - 1;
+        let prev2 = cur - 2;
+        return fib(prev1) + fib(prev2)
+    end
+
+main:
+    int n, f;
+    input(n);
+    let f = fib(n);
+    output(f)

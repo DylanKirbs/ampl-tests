@@ -1,0 +1,11 @@
+program InvalidFunctionCallWithArrArg:
+    sum(int array arr)-> int:
+        int i, result;
+        while 4 < 8:
+            let result = result + arr[i];
+        return result
+        end
+    main:
+        int array arr;
+        let arr = arr;
+        let arr[2] = sum(arr[13])

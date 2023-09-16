@@ -1,0 +1,3 @@
+program hello_world:
+  main:
+    output("Hello, World!")

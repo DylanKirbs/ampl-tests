@@ -1,0 +1,4 @@
+program LogicalOperatorTypeMismatch1:
+    main:
+        bool b;
+        let b = 5 + false and true; {play around with the order}

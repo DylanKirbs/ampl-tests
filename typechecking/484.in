@@ -1,0 +1,9 @@
+program AddAndSubtract:
+    add(int x, int y) -> int array:
+    int result;
+        let result = x + y;
+        return add(3, 5)
+        
+    main:
+    	int array arr;
+    	let arr = add(4, 3)

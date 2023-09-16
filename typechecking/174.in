@@ -1,0 +1,7 @@
+
+program ArrayCreationSize:
+
+main:
+    int array Myarray ;
+    let Myarray = array true; { Error: Incompatible types (expected int, found bool) for array size of 'myArray'}
+    

@@ -1,0 +1,1 @@
+amplc: 444.in:4:22: error: incompatible types (expected integer, found boolean) for operator '>'

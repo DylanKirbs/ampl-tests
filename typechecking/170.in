@@ -1,0 +1,6 @@
+
+    program test: main :
+        int x ;
+        let x = unknownVariable; # Error: Unknown identifier 'unknownVariable'
+    
+    

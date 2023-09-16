@@ -1,0 +1,7 @@
+program NotAnArray2:
+    main:
+        int x, y;
+        int array arr;
+        bool array arr2;
+        let arr = arr2
+        let y = x[5];

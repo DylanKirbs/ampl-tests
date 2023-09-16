@@ -1,0 +1,1 @@
+amplc: 448.in:4:21: error: incompatible types (expected boolean, found integer) for 'not'

@@ -1,0 +1,3 @@
+program error245:
+main:
+    output("Hello, world" "\n")

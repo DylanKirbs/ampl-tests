@@ -1,0 +1,5 @@
+program RelationalOperatorTypeMismatch3:
+    main:
+        bool b;
+        int array arr;
+        let b = arr < 10;

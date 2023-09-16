@@ -1,0 +1,4 @@
+program ArrayIndexMustBeInt1:
+    main:
+        int array arr;
+        let arr[true] = 5;

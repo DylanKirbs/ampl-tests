@@ -1,0 +1,1 @@
+amplc: 378.in:5:18: error: incompatible types (expected integer, found boolean) for unary minus

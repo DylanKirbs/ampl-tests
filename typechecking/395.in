@@ -1,0 +1,11 @@
+program NotAVariable:
+    add(int x,int y) -> int:
+    	int result;
+        let result = x + y;
+        return result
+
+    main:
+    int x,y;
+        let x = 98;
+        let y = 34;
+        let add(x, y) = 10  {Weird stuff be carefull, Attempting to assign a value to a function call}

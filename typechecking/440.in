@@ -1,0 +1,6 @@
+program ReturnTypeMismatch2:
+    add(int x, int y) -> int:
+        return x + y
+    main:
+        int result;
+        let result = add(5, "hello");

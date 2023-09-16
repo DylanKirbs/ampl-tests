@@ -1,0 +1,1 @@
+amplc: 447.in:4:22: error: incompatible types (expected boolean, found integer) for operator 'or'

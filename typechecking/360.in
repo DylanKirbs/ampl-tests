@@ -1,0 +1,8 @@
+
+    program test:
+     sampleFunction(int i)->int :
+        
+        return {# Error: Missing return expression for a function}
+    main :
+        chillax
+    

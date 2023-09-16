@@ -1,0 +1,1 @@
+amplc: 390.in:6:17: error: incompatible types (expected integer, found integer array) for assignment to 'x'

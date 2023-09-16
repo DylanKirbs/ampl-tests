@@ -1,0 +1,15 @@
+program derby_announcement:
+  main:
+    output("Derby Victory Announcement!")
+    
+    let winner = "Eendrag"
+    let loser = "Helshoogte"
+    let year = 2023
+    
+    output("Breaking News: In the intense derby clash of " .. year .. ", " .. winner .. " emerged victorious over " .. loser .. "!")
+    
+    output("The crowd roared as " .. winner .. " secured a memorable victory, celebrating their triumph.")
+    output("Congratulations to " .. winner .. " for their remarkable performance in the derby!")
+    
+    output("Derby announcement complete!")
+

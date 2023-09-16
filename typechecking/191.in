@@ -1,0 +1,6 @@
+program error207:
+main:
+    i, j;
+    bool a, b, c;
+
+    chillax

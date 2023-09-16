@@ -1,0 +1,7 @@
+program ArgumentTypeMismatch2:
+    add(int array arr) -> int:
+        return arr[0]
+    main:
+        int result;
+        int x;
+        let result = add(x);

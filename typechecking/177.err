@@ -1,0 +1,1 @@
+amplc: 177.in:6:8: error: incompatible types (expected boolean, found integer) for 'if' guard

@@ -1,0 +1,8 @@
+program NonIntegerArraySize:
+    main:
+    	int size;
+    	int array arr;
+        let arr = array true;
+        let size = 98;
+        let arr[0] = arr[0]; {Attempting to create an array with a non-integer size}
+        output("Array created successfully!")

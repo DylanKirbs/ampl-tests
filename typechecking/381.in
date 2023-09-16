@@ -1,0 +1,11 @@
+program TypeMatchingTest:
+    main:
+    bool x, sum;
+    bool y;
+    int z;
+    	input(x);
+        let x = x;
+        let y = x;
+        let z = 1;
+        let sum = x or y or z;
+        output("The sum of ".. x.. ".. ".. y.. ".. and ".. z.. " is ".. sum)

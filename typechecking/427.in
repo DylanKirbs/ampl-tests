@@ -1,0 +1,4 @@
+program NotAnArray2:
+    main:
+        int x, y;
+        let y = x[5];

@@ -1,0 +1,10 @@
+program test219:
+
+add(int x, int array y) -> int array:
+	return y 
+
+main:
+	int array arr;
+	int x;
+
+	let arr = add(x, arr)

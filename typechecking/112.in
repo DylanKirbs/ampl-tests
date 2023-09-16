@@ -1,0 +1,52 @@
+program larger_nested_statements_demo:
+  main:
+    output("Welcome to the Larger Nested Statements Demo!")
+    
+    let x = 5
+    let y = 10
+    
+    if x < y:
+      output("x is less than y.")
+      
+      if x + 3 < y:
+        output("x + 3 is still less than y.")
+      else:
+        output("x + 3 is not less than y.")
+      
+      if x * 2 < y:
+        output("x multiplied by 2 is less than y.")
+      else:
+        output("x multiplied by 2 is not less than y.")
+      
+      if x > 0:
+        output("x is positive.")
+        
+        let inner_x = x + 2
+        if inner_x % 2 = 0:
+          output("inner_x is even.")
+        else:
+          output("inner_x is odd.")
+        
+        let inner_y = y / 2
+        if inner_y > 3:
+          output("inner_y is greater than 3.")
+          
+          if inner_y > 5:
+            output("inner_y is even greater than 5.")
+          else:
+            output("inner_y is not even greater than 5.")
+        else:
+          output("inner_y is not greater than 3.")
+        
+        let counter = 0
+        while counter < 3:
+          output("Inside the inner while loop #" .. counter)
+          let counter = counter + 1
+        end
+      else:
+        output("x is not positive.")
+    else:
+      output("x is not less than y.")
+    
+    output("Larger nested statements demo complete!")
+

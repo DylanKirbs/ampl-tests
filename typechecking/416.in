@@ -1,0 +1,10 @@
+program MultipleDefinitions3:
+subtract(int x, int y) -> int:
+            int x;
+            int result;
+            let result = x - y;
+            return result
+    main:
+        int x;
+        chillax
+        

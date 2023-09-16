@@ -1,0 +1,7 @@
+program NotAnArray3:
+    main:
+    int y;
+        int x;
+        let x = array 10;
+        let y = x[true];
+        chillax

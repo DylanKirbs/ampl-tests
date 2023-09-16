@@ -1,0 +1,12 @@
+program CallInExpression:
+    add(int x,int y):
+    	int result;
+        let result = x + y;
+        return
+
+    main:
+    int sum, x, y;
+        let x = 45;
+        let y = 78;
+        let sum = add(x, y) + 1  { Attempting to call add() from inside an expression}
+        output("The sum of ".. x.. " and ".. y.. " plus 1 is ".. sum)

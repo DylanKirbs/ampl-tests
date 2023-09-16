@@ -1,0 +1,3 @@
+program UnknownIdentifier2:
+    main:
+        let x = add(5, y);

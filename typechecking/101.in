@@ -1,0 +1,14 @@
+program syntax_error_demo:
+  main:
+    output("Welcome to the Syntax Error Demo!")
+    
+    let x = 10
+    let y = 5
+    
+    if x > y!
+      output("x is greater than y!")
+    else
+      output("y is greater than or equal to x!")
+    
+    output("Thank you for exploring the syntax error demo!")
+
