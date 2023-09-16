@@ -386,8 +386,10 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
         modules.append('hashtable')
     if args['symboltable']:
         modules.append('symboltable')
+    if args['typechecking']:
+        modules.append('typechecking')
     if args['all']:
-        modules = ['scanner', 'parser', 'hashtable', 'symboltable']
+        modules = ['scanner', 'parser', 'hashtable', 'symboltable', 'typechecking']
 
     if len(modules) == 0:
         logging.error('Invalid modules specified.')
