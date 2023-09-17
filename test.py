@@ -339,13 +339,19 @@ class Test:
         if not self.compile():
             return False
 
-        passed = []
+        failed = []
         for test_number in test_cases:
             if not self.test_unit(test_number):
-                passed.append(test_number)
+                failed.append(test_number)
 
-        if len(passed) > 0:
-            logging.error(f'Tests {passed} failed.')
+        perc = len(failed)/len(test_cases)
+        perc = 1-perc
+        perc *= 100
+        perc = round(perc, 2)
+        logging.info(f"You passed {perc}% of the tests")
+
+        if len(failed) > 0:
+            logging.error(f'Tests {failed} failed.')
             return False
 
         return True
@@ -429,7 +435,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '3.2.0'
+    VERSION = '4.1.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
