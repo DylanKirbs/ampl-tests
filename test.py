@@ -13,6 +13,7 @@ Options:
     --valgrind      Perform a memory check on the test executables
     --side-by-side  Display the differences side by side
     --save=<dir>    Save test output to the specified directory
+    --stream        The stream to diff test (out, err, both) [default: both]
 
 Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
@@ -71,8 +72,8 @@ class Test:
         side_by_side: bool = False,
         src_dir=f'{os.getcwd()}/../src',
         bin_dir=f'{os.getcwd()}/../bin',
-        tests_dir=f'{os.getcwd()}/tests',
-        temp_dir=f'{os.getcwd()}/temp'
+        temp_dir=f'{os.getcwd()}/temp',
+        stream: str = 'both'
     ) -> None:
         """
         Creates a new test.
@@ -94,6 +95,9 @@ class Test:
         # Flags
         self._perform_mem_check = perform_mem_check
         self._side_by_side = side_by_side
+
+        self._check_stdout = True if stream in ['both', 'out'] else False
+        self._check_stderr = True if stream in ['both', 'err'] else False
 
         # Directories
         self._src_dir = src_dir
@@ -277,7 +281,14 @@ class Test:
         ]
 
         passed = True
-        for output_type in ['out', 'err']:
+
+        output_types = []
+        if self._check_stdout:
+            output_types.append('out')
+        if self._check_stderr:
+            output_types.append('err')
+
+        for output_type in output_types:
 
             cmd_args = [
                 'diff',
@@ -395,7 +406,8 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
     if args['typechecking']:
         modules.append('typechecking')
     if args['all']:
-        modules = ['scanner', 'parser', 'hashtable', 'symboltable', 'typechecking']
+        modules = ['scanner', 'parser', 'hashtable',
+                   'symboltable', 'typechecking']
 
     if len(modules) == 0:
         logging.error('Invalid modules specified.')
@@ -435,7 +447,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '4.1.0'
+    VERSION = '4.2.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
@@ -461,9 +473,19 @@ def main():
         logging.error('Current working directory should not contain spaces.')
     os.makedirs('temp', exist_ok=True)
 
+    # Stream
+    stream = 'both'
+    if args['--stream'] == 'out':
+        logging.info('Testing only stdout...')
+        stream = 'out'
+    elif args['--stream'] == 'err':
+        logging.info('Testing onlt stderr...')
+        stream = 'err'
+
     for module in modules:
         logging.info(f'Running {module} tests...')
-        test = Test(module, args['--valgrind'], args['--side-by-side'])
+        test = Test(module, args['--valgrind'],
+                    args['--side-by-side'], stream=stream)
         test.run(test_cases)
 
         if args['--save'] is not None:
