@@ -167,6 +167,9 @@ info diff
 > - 3.0.0: Support for Valgrind and memory leak detection
 > - 3.1.0: Major internal refactoring and change of output format
 > - 3.2.0: Support for redirection
+> - 4.0.0: Type checking tests
+> - 4.1.0: Minor script update
+> - 4.2.0: Support to specify test streams
 >
 > Note: The test script changelog is not exhaustive. For a full list of changes, please refer to the commit history.
 
