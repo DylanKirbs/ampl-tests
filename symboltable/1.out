@@ -33,16 +33,17 @@ bucket[ 9] --> NULL
 bucket[10] --> NULL
 bucket[11] --> NULL
 bucket[12] --> NULL
->> >> Identifier already exists ... not added.
+>> Identifier already exists ... not added.
+>> Identifier already exists ... not added.
 >> >> >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> a@1[integer] --> NULL
-bucket[ 7] --> b@2[integer] --> NULL
-bucket[ 8] --> c@3[integer] --> NULL
+bucket[ 6] --> NULL
+bucket[ 7] --> b@1[integer] --> NULL
+bucket[ 8] --> c@2[integer] --> NULL
 bucket[ 9] --> NULL
 bucket[10] --> NULL
 bucket[11] --> NULL
