@@ -7,13 +7,13 @@ Usage:
     test.py --version
 
 Options:
-    -h, --help      Display this help screen
-    --version       Show version information
-    --verbose       Display verbose output, including debug messages
-    --valgrind      Perform a memory check on the test executables
-    --side-by-side  Display the differences side by side
-    --save=<dir>    Save test output to the specified directory
-    --stream        The stream to diff test (out, err, both) [default: both]
+    -h, --help          Display this help screen
+    --version           Show version information
+    --verbose           Display verbose output, including debug messages
+    --valgrind          Perform a memory check on the test executables
+    --side-by-side      Display the differences side by side
+    --save=<dir>        Save test output to the specified directory
+    --stream=<stream>   The stream to diff test (out, err, both) [default: both]
 
 Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
