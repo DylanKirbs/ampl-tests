@@ -1,0 +1,11 @@
+program test12:
+main:
+	output(true or false .."\t true\n");
+	output(true or true .. "\t true\n");
+	output(false or false .. "\t false\n");
+	output("\n");
+
+	output(true and false .. "\t false\t");
+	output(true and true .. "\t true\n");
+	output(false and true .. "\t false");
+	output("\n")

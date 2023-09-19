@@ -1,0 +1,25 @@
+program test13:
+main:
+
+	output("Relop\t \n");
+	output("-----\t -----\n");
+
+
+	output(48 /= 19 .. "\t true\n");
+	output(48 /=48 .. "\t false\n");
+
+	output(48 < 59 .. "\t true\n");
+	output(109 < 86 .. "\t false\n");
+
+	output(45 = 50 .. "\t false\n");
+	output(50 = 50 .. "\t true\n");
+
+	output(78 > 23 .. "\t true\n");
+	output(100 > 1000 .. "\t false\n");
+
+	output(169 >= 169 .. "\t true\n");
+	output(150 >= 175 .. "\t false\n");
+
+	output(810 <= 180 .. "\t false\n");
+	output(21 <= 21 .. "\t true\n")
+

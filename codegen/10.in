@@ -1,0 +1,5 @@
+program test10:
+main:
+	output("Boolean testing \n");
+	output(true .. "\t true \n");
+	output(false .. "\t false\n")

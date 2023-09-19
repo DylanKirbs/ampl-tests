@@ -1,0 +1,41 @@
+program test20:
+main:
+	bool array ba1, ba2;
+	int array ia1, ia2;
+
+	int i1, i2, i3;
+	bool b1, b2, b3;
+
+	let i1 = 59;
+	let i2 = 420;
+	let i3 = 69;
+
+	let b1 = true;
+	let b2 = true;
+	let b3 = false;
+
+	let ba1 = array 10;
+	let ba2 = array 10;
+
+	let ia1 = array 10;
+	let ia2 = array 10;
+
+
+	let ia1[1] = i1;
+	let ia1[2] = i2;
+	let ia1[3] = i3;
+
+	let ba1[1] = b1;
+	let ba1[2] = b2;
+	let ba1[3] = b3;
+
+	let ba2 = ba1;
+	let ia2 = ia1;
+
+	output(ba2[1] .. "\n");
+	output(ba2[2] .. "\n");
+	output(ba2[3] .. "\n");
+
+	output(ia2[1] .. "\n");
+	output(ia2[2] .. "\n");
+	output(ia2[3] .. "\n")

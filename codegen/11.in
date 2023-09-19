@@ -1,0 +1,4 @@
+program test11:
+main:
+	output(not(true) .."\t false\n");
+	output(not(not(not(not(not(not(not(not(not(not(not(not(not(not(false)))))))))))))) .."\t false\n")

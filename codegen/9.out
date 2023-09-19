@@ -1,0 +1,21 @@
+<program> at 1:1.
+  <body> at 3:2.
+    <statements> at 3:2.
+      <statement> at 3:2.
+        <output> at 3:2.
+          <expr> at 3:34.
+            <simple> at 3:34.
+              <term> at 3:34.
+                <factor> at 3:34.
+                </factor> at 3:37.
+                <factor> at 3:41.
+                </factor> at 3:44.
+              </term> at 3:44.
+            </simple> at 3:44.
+          </expr> at 3:44.
+        </output> at 3:57.
+      </statement> at 3:57.
+    </statements> at 3:57.
+  </body> at 3:57.
+</program> at 3:57.
+Success!

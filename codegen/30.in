@@ -1,0 +1,20 @@
+program test30:
+main:
+	bool b1,b2,b3,b4;
+
+	output("Boolean input: \n");
+	input(b1);
+	output(b1 .."\n");
+
+    output("Boolean input: \n");
+    input(b2);
+    output(b2 .."\n");
+
+    output("Boolean input: \n");
+    input(b3);
+    output(b3 .."\n");
+
+    output("Boolean input: \n");
+    input(b4);
+    output(b4 .."\n")
+

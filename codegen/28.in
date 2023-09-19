@@ -1,0 +1,13 @@
+program test28:
+main:
+    int i1;
+    let i1 = 0;
+    while (i1 /= 30):
+        output(i1 .. "\n");
+        let i1 = (i1 + 1);
+		if (i1 = 15):
+			output("chow \n");
+			return
+		end
+    end
+
