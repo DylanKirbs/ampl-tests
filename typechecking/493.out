@@ -1,0 +1,11 @@
+<program> at 1:1.
+  <body> at 3:2.
+    <statements> at 3:2.
+      <statement> at 3:2.
+        <output> at 3:2.
+        </output> at 3:80.
+      </statement> at 3:80.
+    </statements> at 3:80.
+  </body> at 3:80.
+</program> at 3:80.
+Success!

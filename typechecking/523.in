@@ -1,0 +1,22 @@
+program test35:
+rickyrect(int depth, int curr_depth):
+	int i;
+
+	let i = 0;
+
+	if (depth <= curr_depth):
+		return
+	end;
+
+	while (i /= curr_depth):
+		output("-");
+		let i = i + 1
+	end;
+
+	output("\n");
+	let curr_depth = curr_depth + 1;
+	rickyrect(depth, curr_depth)
+
+main:
+	rickyrect(2000, 1)
+

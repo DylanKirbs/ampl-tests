@@ -1,0 +1,18 @@
+program test33:
+main:
+    int array b1;
+
+    let b1 = array 5;
+
+    output("Integer input: \n");
+    input(b1[0]);
+    output(b1[0] .. "\n");
+
+    output("Integer input: \n");
+    input(b1[1]);
+    output(b1[1] .. "\n");
+
+    output("Integer input: \n");
+    input(b1[2]);
+    output(b1[2] .. "\n")
+

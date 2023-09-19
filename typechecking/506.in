@@ -1,0 +1,9 @@
+program test18:
+main:
+	int array a1,a2;
+
+	let a1 = array 5;
+
+	let a1[3] = 4;
+
+	output(a1[3] .. "\n")

@@ -1,0 +1,14 @@
+program test29:
+main:
+    int i1, i2;
+    let i1 = 0;
+    while (i1 /= 30):
+        output(i1 .. "\n");
+        let i1 = i1 + 1;
+		let i2 = 0;
+		while i2 < 30:
+			output("i2=" .. i2 .. "\n");
+			let i2 = i2 + 1
+		end
+    end
+

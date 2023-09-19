@@ -1,0 +1,16 @@
+program test31:
+main:
+    int b1,b2,b3;
+
+    output("Integer input: \n");
+    input(b1);
+    output(b1 .. "\n");
+
+    output("Integer input: \n");
+    input(b2);
+    output(b2 .. "\n");
+
+    output("Integer input: \n");
+    input(b3);
+    output(b3 .."\n")
+

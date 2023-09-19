@@ -1,0 +1,16 @@
+program test15:
+main:
+	bool b1,b2,b3,b4,b5;
+
+	let b1 = true;
+	let b2 = false;
+	let b3 = true;
+	let b4 = false;
+	let b5 = true;
+
+	output(b1 .. "\n");
+	output(b2 .. "\n");
+	output(b3 .. "\n");
+	output(b4 .. "\n");
+	output(b5 .. "\n")
+
