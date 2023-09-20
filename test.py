@@ -480,6 +480,7 @@ class CodegenTest(BaseTest):
             )
 
             ret = process_handler(process, self.TIMEOUT)
+            logging.debug(f'Process returned {ret}')
             if ret > 0:
                 logging.error(f'Unable to compile {test}')
                 return True
@@ -508,7 +509,9 @@ class CodegenTest(BaseTest):
                     preexec_fn=os.setsid  # Create a new process group
                 )
 
-                if process_handler(process, self.TIMEOUT) != 0:
+                ret = process_handler(process, self.TIMEOUT)
+                logging.debug(f'Process returned {ret}')
+                if ret != 0:
                     logging.error(f'Unable to execute {test}.class')
                     return False
 
