@@ -629,7 +629,7 @@ class Tester:
         self._src_dir = os.path.join(cwd, src_dir)
         self._bin_dir = os.path.join(cwd, bin_dir)
         self._temp_dir = os.path.join(cwd, temp_dir)
-        self._tests_dir = os.path.join(cwd, executable)
+        self._test_dir = os.path.join(cwd, executable)
 
     def run(self, test_cases: list[int]):
 
@@ -648,7 +648,7 @@ class Tester:
             test_cases,
             self._src_dir,
             self._bin_dir,
-            self._tests_dir,
+            self._test_dir,
             self._temp_dir,
             flags={
                 'side-by-side': 'side-by-side' in self._flags,
@@ -753,6 +753,13 @@ def main():
     elif args['--stream'] == 'err':
         logging.info('Testing only stderr...')
         stream = 'err'
+
+    # Export jasmin to the ENV
+    if 'codegen' in modules and 'JASMIN_JAR' not in os.environ:
+        logging.info('Exporting jasmin to the environment')
+
+        os.environ['JASMIN_JAR'] = os.path.join(os.getcwd(), 'jasmin.jar')
+        logging.debug(f"export JASMIN_JAR={os.environ['JASMIN_JAR']}")
 
     for exec in modules:
         logging.info(f'Running {exec} tests...')
