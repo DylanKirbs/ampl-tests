@@ -766,7 +766,7 @@ def main():
         stream = 'err'
 
     # Export jasmin to the ENV
-    if 'codegen' in modules and 'JASMIN_JAR' not in os.environ:
+    if 'JASMIN_JAR' not in os.environ:
         logging.info('Exporting jasmin to the environment')
 
         os.environ['JASMIN_JAR'] = os.path.join(os.getcwd(), 'jasmin.jar')
