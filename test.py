@@ -2,7 +2,7 @@
 Test Script for AMPL compiler.
 
 Usage:
-    test.py (scanner | parser | hashtable | symboltable | typechecking | all) [options] [<tests>...]
+    test.py (scanner | parser | hashtable | symboltable | typechecking | codegen) [options] [<tests>...]
     test.py (-h | --help)
     test.py --version
 
@@ -88,13 +88,16 @@ class Test:
         """
 
         # Name
-        self._make_name = f'test{executable}'
+        self._make_name = f'test{executable}' if executable not in [
+            'codegen'] else 'amplc'
         self._exe_name = f'test{executable}' if executable not in [
-            'parser', 'typechecking'] else 'amplc'
+            'parser', 'typechecking', 'codegen'] else 'amplc'
 
         # Flags
         self._perform_mem_check = perform_mem_check
         self._side_by_side = side_by_side
+
+        self._codegen = True if executable == 'codegen' else False
 
         self._check_stdout = True if stream in ['both', 'out'] else False
         self._check_stderr = True if stream in ['both', 'err'] else False
@@ -266,7 +269,7 @@ class Test:
                 )
                 raise Exception("Test executable could not be terminated.")
 
-    def diff_unit(self, test_number: int) -> bool:
+    def diff_unit(self, test_number: str) -> bool:
         """
         Does a diff check on the out and err files.
 
@@ -314,6 +317,49 @@ class Test:
 
         return passed
 
+    def exec_codegen(self, test_number: int) -> bool:
+        """
+        Executes a single test case.
+
+        :param test_number: The test number to execute
+        :return: True if the test executed, False otherwise
+        """
+
+        temp_out = f'{self._temp_dir}/exec_{test_number}.out'
+        temp_err = f'{self._temp_dir}/exec_{test_number}.err'
+
+        cmd_args = [
+            f'{self._bin_dir}/{test_number}',
+            f'{self._module_dir}/exec_{test_number}.in'
+        ]
+
+        if not os.path.exists(f'{self._bin_dir}/{test_number}'):
+            logging.error(
+                f'Could not find executable {self._bin_dir}/{test_number}')
+            return False
+
+        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
+
+            logging.debug(f'Command: {cmd_args}')
+            process = subprocess.Popen(
+                cmd_args,
+                stdout=f_out,
+                stderr=f_err,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+            logging.debug(f'Process ID: {process.pid}')
+
+            try:
+                process.wait(timeout=self._TIMEOUT)
+                logging.debug(
+                    f"Exited with {process.returncode} return code")
+                return True
+            except subprocess.TimeoutExpired:
+                logging.warning(
+                    f'Test {test_number} timed out after {self._TIMEOUT} seconds.')
+                self._handle_timeout(process)
+                return False
+
     def test_unit(self, test_number: int) -> bool:
         """
         Runs the test.
@@ -329,8 +375,16 @@ class Test:
             if not self.memory_check_unit(test_number):
                 return False
 
-        if not self.diff_unit(test_number):
+        if not self.diff_unit(str(test_number)):
             return False
+
+        if self._codegen:
+            # Codegen will compile an output file that needs to be executed
+            if not self.exec_codegen(test_number):
+                return False
+
+            if not self.diff_unit(f'exec_{test_number}'):
+                return False
 
         logging.info(f'Test {test_number} passed.')
         return True
@@ -355,6 +409,7 @@ class Test:
             if not self.test_unit(test_number):
                 failed.append(test_number)
 
+        # Test results
         perc = len(failed)/len(test_cases)
         perc = 1-perc
         perc *= 100
@@ -405,9 +460,8 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
         modules.append('symboltable')
     if args['typechecking']:
         modules.append('typechecking')
-    if args['all']:
-        modules = ['scanner', 'parser', 'hashtable',
-                   'symboltable', 'typechecking']
+    if args['codegen']:
+        modules.append('codegen')
 
     if len(modules) == 0:
         logging.error('Invalid modules specified.')
@@ -447,7 +501,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '4.2.0'
+    VERSION = '5.0.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
