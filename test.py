@@ -452,7 +452,7 @@ class TypecheckingTest(BaseTest):
 
 class CodegenTest(BaseTest):
 
-    MAKE = 'amplc'
+    MAKE = 'testtypechecking'
     EXEC = 'amplc'
 
     def execute(self, test) -> bool:
@@ -460,35 +460,15 @@ class CodegenTest(BaseTest):
         Runs the test.
         """
 
-        cmd_args = [
-            f'{self._bin_dir}/{self.EXEC}',
-            f'{self._test_dir}/{test}.in'
-        ]
+        if super().execute(test) != 0:
+            return True
 
-        temp_out = f'{self._temp_dir}/{test}.out'
-        temp_err = f'{self._temp_dir}/{test}.err'
+        return self.execute_class(test)
 
-        logging.info("Compiling AMPL file")
-        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
-
-            logging.debug(f'Command: {cmd_args}')
-            process = subprocess.Popen(
-                cmd_args,
-                stdout=f_out,
-                stderr=f_err,
-                preexec_fn=os.setsid  # Create a new process group
-            )
-
-            ret = process_handler(process, self.TIMEOUT)
-            logging.debug(f'Process returned {ret}')
-            if ret > 0:
-                logging.error(
-                    f'Unable to compile {test}, execution finished with error code {ret}')
-                return True
-            elif ret == -1:
-                logging.error(f'Compilation of {test} timed out.')
-                return False
-
+    def execute_class(self, test) -> bool:
+        """
+        Runs the class file.
+        """
         cmd_args = [
             'java',
             f'{self._bin_dir}/{test}',
@@ -515,67 +495,6 @@ class CodegenTest(BaseTest):
                 if ret != 0:
                     logging.error(
                         f'Unable to execute {test}.class, execution finished with error code {ret}')
-                    return False
-
-        return True
-
-    def mem_check(self, test) -> bool:
-        """
-        Perform a memory check.
-
-        :param test: The test to check
-
-        :return: True if the memory check passed, False otherwise
-        """
-
-        cmd_args = [
-            'valgrind',
-            '--leak-check=full',
-            '--error-exitcode=255',
-            f'{self._bin_dir}/{self.EXEC}',
-            f'{self._test_dir}/{test}.in'
-        ]
-
-        # Check for leaks
-        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
-
-            logging.debug(f'Valgrind command: {cmd_args}')
-            valgrind_proc = subprocess.Popen(
-                cmd_args,
-                stdout=subprocess.DEVNULL,
-                stderr=capture,
-                preexec_fn=os.setsid  # Create a new process group
-            )
-            logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
-
-            if process_handler(valgrind_proc, self.TIMEOUT) == -1:
-                logging.error(f'Memory check of {test} timed out.')
-                return False
-
-        cmd_args = [
-            'valgrind',
-            '--leak-check=full',
-            '--error-exitcode=255',
-            'java',
-            f'{self._bin_dir}/{test}'
-        ]
-
-        # Check for leaks
-        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
-
-            logging.debug(f'Valgrind command: {cmd_args}')
-            with open(f'{self._test_dir}/{test}.class.in', 'r') as f_in:
-                valgrind_proc = subprocess.Popen(
-                    cmd_args,
-                    stdout=subprocess.DEVNULL,
-                    stderr=capture,
-                    stdin=f_in,
-                    preexec_fn=os.setsid  # Create a new process group
-                )
-                logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
-
-                if process_handler(valgrind_proc, self.TIMEOUT) == -1:
-                    logging.error(f'Memory check of {test} timed out.')
                     return False
 
         return True
