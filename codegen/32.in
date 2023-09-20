@@ -202,5 +202,5 @@ main:
 
     output("Boolean input: \n");
     input(b1[49]);
-    output(b1[49] .. "\n");
+    output(b1[49] .. "\n")
 
