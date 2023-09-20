@@ -394,7 +394,7 @@ class Test:
         if len(test_cases) == 0:
             # count all the .in file in the module directory
             in_files = filter(lambda f: f.endswith(
-                '.in'), os.listdir(self._module_dir)
+                '.in') and f.split(".")[0].isnumeric(), os.listdir(self._module_dir)
             )
             test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
             test_cases.sort()
