@@ -60,19 +60,541 @@ class CustomFormatter(logging.Formatter):
         return coloured_fmt
 
 
-class Test:
+def process_handler(process: subprocess.Popen, timeout: int) -> int:
+    """
+    Handles subprocess timeouts.
+
+    :param process: The process to handle
+    :param timeout: The timeout in seconds
+
+    :return: The return code of the process or -1 if the process timed out
+    """
+
+    try:
+        process.wait(timeout=timeout)
+        return process.returncode
+
+    # Timeout expired
+    except subprocess.TimeoutExpired:
+        logging.warning(f'Process timed out after {timeout} seconds.')
+
+        try:
+            # Terminate the whole process group
+            os.killpg(os.getpgid(process.pid), signal.SIGTERM)
+            process.wait(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            logging.warning(
+                f'Process could not be terminated using SIGTERM, attempting SIGKILL.'
+            )
+            try:
+                os.killpg(os.getpgid(process.pid), signal.SIGKILL)
+                process.wait(timeout=timeout)
+            except subprocess.TimeoutExpired:
+                logging.error(
+                    f'Process could not be terminated. Manual intervention required.'
+                )
+                raise Exception("Test executable could not be terminated.")
+
+    return -1
+
+
+class BaseTest:
+
+    TIMEOUT = 10
+    MAKE = 'amplc'
+    EXEC = 'amplc'
+    DIFF_FILES = ['out', 'err']
+
+    def __init__(
+        self,
+        test_names: list[str],
+        src_dir: str,
+        bin_dir: str,
+        test_dir: str,
+        temp_dir: str,
+        results_dir: str = '',
+        flags: dict[str, bool] = {
+            'side-by-side': False,
+            'memory-check': False
+        }
+    ) -> None:
+        """
+        Creates a new test.
+
+        :param test_names: The names of the tests to run
+        :param src_dir: The source directory
+        :param bin_dir: The binary directory
+        :param test_dir: The directory containing the tests
+        :param temp_dir: The temp (or output) directory
+        :param flags: The flags to pass to the test
+
+        Flags:
+            side-by-side: Whether to display the diff side by side
+        """
+
+        self._test_names = test_names
+        self._src_dir = src_dir
+        self._bin_dir = bin_dir
+        self._test_dir = test_dir
+        self._temp_dir = temp_dir
+        self._results_dir = results_dir
+
+        self._flags = flags
+
+    def make(self) -> bool:
+        """
+        Makes the test.
+
+        Returns:
+            bool: True if compilation was successful, False otherwise
+        """
+
+        clean_proc = subprocess.Popen(
+            ['make', 'clean'],
+            cwd=self._src_dir,
+            stdout=subprocess.DEVNULL
+        )
+        clean_proc.wait()
+
+        comp_proc = subprocess.Popen(
+            ['make', self.MAKE],
+            cwd=self._src_dir,
+            stdout=subprocess.DEVNULL
+        )
+        comp_proc.wait()
+
+        if comp_proc.returncode == 0:
+            logging.info(
+                f'{self.MAKE.capitalize()} compiled successfully!')
+            return True
+
+        logging.error(
+            f'{self.MAKE.capitalize()} failed to compile with error code {comp_proc.returncode}')
+        return False
+
+    def execute(self, test) -> bool:
+        """
+        Runs the test.
+
+        :param test: The test to execute
+
+        :return: True if the test executed, False otherwise
+        """
+
+        cmd_args = [
+            f'{self._bin_dir}/{self.EXEC}',
+            f'{self._test_dir}/{test}.in'
+        ]
+
+        temp_out = f'{self._temp_dir}/{test}.out'
+        temp_err = f'{self._temp_dir}/{test}.err'
+
+        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
+
+            logging.debug(f'Command: {cmd_args}')
+            process = subprocess.Popen(
+                cmd_args,
+                stdout=f_out,
+                stderr=f_err,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+
+            if process_handler(process, self.TIMEOUT) == -1:
+                logging.error(f'Execution of {test} timed out.')
+                return False
+
+        return True
+
+    def mem_check(self, test) -> bool:
+        """
+        Perform a memory check.
+
+        :param test: The test to check
+
+        :return: True if the memory check passed, False otherwise
+        """
+
+        cmd_args = [
+            'valgrind',
+            '--leak-check=full',
+            '--error-exitcode=255',
+            f'{self._bin_dir}/{self.EXEC}',
+            f'{self._test_dir}/{test}.in'
+        ]
+
+        # Check for leaks
+        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
+
+            logging.debug(f'Valgrind command: {cmd_args}')
+            valgrind_proc = subprocess.Popen(
+                cmd_args,
+                stdout=subprocess.DEVNULL,
+                stderr=capture,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+            logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
+
+            if process_handler(valgrind_proc, self.TIMEOUT) == -1:
+                logging.error(f'Memory check of {test} timed out.')
+                return False
+
+        return True
+
+    def diff(self, test) -> bool:
+        """
+        Does a diff check on the out and err files.
+
+        :param test: The test to diff check
+
+        :return: True if both diffs passed, False otherwise
+        """
+
+        diff_flags = []
+
+        if self._flags['side-by-side']:
+            diff_flags += ['--side-by-side', '--suppress-common-lines']
+
+        passed = True
+        for output_type in self.DIFF_FILES:
+
+            cmd_args = [
+                'diff',
+                f'{self._temp_dir}/{test}.{output_type}',
+                f'{self._test_dir}/{test}.{output_type}'
+            ]
+
+            if diff_flags:
+                cmd_args = cmd_args[:1] + diff_flags + cmd_args[1:]
+
+            logging.debug(f'Diff command for {output_type}: {cmd_args}')
+            diff_proc = subprocess.Popen(
+                cmd_args,
+                cwd=os.getcwd()
+            )
+            logging.debug(f'Diff Process ID: {diff_proc.pid}')
+            diff_proc.wait()
+
+            if diff_proc.returncode != 0:
+                logging.error(
+                    f'{test}: Failed diff check for {output_type}.')
+                passed = False
+
+        return passed
+
+    def clean(self) -> bool:
+        """
+        Cleans the test, and removes the temp directory.
+
+        Returns:
+            bool: True if the test was cleaned, False otherwise
+        """
+
+        if not self._results_dir:
+            try:
+                shutil.rmtree(self._temp_dir)
+                logging.info('Temp directory removed successfully.')
+            except Exception as e:
+                logging.warning(f'Could not remove temp directory: {e}')
+                return False
+        else:
+            # rename
+            try:
+                shutil.move(self._temp_dir, self._results_dir)
+                logging.info('Results saved successfully.')
+            except Exception as e:
+                logging.warning(f'Could not save results: {e}')
+                return False
+
+        return True
+
+    def test(self):
+        """
+        Runs the tests.
+        """
+
+        logging.debug("Making Tester")
+        if not self.make():
+            logging.error("Failed to Make Tester")
+            return
+
+        logging.debug("Executing all tests")
+        failed = []
+        for test in self._test_names:
+            if not self.execute(test):
+                logging.error(f"{test}: Failed to execute")
+                failed.append(test)
+                continue
+
+            if not self.diff(test):
+                failed.append(test)
+
+            if self._flags.get('memory-check', False):
+                if not self.mem_check(test):
+                    logging.error(f"{test}: Failed memory check")
+                    failed.append(test) if test not in failed else None
+
+            if test not in failed:
+                logging.info(f"{test}: Passed")
+
+        perc = (1-(len(failed)/len(self._test_names))) * 100
+        logging.info(f"You passed {round(perc, 2)}% of the tests")
+
+        if failed:
+            logging.error(f"Failed tests: {failed}")
+
+        logging.debug("Cleaning up")
+        if not self.clean():
+            logging.warning("Failed to cleanup")
+
+
+class RedirectionBaseTest(BaseTest):
+
+    def execute(self, test) -> bool:
+        """
+        Runs the test.
+
+        Returns:
+            bool: True if the test executed, False otherwise
+        """
+
+        cmd_args = [
+            f'{self._bin_dir}/{self.EXEC}'
+        ]
+
+        temp_out = f'{self._temp_dir}/{test}.out'
+        temp_err = f'{self._temp_dir}/{test}.err'
+
+        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
+
+            logging.debug(f'Command: {cmd_args}')
+            logging.debug(f'stdin: {self._test_dir}/{test}.in')
+            with open(f'{self._test_dir}/{test}.in', 'r') as f_in:
+                process = subprocess.Popen(
+                    cmd_args,
+                    stdin=f_in,
+                    stdout=f_out,
+                    stderr=f_err,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
+
+                if process_handler(process, self.TIMEOUT) == -1:
+                    logging.error(f'Execution of {test} timed out.')
+                    return False
+
+        return True
+
+    def mem_check(self, test) -> bool:
+        """
+        Perform a memory check.
+
+        :param test: The test to check
+
+        :return: True if the memory check passed, False otherwise
+        """
+
+        cmd_args = [
+            'valgrind',
+            '--leak-check=full',
+            '--error-exitcode=255',
+            f'{self._bin_dir}/{self.EXEC}'
+        ]
+
+        # Check for leaks
+        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
+
+            logging.debug(f'Valgrind command: {cmd_args}')
+            with open(f'{self._test_dir}/{test}.in', 'r') as f_in:
+                valgrind_proc = subprocess.Popen(
+                    cmd_args,
+                    stdout=subprocess.DEVNULL,
+                    stdin=f_in,
+                    stderr=capture,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
+                logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
+
+                if process_handler(valgrind_proc, self.TIMEOUT) == -1:
+                    logging.error(f'Memory check of {test} timed out.')
+                    return False
+
+        return True
+
+
+class ScannerTest(BaseTest):
+
+    MAKE = 'testscanner'
+    EXEC = 'testscanner'
+
+
+class ParserTest(BaseTest):
+
+    MAKE = 'testparser'
+    EXEC = 'amplc'
+
+
+class HashtableTest(RedirectionBaseTest):
+
+    MAKE = 'testhashtable'
+    EXEC = 'testhashtable'
+
+
+class SymboltableTest(RedirectionBaseTest):
+
+    MAKE = 'testsymboltable'
+    EXEC = 'testsymboltable'
+
+
+class TypecheckingTest(BaseTest):
+
+    MAKE = 'testtypechecking'
+    EXEC = 'amplc'
+
+
+class CodegenTest(BaseTest):
+
+    MAKE = 'testtypechecking'
+    EXEC = 'amplc'
+
+    def execute(self, test) -> bool:
+        """
+        Runs the test.
+        """
+
+        cmd_args = [
+            f'{self._bin_dir}/{self.EXEC}',
+            f'{self._test_dir}/{test}.in'
+        ]
+
+        temp_out = f'{self._temp_dir}/{test}.out'
+        temp_err = f'{self._temp_dir}/{test}.err'
+
+        logging.info("Compiling AMPL file")
+        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
+
+            logging.debug(f'Command: {cmd_args}')
+            process = subprocess.Popen(
+                cmd_args,
+                stdout=f_out,
+                stderr=f_err,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+
+            if process_handler(process, self.TIMEOUT) != 0:
+                logging.error(f'Unable to compile {test}')
+                return False
+
+        cmd_args = [
+            'java',
+            f'{self._bin_dir}/{test}',
+        ]
+
+        temp_out = f'{self._temp_dir}/{test}.class.out'
+        temp_err = f'{self._temp_dir}/{test}.class.err'
+
+        logging.info("Executing compiled AMPL file")
+        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
+
+            logging.debug(f'Command: {cmd_args}')
+            with open(f'{self._test_dir}/{test}.class.in', 'r') as f_in:
+                process = subprocess.Popen(
+                    cmd_args,
+                    stdout=f_out,
+                    stderr=f_err,
+                    stdin=f_in,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
+
+                if process_handler(process, self.TIMEOUT) != 0:
+                    logging.error(f'Unable to execute {test}.class')
+                    return False
+
+        return True
+
+    def mem_check(self, test) -> bool:
+        """
+        Perform a memory check.
+
+        :param test: The test to check
+
+        :return: True if the memory check passed, False otherwise
+        """
+
+        cmd_args = [
+            'valgrind',
+            '--leak-check=full',
+            '--error-exitcode=255',
+            f'{self._bin_dir}/{self.EXEC}',
+            f'{self._test_dir}/{test}.in'
+        ]
+
+        # Check for leaks
+        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
+
+            logging.debug(f'Valgrind command: {cmd_args}')
+            valgrind_proc = subprocess.Popen(
+                cmd_args,
+                stdout=subprocess.DEVNULL,
+                stderr=capture,
+                preexec_fn=os.setsid  # Create a new process group
+            )
+            logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
+
+            if process_handler(valgrind_proc, self.TIMEOUT) == -1:
+                logging.error(f'Memory check of {test} timed out.')
+                return False
+
+        cmd_args = [
+            'valgrind',
+            '--leak-check=full',
+            '--error-exitcode=255',
+            'java',
+            f'{self._bin_dir}/{test}'
+        ]
+
+        # Check for leaks
+        with open(f'{self._temp_dir}/{test}.valgrind', 'w') as capture:
+
+            logging.debug(f'Valgrind command: {cmd_args}')
+            with open(f'{self._test_dir}/{test}.class.in', 'r') as f_in:
+                valgrind_proc = subprocess.Popen(
+                    cmd_args,
+                    stdout=subprocess.DEVNULL,
+                    stderr=capture,
+                    stdin=f_in,
+                    preexec_fn=os.setsid  # Create a new process group
+                )
+                logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
+
+                if process_handler(valgrind_proc, self.TIMEOUT) == -1:
+                    logging.error(f'Memory check of {test} timed out.')
+                    return False
+
+        return True
+
+
+class Tester:
     """
     A class representing a test.
     """
 
+    TESTS = {
+        'scanner': ScannerTest,
+        'parser': ParserTest,
+        'hashtable': HashtableTest,
+        'symboltable': SymboltableTest,
+        'typechecking': TypecheckingTest,
+        'codegen': CodegenTest
+    }
+
     def __init__(
         self,
         executable: str,
+        cwd: str = os.getcwd(),
+        src_dir: str = '../src',
+        bin_dir: str = '../bin',
+        temp_dir: str = 'temp',
         perform_mem_check: bool = True,
         side_by_side: bool = False,
-        src_dir=f'{os.getcwd()}/../src',
-        bin_dir=f'{os.getcwd()}/../bin',
-        temp_dir=f'{os.getcwd()}/temp',
         stream: str = 'both'
     ) -> None:
         """
@@ -88,359 +610,55 @@ class Test:
         """
 
         # Name
-        self._make_name = f'test{executable}' if executable not in [
-            'codegen'] else 'amplc'
-        self._exe_name = f'test{executable}' if executable not in [
-            'parser', 'typechecking', 'codegen'] else 'amplc'
+        self._exec = executable
+
+        if self._exec not in self.TESTS:
+            logging.error(f'Invalid executable {self._exec}')
+            sys.exit(1)
 
         # Flags
-        self._perform_mem_check = perform_mem_check
-        self._side_by_side = side_by_side
+        self._flags = []
+        self._flags.append('memory-check') if perform_mem_check else None
+        self._flags.append('side-by-side') if side_by_side else None
 
-        self._codegen = True if executable == 'codegen' else False
-
-        self._check_stdout = True if stream in ['both', 'out'] else False
-        self._check_stderr = True if stream in ['both', 'err'] else False
+        self._diff_stream = []
+        self._diff_stream.append('out') if stream in ['out', 'both'] else None
+        self._diff_stream.append('err') if stream in ['err', 'both'] else None
 
         # Directories
-        self._src_dir = src_dir
-        self._bin_dir = bin_dir
-        self._module_dir = executable
-        self._temp_dir = temp_dir
+        self._src_dir = os.path.join(cwd, src_dir)
+        self._bin_dir = os.path.join(cwd, bin_dir)
+        self._temp_dir = os.path.join(cwd, temp_dir)
+        self._tests_dir = os.path.join(cwd, executable)
 
-        # Constants
-        self._TIMEOUT = 10
-        self._MEM_TIMEOUT = 20
-        self._TIMEOUT_HANDLING_TIMEOUT = 1
-        self._REDIRECT_TESTS = ['hashtable', 'symboltable']
-
-    def compile(self) -> bool:
-        """
-        Compiles the test.
-
-        Returns:
-            bool: True if compilation was successful, False otherwise
-        """
-
-        logging.info(f'Compiling {self._module_dir.capitalize()}...')
-        clean_proc = subprocess.Popen(
-            ['make', 'clean'],
-            cwd=self._src_dir,
-            stdout=subprocess.DEVNULL
-        )
-        clean_proc.wait()
-
-        comp_proc = subprocess.Popen(
-            ['make', f'{self._make_name}'],
-            cwd=self._src_dir,
-            stdout=subprocess.DEVNULL
-        )
-        comp_proc.wait()
-
-        if comp_proc.returncode == 0:
-            logging.info(
-                f'{self._module_dir.capitalize()} compiled successfully!')
-            return True
-
-        logging.error(
-            f'{self._module_dir.capitalize()} failed to compile with error code {comp_proc.returncode}')
-        return False
-
-    def exec_unit(self, test_number: int) -> bool:
-        """
-        Executes a single test case.
-
-        :param test_number: The test number to execute
-        :return: True if the test executed, False otherwise
-        """
-
-        temp_out = f'{self._temp_dir}/{test_number}.out'
-        temp_err = f'{self._temp_dir}/{test_number}.err'
-
-        cmd_args = [
-            f'{self._bin_dir}/{self._exe_name}',
-            f'{self._module_dir}/{test_number}.in'
-        ]
-
-        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
-
-            if self._module_dir in self._REDIRECT_TESTS:
-                cmd_args.pop()
-                logging.debug(f'Command: {cmd_args}')
-                logging.debug(f'stdin: {self._module_dir}/{test_number}.in')
-                with open(f'{self._module_dir}/{test_number}.in', 'r') as f_in:
-                    process = subprocess.Popen(
-                        cmd_args,
-                        stdin=f_in,
-                        stdout=f_out,
-                        stderr=f_err,
-                        preexec_fn=os.setsid  # Create a new process group
-                    )
-            else:
-                logging.debug(f'Command: {cmd_args}')
-                process = subprocess.Popen(
-                    cmd_args,
-                    stdout=f_out,
-                    stderr=f_err,
-                    preexec_fn=os.setsid  # Create a new process group
-                )
-            logging.debug(f'Process ID: {process.pid}')
-
-            try:
-                process.wait(timeout=self._TIMEOUT)
-                logging.debug(
-                    f"Exited with {process.returncode} return code")
-                return True
-            except subprocess.TimeoutExpired:
-                logging.warning(
-                    f'Test {test_number} timed out after {self._TIMEOUT} seconds.')
-                self._handle_timeout(process)
-                return False
-
-    def memory_check_unit(self, test_number: int) -> bool:
-
-        cmd_args = [
-            'valgrind',
-            '--leak-check=full',
-            '--error-exitcode=255',
-            f'{self._bin_dir}/{self._exe_name}',
-            f'{self._module_dir}/{test_number}.in'
-        ]
-
-        # Check for leaks
-        with open(f'{self._temp_dir}/{test_number}.valgrind', 'w') as capture:
-
-            if self._module_dir in self._REDIRECT_TESTS:
-                cmd_args.insert(-1, '<')
-                cmd_args = ' '.join(cmd_args)
-                logging.debug(f'Valgrind command: {cmd_args}')
-                valgrind_proc = subprocess.Popen(
-                    cmd_args,
-                    stdout=subprocess.DEVNULL,
-                    stderr=capture,
-                    shell=True,           # Valgrind with redirection prefers shells
-                    preexec_fn=os.setsid  # Create a new process group
-                )
-            else:
-                logging.debug(f'Valgrind command: {cmd_args}')
-                valgrind_proc = subprocess.Popen(
-                    cmd_args,
-                    stdout=subprocess.DEVNULL,
-                    stderr=capture,
-                    preexec_fn=os.setsid  # Create a new process group
-                )
-            logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
-
-        try:
-            valgrind_proc.wait(timeout=self._MEM_TIMEOUT)
-            logging.debug(
-                f"Exited with {valgrind_proc.returncode} return code")
-            if valgrind_proc.returncode == 255:
-                logging.error(f'Test {test_number} failed memory check')
-                return False
-            elif valgrind_proc.returncode != 0:
-                logging.debug(
-                    "Unable to determine memory check status, execution returned non-zero exit status.")
-            return True
-        except subprocess.TimeoutExpired:
-            logging.warning(
-                f'Valgrind {test_number} timed out after {self._MEM_TIMEOUT} seconds.')
-            self._handle_timeout(valgrind_proc)
-            return False
-
-    def _handle_timeout(self, process: subprocess.Popen):
-
-        logging.debug(f'Terminating process {process.pid}...')
-
-        try:
-            # Terminate the whole process group
-            os.killpg(os.getpgid(process.pid), signal.SIGTERM)
-            process.wait(timeout=self._TIMEOUT_HANDLING_TIMEOUT)
-        except subprocess.TimeoutExpired:
-            logging.warning(
-                f'{self._exe_name} process could not be terminated using SIGTERM, attempting SIGKILL.'
-            )
-            try:
-                os.killpg(os.getpgid(process.pid), signal.SIGKILL)
-                process.wait(timeout=self._TIMEOUT_HANDLING_TIMEOUT)
-            except subprocess.TimeoutExpired:
-                logging.error(
-                    f'{self._exe_name} process could not be terminated using SIGKILL. Manual intervention required.'
-                )
-                raise Exception("Test executable could not be terminated.")
-
-    def diff_unit(self, test_number: str) -> bool:
-        """
-        Does a diff check on the out and err files.
-
-        :param test_number: The test number to diff
-        :param flags: The flags to pass to diff
-        :return: True if both diffs passed, False otherwise
-        """
-
-        side_by_side_flags = [
-            '--side-by-side',
-            '--suppress-common-lines'
-        ]
-
-        passed = True
-
-        output_types = []
-        if self._check_stdout:
-            output_types.append('out')
-        if self._check_stderr:
-            output_types.append('err')
-
-        for output_type in output_types:
-
-            cmd_args = [
-                'diff',
-                f'{self._temp_dir}/{test_number}.{output_type}',
-                f'{self._module_dir}/{test_number}.{output_type}'
-            ]
-
-            if self._side_by_side:
-                cmd_args = cmd_args[:1] + side_by_side_flags + cmd_args[1:]
-
-            logging.debug(f'Diff command for std{output_type}: {cmd_args}')
-            diff_proc = subprocess.Popen(
-                cmd_args,
-                cwd=os.getcwd()
-            )
-            logging.debug(f'Diff Process ID: {diff_proc.pid}')
-            diff_proc.wait()
-
-            if diff_proc.returncode != 0:
-                logging.error(
-                    f'Test {test_number} failed diff check ({output_type}).')
-                passed = False
-
-        return passed
-
-    def exec_codegen(self, test_number: int) -> bool:
-        """
-        Executes a single test case.
-
-        :param test_number: The test number to execute
-        :return: True if the test executed, False otherwise
-        """
-
-        temp_out = f'{self._temp_dir}/exec_{test_number}.out'
-        temp_err = f'{self._temp_dir}/exec_{test_number}.err'
-
-        cmd_args = [
-            f'{self._bin_dir}/{test_number}',
-            f'{self._module_dir}/exec_{test_number}.in'
-        ]
-
-        if not os.path.exists(f'{self._bin_dir}/{test_number}'):
-            logging.error(
-                f'Could not find executable {self._bin_dir}/{test_number}')
-            return False
-
-        with open(temp_out, 'w') as f_out, open(temp_err, 'w') as f_err:
-
-            logging.debug(f'Command: {cmd_args}')
-            process = subprocess.Popen(
-                cmd_args,
-                stdout=f_out,
-                stderr=f_err,
-                preexec_fn=os.setsid  # Create a new process group
-            )
-            logging.debug(f'Process ID: {process.pid}')
-
-            try:
-                process.wait(timeout=self._TIMEOUT)
-                logging.debug(
-                    f"Exited with {process.returncode} return code")
-                return True
-            except subprocess.TimeoutExpired:
-                logging.warning(
-                    f'Test {test_number} timed out after {self._TIMEOUT} seconds.')
-                self._handle_timeout(process)
-                return False
-
-    def test_unit(self, test_number: int) -> bool:
-        """
-        Runs the test.
-
-        :param test_number: The test number to execute
-        :return: True if the test executed, False otherwise
-        """
-
-        if not self.exec_unit(test_number):
-            return False
-
-        if self._perform_mem_check:
-            if not self.memory_check_unit(test_number):
-                return False
-
-        if not self.diff_unit(str(test_number)):
-            return False
-
-        if self._codegen:
-            # Codegen will compile an output file that needs to be executed
-            if not self.exec_codegen(test_number):
-                return False
-
-            if not self.diff_unit(f'exec_{test_number}'):
-                return False
-
-        logging.info(f'Test {test_number} passed.')
-        return True
-
-    def run(self, test_cases: list[int]) -> bool:
+    def run(self, test_cases: list[int]):
 
         if len(test_cases) == 0:
             # count all the .in file in the module directory
             in_files = filter(lambda f: f.endswith(
-                '.in') and f.split(".")[0].isnumeric(), os.listdir(self._module_dir)
+                '.in') and "class" not in f, os.listdir(self._exec)
             )
             test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
             test_cases.sort()
 
         logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
 
-        if not self.compile():
-            return False
+        # Create the test
+        test = self.TESTS[self._exec](
+            test_cases,
+            self._src_dir,
+            self._bin_dir,
+            self._tests_dir,
+            self._temp_dir,
+            flags={
+                'side-by-side': 'side-by-side' in self._flags,
+                'memory-check': 'memory-check' in self._flags
+            }
+        )
 
-        failed = []
-        for test_number in test_cases:
-            if not self.test_unit(test_number):
-                failed.append(test_number)
-
-        # Test results
-        perc = len(failed)/len(test_cases)
-        perc = 1-perc
-        perc *= 100
-        perc = round(perc, 2)
-        logging.info(f"You passed {perc}% of the tests")
-
-        if len(failed) > 0:
-            logging.error(f'Tests {failed} failed.')
-            return False
-
-        return True
-
-    def save_results(self, save_dir) -> None:
-
-        if os.path.exists(save_dir):
-            shutil.rmtree(save_dir)
-
-        try:
-            shutil.move(self._temp_dir, save_dir)
-            logging.info(f'Saving test results to {save_dir}...')
-        except Exception as e:
-            logging.error(f'Error saving test results: {e}')
-
-    def rm_temp(self) -> None:
-        """Removes the temp directory."""
-
-        try:
-            shutil.rmtree(self._temp_dir)
-            logging.info('Temp directory removed successfully.')
-        except Exception as e:
-            logging.warning(f'Could not remove temp directory: {e}')
+        # Run the test
+        logging.debug(f'Running {self._exec} tests...')
+        test.test()
 
 
 def parse_modules(args: dict[str, bool]) -> list[str]:
@@ -501,7 +719,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '5.0.0'
+    VERSION = '6.0.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
@@ -533,19 +751,18 @@ def main():
         logging.info('Testing only stdout...')
         stream = 'out'
     elif args['--stream'] == 'err':
-        logging.info('Testing onlt stderr...')
+        logging.info('Testing only stderr...')
         stream = 'err'
 
-    for module in modules:
-        logging.info(f'Running {module} tests...')
-        test = Test(module, args['--valgrind'],
-                    args['--side-by-side'], stream=stream)
+    for exec in modules:
+        logging.info(f'Running {exec} tests...')
+        test = Tester(
+            exec,
+            perform_mem_check=args['--valgrind'],
+            side_by_side=args['--side-by-side'],
+            stream=stream
+        )
         test.run(test_cases)
-
-        if args['--save'] is not None:
-            test.save_results(args['--save'])
-        else:
-            test.rm_temp()
 
     logging.info('Done.')
 
