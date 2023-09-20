@@ -479,8 +479,12 @@ class CodegenTest(BaseTest):
                 preexec_fn=os.setsid  # Create a new process group
             )
 
-            if process_handler(process, self.TIMEOUT) != 0:
+            ret = process_handler(process, self.TIMEOUT)
+            if ret > 0:
                 logging.error(f'Unable to compile {test}')
+                return True
+            elif ret == -1:
+                logging.error(f'Compilation of {test} timed out.')
                 return False
 
         cmd_args = [
