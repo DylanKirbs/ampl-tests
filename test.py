@@ -482,7 +482,8 @@ class CodegenTest(BaseTest):
             ret = process_handler(process, self.TIMEOUT)
             logging.debug(f'Process returned {ret}')
             if ret > 0:
-                logging.error(f'Unable to compile {test}')
+                logging.error(
+                    f'Unable to compile {test}, execution finished with error code {ret}')
                 return True
             elif ret == -1:
                 logging.error(f'Compilation of {test} timed out.')
@@ -512,7 +513,8 @@ class CodegenTest(BaseTest):
                 ret = process_handler(process, self.TIMEOUT)
                 logging.debug(f'Process returned {ret}')
                 if ret != 0:
-                    logging.error(f'Unable to execute {test}.class')
+                    logging.error(
+                        f'Unable to execute {test}.class, execution finished with error code {ret}')
                     return False
 
         return True
