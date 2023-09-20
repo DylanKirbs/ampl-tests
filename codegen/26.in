@@ -1,0 +1,32 @@
+program test26:
+main:
+    bool array ba1, ba2;
+    bool b1, b2, b3;
+
+    let b1 = true;
+    let b2 = true;
+    let b3 = false;
+
+    let ba1 = array 10;
+    let ba2 = array 10;
+
+    let ba1[1] = b1;
+    let ba1[2] = b2;
+    let ba1[3] = b3;
+
+    let ba2 = ba1;
+
+
+    if (false):
+        output("if1 \n")
+    elif (b3):
+        output("if2 \n")
+    elif (b1):
+        output("if3 \n")
+    elif (false):
+        output("if4 \n")
+    else:
+        output("ifelse \n")
+    end;
+
+   output("done \n")

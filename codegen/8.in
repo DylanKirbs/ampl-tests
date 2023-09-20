@@ -1,0 +1,7 @@
+program test08:
+main:
+	output(10*10.."\t 100\n");
+	output(10/10.. "\t 1\n");
+	output(42*10.. "\t 420\n");
+	output(420 rem 69 .."\t 6\n");
+	output(3 rem 2.."\t 1\n")

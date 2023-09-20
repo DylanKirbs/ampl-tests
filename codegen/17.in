@@ -1,0 +1,27 @@
+program test17:
+main:
+	bool b1,b2,b3,b4,b5;
+
+    let b1 = true;
+    let b2 = false;
+    let b3 = true;
+    let b4 = false;
+    let b5 = true;
+
+    output(b1 and b3 .. "\n");
+    output(b2 or b5 .. "\n");
+    output((not(b3) or b5) .. "\n");
+    output(not(not(not(not(not(not(not(not(not(not(not(b4))))))))))) .. "\n");
+ 	output(not(b1) .. "\n");
+	output(b5 and b5 .. "\n");
+	output(b1 and b1 .. "\n");
+	output(b2 and b2 .. "\n");
+	output(b3 or b3 .. "\n");
+	output(b5 or b4 .. "\n");
+	output(b1 or not(b2) .. "\n");
+	output(not(b1) .. "\n");
+	output(b2 and b4 .. "\n");
+	output("normal strings\n");
+	output(1221333345 .. "\n");
+	output(6+6 .. "\n");
+	output(true .. "\n")

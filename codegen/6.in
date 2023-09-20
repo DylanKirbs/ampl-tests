@@ -1,0 +1,5 @@
+program test06:
+main:
+	output("Mathematical expressions\n");
+	output(6 + 10.."\t 16\n");
+	output(6+10 .."\t 16\n")

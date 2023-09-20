@@ -1,0 +1,12 @@
+program test19:
+main:
+	bool array a1;
+
+	let a1 = array 5;
+
+	let a1[3] = true;
+
+
+	output(a1[3] .. "\n")
+
+

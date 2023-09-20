@@ -1,0 +1,26 @@
+program test34:
+foo(int a, bool b) -> int array:
+	int array ia1;
+
+	let ia1 = array (a+1);
+
+	while (a /= 0) and not(b):
+		let ia1[a] = a;
+		let a = a-1
+	end;
+
+	return ia1
+
+main:
+	int array intarr;
+	int var;
+
+	let var = 10000;
+
+	let intarr = foo(var ,false);
+
+	while (var /= 0):
+		output(intarr[var] .. "\n");
+		let var = var -1
+	end
+

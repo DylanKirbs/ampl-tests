@@ -1,0 +1,206 @@
+program test32:
+main:
+    bool array b1;
+
+	let b1 = array 60;
+
+    output("Boolean input: \n");
+    input(b1[0]);
+    output(b1[0] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[1]);
+    output(b1[1] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[2]);
+    output(b1[2] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[3]);
+    output(b1[3] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[4]);
+    output(b1[4] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[5]);
+    output(b1[5] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[6]);
+    output(b1[6] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[7]);
+    output(b1[7] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[8]);
+    output(b1[8] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[9]);
+    output(b1[9] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[10]);
+    output(b1[10] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[11]);
+    output(b1[11] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[12]);
+    output(b1[12] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[13]);
+    output(b1[13] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[14]);
+    output(b1[14] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[15]);
+    output(b1[15] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[16]);
+    output(b1[16] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[17]);
+    output(b1[17] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[18]);
+    output(b1[18] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[19]);
+    output(b1[19] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[20]);
+    output(b1[20] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[21]);
+    output(b1[21] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[22]);
+    output(b1[22] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[23]);
+    output(b1[23] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[24]);
+    output(b1[24] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[25]);
+    output(b1[25] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[26]);
+    output(b1[26] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[27]);
+    output(b1[27] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[28]);
+    output(b1[28] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[29]);
+    output(b1[29] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[30]);
+    output(b1[30] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[31]);
+    output(b1[31] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[32]);
+    output(b1[32] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[33]);
+    output(b1[33] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[34]);
+    output(b1[34] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[35]);
+    output(b1[35] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[36]);
+    output(b1[36] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[37]);
+    output(b1[37] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[38]);
+    output(b1[38] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[39]);
+    output(b1[39] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[40]);
+    output(b1[40] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[41]);
+    output(b1[41] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[42]);
+    output(b1[42] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[43]);
+    output(b1[43] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[44]);
+    output(b1[44] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[45]);
+    output(b1[45] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[46]);
+    output(b1[46] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[47]);
+    output(b1[47] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[48]);
+    output(b1[48] .. "\n");
+
+    output("Boolean input: \n");
+    input(b1[49]);
+    output(b1[49] .. "\n");
+
