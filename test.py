@@ -656,6 +656,8 @@ class Tester:
             }
         )
 
+        test.DIFF_FILES = self._diff_stream
+
         # Run the test
         logging.debug(f'Running {self._exec} tests...')
         test.test()
