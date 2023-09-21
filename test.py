@@ -699,7 +699,7 @@ def main():
             exec,
             perform_mem_check=args['--valgrind'],
             side_by_side=args['--side-by-side'],
-            result_dir=f'{args["--save"]}',
+            result_dir=f'{args["--save"]}' if args['--save'] else '',
             stream=stream
         )
         test.run(test_cases)
