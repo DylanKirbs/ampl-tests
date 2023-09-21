@@ -14,6 +14,7 @@ Options:
     --side-by-side      Display the differences side by side
     --save=<dir>        Save test output to the specified directory
     --stream=<stream>   The stream to diff test (out, err, both) [default: both]
+    --exec-class        Execute the compiled AMPL file
 
 Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
@@ -121,7 +122,8 @@ class BaseTest:
         results_dir: str = '',
         flags: dict[str, bool] = {
             'side-by-side': False,
-            'memory-check': False
+            'memory-check': False,
+            'exec-class': False,
         }
     ) -> None:
         """
@@ -472,10 +474,13 @@ class CodegenTest(BaseTest):
         Runs the test.
         """
 
-        if super().execute(test) != 0:
+        if not super().execute(test):
             return True
 
-        return self.execute_class(test)
+        if self._flags.get('exec-class', False):
+            return self.execute_class(test)
+
+        return True
 
     def execute_class(self, test) -> bool:
         """
@@ -549,12 +554,11 @@ TESTS = {
 def test_runner(
     executable: str,
     test_cases,
+    flags,
     cwd: str = os.getcwd(),
     src_dir: str = '../src',
     bin_dir: str = '../bin',
     result_dir: str = '',
-    perform_mem_check: bool = True,
-    side_by_side: bool = False,
     stream: str = 'both'
 ):
     """
@@ -596,10 +600,7 @@ def test_runner(
         os.path.join(cwd, executable),
         os.path.join(cwd, 'temp'),
         result_dir,
-        flags={
-            'side-by-side': side_by_side,
-            'memory-check': perform_mem_check
-        }
+        flags
     )
     test.DIFF_FILES = diff_stream
 
@@ -697,14 +698,19 @@ def main():
         os.environ['JASMIN_JAR'] = os.path.join(os.getcwd(), 'jasmin.jar')
         logging.debug(f"export JASMIN_JAR={os.environ['JASMIN_JAR']}")
 
+    flags = {
+        'side-by-side': args['--side-by-side'],
+        'memory-check': args['--valgrind'],
+        'exec-class': args['--exec-class']
+    }
+    logging.debug("Additional Flags: " + pformat(flags))
+
     for exec in modules:
         logging.info(f'Running {exec} tests...')
         test_runner(
             exec,
             test_cases,
-            result_dir=f'{args["--save"]}' if args['--save'] else '',
-            perform_mem_check=args['--valgrind'],
-            side_by_side=args['--side-by-side'],
+            flags,
             stream=stream
         )
 
