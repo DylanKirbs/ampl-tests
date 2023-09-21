@@ -517,30 +517,6 @@ class CodegenTest(BaseTest):
 
         return True
 
-    def clean(self) -> bool:
-        success = super().clean()
-
-        # remove the jasmin and class files from bin
-        try:
-            for file in os.listdir(self._bin_dir):
-
-                if self._results_dir != '' and file.endswith(".jasmin"):
-                    shutil.move(
-                        os.path.join(self._bin_dir, file),
-                        os.path.join(self._results_dir, file)
-                    )
-                    continue
-
-                if file.endswith((".jasmin", ".class")):
-                    os.remove(os.path.join(self._bin_dir, file))
-
-            logging.info('Cleaning bin directory successful.')
-        except Exception as e:
-            logging.warning(f'Could not remove jasmin and class files: {e}')
-            return False
-
-        return success
-
 # ---------------------------------------------------------------------------- #
 # Test Runner
 
