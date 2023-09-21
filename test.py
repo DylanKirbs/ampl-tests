@@ -40,6 +40,9 @@ from docopt import docopt
 from termcolor import colored
 from pprint import pformat
 
+# ---------------------------------------------------------------------------- #
+# Custom formatter
+
 
 class CustomFormatter(logging.Formatter):
 
@@ -58,6 +61,9 @@ class CustomFormatter(logging.Formatter):
         formatter = logging.Formatter(fmt_str)
         coloured_fmt = colour(formatter.format(record))
         return coloured_fmt
+
+# ---------------------------------------------------------------------------- #
+# Test Classes
 
 
 def process_handler(process: subprocess.Popen, timeout: int) -> int:
@@ -291,7 +297,9 @@ class BaseTest:
             bool: True if the test was cleaned, False otherwise
         """
 
+        logging.debug(f"Results dir: {self._results_dir}")
         if self._results_dir == '':
+            # remove temp dir
             try:
                 shutil.rmtree(self._temp_dir)
                 logging.info('Temp directory removed successfully.')
@@ -524,6 +532,9 @@ class CodegenTest(BaseTest):
 
         return success
 
+# ---------------------------------------------------------------------------- #
+# Test Runner
+
 
 TESTS = {
     'scanner': ScannerTest,
@@ -535,7 +546,7 @@ TESTS = {
 }
 
 
-def test(
+def test_runner(
     executable: str,
     test_cases,
     cwd: str = os.getcwd(),
@@ -584,7 +595,7 @@ def test(
         os.path.join(cwd, bin_dir),
         os.path.join(cwd, executable),
         os.path.join(cwd, 'temp'),
-        os.path.join(cwd, result_dir),
+        result_dir,
         flags={
             'side-by-side': side_by_side,
             'memory-check': perform_mem_check
@@ -596,8 +607,11 @@ def test(
     logging.debug(f'Running {executable} tests...')
     test.test()
 
+# ---------------------------------------------------------------------------- #
+# Argument Parsing and Event Handling
 
-def parse_modules(args: dict[str, bool]) -> list[str]:
+
+def parse_args(args: dict):
     """
     Parses the modules from the command line.
     """
@@ -614,15 +628,8 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
 
     logging.debug(f'Modules\n{pformat(modules, compact=True)}')
 
-    return modules
-
-
-def parse_test_cases(test_args) -> list[int]:
-    """
-    Parses the test cases from the command line.
-    Either a list of integers or a start..end range can be provided.
-    """
     cases = []
+    test_args = args['<tests>']
 
     if len(test_args) == 0:
         pass
@@ -633,7 +640,8 @@ def parse_test_cases(test_args) -> list[int]:
         cases = list(map(int, test_args))
 
     logging.debug(f'Test cases\n{pformat(cases, compact=True)}')
-    return cases
+
+    return modules, cases
 
 
 def handle_keyboard_interrupt(sig, frame):
@@ -642,6 +650,8 @@ def handle_keyboard_interrupt(sig, frame):
     logging.warning('Keyboard interrupt detected!')
     logging.warning('Ensure that all subprocesses are terminated.')
     sys.exit(0)
+
+# ---------------------------------------------------------------------------- #
 
 
 def main():
@@ -662,8 +672,7 @@ def main():
     # Argument parsing
     logging.info(f'Running Test script version {VERSION}')
     logging.debug(f'Arguments\n{pformat(args)}')
-    modules = parse_modules(args)
-    test_cases = parse_test_cases(args['<tests>'])
+    modules, test_cases = parse_args(args)
 
     # CWD and temp dir setup
     logging.info('Setting up')
@@ -690,7 +699,7 @@ def main():
 
     for exec in modules:
         logging.info(f'Running {exec} tests...')
-        test(
+        test_runner(
             exec,
             test_cases,
             result_dir=f'{args["--save"]}' if args['--save'] else '',
