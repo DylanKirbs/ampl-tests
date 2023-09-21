@@ -523,6 +523,14 @@ class CodegenTest(BaseTest):
         # remove the jasmin and class files from bin
         try:
             for file in os.listdir(self._bin_dir):
+
+                if self._results_dir != '' and file.endswith(".jasmin"):
+                    shutil.move(
+                        os.path.join(self._bin_dir, file),
+                        os.path.join(self._results_dir, file)
+                    )
+                    continue
+
                 if file.endswith((".jasmin", ".class")):
                     os.remove(os.path.join(self._bin_dir, file))
 
