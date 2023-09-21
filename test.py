@@ -291,7 +291,7 @@ class BaseTest:
             bool: True if the test was cleaned, False otherwise
         """
 
-        if not self._results_dir:
+        if self._results_dir == '':
             try:
                 shutil.rmtree(self._temp_dir)
                 logging.info('Temp directory removed successfully.')
@@ -525,97 +525,76 @@ class CodegenTest(BaseTest):
         return success
 
 
-class Tester:
+TESTS = {
+    'scanner': ScannerTest,
+    'parser': ParserTest,
+    'hashtable': HashtableTest,
+    'symboltable': SymboltableTest,
+    'typechecking': TypecheckingTest,
+    'codegen': CodegenTest
+}
+
+
+def test(
+    executable: str,
+    test_cases,
+    cwd: str = os.getcwd(),
+    src_dir: str = '../src',
+    bin_dir: str = '../bin',
+    result_dir: str = '',
+    perform_mem_check: bool = True,
+    side_by_side: bool = False,
+    stream: str = 'both'
+):
     """
-    A class representing a test.
+    Creates a new test.
+
+    :param executable: The name of the executable to test
+    :param test_cases: The test cases to run
+    :param perform_mem_check: Whether to perform a memory check on the executable
+    :param side_by_side: Whether to display the diff side by side
+    :param src_dir: The source directory
+    :param bin_dir: The binary directory
+    :param tests_dir: The tests directory
+    :param result_dir: The directory to save to
     """
 
-    TESTS = {
-        'scanner': ScannerTest,
-        'parser': ParserTest,
-        'hashtable': HashtableTest,
-        'symboltable': SymboltableTest,
-        'typechecking': TypecheckingTest,
-        'codegen': CodegenTest
-    }
+    if executable not in TESTS:
+        logging.error(f'Invalid executable {executable}')
+        sys.exit(1)
 
-    def __init__(
-        self,
-        executable: str,
-        cwd: str = os.getcwd(),
-        src_dir: str = '../src',
-        bin_dir: str = '../bin',
-        result_dir: str = '',
-        perform_mem_check: bool = True,
-        side_by_side: bool = False,
-        stream: str = 'both'
-    ) -> None:
-        """
-        Creates a new test.
+    diff_stream = []
+    diff_stream.append('out') if stream in ['out', 'both'] else None
+    diff_stream.append('err') if stream in ['err', 'both'] else None
 
-        :param executable: The name of the executable to test
-        :param perform_mem_check: Whether to perform a memory check on the executable
-        :param side_by_side: Whether to display the diff side by side
-        :param src_dir: The source directory
-        :param bin_dir: The binary directory
-        :param tests_dir: The tests directory
-        :param result_dir: The directory to save to
-        """
-
-        # Name
-        self._exec = executable
-
-        if self._exec not in self.TESTS:
-            logging.error(f'Invalid executable {self._exec}')
-            sys.exit(1)
-
-        # Flags
-        self._flags = []
-        self._flags.append('memory-check') if perform_mem_check else None
-        self._flags.append('side-by-side') if side_by_side else None
-
-        self._diff_stream = []
-        self._diff_stream.append('out') if stream in ['out', 'both'] else None
-        self._diff_stream.append('err') if stream in ['err', 'both'] else None
-
-        # Directories
-        self._src_dir = os.path.join(cwd, src_dir)
-        self._bin_dir = os.path.join(cwd, bin_dir)
-        self._temp_dir = os.path.join(cwd, 'temp')
-        self._results_dir = os.path.join(cwd, result_dir)
-        self._test_dir = os.path.join(cwd, executable)
-
-    def run(self, test_cases: list[int]):
-
-        if len(test_cases) == 0:
-            # count all the .in file in the module directory
-            in_files = filter(lambda f: f.endswith(
-                '.in') and "class" not in f, os.listdir(self._exec)
-            )
-            test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
-            test_cases.sort()
-
-        logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
-
-        # Create the test
-        test = self.TESTS[self._exec](
-            test_cases,
-            self._src_dir,
-            self._bin_dir,
-            self._test_dir,
-            self._temp_dir,
-            self._results_dir,
-            flags={
-                'side-by-side': 'side-by-side' in self._flags,
-                'memory-check': 'memory-check' in self._flags
-            }
+    if len(test_cases) == 0:
+        # count all the .in file in the module directory
+        in_files = filter(lambda f: f.endswith(
+            '.in') and "class" not in f, os.listdir(executable)
         )
+        test_cases = list(map(lambda f: int(f.split('.')[0]), in_files))
+        test_cases.sort()
 
-        test.DIFF_FILES = self._diff_stream
+    logging.debug(f'Test cases\n{pformat(test_cases, compact=True)}')
 
-        # Run the test
-        logging.debug(f'Running {self._exec} tests...')
-        test.test()
+    # Create the test
+    test = TESTS[executable](
+        test_cases,
+        os.path.join(cwd, src_dir),
+        os.path.join(cwd, bin_dir),
+        os.path.join(cwd, executable),
+        os.path.join(cwd, 'temp'),
+        os.path.join(cwd, result_dir),
+        flags={
+            'side-by-side': side_by_side,
+            'memory-check': perform_mem_check
+        }
+    )
+    test.DIFF_FILES = diff_stream
+
+    # Run the test
+    logging.debug(f'Running {executable} tests...')
+    test.test()
 
 
 def parse_modules(args: dict[str, bool]) -> list[str]:
@@ -625,18 +604,9 @@ def parse_modules(args: dict[str, bool]) -> list[str]:
 
     modules = []
 
-    if args['scanner']:
-        modules.append('scanner')
-    if args['parser']:
-        modules.append('parser')
-    if args['hashtable']:
-        modules.append('hashtable')
-    if args['symboltable']:
-        modules.append('symboltable')
-    if args['typechecking']:
-        modules.append('typechecking')
-    if args['codegen']:
-        modules.append('codegen')
+    for module in TESTS:
+        if args[module]:
+            modules.append(module)
 
     if len(modules) == 0:
         logging.error('Invalid modules specified.')
@@ -720,14 +690,14 @@ def main():
 
     for exec in modules:
         logging.info(f'Running {exec} tests...')
-        test = Tester(
+        test(
             exec,
+            test_cases,
+            result_dir=f'{args["--save"]}' if args['--save'] else '',
             perform_mem_check=args['--valgrind'],
             side_by_side=args['--side-by-side'],
-            result_dir=f'{args["--save"]}' if args['--save'] else '',
             stream=stream
         )
-        test.run(test_cases)
 
     logging.info('Done.')
 
