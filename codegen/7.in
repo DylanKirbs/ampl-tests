@@ -1,4 +1,4 @@
-program test07:
+program test7:
 main:
 	output( -6.. "\t -5\n");
 	output( 9-5.. "\t 5\n");

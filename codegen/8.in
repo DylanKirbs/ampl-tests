@@ -1,4 +1,4 @@
-program test08:
+program test8:
 main:
 	output(10*10.."\t 100\n");
 	output(10/10.. "\t 1\n");

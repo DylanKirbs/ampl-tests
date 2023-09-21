@@ -1,4 +1,4 @@
-program test06:
+program test6:
 main:
 	output("Mathematical expressions\n");
 	output(6 + 10.."\t 16\n");
