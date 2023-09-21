@@ -471,7 +471,7 @@ class CodegenTest(BaseTest):
         """
         cmd_args = [
             'java',
-            f'{self._bin_dir}/{test}',
+            f'test{test}',
         ]
 
         temp_out = f'{self._temp_dir}/{test}.class.out'
