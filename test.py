@@ -520,7 +520,7 @@ class Tester:
         cwd: str = os.getcwd(),
         src_dir: str = '../src',
         bin_dir: str = '../bin',
-        temp_dir: str = 'temp',
+        result_dir: str = '',
         perform_mem_check: bool = True,
         side_by_side: bool = False,
         stream: str = 'both'
@@ -534,7 +534,7 @@ class Tester:
         :param src_dir: The source directory
         :param bin_dir: The binary directory
         :param tests_dir: The tests directory
-        :param temp_dir: The temp directory
+        :param result_dir: The directory to save to
         """
 
         # Name
@@ -556,7 +556,8 @@ class Tester:
         # Directories
         self._src_dir = os.path.join(cwd, src_dir)
         self._bin_dir = os.path.join(cwd, bin_dir)
-        self._temp_dir = os.path.join(cwd, temp_dir)
+        self._temp_dir = os.path.join(cwd, 'temp')
+        self._results_dir = os.path.join(cwd, result_dir)
         self._test_dir = os.path.join(cwd, executable)
 
     def run(self, test_cases: list[int]):
@@ -578,6 +579,7 @@ class Tester:
             self._bin_dir,
             self._test_dir,
             self._temp_dir,
+            self._results_dir,
             flags={
                 'side-by-side': 'side-by-side' in self._flags,
                 'memory-check': 'memory-check' in self._flags
@@ -697,6 +699,7 @@ def main():
             exec,
             perform_mem_check=args['--valgrind'],
             side_by_side=args['--side-by-side'],
+            result_dir=f'{args["--save"]}',
             stream=stream
         )
         test.run(test_cases)
