@@ -110,7 +110,7 @@ class BaseTest:
     TIMEOUT = 10
     MAKE = 'amplc'
     EXEC = 'amplc'
-    DIFF_FILES = ['out', 'err']
+    DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
 
     def __init__(
         self,
@@ -581,6 +581,9 @@ def test_runner(
     diff_stream = []
     diff_stream.append('out') if stream in ['out', 'both'] else None
     diff_stream.append('err') if stream in ['err', 'both'] else None
+    if flags['exec-class'] == true:
+        diff_stream.append('class.out') if stream in ['out', 'both'] else None
+        diff_stream.append('class.err') if stream in ['err', 'both'] else None
 
     if len(test_cases) == 0:
         # count all the .in file in the module directory
