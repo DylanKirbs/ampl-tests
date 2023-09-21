@@ -491,7 +491,7 @@ class CodegenTest(BaseTest):
                     stdout=f_out,
                     stderr=f_err,
                     stdin=f_in,
-                    cwd=self._bin_dir
+                    cwd=self._bin_dir,
                     preexec_fn=os.setsid  # Create a new process group
                 )
 
@@ -521,9 +521,9 @@ class CodegenTest(BaseTest):
         except Exception as e:
             logging.warning(f'Could not remove jasmin and class files: {e}')
             return False
-        
+
         return success
-    
+
 
 class Tester:
     """
