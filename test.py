@@ -714,6 +714,7 @@ def main():
             exec,
             test_cases,
             flags,
+            result_dir=args['--save'],
             stream=stream
         )
 
