@@ -196,6 +196,7 @@ class BaseTest:
                 cmd_args,
                 stdout=f_out,
                 stderr=f_err,
+                cwd=self._bin_dir,
                 preexec_fn=os.setsid  # Create a new process group
             )
 
@@ -230,6 +231,7 @@ class BaseTest:
                 cmd_args,
                 stdout=subprocess.DEVNULL,
                 stderr=capture,
+                cwd=self._bin_dir,
                 preexec_fn=os.setsid  # Create a new process group
             )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
@@ -374,6 +376,7 @@ class RedirectionBaseTest(BaseTest):
                     stdin=f_in,
                     stdout=f_out,
                     stderr=f_err,
+                    cwd=self._bin_dir,
                     preexec_fn=os.setsid  # Create a new process group
                 )
 
@@ -409,6 +412,7 @@ class RedirectionBaseTest(BaseTest):
                     stdout=subprocess.DEVNULL,
                     stdin=f_in,
                     stderr=capture,
+                    cwd=self._bin_dir,
                     preexec_fn=os.setsid  # Create a new process group
                 )
                 logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
@@ -487,6 +491,7 @@ class CodegenTest(BaseTest):
                     stdout=f_out,
                     stderr=f_err,
                     stdin=f_in,
+                    cwd=self._bin_dir
                     preexec_fn=os.setsid  # Create a new process group
                 )
 
