@@ -581,7 +581,7 @@ def test_runner(
     diff_stream = []
     diff_stream.append('out') if stream in ['out', 'both'] else None
     diff_stream.append('err') if stream in ['err', 'both'] else None
-    if flags['exec-class']:
+    if flags.get('exec-class', False):
         diff_stream.append('class.out') if stream in ['out', 'both'] else None
         diff_stream.append('class.err') if stream in ['err', 'both'] else None
 
