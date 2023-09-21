@@ -311,6 +311,7 @@ class BaseTest:
         else:
             # rename
             try:
+                shutil.rmtree(self._results_dir)
                 shutil.move(self._temp_dir, self._results_dir)
                 logging.info('Results saved successfully.')
             except Exception as e:
