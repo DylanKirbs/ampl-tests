@@ -63,9 +63,30 @@
               </term> at 15:15.
             </simple> at 15:15.
           </expr> at 15:15.
-        </output> at 16:1.
-      </statement> at 16:1.
-    </statements> at 16:1.
-  </body> at 16:1.
-</program> at 16:1.
+        </output> at 15:22.
+      </statement> at 15:22.
+      <statement> at 17:5.
+        <output> at 17:5.
+        </output> at 17:32.
+      </statement> at 17:32.
+      <statement> at 18:5.
+        <input> at 18:5.
+        </input> at 18:14.
+      </statement> at 18:14.
+      <statement> at 19:5.
+        <output> at 19:5.
+          <expr> at 19:12.
+            <simple> at 19:12.
+              <term> at 19:12.
+                <factor> at 19:12.
+                </factor> at 19:15.
+              </term> at 19:15.
+            </simple> at 19:15.
+          </expr> at 19:15.
+        </output> at 20:1.
+      </statement> at 20:1.
+    </statements> at 20:1.
+  </body> at 20:1.
+</program> at 20:1.
+Generated: test30.class
 Success!
