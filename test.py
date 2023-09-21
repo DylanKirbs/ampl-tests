@@ -14,7 +14,7 @@ Options:
     --side-by-side      Display the differences side by side
     --save=<dir>        Save test output to the specified directory
     --stream=<stream>   The stream to diff test (out, err, both) [default: both]
-    --exec-class        Execute the compiled AMPL file
+    --no-exec-class     Do not execute the compiled AMPL file
 
 Examples:
     test.py scanner 1 2 3                       # Run scanner tests 1, 2, 3
@@ -704,7 +704,7 @@ def main():
     flags = {
         'side-by-side': args['--side-by-side'],
         'memory-check': args['--valgrind'],
-        'exec-class': args['--exec-class']
+        'exec-class': not args['--no-exec-class']
     }
     logging.debug("Additional Flags: " + pformat(flags))
 
@@ -714,7 +714,7 @@ def main():
             exec,
             test_cases,
             flags,
-            result_dir=args['--save'],
+            result_dir=args['--save'] if args['--save'] else '',
             stream=stream
         )
 
