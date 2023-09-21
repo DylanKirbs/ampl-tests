@@ -452,7 +452,7 @@ class TypecheckingTest(BaseTest):
 
 class CodegenTest(BaseTest):
 
-    MAKE = 'testtypechecking'
+    MAKE = 'amplc'
     EXEC = 'amplc'
 
     def execute(self, test) -> bool:
