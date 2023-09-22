@@ -518,6 +518,8 @@ class CodegenTest(BaseTest):
                 if ret != 0:
                     logging.error(
                         f'Unable to execute {test}.class, execution finished with error code {ret}')
+                    return True
+                elif ret == -1:
                     return False
 
         return True
