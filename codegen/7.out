@@ -7,12 +7,12 @@
             <simple> at 3:10.
               <term> at 3:11.
                 <factor> at 3:11.
-                </factor> at 3:12.
-              </term> at 3:12.
-            </simple> at 3:12.
-          </expr> at 3:12.
-        </output> at 3:25.
-      </statement> at 3:25.
+                </factor> at 3:13.
+              </term> at 3:13.
+            </simple> at 3:13.
+          </expr> at 3:13.
+        </output> at 3:26.
+      </statement> at 3:26.
       <statement> at 4:2.
         <output> at 4:2.
           <expr> at 4:10.
@@ -23,12 +23,12 @@
               </term> at 4:11.
               <term> at 4:12.
                 <factor> at 4:12.
-                </factor> at 4:13.
-              </term> at 4:13.
-            </simple> at 4:13.
-          </expr> at 4:13.
-        </output> at 4:25.
-      </statement> at 4:25.
+                </factor> at 4:14.
+              </term> at 4:14.
+            </simple> at 4:14.
+          </expr> at 4:14.
+        </output> at 4:26.
+      </statement> at 4:26.
       <statement> at 5:2.
         <output> at 5:2.
           <expr> at 5:9.
@@ -39,15 +39,15 @@
               </term> at 5:12.
               <term> at 5:13.
                 <factor> at 5:13.
-                </factor> at 5:15.
-              </term> at 5:15.
-            </simple> at 5:15.
-          </expr> at 5:15.
-        </output> at 5:28.
-      </statement> at 5:28.
-    </statements> at 5:28.
-  </body> at 5:28.
-</program> at 5:28.
+                </factor> at 5:16.
+              </term> at 5:16.
+            </simple> at 5:16.
+          </expr> at 5:16.
+        </output> at 5:29.
+      </statement> at 5:29.
+    </statements> at 5:29.
+  </body> at 5:29.
+</program> at 5:29.
 Generated: test7.class
 .class public test7
 .super java/lang/Object
@@ -132,7 +132,7 @@ Exception:
 	swap
 	invokevirtual java/io/PrintStream/print(I)V
 	getstatic java/lang/System/out Ljava/io/PrintStream;
-	ldc "\t -5\n"
+	ldc "\t -6\n"
 	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 	ldc 9
 	ldc 5
@@ -141,7 +141,7 @@ Exception:
 	swap
 	invokevirtual java/io/PrintStream/print(I)V
 	getstatic java/lang/System/out Ljava/io/PrintStream;
-	ldc "\t 5\n"
+	ldc "\t 4\n"
 	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 	ldc 16
 	ineg
@@ -151,7 +151,7 @@ Exception:
 	swap
 	invokevirtual java/io/PrintStream/print(I)V
 	getstatic java/lang/System/out Ljava/io/PrintStream;
-	ldc "\t -5\n"
+	ldc "\t -6\n"
 	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
 	return
 .end method

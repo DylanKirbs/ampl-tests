@@ -1,5 +1,5 @@
 program test7:
 main:
-	output( -6.. "\t -5\n");
-	output( 9-5.. "\t 5\n");
-	output(-16+10.. "\t -5\n")
+	output( -6 .. "\t -6\n");
+	output( 9-5 .. "\t 4\n");
+	output(-16+10 .. "\t -6\n")
