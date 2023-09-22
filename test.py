@@ -110,7 +110,7 @@ class BaseTest:
     TIMEOUT = 10
     MAKE = 'amplc'
     EXEC = 'amplc'
-    DIFF_FILES = ['out', 'err'] #, 'class.out', 'class.err']
+    DIFF_FILES = ['out', 'err']
 
     def __init__(
         self,
@@ -569,7 +569,7 @@ def test_runner(
     diff_stream = []
     diff_stream.append('out') if stream in ['out', 'both'] else None
     diff_stream.append('err') if stream in ['err', 'both'] else None
-    if flags.get('exec-class', False):
+    if flags.get('exec-class', False) and executable == 'codegen':
         diff_stream.append('class.out') if stream in ['out', 'both'] else None
         diff_stream.append('class.err') if stream in ['err', 'both'] else None
 
