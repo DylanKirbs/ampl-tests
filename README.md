@@ -159,6 +159,19 @@ info diff
 >
 > You can then use the test script as normal, and whenever you want to switch back to using your own hash function you only need to re-comment the debug flags in the Makefile.
 
+> **NOTE** <br>
+> The codegen tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
+> ```Makefile
+> DFLAGS = # -DDEBUG_PARSER -DDEBUG_CODEGEN
+> ```
+> You must also ensure that you include the following code somewhere after you call assemble() in the main function of amplc, but before you call release_code_generation():
+> ```c
+> #ifdef DEBUG_CODEGEN
+>   list_code();
+> #endif
+> ```
+> The tests can then be executed using the script as normal. Currently only cases 0 to 10 have this output, but more are on the way.
+
 > Test Script Changelog Overview <br>
 > - 1.0.0: Initial Release
 > - 2.0.0: Support for timeouts
