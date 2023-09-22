@@ -475,6 +475,15 @@ class CodegenTest(BaseTest):
     EXEC = 'amplc'
     DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
 
+    def make(self) -> bool:
+
+        # Remove jasmin and class files from bin
+        for f in os.listdir(self._bin_dir):
+            if f.endswith('.jasmin') or f.endswith('.class'):
+                os.remove(os.path.join(self._bin_dir, f))
+
+        return super().make()
+
     def execute(self, test) -> bool:
         """
         Runs the test.
