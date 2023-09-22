@@ -167,7 +167,8 @@ To disable them once again, comment out the demonstrated line.
 
 ### Codegen Tests
 > The codegen tests require you to enable the debug flags, see [Debug Flags](#debug-flags)
-> You must also ensure that you include the following code somewhere after you call assemble() in the main function of amplc, but before you call release_code_generation():
+> 
+> You must also ensure that you include the following code somewhere after you call `assemble()` in the main function of amplc, but before you call `release_code_generation()`:
 > ```c
 > #ifdef DEBUG_CODEGEN
 >   list_code();
