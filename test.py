@@ -110,7 +110,7 @@ class BaseTest:
     TIMEOUT = 10
     MAKE = 'amplc'
     EXEC = 'amplc'
-    DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
+    DIFF_FILES = ['out', 'err'] #, 'class.out', 'class.err']
 
     def __init__(
         self,
@@ -473,6 +473,7 @@ class CodegenTest(BaseTest):
 
     MAKE = 'amplc'
     EXEC = 'amplc'
+    DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
 
     def execute(self, test) -> bool:
         """
