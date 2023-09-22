@@ -110,7 +110,7 @@ class BaseTest:
     TIMEOUT = 10
     MAKE = 'amplc'
     EXEC = 'amplc'
-    DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
+    DIFF_FILES = ['out', 'err']
 
     def __init__(
         self,
@@ -312,6 +312,10 @@ class BaseTest:
             # rename
             try:
                 shutil.rmtree(self._results_dir)
+            except Exception as e:
+                pass
+
+            try:
                 shutil.move(self._temp_dir, self._results_dir)
                 logging.info('Results saved successfully.')
             except Exception as e:
@@ -469,6 +473,16 @@ class CodegenTest(BaseTest):
 
     MAKE = 'amplc'
     EXEC = 'amplc'
+    DIFF_FILES = ['out', 'err', 'class.out', 'class.err']
+
+    def make(self) -> bool:
+
+        # Remove jasmin and class files from bin
+        for f in os.listdir(self._bin_dir):
+            if f.endswith('.jasmin') or f.endswith('.class'):
+                os.remove(os.path.join(self._bin_dir, f))
+
+        return super().make()
 
     def execute(self, test) -> bool:
         """
@@ -514,6 +528,8 @@ class CodegenTest(BaseTest):
                 if ret != 0:
                     logging.error(
                         f'Unable to execute {test}.class, execution finished with error code {ret}')
+                    return True
+                elif ret == -1:
                     return False
 
         return True
@@ -562,7 +578,7 @@ def test_runner(
     diff_stream = []
     diff_stream.append('out') if stream in ['out', 'both'] else None
     diff_stream.append('err') if stream in ['err', 'both'] else None
-    if flags.get('exec-class', False):
+    if flags.get('exec-class', False) and executable == 'codegen':
         diff_stream.append('class.out') if stream in ['out', 'both'] else None
         diff_stream.append('class.err') if stream in ['err', 'both'] else None
 

@@ -114,11 +114,19 @@ man diff
 info diff
 ```
 
-> **NOTE** <br>
-> The parser tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
-> ```Makefile
-> DFLAGS = # -DDEBUG_PARSER ...
-> ```
+#### Debug Flags
+
+To enable the debug flags, open the Makefile and uncomment the following, in the compiler flags section:
+```Makefile
+DFLAGS = # -DDEBUG_PARSER ...
+```
+
+To disable them once again, comment out the demonstrated line.
+
+
+### Parser Tests
+> The  parser tests require you to enable the debug flags, see [Debug Flags](#debug-flags)
+> 
 > You must also ensure that all of your `parse_` methods have the appropriate `DBG_` calls. For example:
 > ```c
 > void parse_program(void)
@@ -130,11 +138,9 @@ info diff
 > ```
 > The tests can then be executed using the script as normal.
 
-> **NOTE** <br>
-> The  symbol table tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
-> ```Makefile
-> DFLAGS = # -DDEBUG_PARSER -DDEBUG_SYMBOL_TABLE ...
-> ```
+### Symbol Table Tests
+> The  symbol table tests require you to enable the debug flags, see [Debug Flags](#debug-flags)
+> 
 > You must also set up your ```shift_hash``` function in ```symboltable.c``` like this:
 > ```c
 > static unsigned int shift_hash(void *key, unsigned int size)
@@ -159,18 +165,18 @@ info diff
 >
 > You can then use the test script as normal, and whenever you want to switch back to using your own hash function you only need to re-comment the debug flags in the Makefile.
 
-> **NOTE** <br>
-> The codegen tests require you to enable the debug flags in the Makefile. To do so, open the Makefile and uncomment the following, in the compiler flags section:
-> ```Makefile
-> DFLAGS = # -DDEBUG_PARSER -DDEBUG_CODEGEN
-> ```
-> You must also ensure that you include the following code somewhere after you call assemble() in the main function of amplc, but before you call release_code_generation():
+### Codegen Tests
+> The codegen tests require you to enable the debug flags, see [Debug Flags](#debug-flags)
+> 
+> You must also ensure that you include the following code somewhere after you call `assemble()` in the main function of amplc, but before you call `release_code_generation()`:
 > ```c
 > #ifdef DEBUG_CODEGEN
 >   list_code();
 > #endif
 > ```
 > The tests can then be executed using the script as normal. Currently only cases 0 to 10 have this output, but more are on the way.
+
+### Change Log
 
 > Test Script Changelog Overview <br>
 > - 1.0.0: Initial Release
@@ -190,10 +196,9 @@ info diff
 
 ### Style Checking
 
-To maintain consistent coding style, you can utilize two style checking scripts: `styletest.py` and `style_checker.py`. For the latest and more comprehensive checks, use `style_checker.py`. Both scripts can be run as follows:
+To maintain consistent coding style, you can utilize two style checking scripts: `styletest.py` and `style_checker.py`. For the latest and more comprehensive checks, use `style_checker.py`. The script can be run as follows:
 
 ```bash
-python3 styletest.py
 python3 style_checker.py
 ```
 

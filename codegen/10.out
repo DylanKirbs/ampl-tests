@@ -33,4 +33,101 @@
   </body> at 5:31.
 </program> at 5:31.
 Generated: test10.class
+.class public test10
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test10/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test10/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test10/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test10/scanner Ljava/util/Scanner;
+	getstatic test10/scanner Ljava/util/Scanner;
+	getstatic test10/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test10/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test10/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 10
+.limit locals 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "Boolean testing \n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	ldc 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(Z)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\t true \n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	ldc 0
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(Z)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\t false\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	return
+.end method
+
 Success!

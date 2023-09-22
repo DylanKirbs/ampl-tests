@@ -42,8 +42,8 @@ bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
 bucket[ 6] --> NULL
-bucket[ 7] --> b@1[integer] --> NULL
-bucket[ 8] --> c@2[integer] --> NULL
+bucket[ 7] --> b@0[integer] --> NULL
+bucket[ 8] --> c@1[integer] --> NULL
 bucket[ 9] --> NULL
 bucket[10] --> NULL
 bucket[11] --> NULL

@@ -7,115 +7,115 @@ open <id>   -- open subroutine <id> table
 close       -- close current subroutine table
 print       -- print current symbol table
 quit        -- quit program
->> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> bucket[ 0] --> social@33[integer] --> NULL
+>> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> bucket[ 0] --> social@32[integer] --> NULL
 bucket[ 1] --> NULL
 bucket[ 2] --> NULL
 bucket[ 3] --> NULL
 bucket[ 4] --> NULL
 bucket[ 5] --> NULL
-bucket[ 6] --> society@34[integer] --> NULL
-bucket[ 7] --> single@21[integer] --> NULL
-bucket[ 8] --> station@65[integer] --> NULL
+bucket[ 6] --> society@33[integer] --> NULL
+bucket[ 7] --> single@20[integer] --> NULL
+bucket[ 8] --> station@64[integer] --> NULL
 bucket[ 9] --> NULL
 bucket[10] --> NULL
 bucket[11] --> NULL
 bucket[12] --> NULL
 bucket[13] --> NULL
 bucket[14] --> NULL
-bucket[15] --> simple@17[integer] --> NULL
-bucket[16] --> space@49[integer] --> shake@4[integer] --> NULL
+bucket[15] --> simple@16[integer] --> NULL
+bucket[16] --> space@48[integer] --> shake@3[integer] --> NULL
 bucket[17] --> NULL
 bucket[18] --> NULL
 bucket[19] --> NULL
-bucket[20] --> should@10[integer] --> NULL
+bucket[20] --> should@9[integer] --> NULL
 bucket[21] --> NULL
-bucket[22] --> source@46[integer] --> since@19[integer] --> NULL
-bucket[23] --> sexual@3[integer] --> share@5[integer] --> NULL
-bucket[24] --> stage@58[integer] --> staff@57[integer] --> spring@56[integer] --> speak@50[integer] --> significant@15[integer] --> NULL
+bucket[22] --> source@45[integer] --> since@18[integer] --> NULL
+bucket[23] --> sexual@2[integer] --> share@4[integer] --> NULL
+bucket[24] --> stage@57[integer] --> staff@56[integer] --> spring@55[integer] --> speak@49[integer] --> significant@14[integer] --> NULL
 bucket[25] --> NULL
 bucket[26] --> NULL
 bucket[27] --> NULL
 bucket[28] --> NULL
-bucket[29] --> small@30[integer] --> NULL
-bucket[30] --> stand@59[integer] --> spend@54[integer] --> smile@31[integer] --> NULL
-bucket[31] --> sister@22[integer] --> NULL
+bucket[29] --> small@29[integer] --> NULL
+bucket[30] --> stand@58[integer] --> spend@53[integer] --> smile@30[integer] --> NULL
+bucket[31] --> sister@21[integer] --> NULL
 bucket[32] --> NULL
 bucket[33] --> NULL
 bucket[34] --> NULL
-bucket[35] --> simply@18[integer] --> skill@28[integer] --> NULL
+bucket[35] --> simply@17[integer] --> skill@27[integer] --> NULL
 bucket[36] --> NULL
-bucket[37] --> state@63[integer] --> NULL
+bucket[37] --> state@62[integer] --> NULL
 bucket[38] --> NULL
 bucket[39] --> NULL
-bucket[40] --> stock@69[integer] --> side@13[integer] --> NULL
+bucket[40] --> stock@68[integer] --> side@12[integer] --> NULL
 bucket[41] --> NULL
 bucket[42] --> NULL
 bucket[43] --> NULL
-bucket[44] --> still@68[integer] --> NULL
-bucket[45] --> sound@45[integer] --> NULL
+bucket[44] --> still@67[integer] --> NULL
+bucket[45] --> sound@44[integer] --> NULL
 bucket[46] --> NULL
 bucket[47] --> NULL
 bucket[48] --> NULL
-bucket[49] --> shoot@7[integer] --> NULL
-bucket[50] --> start@62[integer] --> NULL
+bucket[49] --> shoot@6[integer] --> NULL
+bucket[50] --> start@61[integer] --> NULL
 bucket[51] --> NULL
-bucket[52] --> short@8[integer] --> sing@20[integer] --> sign@14[integer] --> NULL
+bucket[52] --> short@7[integer] --> sing@19[integer] --> sign@13[integer] --> NULL
 bucket[53] --> NULL
 bucket[54] --> NULL
-bucket[55] --> south@47[integer] --> some@36[integer] --> NULL
-bucket[56] --> site@24[integer] --> skin@29[integer] --> NULL
+bucket[55] --> south@46[integer] --> some@35[integer] --> NULL
+bucket[56] --> site@23[integer] --> skin@28[integer] --> NULL
 bucket[57] --> NULL
-bucket[58] --> song@42[integer] --> NULL
+bucket[58] --> song@41[integer] --> NULL
 bucket[59] --> NULL
-bucket[60] --> sport@55[integer] --> NULL
-bucket[61] --> star@61[integer] --> NULL
-bucket[62] --> size@27[integer] --> NULL
-bucket[63] --> step@67[integer] --> NULL
+bucket[60] --> sport@54[integer] --> NULL
+bucket[61] --> star@60[integer] --> NULL
+bucket[62] --> size@26[integer] --> NULL
+bucket[63] --> step@66[integer] --> NULL
 bucket[64] --> NULL
-bucket[65] --> shot@9[integer] --> NULL
-bucket[66] --> soon@43[integer] --> she@6[integer] --> NULL
+bucket[65] --> shot@8[integer] --> NULL
+bucket[66] --> soon@42[integer] --> she@5[integer] --> NULL
 bucket[67] --> NULL
-bucket[68] --> stay@66[integer] --> show@12[integer] --> NULL
+bucket[68] --> stay@65[integer] --> show@11[integer] --> NULL
 bucket[69] --> NULL
 bucket[70] --> NULL
 bucket[71] --> NULL
 bucket[72] --> NULL
-bucket[73] --> stop@70[integer] --> NULL
+bucket[73] --> stop@69[integer] --> NULL
 bucket[74] --> NULL
-bucket[75] --> sort@44[integer] --> NULL
-bucket[76] --> specific@52[integer] --> NULL
+bucket[75] --> sort@43[integer] --> NULL
+bucket[76] --> specific@51[integer] --> NULL
 bucket[77] --> NULL
 bucket[78] --> NULL
 bucket[79] --> NULL
 bucket[80] --> NULL
 bucket[81] --> NULL
-bucket[82] --> sit@23[integer] --> sex@2[integer] --> son@41[integer] --> NULL
+bucket[82] --> sit@22[integer] --> sex@1[integer] --> son@40[integer] --> NULL
 bucket[83] --> NULL
 bucket[84] --> NULL
-bucket[85] --> something@39[integer] --> NULL
-bucket[86] --> six@26[integer] --> NULL
-bucket[87] --> standard@60[integer] --> NULL
+bucket[85] --> something@38[integer] --> NULL
+bucket[86] --> six@25[integer] --> NULL
+bucket[87] --> standard@59[integer] --> NULL
 bucket[88] --> NULL
 bucket[89] --> NULL
 bucket[90] --> NULL
 bucket[91] --> NULL
-bucket[92] --> statement@64[integer] --> NULL
-bucket[93] --> sometimes@40[integer] --> NULL
+bucket[92] --> statement@63[integer] --> NULL
+bucket[93] --> sometimes@39[integer] --> NULL
 bucket[94] --> NULL
 bucket[95] --> NULL
 bucket[96] --> NULL
 bucket[97] --> NULL
 bucket[98] --> NULL
-bucket[99] --> so@32[integer] --> NULL
+bucket[99] --> so@31[integer] --> NULL
 bucket[100] --> NULL
 bucket[101] --> NULL
-bucket[102] --> special@51[integer] --> NULL
-bucket[103] --> situation@25[integer] --> NULL
-bucket[104] --> somebody@37[integer] --> NULL
+bucket[102] --> special@50[integer] --> NULL
+bucket[103] --> situation@24[integer] --> NULL
+bucket[104] --> somebody@36[integer] --> NULL
 bucket[105] --> NULL
 bucket[106] --> NULL
 bucket[107] --> NULL
-bucket[108] --> shoulder@11[integer] --> NULL
+bucket[108] --> shoulder@10[integer] --> NULL
 bucket[109] --> NULL
 bucket[110] --> NULL
 bucket[111] --> NULL
@@ -125,16 +125,16 @@ bucket[114] --> NULL
 bucket[115] --> NULL
 bucket[116] --> NULL
 bucket[117] --> NULL
-bucket[118] --> similar@16[integer] --> NULL
-bucket[119] --> several@1[integer] --> soldier@35[integer] --> NULL
+bucket[118] --> similar@15[integer] --> NULL
+bucket[119] --> several@0[integer] --> soldier@34[integer] --> NULL
 bucket[120] --> NULL
 bucket[121] --> NULL
 bucket[122] --> NULL
-bucket[123] --> someone@38[integer] --> NULL
-bucket[124] --> speech@53[integer] --> NULL
+bucket[123] --> someone@37[integer] --> NULL
+bucket[124] --> speech@52[integer] --> NULL
 bucket[125] --> NULL
-bucket[126] --> southern@48[integer] --> NULL
->> "step" found at offset 67
+bucket[126] --> southern@47[integer] --> NULL
+>> "step" found at offset 66
 >> Identifier not found.
 >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> bucket[ 0] --> NULL
 bucket[ 1] --> NULL
