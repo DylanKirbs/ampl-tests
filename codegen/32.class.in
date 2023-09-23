@@ -14,7 +14,7 @@ trUE
 TrUE
 tRUE
 TRUE
-1
+true
 false
 False
 fAlse
@@ -47,4 +47,4 @@ faLSE
 FaLSE
 fALSE
 FALSE
-0
+false
