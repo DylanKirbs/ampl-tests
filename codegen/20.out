@@ -397,4 +397,190 @@
   </body> at 41:24.
 </program> at 41:24.
 Generated: test20.class
+.class public test20
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test20/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test20/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test20/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test20/scanner Ljava/util/Scanner;
+	getstatic test20/scanner Ljava/util/Scanner;
+	getstatic test20/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test20/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test20/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 24
+.limit locals 11
+	ldc 59
+	istore 5
+	ldc 420
+	istore 6
+	ldc 69
+	istore 7
+	ldc 1
+	istore 8
+	ldc 1
+	istore 9
+	ldc 0
+	istore 10
+	ldc 10
+	newarray int
+	astore 1
+	ldc 10
+	newarray int
+	astore 2
+	ldc 10
+	newarray int
+	astore 3
+	ldc 10
+	newarray int
+	astore 4
+	aload 3
+	ldc 1
+	iload 5
+	iastore
+	aload 3
+	ldc 2
+	iload 6
+	iastore
+	aload 3
+	ldc 3
+	iload 7
+	iastore
+	aload 1
+	ldc 1
+	iload 8
+	iastore
+	aload 1
+	ldc 2
+	iload 9
+	iastore
+	aload 1
+	ldc 3
+	iload 10
+	iastore
+	aload 1
+	astore 2
+	aload 3
+	astore 4
+	aload 2
+	ldc 1
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(Z)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 2
+	ldc 2
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(Z)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 2
+	ldc 3
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(Z)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 4
+	ldc 1
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 4
+	ldc 2
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 4
+	ldc 3
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	return
+.end method
+
 Success!
