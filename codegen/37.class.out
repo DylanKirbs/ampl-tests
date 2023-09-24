@@ -1,0 +1,10 @@
+Join the following strings:
+(with int arrays!)
+
+"Lorem ipsum dolor sit amet anim quis sint culpa quis aliquip duis laboris aliquip dolore duis minim irure do. Consequat ullamco aliqua enim consequat nisi quis sit fugiat ipsum tempor velit, est eu duis nulla do dolor sit deserunt et amet qui eiusmod."
+
+"Lorem ipsum dolor sit amet eiusmod aute id cupidatat, duis esse minim adipisicing et proident consectetur excepteur sunt consequat veniam voluptate quis. Fugiat ea sint fugiat reprehenderit adipisicing aute ipsum ullamco deserunt tempor dolor voluptate cupidatat sint do magna commodo labore."
+
+
+RESULT:
+"Lorem ipsum dolor sit amet anim quis sint culpa quis aliquip duis laboris aliquip dolore duis minim irure do. Consequat ullamco aliqua enim consequat nisi quis sit fugiat ipsum tempor velit, est eu duis nulla do dolor sit deserunt et amet qui eiusmod.Lorem ipsum dolor sit amet eiusmod aute id cupidatat, duis esse minim adipisicing et proident consectetur excepteur sunt consequat veniam voluptate quis. Fugiat ea sint fugiat reprehenderit adipisicing aute ipsum ullamco deserunt tempor dolor voluptate cupidatat sint do magna commodo labore."

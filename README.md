@@ -174,7 +174,7 @@ To disable them once again, comment out the demonstrated line.
 >   list_code();
 > #endif
 > ```
-> The tests can then be executed using the script as normal. Currently only cases 0 to 19 have this output, but more are on the way.
+> The tests can then be executed using the script as normal.
 
 ### Change Log
 
