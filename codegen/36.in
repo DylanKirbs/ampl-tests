@@ -1,0 +1,170 @@
+program test36:
+length(int array a) -> int:
+	int pos;
+	let pos = 0;
+	while (a[pos] /= 0) :
+		let pos = pos + 1
+	end;
+	return pos
+
+join(int array a, int array b) -> int array:
+	int array out;
+	int len_a, len_b, len_out, pos;
+
+	let len_a = length(a);
+	let len_b = length(b);
+	let len_out = len_a + len_b;
+	let pos = 0;
+	let out = array len_out + 1;
+
+	while (pos < len_a):
+		let out[pos] = a[pos];
+		let pos = pos + 1
+	end;
+	
+	while (pos < len_out):
+		let out[pos] = b[pos - len_a];
+		let pos = pos + 1
+	end;
+
+	let out[pos] = 0;
+
+	return out
+
+print(int array text):
+	int i, c;
+	let i = 0;
+	while (text[i] /= 0):
+		let c = text[i];
+		if c = 9: output ("\t")
+		elif c = 10: output ("\n")
+		elif c = 32: output (" ")
+		elif c = 33: output ("!")
+		elif c = 34: output ("\"")
+		elif c = 35: output ("\n")
+		elif c = 35: output ("#")
+		elif c = 36: output ("$")
+		elif c = 37: output ("%")
+		elif c = 38: output ("&")
+		elif c = 39: output ("'")
+		elif c = 40: output ("(")
+		elif c = 41: output (")")
+		elif c = 42: output ("*")
+		elif c = 43: output ("+")
+		elif c = 44: output (",")
+		elif c = 45: output ("-")
+		elif c = 46: output (".")
+		elif c = 47: output ("/")
+		elif c = 48: output ("0")
+		elif c = 49: output ("1")
+		elif c = 50: output ("2")
+		elif c = 51: output ("3")
+		elif c = 52: output ("4")
+		elif c = 53: output ("5")
+		elif c = 54: output ("6")
+		elif c = 55: output ("7")
+		elif c = 56: output ("8")
+		elif c = 57: output ("9")
+		elif c = 58: output (":")
+		elif c = 59: output (";")
+		elif c = 60: output ("<")
+		elif c = 61: output ("=")
+		elif c = 62: output (">")
+		elif c = 63: output ("?")
+		elif c = 64: output ("@")
+		elif c = 65: output ("A")
+		elif c = 66: output ("B")
+		elif c = 67: output ("C")
+		elif c = 68: output ("D")
+		elif c = 69: output ("E")
+		elif c = 70: output ("F")
+		elif c = 71: output ("G")
+		elif c = 72: output ("H")
+		elif c = 73: output ("I")
+		elif c = 74: output ("J")
+		elif c = 75: output ("K")
+		elif c = 76: output ("L")
+		elif c = 77: output ("M")
+		elif c = 78: output ("N")
+		elif c = 79: output ("O")
+		elif c = 80: output ("P")
+		elif c = 81: output ("Q")
+		elif c = 82: output ("R")
+		elif c = 83: output ("S")
+		elif c = 84: output ("T")
+		elif c = 85: output ("U")
+		elif c = 86: output ("V")
+		elif c = 87: output ("W")
+		elif c = 88: output ("X")
+		elif c = 89: output ("Y")
+		elif c = 90: output ("Z")
+		elif c = 91: output ("[")
+		elif c = 92: output ("\\")
+		elif c = 93: output ("]")
+		elif c = 94: output ("^")
+		elif c = 95: output ("_")
+		elif c = 96: output ("`")
+		elif c = 97: output ("a")
+		elif c = 98: output ("b")
+		elif c = 99: output ("c")
+		elif c = 100: output ("d")
+		elif c = 101: output ("e")
+		elif c = 102: output ("f")
+		elif c = 103: output ("g")
+		elif c = 104: output ("h")
+		elif c = 105: output ("i")
+		elif c = 106: output ("j")
+		elif c = 107: output ("k")
+		elif c = 108: output ("l")
+		elif c = 109: output ("m")
+		elif c = 110: output ("n")
+		elif c = 111: output ("o")
+		elif c = 112: output ("p")
+		elif c = 113: output ("q")
+		elif c = 114: output ("r")
+		elif c = 115: output ("s")
+		elif c = 116: output ("t")
+		elif c = 117: output ("u")
+		elif c = 118: output ("v")
+		elif c = 119: output ("w")
+		elif c = 120: output ("x")
+		elif c = 121: output ("y")
+		elif c = 122: output ("z")
+		elif c = 123: output ("{")
+		elif c = 124: output ("|")
+		elif c = 125: output ("}")
+		elif c = 126: output ("~")
+		else: chillax
+		end;
+		let i = i + 1
+	end
+
+main:
+	int array x, y, z;
+	int i, j;
+
+	output("Join the following strings:\n(with int arrays!)\n\n\"");
+	let x = array 50;
+	let x[0 ] = 72;
+	let x[1 ] = 101;
+	let x[2 ] = 108;
+	let x[3 ] = 108;
+	let x[4 ] = 111;
+	let x[5 ] = 0;
+	print(x);
+	output("\"\n\n\"");
+	let y = array 50;
+	let y[0 ] = 44;
+	let y[1 ] = 32;
+	let y[2 ] = 87;
+	let y[3 ] = 111;
+	let y[4 ] = 114;
+	let y[5 ] = 108;
+	let y[6 ] = 100;
+	let y[7 ] = 33;
+	let y[8 ] = 0;
+	print(y);
+	output("\"\n\n");
+	output("\nRESULT:\n\"");
+	print(join(x, y));
+	output("\"\n")

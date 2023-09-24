@@ -1,0 +1,10 @@
+Join the following strings:
+(with int arrays!)
+
+"Hello"
+
+", World!"
+
+
+RESULT:
+"Hello, World!"
