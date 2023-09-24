@@ -226,6 +226,7 @@ class BaseTest:
         cmd_args = [
             'valgrind',
             '--leak-check=full',
+            '--errors-for-leak-kinds=all',
             '--error-exitcode=255',
             f'{self._bin_dir}/{self.EXEC}',
             f'{self._test_dir}/{test}.in'
@@ -413,6 +414,7 @@ class RedirectionBaseTest(BaseTest):
         cmd_args = [
             'valgrind',
             '--leak-check=full',
+            '--errors-for-leak-kinds=all',
             '--error-exitcode=255',
             f'{self._bin_dir}/{self.EXEC}'
         ]
