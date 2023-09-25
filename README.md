@@ -194,6 +194,7 @@ To disable them once again, comment out the demonstrated line.
 > - 6.1.0: Fix cleanup bug and save flag
 > - 6.2.0: Remove jasmin files on next compile
 > - 6.3.0: Small bug fixes
+> - 6.4.0: Fix valgrind tests
 >
 > Note: The test script changelog is not exhaustive. For a full list of changes, please refer to the commit history.
 
