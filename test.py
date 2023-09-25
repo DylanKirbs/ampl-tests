@@ -659,7 +659,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '6.0.0'
+    VERSION = '6.3.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)

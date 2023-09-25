@@ -191,6 +191,9 @@ To disable them once again, comment out the demonstrated line.
 > - 4.2.0: Support to specify test streams
 > - 5.0.0: Support for codegen tests
 > - 6.0.0: Internal Overhaul
+> - 6.1.0: Fix cleanup bug and save flag
+> - 6.2.0: Remove jasmin files on next compile
+> - 6.3.0: Small bug fixes
 >
 > Note: The test script changelog is not exhaustive. For a full list of changes, please refer to the commit history.
 
