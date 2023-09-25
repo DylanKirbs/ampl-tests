@@ -79,6 +79,7 @@ def process_handler(process: subprocess.Popen, timeout: int) -> int:
 
     try:
         process.wait(timeout=timeout)
+        logging.debug(f'Process returned {process.returncode}')
         return process.returncode
 
     # Timeout expired
@@ -245,8 +246,8 @@ class BaseTest:
             )
             logging.debug(f'Valgrind Process ID: {valgrind_proc.pid}')
 
-            if process_handler(valgrind_proc, self.TIMEOUT) == -1:
-                logging.error(f'Memory check of {test} timed out.')
+            ret = process_handler(valgrind_proc, self.TIMEOUT)
+            if ret == -1 or ret == 255:
                 return False
 
         return True
@@ -659,7 +660,7 @@ def handle_keyboard_interrupt(sig, frame):
 
 def main():
 
-    VERSION = '6.3.0'
+    VERSION = '6.4.0'
 
     # Interrupt handler
     signal.signal(signal.SIGINT, handle_keyboard_interrupt)
