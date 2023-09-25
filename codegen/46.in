@@ -1,0 +1,70 @@
+program test46:
+  main:
+    int i;
+    
+    int array one, two;
+    
+    let one = array 10;
+    let two = array 10;
+    
+    let one[0] = 42;
+    let one[1] = 12;
+    let one[2] = 83;
+    let one[3] = 102;
+    let one[4] = 0;
+    let one[5] = 2173;
+    let one[6] = 2;
+    let one[7] = 8;
+    let one[8] = 100;
+    let one[9] = -2147483647 - 3;
+    
+    let two[0] = 69;
+    let two[1] = 1;
+    let two[2] = -29;
+    let two[3] = 102;
+    let two[4] = 2147483647 + 1;
+    let two[5] = 49;
+    let two[6] = 83;
+    let two[7] = 420;
+    let two[8] = 4200;
+    let two[9] = 10;
+    
+    output("Welcome to the Relational Operator Test!\n");
+    
+    let i = 0;
+    
+    output("\n");
+    while i < 10:
+    
+        if one[i] = two[i]:
+            output(one[i] .. " is equal to " .. two[i] .. ".\n")
+        end;
+    
+        if one[i] >= two[i]:
+            output(one[i] .. " is greater than or equal to " .. two[i] .. ".\n")
+        end;
+    
+        if one[i] > two[i]:
+            output(one[i] .. " is greater than " .. two[i] .. ".\n")
+        end;
+    
+        if one[i] <= two[i]:
+            output(one[i] .. " is less than or equal to " .. two[i] .. ".\n")
+        end;
+    
+        if one[i] < two[i]:
+            output(one[i] .. " is less than " .. two[i] .. ".\n")
+        end;
+      
+        if one[i] /= two[i]:
+            output(one[i] .. " is not equal to " .. two[i] .. ".\n")
+        end;
+    
+        let i = i + 1;
+        output("\n")
+    
+    end;
+    
+
+    
+    output("Relational operator testing complete!")

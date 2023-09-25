@@ -1,0 +1,19 @@
+program test44:
+    Fibonacci(int n) -> int:
+        if n <= 1:
+            return n
+        else:
+            return Fibonacci(n - 1) + Fibonacci(n - 2)
+        end
+
+    main:
+        int termCount, fibonacciNumber, i;
+        let termCount = 30;
+        let i = 0;
+        
+        while termCount > 0:
+            let fibonacciNumber = Fibonacci(i);
+            output("Fibonacci(" .. i .. ") = " .. fibonacciNumber.. "\n");
+            let termCount = termCount - 1;
+            let i = i + 1
+        end

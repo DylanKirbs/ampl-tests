@@ -1,0 +1,451 @@
+<program> at 1:1.
+  <body> at 4:9.
+    <vardef> at 4:9.
+      <type> at 4:9.
+      </type> at 4:13.
+    </vardef> at 5:9.
+    <vardef> at 5:9.
+      <type> at 5:9.
+      </type> at 5:14.
+    </vardef> at 6:9.
+    <vardef> at 6:9.
+      <type> at 6:9.
+      </type> at 6:20.
+    </vardef> at 8:9.
+    <statements> at 8:9.
+      <statement> at 8:9.
+        <assign> at 8:9.
+          <simple> at 8:33.
+            <term> at 8:33.
+              <factor> at 8:33.
+              </factor> at 8:35.
+            </term> at 8:35.
+          </simple> at 8:35.
+        </assign> at 8:35.
+      </statement> at 8:35.
+      <statement> at 9:9.
+        <assign> at 9:9.
+          <expr> at 9:21.
+            <simple> at 9:21.
+              <term> at 9:21.
+                <factor> at 9:21.
+                </factor> at 9:22.
+              </term> at 9:22.
+            </simple> at 9:22.
+          </expr> at 9:22.
+        </assign> at 9:22.
+      </statement> at 9:22.
+      <statement> at 10:9.
+        <assign> at 10:9.
+          <expr> at 10:20.
+            <simple> at 10:20.
+              <term> at 10:20.
+                <factor> at 10:20.
+                </factor> at 10:24.
+              </term> at 10:24.
+            </simple> at 10:24.
+          </expr> at 10:24.
+        </assign> at 10:24.
+      </statement> at 10:24.
+      <statement> at 12:9.
+        <while> at 12:9.
+          <expr> at 12:15.
+            <simple> at 12:15.
+              <term> at 12:15.
+                <factor> at 12:15.
+                </factor> at 12:19.
+              </term> at 12:19.
+            </simple> at 12:19.
+          </expr> at 12:19.
+          <statements> at 14:13.
+            <statement> at 14:13.
+              <if> at 14:13.
+                <expr> at 14:16.
+                  <simple> at 14:16.
+                    <term> at 14:16.
+                      <factor> at 14:16.
+                      </factor> at 14:22.
+                      <factor> at 14:26.
+                      </factor> at 14:28.
+                    </term> at 14:28.
+                  </simple> at 14:28.
+                  <simple> at 14:30.
+                    <term> at 14:30.
+                      <factor> at 14:30.
+                      </factor> at 14:31.
+                    </term> at 14:31.
+                  </simple> at 14:31.
+                </expr> at 14:31.
+                <statements> at 15:17.
+                  <statement> at 15:17.
+                    <assign> at 15:17.
+                      <index> at 15:32.
+                        <simple> at 15:33.
+                          <term> at 15:33.
+                            <factor> at 15:33.
+                            </factor> at 15:38.
+                          </term> at 15:38.
+                        </simple> at 15:38.
+                      </index> at 15:40.
+                      <expr> at 15:42.
+                        <simple> at 15:42.
+                          <term> at 15:42.
+                            <factor> at 15:42.
+                            </factor> at 16:13.
+                          </term> at 16:13.
+                        </simple> at 16:13.
+                      </expr> at 16:13.
+                    </assign> at 16:13.
+                  </statement> at 16:13.
+                </statements> at 16:13.
+                <else> at 16:13.
+                <statements> at 17:17.
+                  <statement> at 17:17.
+                    <assign> at 17:17.
+                      <index> at 17:32.
+                        <simple> at 17:33.
+                          <term> at 17:33.
+                            <factor> at 17:33.
+                            </factor> at 17:38.
+                          </term> at 17:38.
+                        </simple> at 17:38.
+                      </index> at 17:40.
+                      <expr> at 17:42.
+                        <simple> at 17:42.
+                          <term> at 17:42.
+                            <factor> at 17:42.
+                            </factor> at 18:13.
+                          </term> at 18:13.
+                        </simple> at 18:13.
+                      </expr> at 18:13.
+                    </assign> at 18:13.
+                  </statement> at 18:13.
+                </statements> at 18:13.
+                </else> at 18:13.
+              </if> at 18:16.
+            </statement> at 18:16.
+            <statement> at 20:13.
+              <if> at 20:13.
+                <expr> at 20:16.
+                  <simple> at 20:16.
+                    <term> at 20:16.
+                      <factor> at 20:16.
+                      </factor> at 20:22.
+                    </term> at 20:22.
+                  </simple> at 20:22.
+                  <simple> at 20:24.
+                    <term> at 20:24.
+                      <factor> at 20:24.
+                      </factor> at 20:26.
+                    </term> at 20:26.
+                  </simple> at 20:26.
+                </expr> at 20:26.
+                <statements> at 21:17.
+                  <statement> at 21:17.
+                    <assign> at 21:17.
+                      <expr> at 21:28.
+                        <simple> at 21:28.
+                          <term> at 21:28.
+                            <factor> at 21:28.
+                            </factor> at 22:13.
+                          </term> at 22:13.
+                        </simple> at 22:13.
+                      </expr> at 22:13.
+                    </assign> at 22:13.
+                  </statement> at 22:13.
+                </statements> at 22:13.
+              </if> at 22:16.
+            </statement> at 22:16.
+            <statement> at 24:13.
+              <assign> at 24:13.
+                <expr> at 24:25.
+                  <simple> at 24:25.
+                    <term> at 24:25.
+                      <factor> at 24:25.
+                      </factor> at 24:31.
+                    </term> at 24:31.
+                    <term> at 24:33.
+                      <factor> at 24:33.
+                      </factor> at 26:9.
+                    </term> at 26:9.
+                  </simple> at 26:9.
+                </expr> at 26:9.
+              </assign> at 26:9.
+            </statement> at 26:9.
+          </statements> at 26:9.
+        </while> at 26:12.
+      </statement> at 26:12.
+      <statement> at 28:9.
+        <assign> at 28:9.
+          <expr> at 28:21.
+            <simple> at 28:21.
+              <term> at 28:21.
+                <factor> at 28:21.
+                </factor> at 28:22.
+              </term> at 28:22.
+            </simple> at 28:22.
+          </expr> at 28:22.
+        </assign> at 28:22.
+      </statement> at 28:22.
+      <statement> at 30:9.
+        <while> at 30:9.
+          <expr> at 30:15.
+            <simple> at 30:15.
+              <term> at 30:15.
+                <factor> at 30:15.
+                </factor> at 30:21.
+              </term> at 30:21.
+            </simple> at 30:21.
+            <simple> at 30:23.
+              <term> at 30:23.
+                <factor> at 30:23.
+                </factor> at 30:25.
+              </term> at 30:25.
+            </simple> at 30:25.
+          </expr> at 30:25.
+          <statements> at 32:13.
+            <statement> at 32:13.
+              <if> at 32:13.
+                <expr> at 32:16.
+                  <simple> at 32:16.
+                    <term> at 32:16.
+                      <factor> at 32:16.
+                        <index> at 32:27.
+                          <simple> at 32:28.
+                            <term> at 32:28.
+                              <factor> at 32:28.
+                              </factor> at 32:33.
+                            </term> at 32:33.
+                          </simple> at 32:33.
+                        </index> at 32:34.
+                      </factor> at 32:34.
+                    </term> at 32:34.
+                  </simple> at 32:34.
+                </expr> at 32:34.
+                <statements> at 33:17.
+                  <statement> at 33:17.
+                    <output> at 33:17.
+                      <expr> at 33:24.
+                        <simple> at 33:24.
+                          <term> at 33:24.
+                            <factor> at 33:24.
+                            </factor> at 33:30.
+                          </term> at 33:30.
+                        </simple> at 33:30.
+                      </expr> at 33:30.
+                    </output> at 34:13.
+                  </statement> at 34:13.
+                </statements> at 34:13.
+                <else> at 34:13.
+                <statements> at 35:17.
+                  <statement> at 35:17.
+                    <output> at 35:17.
+                      <expr> at 35:24.
+                        <simple> at 35:24.
+                          <term> at 35:24.
+                            <factor> at 35:24.
+                            </factor> at 35:30.
+                          </term> at 35:30.
+                        </simple> at 35:30.
+                      </expr> at 35:30.
+                    </output> at 36:13.
+                  </statement> at 36:13.
+                </statements> at 36:13.
+                </else> at 36:13.
+              </if> at 36:16.
+            </statement> at 36:16.
+            <statement> at 38:13.
+              <assign> at 38:13.
+                <expr> at 38:25.
+                  <simple> at 38:25.
+                    <term> at 38:25.
+                      <factor> at 38:25.
+                      </factor> at 38:31.
+                    </term> at 38:31.
+                    <term> at 38:33.
+                      <factor> at 38:33.
+                      </factor> at 39:9.
+                    </term> at 39:9.
+                  </simple> at 39:9.
+                </expr> at 39:9.
+              </assign> at 39:9.
+            </statement> at 39:9.
+          </statements> at 39:9.
+        </while> at 42:13.
+      </statement> at 42:13.
+    </statements> at 42:13.
+  </body> at 42:13.
+</program> at 42:13.
+Generated: test50.class
+.class public test50
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test50/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test50/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test50/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test50/scanner Ljava/util/Scanner;
+	getstatic test50/scanner Ljava/util/Scanner;
+	getstatic test50/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test50/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test50/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 14
+.limit locals 4
+	ldc 52
+	newarray int
+	astore 3
+	ldc 0
+	istore 1
+	ldc 1
+	istore 2
+L1:
+	iload 2
+	ifeq L2
+	iload 1
+	ldc 5
+	irem
+	ldc 0
+	if_icmpeq L5
+	ldc 0
+	goto L6
+L5:
+	ldc 1
+L6:
+	ifeq L4
+	aload 3
+	iload 1
+	ldc 1
+	iastore
+	goto L3
+L4:
+	aload 3
+	iload 1
+	ldc 0
+	iastore
+L3:
+	iload 1
+	ldc 50
+	if_icmpgt L9
+	ldc 0
+	goto L10
+L9:
+	ldc 1
+L10:
+	ifeq L8
+	ldc 0
+	istore 2
+	goto L7
+L8:
+L7:
+	iload 1
+	ldc 1
+	iadd
+	istore 1
+	goto L1
+L2:
+	ldc 0
+	istore 1
+L11:
+	iload 1
+	ldc 52
+	if_icmplt L13
+	ldc 0
+	goto L14
+L13:
+	ldc 1
+L14:
+	ifeq L12
+	aload 3
+	iload 1
+	iaload
+	ifeq L16
+	iload 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " is a multiple of 5\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	goto L15
+L16:
+	iload 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " is not a multiple of 5\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+L15:
+	iload 1
+	ldc 1
+	iadd
+	istore 1
+	goto L11
+L12:
+	return
+.end method
+
+Success!

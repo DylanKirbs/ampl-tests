@@ -1,0 +1,27 @@
+program test49:
+    main:
+        
+        int array one, two, three, four;
+        
+        let one = array 10;
+        let four = array 1;
+        
+        let one[0] = 42;
+        let four[0] = 12;
+
+        let two = one;
+        let three = two;
+        
+        output(three[0] .. "\n");
+        
+        let two = four;
+        
+        output(three[0] .. "\n");
+        output(two[0] .. "\n");
+
+        let three = two;
+        output(three[0] .. "\n");
+        
+        let four = one;
+        output(four[0] .. "\n");
+        output(two[0] .. "\n")

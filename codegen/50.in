@@ -1,0 +1,42 @@
+program test50:
+    main:
+        
+        int count;
+        bool loop;
+        bool array multsoffive;
+        
+        let multsoffive = array 52;
+        let count = 0;
+        let loop = true;
+        
+        while loop:
+            
+            if count rem 5 = 0:
+                let multsoffive[count] = true
+            else:
+                let multsoffive[count] = false
+            end;
+        
+            if count > 50:
+                let loop = false
+            end;
+            
+            let count = count + 1
+        
+        end;
+        
+        let count = 0;
+        
+        while count < 52:
+        
+            if multsoffive[count]:
+                output(count .. " is a multiple of 5\n")
+            else:
+                output(count .. " is not a multiple of 5\n")
+            end;
+            
+            let count = count + 1
+        end
+                
+            
+            

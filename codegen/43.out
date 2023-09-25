@@ -1,0 +1,125 @@
+<program> at 1:1.
+  <subdef> at 3:1.
+    <type> at 3:18.
+    </type> at 3:22.
+    <body> at 4:5.
+      <statements> at 4:5.
+        <statement> at 4:5.
+          <output> at 4:5.
+          </output> at 6:1.
+        </statement> at 6:1.
+      </statements> at 6:1.
+    </body> at 6:1.
+  </subdef> at 6:1.
+  <body> at 7:5.
+    <statements> at 7:5.
+      <statement> at 7:5.
+        <call> at 7:5.
+          <arglist> at 7:21.
+            <expr> at 7:22.
+              <simple> at 7:22.
+                <term> at 7:22.
+                  <factor> at 7:22.
+                  </factor> at 7:23.
+                </term> at 7:23.
+              </simple> at 7:23.
+            </expr> at 7:23.
+          </arglist> at 7:24.
+        </call> at 7:24.
+      </statement> at 7:24.
+    </statements> at 7:24.
+  </body> at 7:24.
+</program> at 7:24.
+Generated: test43.class
+.class public test43
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test43/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test43/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test43/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test43/scanner Ljava/util/Scanner;
+	getstatic test43/scanner Ljava/util/Scanner;
+	getstatic test43/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test43/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test43/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 2
+.limit locals 1
+	ldc 5
+	invokestatic test43.print_big_string(I)V
+	return
+.end method
+
+.method public static print_big_string(I)V
+.limit stack 2
+.limit locals 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Id semper risus in hendrerit. Posuere lorem ipsum dolor sit. Posuere urna nec tincidunt praesent semper. Adipiscing elit pellentesque habitant morbi. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Elementum nibh tellus molestie nunc non blandit massa enim. Egestas pretium aenean pharetra magna ac. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Velit euismod in pellentesque massa placerat duis ultricies. Sit amet aliquam id diam maecenas. Cursus metus aliquam eleifend mi in nulla posuere.\nSociis natoque penatibus et magnis. Elit at imperdiet dui accumsan sit amet nulla facilisi. Vestibulum lectus mauris ultrices eros in cursus turpis. Lorem donec massa sapien faucibus. Nunc sed id semper risus in hendrerit. Purus sit amet volutpat consequat. Enim tortor at auctor urna. Sagittis vitae et leo duis. Arcu cursus vitae congue mauris. Arcu non sodales neque sodales ut etiam. Magna ac placerat vestibulum lectus mauris ultrices eros in. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed. Cursus euismod quis viverra nibh cras. Viverra aliquet eget sit amet tellus. Scelerisque mauris pellentesque pulvinar pellentesque habitant.\nArcu odio ut sem nulla pharetra diam sit. Integer quis auctor elit sed vulputate mi sit. Auctor neque vitae tempus quam pellentesque nec nam. Enim sed faucibus turpis in eu mi bibendum neque egestas. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin. Ornare lectus sit amet est placerat in egestas. Venenatis cras sed felis eget velit aliquet. Consequat semper viverra nam libero justo laoreet sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque.\nMalesuada fames ac turpis egestas maecenas pharetra convallis. Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Iaculis eu non diam phasellus vestibulum lorem sed risus. Facilisis leo vel fringilla est ullamcorper. Nulla aliquet porttitor lacus luctus accumsan tortor. Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Nisl nisi scelerisque eu ultrices vitae. Eleifend donec pretium vulputate sapien. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Malesuada pellentesque elit eget gravida.\nVestibulum lectus mauris ultrices eros in cursus turpis. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Lobortis mattis aliquam faucibus purus in massa tempor nec feugiat. Tortor at risus viverra adipiscing at in tellus. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in. Tempor orci dapibus ultrices in iaculis. Mauris cursus mattis molestie a. Nunc mattis enim ut tellus elementum sagittis vitae. Dolor sit amet consectetur adipiscing. Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi.\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	return
+.end method
+
+Success!

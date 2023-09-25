@@ -1,0 +1,43 @@
+Welcome to the Relational Operator Test!
+
+42 is less than or equal to 69.
+42 is less than 69.
+42 is not equal to 69.
+
+12 is greater than or equal to 1.
+12 is greater than 1.
+12 is not equal to 1.
+
+83 is greater than or equal to -29.
+83 is greater than -29.
+83 is not equal to -29.
+
+102 is equal to 102.
+102 is greater than or equal to 102.
+102 is less than or equal to 102.
+
+0 is greater than or equal to -2147483648.
+0 is greater than -2147483648.
+0 is not equal to -2147483648.
+
+2173 is greater than or equal to 49.
+2173 is greater than 49.
+2173 is not equal to 49.
+
+2 is less than or equal to 83.
+2 is less than 83.
+2 is not equal to 83.
+
+8 is less than or equal to 420.
+8 is less than 420.
+8 is not equal to 420.
+
+100 is less than or equal to 4200.
+100 is less than 4200.
+100 is not equal to 4200.
+
+2147483646 is greater than or equal to 10.
+2147483646 is greater than 10.
+2147483646 is not equal to 10.
+
+Relational operator testing complete!
