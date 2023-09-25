@@ -1,0 +1,14 @@
+program test48:
+    main:
+
+        int i, overflow;
+        let overflow = 0;
+        
+        let i = 0;
+        while i < 10:
+            let overflow = overflow + 1000000000;
+            let i = i + 1
+        end;
+        
+        output(overflow .. "\n")
+ 

@@ -1,0 +1,14 @@
+{testing int overflow}
+
+program test41:
+
+add(int x, int y) -> int:
+	int sum;
+	let sum = x + y;
+	return sum
+
+main:
+	int x;
+	let x = 2147483647;
+
+	output(add(x, 1) .. "\n")

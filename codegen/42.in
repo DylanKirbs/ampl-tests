@@ -1,0 +1,7 @@
+program test42:
+greet(int i):
+    output ("Nobody is perfect\t\n");
+    output ("Maybe I \ncontain a \"mistake\"...?");
+    output ("\\Maybe\\....\n")
+main:
+    greet(1)

@@ -1,0 +1,29 @@
+program test47:
+    main:
+        
+        int array nums;
+        int i;
+        
+        let nums = array 10;
+        
+        let nums[0] = 42;
+        let nums[1] = 11;
+        let nums[2] = 83;
+        let nums[3] = 102;
+        let nums[4] = 0;
+        let nums[5] = 2173;
+        let nums[6] = 2;
+        let nums[7] = -8;
+        let nums[8] = 100;
+        let nums[9] = -3;
+        
+        let i = 0;
+        while i < 10:
+            if nums[i] rem 2 = 0:
+                output(nums[i] .. " is even\n")
+            else:
+                output(nums[i] .. " is odd\n")
+            end;
+            let i = i + 1;
+            output("\n")
+        end

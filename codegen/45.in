@@ -1,0 +1,89 @@
+program test45:
+    insertionSort(int array arr) -> int array:
+
+        int i, key, n, j;
+        let n = 15;
+        let i = 1;
+
+        while i < n:
+            let key = arr[i];
+            let j = i - 1;
+            
+            while (j >= 0):
+                if arr[j] > key:
+                    let arr[j + 1] = arr[j];
+                    let j = j - 1
+                end
+            end;
+            
+            let arr[j + 1] = key;
+            let i = i + 1
+        end;
+        
+        return arr
+
+    binarySearch(int array arr, int target) -> bool:
+        int low, high, mid;
+        let low = 0;
+        let high = 15 - 1;
+        
+        while low <= high:
+            let mid = (low + high) / 2;
+            
+            if arr[mid] = target:
+                return true
+            elif arr[mid] < target:
+                let low = mid + 1
+            else:
+                let high = mid - 1
+            end
+
+        end;
+        
+        return false
+
+    main:
+    int array numbers;
+    int array sortedArray;
+    
+    int i, targetfind, targetmiss;
+    bool foundfind, foundmiss;
+    
+        let numbers = array 15;
+        let i = 0;
+        while i < 15:
+            let numbers[i] = 61-i;
+            let i = i + 1
+        end;
+        
+        let i = 0;
+        while i < 15:
+            output ("Original array index " .. i .. ":" .. numbers[i] .. "\n");
+            let i = i + 1
+        end;
+
+        let sortedArray = insertionSort(numbers);
+         output("\n");
+        let i = 0;
+        while i < 15:
+            output ("Sorted array index " .. i .. ":" .. sortedArray[i].. "\n");
+            let i = i + 1
+        end;
+
+        let targetfind = 52;
+        let targetmiss = 104;
+        let foundfind = binarySearch(sortedArray, targetfind);
+        let foundmiss = binarySearch(sortedArray, targetmiss);
+        
+        output("\n");
+        if foundfind:
+            output ("Target: " ..  targetfind .. " was found in the sorted array.\n")
+        else:
+            output ("Target: " .. targetfind .. " was not found in the sorted array.\n")
+        end;
+        
+         if foundmiss:
+            output ("Target: " ..  targetmiss .. " was found in the sorted array.\n")
+        else:
+            output ("Target: " .. targetmiss .. " was not found in the sorted array.\n")
+        end

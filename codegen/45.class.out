@@ -1,0 +1,34 @@
+Original array index 0:61
+Original array index 1:60
+Original array index 2:59
+Original array index 3:58
+Original array index 4:57
+Original array index 5:56
+Original array index 6:55
+Original array index 7:54
+Original array index 8:53
+Original array index 9:52
+Original array index 10:51
+Original array index 11:50
+Original array index 12:49
+Original array index 13:48
+Original array index 14:47
+
+Sorted array index 0:47
+Sorted array index 1:48
+Sorted array index 2:49
+Sorted array index 3:50
+Sorted array index 4:51
+Sorted array index 5:52
+Sorted array index 6:53
+Sorted array index 7:54
+Sorted array index 8:55
+Sorted array index 9:56
+Sorted array index 10:57
+Sorted array index 11:58
+Sorted array index 12:59
+Sorted array index 13:60
+Sorted array index 14:61
+
+Target: 52 was found in the sorted array.
+Target: 104 was not found in the sorted array.
