@@ -586,8 +586,10 @@ def test_runner(
     diff_stream.append('out') if stream in ['out', 'both'] else None
     diff_stream.append('err') if stream in ['err', 'both'] else None
     if flags.get('exec-class', False) and executable == 'codegen':
-        diff_stream.append('class.out') if stream in ['out', 'both'] else None
-        diff_stream.append('class.err') if stream in ['err', 'both'] else None
+        diff_stream.append('class.out') if stream in [
+            'out', 'both', 'class'] else None
+        diff_stream.append('class.err') if stream in [
+            'err', 'both', 'class'] else None
 
     if len(test_cases) == 0:
         # count all the .in file in the module directory
@@ -690,13 +692,8 @@ def main():
     os.makedirs('temp', exist_ok=True)
 
     # Stream
-    stream = 'both'
-    if args['--stream'] == 'out':
-        logging.info('Testing only stdout...')
-        stream = 'out'
-    elif args['--stream'] == 'err':
-        logging.info('Testing only stderr...')
-        stream = 'err'
+    stream = args['--stream'] if args['--stream'] else 'both'
+    logging.debug(f'Stream: {stream}')
 
     # Export jasmin to the ENV
     if 'JASMIN_JAR' not in os.environ:
