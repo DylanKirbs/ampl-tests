@@ -1,0 +1,15 @@
+a[0] = 1
+a[1] = 8
+a[2] = 16
+a[3] = 28
+a[4] = 30
+
+b[0] = 0
+b[1] = 9
+b[2] = 12
+b[3] = 13
+b[4] = 14
+b[5] = 33
+
+The median of a is approximately: 16
+The median of b is approximately: 12

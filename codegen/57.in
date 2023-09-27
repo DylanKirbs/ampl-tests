@@ -1,0 +1,76 @@
+{prime number checker}
+program test57: 
+
+    isprime(int num) -> bool:
+        bool prime;
+        int i;
+        
+        let prime = true;
+        
+        if (num = 0) or (num = 1) or (num < 0):
+            let prime = false
+        end;
+        
+        let i = 2;
+        while i <= num/2:
+            if num rem i = 0:
+                let prime = false
+            end;
+            let i = i + 1
+        end;
+        
+        return prime
+        
+    smallprime(int num) -> int:
+        
+        int i;
+        bool loop;
+        let i = num + 1;
+        let loop = true;
+            
+        while loop:
+            if isprime(i):
+                return i
+            end;
+            let i = i + 1
+        end;
+        return -1
+        
+    main:
+    
+        int array a;
+        int i;
+        let a = array 10;
+    
+        let a[0] = 2;
+        let a[1] = 1;
+        let a[2] = 0;
+        let a[3] = 9;
+        let a[4] = -1;
+        let a[5] = 13;
+        let a[6] = 83;
+        let a[6] = 14;
+        let a[7] = 23;
+        let a[8] = 100;
+        let a[9] = 1024;
+    
+        let i = 0;
+    
+        while i < 10:
+        
+            if isprime(a[i]):
+                output(a[i] .. " is a prime number\n")
+            else: 
+                output(a[i] .. " is not a prime number\n")
+            end;
+        
+            let i = i + 1
+        
+        end;
+        
+        output("\n");
+        output("The smallest prime greater than 5 is: " .. smallprime(5) .. "\n");
+        output("The smallest prime greater than 12 is: " .. smallprime(12) .. "\n");
+        output("The smallest prime greater than 103 is: " .. smallprime(103) .. "\n");
+        output("The smallest prime greater than 2800 is: " .. smallprime(2800) .. "\n");
+        output("The smallest prime greater than 20000 is: " .. smallprime(20000) .. "\n")

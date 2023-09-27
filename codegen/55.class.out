@@ -1,0 +1,17 @@
+a[0] = 8
+a[1] = 1
+a[2] = 16
+a[3] = 28
+a[4] = 30
+
+b[0] = 32
+b[1] = 14
+b[2] = 0
+b[3] = 9
+b[4] = 12
+
+The dot product of a and b is: 882
+The sum of the values in a is: 83
+The mean of the values in a is approximately: 17
+The sum of the values in b is: 67
+The mean of the values in b is approximately: 13

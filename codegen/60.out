@@ -1,0 +1,1048 @@
+<program> at 3:1.
+  <subdef> at 5:5.
+    <type> at 5:12.
+    </type> at 5:16.
+    <type> at 5:24.
+    </type> at 5:27.
+    <body> at 7:9.
+      <statements> at 7:9.
+        <statement> at 7:9.
+          <return> at 7:9.
+            <expr> at 7:16.
+              <simple> at 7:16.
+                <term> at 7:16.
+                  <factor> at 7:16.
+                  </factor> at 7:19.
+                  <factor> at 7:20.
+                  </factor> at 9:5.
+                </term> at 9:5.
+              </simple> at 9:5.
+            </expr> at 9:5.
+          </return> at 9:5.
+        </statement> at 9:5.
+      </statements> at 9:5.
+    </body> at 9:5.
+  </subdef> at 9:5.
+  <subdef> at 9:5.
+    <type> at 9:14.
+    </type> at 9:18.
+    <type> at 9:21.
+    </type> at 9:25.
+    <type> at 9:28.
+    </type> at 9:32.
+    <type> at 9:39.
+    </type> at 9:43.
+    <type> at 9:53.
+    </type> at 9:56.
+    <body> at 11:9.
+      <vardef> at 11:9.
+        <type> at 11:9.
+        </type> at 11:13.
+      </vardef> at 12:9.
+      <statements> at 12:9.
+        <statement> at 12:9.
+          <assign> at 12:9.
+            <expr> at 12:23.
+              <simple> at 12:23.
+                <term> at 12:23.
+                  <factor> at 12:23.
+                  </factor> at 12:24.
+                  <factor> at 12:25.
+                  </factor> at 12:26.
+                </term> at 12:26.
+              </simple> at 12:26.
+            </expr> at 12:26.
+          </assign> at 12:26.
+        </statement> at 12:26.
+        <statement> at 13:9.
+          <assign> at 13:9.
+            <expr> at 13:25.
+              <simple> at 13:25.
+                <term> at 13:25.
+                  <factor> at 13:25.
+                  </factor> at 13:27.
+                  <factor> at 13:31.
+                  </factor> at 13:32.
+                </term> at 13:32.
+              </simple> at 13:32.
+            </expr> at 13:32.
+          </assign> at 13:32.
+        </statement> at 13:32.
+        <statement> at 15:9.
+          <assign> at 15:9.
+            <expr> at 15:19.
+              <simple> at 15:19.
+                <term> at 15:19.
+                  <factor> at 15:19.
+                  </factor> at 15:27.
+                  <factor> at 15:29.
+                    <arglist> at 15:35.
+                      <expr> at 15:36.
+                        <simple> at 15:36.
+                          <term> at 15:36.
+                            <factor> at 15:36.
+                            </factor> at 15:41.
+                          </term> at 15:41.
+                        </simple> at 15:41.
+                      </expr> at 15:41.
+                    </arglist> at 15:43.
+                  </factor> at 15:43.
+                </term> at 15:43.
+                <term> at 15:45.
+                  <factor> at 15:45.
+                  </factor> at 15:53.
+                  <factor> at 15:55.
+                    <arglist> at 15:61.
+                      <expr> at 15:62.
+                        <simple> at 15:62.
+                          <term> at 15:62.
+                            <factor> at 15:62.
+                            </factor> at 15:67.
+                          </term> at 15:67.
+                        </simple> at 15:67.
+                      </expr> at 15:67.
+                    </arglist> at 15:69.
+                  </factor> at 15:69.
+                </term> at 15:69.
+                <term> at 15:71.
+                  <factor> at 15:71.
+                  </factor> at 15:73.
+                  <factor> at 15:75.
+                  </factor> at 15:81.
+                </term> at 15:81.
+                <term> at 15:83.
+                  <factor> at 15:83.
+                  </factor> at 15:85.
+                  <factor> at 15:87.
+                  </factor> at 15:92.
+                </term> at 15:92.
+              </simple> at 15:92.
+            </expr> at 15:92.
+          </assign> at 15:92.
+        </statement> at 15:92.
+        <statement> at 16:9.
+          <assign> at 16:9.
+            <expr> at 16:19.
+              <simple> at 16:19.
+                <term> at 16:19.
+                  <factor> at 16:19.
+                  </factor> at 16:23.
+                </term> at 16:23.
+                <term> at 16:25.
+                  <factor> at 16:25.
+                    <expr> at 16:26.
+                      <simple> at 16:26.
+                        <term> at 16:26.
+                          <factor> at 16:26.
+                          </factor> at 16:36.
+                          <factor> at 16:38.
+                            <arglist> at 16:44.
+                              <expr> at 16:45.
+                                <simple> at 16:45.
+                                  <term> at 16:45.
+                                    <factor> at 16:45.
+                                    </factor> at 16:50.
+                                  </term> at 16:50.
+                                </simple> at 16:50.
+                              </expr> at 16:50.
+                            </arglist> at 16:52.
+                          </factor> at 16:52.
+                        </term> at 16:52.
+                        <term> at 16:54.
+                          <factor> at 16:54.
+                          </factor> at 16:64.
+                          <factor> at 16:66.
+                            <arglist> at 16:72.
+                              <expr> at 16:73.
+                                <simple> at 16:73.
+                                  <term> at 16:73.
+                                    <factor> at 16:73.
+                                    </factor> at 16:78.
+                                  </term> at 16:78.
+                                </simple> at 16:78.
+                              </expr> at 16:78.
+                            </arglist> at 16:79.
+                          </factor> at 16:79.
+                        </term> at 16:79.
+                      </simple> at 16:79.
+                    </expr> at 16:79.
+                  </factor> at 16:80.
+                  <factor> at 16:81.
+                  </factor> at 16:82.
+                </term> at 16:82.
+              </simple> at 16:82.
+            </expr> at 16:82.
+          </assign> at 16:82.
+        </statement> at 16:82.
+        <statement> at 17:9.
+          <return> at 17:9.
+            <expr> at 17:16.
+              <simple> at 17:16.
+                <term> at 17:16.
+                  <factor> at 17:16.
+                  </factor> at 19:5.
+                </term> at 19:5.
+              </simple> at 19:5.
+            </expr> at 19:5.
+          </return> at 19:5.
+        </statement> at 19:5.
+      </statements> at 19:5.
+    </body> at 19:5.
+  </subdef> at 19:5.
+  <body> at 21:5.
+    <vardef> at 21:5.
+      <type> at 21:5.
+      </type> at 21:15.
+    </vardef> at 22:5.
+    <vardef> at 22:5.
+      <type> at 22:5.
+      </type> at 22:9.
+    </vardef> at 24:5.
+    <statements> at 24:5.
+      <statement> at 24:5.
+        <assign> at 24:5.
+          <simple> at 24:22.
+            <term> at 24:22.
+              <factor> at 24:22.
+              </factor> at 24:23.
+            </term> at 24:23.
+          </simple> at 24:23.
+        </assign> at 24:23.
+      </statement> at 24:23.
+      <statement> at 25:5.
+        <assign> at 25:5.
+          <simple> at 25:23.
+            <term> at 25:23.
+              <factor> at 25:23.
+              </factor> at 25:24.
+            </term> at 25:24.
+          </simple> at 25:24.
+        </assign> at 25:24.
+      </statement> at 25:24.
+      <statement> at 26:5.
+        <assign> at 26:5.
+          <simple> at 26:21.
+            <term> at 26:21.
+              <factor> at 26:21.
+              </factor> at 26:22.
+            </term> at 26:22.
+          </simple> at 26:22.
+        </assign> at 26:22.
+      </statement> at 26:22.
+      <statement> at 27:5.
+        <assign> at 27:5.
+          <simple> at 27:20.
+            <term> at 27:20.
+              <factor> at 27:20.
+              </factor> at 27:21.
+            </term> at 27:21.
+          </simple> at 27:21.
+        </assign> at 27:21.
+      </statement> at 27:21.
+      <statement> at 29:5.
+        <assign> at 29:5.
+          <index> at 29:13.
+            <simple> at 29:14.
+              <term> at 29:14.
+                <factor> at 29:14.
+                </factor> at 29:15.
+              </term> at 29:15.
+            </simple> at 29:15.
+          </index> at 29:17.
+          <expr> at 29:19.
+            <simple> at 29:19.
+              <term> at 29:19.
+                <factor> at 29:19.
+                </factor> at 29:21.
+              </term> at 29:21.
+            </simple> at 29:21.
+          </expr> at 29:21.
+        </assign> at 29:21.
+      </statement> at 29:21.
+      <statement> at 30:5.
+        <assign> at 30:5.
+          <index> at 30:13.
+            <simple> at 30:14.
+              <term> at 30:14.
+                <factor> at 30:14.
+                </factor> at 30:15.
+              </term> at 30:15.
+            </simple> at 30:15.
+          </index> at 30:17.
+          <expr> at 30:19.
+            <simple> at 30:19.
+              <term> at 30:19.
+                <factor> at 30:19.
+                </factor> at 30:20.
+              </term> at 30:20.
+            </simple> at 30:20.
+          </expr> at 30:20.
+        </assign> at 30:20.
+      </statement> at 30:20.
+      <statement> at 31:5.
+        <assign> at 31:5.
+          <index> at 31:13.
+            <simple> at 31:14.
+              <term> at 31:14.
+                <factor> at 31:14.
+                </factor> at 31:15.
+              </term> at 31:15.
+            </simple> at 31:15.
+          </index> at 31:17.
+          <expr> at 31:19.
+            <simple> at 31:19.
+              <term> at 31:19.
+                <factor> at 31:19.
+                </factor> at 31:20.
+              </term> at 31:20.
+            </simple> at 31:20.
+          </expr> at 31:20.
+        </assign> at 31:20.
+      </statement> at 31:20.
+      <statement> at 32:5.
+        <assign> at 32:5.
+          <index> at 32:13.
+            <simple> at 32:14.
+              <term> at 32:14.
+                <factor> at 32:14.
+                </factor> at 32:15.
+              </term> at 32:15.
+            </simple> at 32:15.
+          </index> at 32:17.
+          <expr> at 32:19.
+            <simple> at 32:19.
+              <term> at 32:19.
+                <factor> at 32:19.
+                </factor> at 32:21.
+              </term> at 32:21.
+            </simple> at 32:21.
+          </expr> at 32:21.
+        </assign> at 32:21.
+      </statement> at 32:21.
+      <statement> at 34:5.
+        <assign> at 34:5.
+          <index> at 34:14.
+            <simple> at 34:15.
+              <term> at 34:15.
+                <factor> at 34:15.
+                </factor> at 34:16.
+              </term> at 34:16.
+            </simple> at 34:16.
+          </index> at 34:18.
+          <expr> at 34:20.
+            <simple> at 34:20.
+              <term> at 34:20.
+                <factor> at 34:20.
+                </factor> at 34:23.
+              </term> at 34:23.
+            </simple> at 34:23.
+          </expr> at 34:23.
+        </assign> at 34:23.
+      </statement> at 34:23.
+      <statement> at 35:5.
+        <assign> at 35:5.
+          <index> at 35:14.
+            <simple> at 35:15.
+              <term> at 35:15.
+                <factor> at 35:15.
+                </factor> at 35:16.
+              </term> at 35:16.
+            </simple> at 35:16.
+          </index> at 35:18.
+          <expr> at 35:20.
+            <simple> at 35:20.
+              <term> at 35:21.
+                <factor> at 35:21.
+                </factor> at 35:23.
+              </term> at 35:23.
+            </simple> at 35:23.
+          </expr> at 35:23.
+        </assign> at 35:23.
+      </statement> at 35:23.
+      <statement> at 36:5.
+        <assign> at 36:5.
+          <index> at 36:14.
+            <simple> at 36:15.
+              <term> at 36:15.
+                <factor> at 36:15.
+                </factor> at 36:16.
+              </term> at 36:16.
+            </simple> at 36:16.
+          </index> at 36:18.
+          <expr> at 36:20.
+            <simple> at 36:20.
+              <term> at 36:20.
+                <factor> at 36:20.
+                </factor> at 36:22.
+              </term> at 36:22.
+            </simple> at 36:22.
+          </expr> at 36:22.
+        </assign> at 36:22.
+      </statement> at 36:22.
+      <statement> at 37:5.
+        <assign> at 37:5.
+          <index> at 37:14.
+            <simple> at 37:15.
+              <term> at 37:15.
+                <factor> at 37:15.
+                </factor> at 37:16.
+              </term> at 37:16.
+            </simple> at 37:16.
+          </index> at 37:18.
+          <expr> at 37:20.
+            <simple> at 37:20.
+              <term> at 37:20.
+                <factor> at 37:20.
+                </factor> at 37:24.
+              </term> at 37:24.
+            </simple> at 37:24.
+          </expr> at 37:24.
+        </assign> at 37:24.
+      </statement> at 37:24.
+      <statement> at 39:5.
+        <assign> at 39:5.
+          <index> at 39:12.
+            <simple> at 39:13.
+              <term> at 39:13.
+                <factor> at 39:13.
+                </factor> at 39:14.
+              </term> at 39:14.
+            </simple> at 39:14.
+          </index> at 39:16.
+          <expr> at 39:18.
+            <simple> at 39:18.
+              <term> at 39:18.
+                <factor> at 39:18.
+                </factor> at 39:19.
+              </term> at 39:19.
+            </simple> at 39:19.
+          </expr> at 39:19.
+        </assign> at 39:19.
+      </statement> at 39:19.
+      <statement> at 40:5.
+        <assign> at 40:5.
+          <index> at 40:12.
+            <simple> at 40:13.
+              <term> at 40:13.
+                <factor> at 40:13.
+                </factor> at 40:14.
+              </term> at 40:14.
+            </simple> at 40:14.
+          </index> at 40:16.
+          <expr> at 40:18.
+            <simple> at 40:18.
+              <term> at 40:18.
+                <factor> at 40:18.
+                </factor> at 40:19.
+              </term> at 40:19.
+            </simple> at 40:19.
+          </expr> at 40:19.
+        </assign> at 40:19.
+      </statement> at 40:19.
+      <statement> at 41:5.
+        <assign> at 41:5.
+          <index> at 41:12.
+            <simple> at 41:13.
+              <term> at 41:13.
+                <factor> at 41:13.
+                </factor> at 41:14.
+              </term> at 41:14.
+            </simple> at 41:14.
+          </index> at 41:16.
+          <expr> at 41:18.
+            <simple> at 41:18.
+              <term> at 41:19.
+                <factor> at 41:19.
+                </factor> at 41:20.
+              </term> at 41:20.
+            </simple> at 41:20.
+          </expr> at 41:20.
+        </assign> at 41:20.
+      </statement> at 41:20.
+      <statement> at 42:5.
+        <assign> at 42:5.
+          <index> at 42:12.
+            <simple> at 42:13.
+              <term> at 42:13.
+                <factor> at 42:13.
+                </factor> at 42:14.
+              </term> at 42:14.
+            </simple> at 42:14.
+          </index> at 42:16.
+          <expr> at 42:18.
+            <simple> at 42:18.
+              <term> at 42:18.
+                <factor> at 42:18.
+                </factor> at 42:22.
+              </term> at 42:22.
+            </simple> at 42:22.
+          </expr> at 42:22.
+        </assign> at 42:22.
+      </statement> at 42:22.
+      <statement> at 44:5.
+        <assign> at 44:5.
+          <index> at 44:11.
+            <simple> at 44:12.
+              <term> at 44:12.
+                <factor> at 44:12.
+                </factor> at 44:13.
+              </term> at 44:13.
+            </simple> at 44:13.
+          </index> at 44:15.
+          <expr> at 44:17.
+            <simple> at 44:17.
+              <term> at 44:17.
+                <factor> at 44:17.
+                </factor> at 44:19.
+              </term> at 44:19.
+            </simple> at 44:19.
+          </expr> at 44:19.
+        </assign> at 44:19.
+      </statement> at 44:19.
+      <statement> at 45:5.
+        <assign> at 45:5.
+          <index> at 45:11.
+            <simple> at 45:12.
+              <term> at 45:12.
+                <factor> at 45:12.
+                </factor> at 45:13.
+              </term> at 45:13.
+            </simple> at 45:13.
+          </index> at 45:15.
+          <expr> at 45:17.
+            <simple> at 45:17.
+              <term> at 45:17.
+                <factor> at 45:17.
+                </factor> at 45:18.
+              </term> at 45:18.
+            </simple> at 45:18.
+          </expr> at 45:18.
+        </assign> at 45:18.
+      </statement> at 45:18.
+      <statement> at 46:5.
+        <assign> at 46:5.
+          <index> at 46:11.
+            <simple> at 46:12.
+              <term> at 46:12.
+                <factor> at 46:12.
+                </factor> at 46:13.
+              </term> at 46:13.
+            </simple> at 46:13.
+          </index> at 46:15.
+          <expr> at 46:17.
+            <simple> at 46:17.
+              <term> at 46:17.
+                <factor> at 46:17.
+                </factor> at 46:18.
+              </term> at 46:18.
+            </simple> at 46:18.
+          </expr> at 46:18.
+        </assign> at 46:18.
+      </statement> at 46:18.
+      <statement> at 47:5.
+        <assign> at 47:5.
+          <index> at 47:11.
+            <simple> at 47:12.
+              <term> at 47:12.
+                <factor> at 47:12.
+                </factor> at 47:13.
+              </term> at 47:13.
+            </simple> at 47:13.
+          </index> at 47:15.
+          <expr> at 47:17.
+            <simple> at 47:17.
+              <term> at 47:17.
+                <factor> at 47:17.
+                </factor> at 47:19.
+              </term> at 47:19.
+            </simple> at 47:19.
+          </expr> at 47:19.
+        </assign> at 47:19.
+      </statement> at 47:19.
+      <statement> at 49:5.
+        <assign> at 49:5.
+          <expr> at 49:13.
+            <simple> at 49:13.
+              <term> at 49:13.
+                <factor> at 49:13.
+                </factor> at 49:14.
+              </term> at 49:14.
+            </simple> at 49:14.
+          </expr> at 49:14.
+        </assign> at 49:14.
+      </statement> at 49:14.
+      <statement> at 50:5.
+        <while> at 50:5.
+          <expr> at 50:11.
+            <simple> at 50:11.
+              <term> at 50:11.
+                <factor> at 50:11.
+                </factor> at 50:13.
+              </term> at 50:13.
+            </simple> at 50:13.
+            <simple> at 50:15.
+              <term> at 50:15.
+                <factor> at 50:15.
+                </factor> at 50:16.
+              </term> at 50:16.
+            </simple> at 50:16.
+          </expr> at 50:16.
+          <statements> at 51:9.
+            <statement> at 51:9.
+              <output> at 51:9.
+                <expr> at 51:55.
+                  <simple> at 51:55.
+                    <term> at 51:55.
+                      <factor> at 51:55.
+                        <index> at 51:59.
+                          <simple> at 51:60.
+                            <term> at 51:60.
+                              <factor> at 51:60.
+                              </factor> at 51:61.
+                            </term> at 51:61.
+                          </simple> at 51:61.
+                        </index> at 51:63.
+                      </factor> at 51:63.
+                    </term> at 51:63.
+                  </simple> at 51:63.
+                </expr> at 51:63.
+                <expr> at 51:76.
+                  <simple> at 51:76.
+                    <term> at 51:76.
+                      <factor> at 51:76.
+                        <index> at 51:81.
+                          <simple> at 51:82.
+                            <term> at 51:82.
+                              <factor> at 51:82.
+                              </factor> at 51:83.
+                            </term> at 51:83.
+                          </simple> at 51:83.
+                        </index> at 51:85.
+                      </factor> at 51:85.
+                    </term> at 51:85.
+                  </simple> at 51:85.
+                </expr> at 51:85.
+                <expr> at 51:100.
+                  <simple> at 51:100.
+                    <term> at 51:100.
+                      <factor> at 51:100.
+                        <index> at 51:103.
+                          <simple> at 51:104.
+                            <term> at 51:104.
+                              <factor> at 51:104.
+                              </factor> at 51:105.
+                            </term> at 51:105.
+                          </simple> at 51:105.
+                        </index> at 51:107.
+                      </factor> at 51:107.
+                    </term> at 51:107.
+                  </simple> at 51:107.
+                </expr> at 51:107.
+                <expr> at 51:120.
+                  <simple> at 51:120.
+                    <term> at 51:120.
+                      <factor> at 51:120.
+                        <index> at 51:122.
+                          <simple> at 51:123.
+                            <term> at 51:123.
+                              <factor> at 51:123.
+                              </factor> at 51:124.
+                            </term> at 51:124.
+                          </simple> at 51:124.
+                        </index> at 51:126.
+                      </factor> at 51:126.
+                    </term> at 51:126.
+                  </simple> at 51:126.
+                </expr> at 51:126.
+                <expr> at 51:154.
+                  <simple> at 51:154.
+                    <term> at 51:154.
+                      <factor> at 51:154.
+                        <arglist> at 51:162.
+                          <expr> at 51:163.
+                            <simple> at 51:163.
+                              <term> at 51:163.
+                                <factor> at 51:163.
+                                  <index> at 51:167.
+                                    <simple> at 51:168.
+                                      <term> at 51:168.
+                                        <factor> at 51:168.
+                                        </factor> at 51:169.
+                                      </term> at 51:169.
+                                    </simple> at 51:169.
+                                  </index> at 51:170.
+                                </factor> at 51:170.
+                              </term> at 51:170.
+                            </simple> at 51:170.
+                          </expr> at 51:170.
+                          <expr> at 51:172.
+                            <simple> at 51:172.
+                              <term> at 51:172.
+                                <factor> at 51:172.
+                                  <index> at 51:177.
+                                    <simple> at 51:178.
+                                      <term> at 51:178.
+                                        <factor> at 51:178.
+                                        </factor> at 51:179.
+                                      </term> at 51:179.
+                                    </simple> at 51:179.
+                                  </index> at 51:180.
+                                </factor> at 51:180.
+                              </term> at 51:180.
+                            </simple> at 51:180.
+                          </expr> at 51:180.
+                          <expr> at 51:182.
+                            <simple> at 51:182.
+                              <term> at 51:182.
+                                <factor> at 51:182.
+                                  <index> at 51:184.
+                                    <simple> at 51:185.
+                                      <term> at 51:185.
+                                        <factor> at 51:185.
+                                        </factor> at 51:186.
+                                      </term> at 51:186.
+                                    </simple> at 51:186.
+                                  </index> at 51:187.
+                                </factor> at 51:187.
+                              </term> at 51:187.
+                            </simple> at 51:187.
+                          </expr> at 51:187.
+                          <expr> at 51:189.
+                            <simple> at 51:189.
+                              <term> at 51:189.
+                                <factor> at 51:189.
+                                  <index> at 51:192.
+                                    <simple> at 51:193.
+                                      <term> at 51:193.
+                                        <factor> at 51:193.
+                                        </factor> at 51:194.
+                                      </term> at 51:194.
+                                    </simple> at 51:194.
+                                  </index> at 51:195.
+                                </factor> at 51:195.
+                              </term> at 51:195.
+                            </simple> at 51:195.
+                          </expr> at 51:195.
+                        </arglist> at 51:196.
+                      </factor> at 51:196.
+                    </term> at 51:196.
+                  </simple> at 51:196.
+                </expr> at 51:196.
+              </output> at 51:204.
+            </statement> at 51:204.
+            <statement> at 52:9.
+              <assign> at 52:9.
+                <expr> at 52:17.
+                  <simple> at 52:17.
+                    <term> at 52:17.
+                      <factor> at 52:17.
+                      </factor> at 52:19.
+                    </term> at 52:19.
+                    <term> at 52:21.
+                      <factor> at 52:21.
+                      </factor> at 53:5.
+                    </term> at 53:5.
+                  </simple> at 53:5.
+                </expr> at 53:5.
+              </assign> at 53:5.
+            </statement> at 53:5.
+          </statements> at 53:5.
+        </while> at 53:8.
+      </statement> at 53:8.
+    </statements> at 53:8.
+  </body> at 53:8.
+</program> at 53:8.
+Generated: test60.class
+.class public test60
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test60/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test60/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test60/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test60/scanner Ljava/util/Scanner;
+	getstatic test60/scanner Ljava/util/Scanner;
+	getstatic test60/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test60/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test60/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 30
+.limit locals 6
+	ldc 4
+	newarray int
+	astore 1
+	ldc 4
+	newarray int
+	astore 2
+	ldc 4
+	newarray int
+	astore 3
+	ldc 4
+	newarray int
+	astore 4
+	aload 1
+	ldc 0
+	ldc 99
+	iastore
+	aload 1
+	ldc 1
+	ldc 1
+	iastore
+	aload 1
+	ldc 2
+	ldc 8
+	iastore
+	aload 1
+	ldc 3
+	ldc 33
+	iastore
+	aload 2
+	ldc 0
+	ldc 100
+	iastore
+	aload 2
+	ldc 1
+	ldc 40
+	ineg
+	iastore
+	aload 2
+	ldc 2
+	ldc 63
+	iastore
+	aload 2
+	ldc 3
+	ldc 1000
+	iastore
+	aload 3
+	ldc 0
+	ldc 0
+	iastore
+	aload 3
+	ldc 1
+	ldc 1
+	iastore
+	aload 3
+	ldc 2
+	ldc 4
+	ineg
+	iastore
+	aload 3
+	ldc 3
+	ldc 3000
+	iastore
+	aload 4
+	ldc 0
+	ldc 99
+	iastore
+	aload 4
+	ldc 1
+	ldc 2
+	iastore
+	aload 4
+	ldc 2
+	ldc 8
+	iastore
+	aload 4
+	ldc 3
+	ldc 30
+	iastore
+	ldc 0
+	istore 5
+L1:
+	iload 5
+	ldc 4
+	if_icmplt L3
+	ldc 0
+	goto L4
+L3:
+	ldc 1
+L4:
+	ifeq L2
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "The area under the straight line "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 1
+	iload 5
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "x + "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 2
+	iload 5
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " from "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 3
+	iload 5
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " to "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 4
+	iload 5
+	iaload
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " is approximately: "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	aload 1
+	iload 5
+	iaload
+	aload 2
+	iload 5
+	iaload
+	aload 4
+	iload 5
+	iaload
+	aload 3
+	iload 5
+	iaload
+	invokestatic test60.straight(IIII)I
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	iload 5
+	ldc 1
+	iadd
+	istore 5
+	goto L1
+L2:
+	return
+.end method
+
+.method public static straight(IIII)I
+.limit stack 9
+.limit locals 7
+	iload 0
+	ldc 2
+	idiv
+	istore 6
+	iload 0
+	ldc 2
+	irem
+	istore 5
+	iload 6
+	iload 2
+	invokestatic test60.square(I)I
+	imul
+	iload 6
+	iload 3
+	invokestatic test60.square(I)I
+	imul
+	isub
+	iload 1
+	iload 2
+	imul
+	iadd
+	iload 1
+	iload 3
+	imul
+	isub
+	istore 4
+	iload 4
+	iload 5
+	iload 2
+	invokestatic test60.square(I)I
+	imul
+	iload 5
+	iload 3
+	invokestatic test60.square(I)I
+	imul
+	isub
+	ldc 2
+	idiv
+	iadd
+	istore 4
+	iload 4
+	ireturn
+	return
+.end method
+
+.method public static square(I)I
+.limit stack 3
+.limit locals 1
+	iload 0
+	iload 0
+	imul
+	ireturn
+	return
+.end method
+
+Success!

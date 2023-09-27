@@ -1,0 +1,53 @@
+{Integration under a straight line}
+
+program test60:
+
+    square(int num) -> int:
+    
+        return num*num
+
+    straight(int m, int c, int upper, int lower) -> int:
+
+        int val, remainder, newcoef;
+        let newcoef = m/2;
+        let remainder = m rem 2;
+    
+        let val = newcoef * square(upper) - newcoef * square(lower) + c * upper - c * lower;
+        let val = val + (remainder * square(upper) - remainder * square(lower))/2;
+        return val
+    
+    main:
+    
+    int array coef, const, low, up;
+    int i;
+    
+    let coef = array 4;
+    let const = array 4;
+    let low = array 4;
+    let up = array 4;
+    
+    let coef[0] = 99;
+    let coef[1] = 1;
+    let coef[2] = 8;
+    let coef[3] = 33;
+    
+    let const[0] = 100;
+    let const[1] = -40;
+    let const[2] = 63;
+    let const[3] = 1000;
+    
+    let low[0] = 0;
+    let low[1] = 1;
+    let low[2] = -4;
+    let low[3] = 3000;
+    
+    let up[0] = 99;
+    let up[1] = 2;
+    let up[2] = 8;
+    let up[3] = 30;
+    
+    let i = 0;
+    while i < 4:
+        output("The area under the straight line " .. coef[i] .. "x + " .. const[i] .. " from " .. low[i] .. " to " .. up[i] .. " is approximately: " .. straight(coef[i], const[i], up[i], low[i]).. "\n");
+        let i = i + 1
+    end

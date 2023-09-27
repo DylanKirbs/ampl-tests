@@ -1,0 +1,16 @@
+2 is a prime number
+1 is not a prime number
+0 is not a prime number
+9 is not a prime number
+-1 is not a prime number
+13 is a prime number
+14 is not a prime number
+23 is a prime number
+100 is not a prime number
+1024 is not a prime number
+
+The smallest prime greater than 5 is: 7
+The smallest prime greater than 12 is: 13
+The smallest prime greater than 103 is: 107
+The smallest prime greater than 2800 is: 2801
+The smallest prime greater than 20000 is: 20011

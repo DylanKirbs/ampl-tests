@@ -1,0 +1,45 @@
+{Extremely inefficient squaring}
+program test54:
+
+squarenum(int num) -> int:
+    int i, square;
+    let i = 0;
+    let square = 0;
+    
+    if num = 1:
+        while i < 1:
+            let square = square + num;
+            let i = i + 1
+        end
+    elif num = 2:
+        while i < 2:
+            let square = square + num;
+            let i = i + 1
+        end
+    elif num = 3:
+        while i < 3:
+            let square = square + num;
+            let i = i + 1
+        end
+    elif num = 4:
+        while i < 4:
+            let square = square + num;
+            let i = i + 1
+        end
+    else:
+        while i < 5:
+            let square = square + num;
+            let i = i + 1
+        end
+    end;
+    return square
+
+main:
+    int i;
+    
+    let i = 0;
+    while i < 5:
+        output(i .. " squared is: " .. squarenum(i) .. "\n");
+        let i = i + 1
+    end
+        

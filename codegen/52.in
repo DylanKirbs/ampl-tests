@@ -1,0 +1,60 @@
+{testing mutability of arrays and scaling arrays by a constant}
+
+program test52:
+    scalevector(int array arr, int scalar):
+    
+        int i;
+        let i = 0;
+        while i < 15:
+            let arr[i] = arr[i] * scalar;
+            let i = i + 1
+        end
+        
+    scalevector_ret(int array arr, int scalar) -> int array:
+        
+        int i;
+        int array scale;
+        let scale = array 15;
+        let i = 0;
+        while i < 15:
+            let scale[i] = arr[i] * scalar;
+            let i = i + 1
+        end;
+        return scale
+
+    main:
+        int array numbers;
+        int array scaledArray;
+        int i;
+    
+        let numbers = array 15;
+
+        let i = 0;
+        while i < 15:
+            let numbers[i] = 61-i;
+            let i = i + 1
+        end;
+        
+        let i = 0;
+        while i < 15:
+            output ("Original array index " .. i .. ":" .. numbers[i] .. "\n");
+            let i = i + 1
+        end;
+
+        output("\n");
+        
+        scalevector(numbers, 5);  
+        let i = 0;
+        while i < 15:
+            output ("Scaled array index " .. i .. ":" .. numbers[i] .. "\n");
+            let i = i + 1
+        end;
+        
+        let scaledArray = scalevector_ret(numbers, 2);
+        
+        output("\n");
+        let i = 0;
+        while i < 15:
+            output ("Twice scaled array index " .. i .. ":" .. scaledArray[i].. "\n");
+            let i = i + 1
+        end
