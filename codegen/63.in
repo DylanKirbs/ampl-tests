@@ -1,0 +1,26 @@
+{Calculates factors of a number}
+
+program test63:
+    
+    listfactors(int num):
+    
+        int i;
+        let i = num;
+    
+        while i > 0:
+            if (num rem i) = 0:
+                output(i .. " is a factor of " .. num .. "\n")
+            end;
+            let i = i - 1
+        end
+        
+    main:
+    
+    listfactors(1);
+    output("\n");
+    listfactors(24);
+    output("\n");
+    listfactors(144);
+    output("\n");
+    listfactors(512);
+    output("\n")

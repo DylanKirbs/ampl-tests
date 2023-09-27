@@ -1,0 +1,109 @@
+ {merge sort}
+ 
+ program test61:
+    
+    merge(int array a, int l, int m, int u):
+    
+        int i, j, k;
+        int nelement1, nelement2;
+        int array subleft, subright;
+        
+        let nelement1 = m - l + 1;
+        let nelement2 = u - m;
+        
+        let subleft = array nelement1;
+        let subright = array nelement2;
+        
+        let i = 0;
+        while i < nelement1:
+        
+            let subleft[i] = a[l + i];
+            let i = i + 1
+            
+        end;
+        
+        let i = 0;
+        while i < nelement2:
+        
+            let subright[i] = a[m + i + 1];
+            let i = i + 1
+            
+        end;
+        
+        let i = 0;
+        let j = 0;
+        let k = l;
+        
+        while (i < nelement1) and (j < nelement2):
+            
+            if subleft[i] <= subright[j]:
+                let a[k] = subleft[i];
+                let i = i + 1
+            else:
+                let a[k] = subright[j];
+                let j = j + 1
+            end;
+            
+            let k = k + 1
+        
+        end;
+        
+        while i < nelement1:
+            let a[k] = subleft[i];
+            let i = i + 1;
+            let k = k + 1
+        end;
+        
+        while j < nelement2:
+            let a[k] = subright[j];
+            let j = j + 1;
+            let k = k + 1
+        end
+        
+    
+    mergesort(int array a, int left, int right):
+
+        int middle;
+        
+        if (left < right): 
+            let middle = left + (right - left) / 2;
+        
+            mergesort(a, left, middle);
+            mergesort(a, middle + 1, right);
+        
+            merge(a, left, middle, right)
+        end
+        
+    main:
+    
+        int i;
+        int array numbers;
+        int array sortedArray;
+    
+        let numbers = array 15;
+        let i = 0;
+        while i < 15:
+            let numbers[i] = 61-i;
+            let i = i + 1
+        end;
+        
+        let numbers[3] = 144;
+        let numbers[7] = 2;
+        let numbers[0] = -8;
+        let numbers[14] = 0;
+        
+        let i = 0;
+        while i < 15:
+            output ("Original array index " .. i .. ": " .. numbers[i] .. "\n");
+            let i = i + 1
+        end;
+
+        mergesort(numbers, 0, 14);
+        output("\n");
+        let i = 0;
+        while i < 15:
+            output ("Sorted array index " .. i .. ": " .. numbers[i].. "\n");
+            let i = i + 1
+        end
+    
+    

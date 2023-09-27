@@ -1,0 +1,342 @@
+<program> at 3:1.
+  <subdef> at 5:5.
+    <type> at 5:17.
+    </type> at 5:21.
+    <body> at 7:9.
+      <vardef> at 7:9.
+        <type> at 7:9.
+        </type> at 7:13.
+      </vardef> at 8:9.
+      <statements> at 8:9.
+        <statement> at 8:9.
+          <assign> at 8:9.
+            <expr> at 8:17.
+              <simple> at 8:17.
+                <term> at 8:17.
+                  <factor> at 8:17.
+                  </factor> at 8:20.
+                </term> at 8:20.
+              </simple> at 8:20.
+            </expr> at 8:20.
+          </assign> at 8:20.
+        </statement> at 8:20.
+        <statement> at 10:9.
+          <while> at 10:9.
+            <expr> at 10:15.
+              <simple> at 10:15.
+                <term> at 10:15.
+                  <factor> at 10:15.
+                  </factor> at 10:17.
+                </term> at 10:17.
+              </simple> at 10:17.
+              <simple> at 10:19.
+                <term> at 10:19.
+                  <factor> at 10:19.
+                  </factor> at 10:20.
+                </term> at 10:20.
+              </simple> at 10:20.
+            </expr> at 10:20.
+            <statements> at 11:13.
+              <statement> at 11:13.
+                <if> at 11:13.
+                  <expr> at 11:16.
+                    <simple> at 11:16.
+                      <term> at 11:16.
+                        <factor> at 11:16.
+                          <expr> at 11:17.
+                            <simple> at 11:17.
+                              <term> at 11:17.
+                                <factor> at 11:17.
+                                </factor> at 11:21.
+                                <factor> at 11:25.
+                                </factor> at 11:26.
+                              </term> at 11:26.
+                            </simple> at 11:26.
+                          </expr> at 11:26.
+                        </factor> at 11:28.
+                      </term> at 11:28.
+                    </simple> at 11:28.
+                    <simple> at 11:30.
+                      <term> at 11:30.
+                        <factor> at 11:30.
+                        </factor> at 11:31.
+                      </term> at 11:31.
+                    </simple> at 11:31.
+                  </expr> at 11:31.
+                  <statements> at 12:17.
+                    <statement> at 12:17.
+                      <output> at 12:17.
+                        <expr> at 12:24.
+                          <simple> at 12:24.
+                            <term> at 12:24.
+                              <factor> at 12:24.
+                              </factor> at 12:26.
+                            </term> at 12:26.
+                          </simple> at 12:26.
+                        </expr> at 12:26.
+                        <expr> at 12:51.
+                          <simple> at 12:51.
+                            <term> at 12:51.
+                              <factor> at 12:51.
+                              </factor> at 12:55.
+                            </term> at 12:55.
+                          </simple> at 12:55.
+                        </expr> at 12:55.
+                      </output> at 13:13.
+                    </statement> at 13:13.
+                  </statements> at 13:13.
+                </if> at 13:16.
+              </statement> at 13:16.
+              <statement> at 14:13.
+                <assign> at 14:13.
+                  <expr> at 14:21.
+                    <simple> at 14:21.
+                      <term> at 14:21.
+                        <factor> at 14:21.
+                        </factor> at 14:23.
+                      </term> at 14:23.
+                      <term> at 14:25.
+                        <factor> at 14:25.
+                        </factor> at 15:9.
+                      </term> at 15:9.
+                    </simple> at 15:9.
+                  </expr> at 15:9.
+                </assign> at 15:9.
+              </statement> at 15:9.
+            </statements> at 15:9.
+          </while> at 17:5.
+        </statement> at 17:5.
+      </statements> at 17:5.
+    </body> at 17:5.
+  </subdef> at 17:5.
+  <body> at 19:5.
+    <statements> at 19:5.
+      <statement> at 19:5.
+        <call> at 19:5.
+          <arglist> at 19:16.
+            <expr> at 19:17.
+              <simple> at 19:17.
+                <term> at 19:17.
+                  <factor> at 19:17.
+                  </factor> at 19:18.
+                </term> at 19:18.
+              </simple> at 19:18.
+            </expr> at 19:18.
+          </arglist> at 19:19.
+        </call> at 19:19.
+      </statement> at 19:19.
+      <statement> at 20:5.
+        <output> at 20:5.
+        </output> at 20:17.
+      </statement> at 20:17.
+      <statement> at 21:5.
+        <call> at 21:5.
+          <arglist> at 21:16.
+            <expr> at 21:17.
+              <simple> at 21:17.
+                <term> at 21:17.
+                  <factor> at 21:17.
+                  </factor> at 21:19.
+                </term> at 21:19.
+              </simple> at 21:19.
+            </expr> at 21:19.
+          </arglist> at 21:20.
+        </call> at 21:20.
+      </statement> at 21:20.
+      <statement> at 22:5.
+        <output> at 22:5.
+        </output> at 22:17.
+      </statement> at 22:17.
+      <statement> at 23:5.
+        <call> at 23:5.
+          <arglist> at 23:16.
+            <expr> at 23:17.
+              <simple> at 23:17.
+                <term> at 23:17.
+                  <factor> at 23:17.
+                  </factor> at 23:20.
+                </term> at 23:20.
+              </simple> at 23:20.
+            </expr> at 23:20.
+          </arglist> at 23:21.
+        </call> at 23:21.
+      </statement> at 23:21.
+      <statement> at 24:5.
+        <output> at 24:5.
+        </output> at 24:17.
+      </statement> at 24:17.
+      <statement> at 25:5.
+        <call> at 25:5.
+          <arglist> at 25:16.
+            <expr> at 25:17.
+              <simple> at 25:17.
+                <term> at 25:17.
+                  <factor> at 25:17.
+                  </factor> at 25:20.
+                </term> at 25:20.
+              </simple> at 25:20.
+            </expr> at 25:20.
+          </arglist> at 25:21.
+        </call> at 25:21.
+      </statement> at 25:21.
+      <statement> at 26:5.
+        <output> at 26:5.
+        </output> at 26:17.
+      </statement> at 26:17.
+    </statements> at 26:17.
+  </body> at 26:17.
+</program> at 26:17.
+Generated: test63.class
+.class public test63
+.super java/lang/Object
+
+.field private static final charsetName Ljava/lang/String;
+.field private static final usLocale Ljava/util/Locale;
+.field private static final scanner Ljava/util/Scanner;
+
+.method static public <clinit>()V
+.limit stack 5
+.limit locals 1 
+	ldc	"UTF-8"
+	putstatic test63/charsetName Ljava/lang/String;
+	new	java/util/Locale
+	dup
+	ldc	"en"
+	ldc	"US"
+	invokespecial java/util/Locale/<init>(Ljava/lang/String;Ljava/lang/String;)V
+	putstatic test63/usLocale Ljava/util/Locale;
+	new	java/util/Scanner
+	dup
+	new	java/io/BufferedInputStream
+	dup
+	getstatic java/lang/System/in Ljava/io/InputStream;
+	invokespecial java/io/BufferedInputStream/<init>(Ljava/io/InputStream;)V
+	getstatic test63/charsetName Ljava/lang/String;
+	invokespecial java/util/Scanner/<init>(Ljava/io/InputStream;Ljava/lang/String;)V
+	putstatic test63/scanner Ljava/util/Scanner;
+	getstatic test63/scanner Ljava/util/Scanner;
+	getstatic test63/usLocale Ljava/util/Locale;
+	invokevirtual java/util/Scanner/useLocale(Ljava/util/Locale;)Ljava/util/Scanner;
+	pop
+	return
+.end method
+
+.method public <init>()V
+	aload_0
+	invokespecial java/lang/Object/<init>()V
+	return
+.end method
+
+.method public static readInt()I
+.limit stack 1
+.limit locals 1
+	getstatic test63/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/nextInt()I
+	ireturn
+.end method
+
+.method public static readBoolean()Z
+.limit stack 2
+.limit locals 1
+	getstatic test63/scanner Ljava/util/Scanner;
+	invokevirtual java/util/Scanner/next()Ljava/lang/String;
+	astore 0
+	aload 0
+	ldc	"true"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq False
+	iconst_1
+	ireturn
+False:
+	aload 0
+	ldc	"false"
+	invokevirtual java/lang/String/equalsIgnoreCase(Ljava/lang/String;)Z
+	ifeq Exception
+	iconst_0
+	ireturn
+Exception:
+	new	java/util/InputMismatchException
+	dup
+	invokespecial java/util/InputMismatchException/<init>()V
+	athrow
+.end method
+
+.method public static main([Ljava/lang/String;)V
+.limit stack 16
+.limit locals 1
+	ldc 1
+	invokestatic test63.listfactors(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	ldc 24
+	invokestatic test63.listfactors(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	ldc 144
+	invokestatic test63.listfactors(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	ldc 512
+	invokestatic test63.listfactors(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	return
+.end method
+
+.method public static listfactors(I)V
+.limit stack 13
+.limit locals 2
+	iload 0
+	istore 1
+L1:
+	iload 1
+	ldc 0
+	if_icmpgt L3
+	ldc 0
+	goto L4
+L3:
+	ldc 1
+L4:
+	ifeq L2
+	iload 0
+	iload 1
+	irem
+	ldc 0
+	if_icmpeq L7
+	ldc 0
+	goto L8
+L7:
+	ldc 1
+L8:
+	ifeq L6
+	iload 1
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc " is a factor of "
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	iload 0
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	swap
+	invokevirtual java/io/PrintStream/print(I)V
+	getstatic java/lang/System/out Ljava/io/PrintStream;
+	ldc "\n"
+	invokevirtual java/io/PrintStream/print(Ljava/lang/String;)V
+	goto L5
+L6:
+L5:
+	iload 1
+	ldc 1
+	isub
+	istore 1
+	goto L1
+L2:
+	return
+.end method
+
+Success!

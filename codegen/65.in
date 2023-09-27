@@ -1,0 +1,65 @@
+program test65:
+    
+    getweekday(int year, int month, int day) -> int:
+    
+        if (month <= 2):
+        
+            let year = year - 1;
+            let month = month + 12
+    
+        end;
+        
+        return (day + (26 * (month + 1) / 10) + year + (year / 4) + 6 * ( year / 100) + (year / 400)) rem 7
+
+    main:
+    int day, i;
+    
+    int array years;
+    int array months;
+    int array days;
+    
+    let years = array 4;
+    let months = array 4;
+    let days = array 4;
+    
+    let years[0] = 2023;
+    let years[1] = 2021;
+    let years[2] = 1999;
+    let years[3] = 1876;
+
+    let months[0] = 3;
+    let months[1] = 2;
+    let months[2] = 11;
+    let months[3] = 6;
+    
+    let days[0] = 26;
+    let days[1] = 1;
+    let days[2] = 20;
+    let days[3] = 8;
+    
+    let i = 0;
+    while i < 4:
+    
+        let day = getweekday(years[i], months[i], days[i]);
+    
+        if day = 1:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Sunday\n")
+        elif day = 2:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Monday\n")
+        elif day = 3:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Tuesday\n")
+        elif day = 4:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Wednesday\n")
+        elif day = 5:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Thursday\n")
+        elif day = 6:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Friday\n")
+        elif day = 0:
+            output(days[i] .. "/" .. months[i] .. "/" .. years[i] .. " is a Saturday\n")
+        else:
+            output("Something went wrong\n")
+        end;
+        
+        let i = i + 1
+        
+    end

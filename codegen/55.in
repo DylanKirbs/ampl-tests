@@ -1,0 +1,83 @@
+{Performing various operations on vectors}
+program test55:
+
+dotprod(int array a, int array b, int size) -> int:
+    
+    int i, val;
+    let i = 0;
+    let val = 0;
+    
+    while i < size:
+        let val = val + (a[i] * b[i]);
+        let i = i + 1
+    end;
+    
+    return val
+    
+sum(int array a, int size) -> int:
+    
+    int i, val;
+    let i = 0;
+    let val = 0;
+    
+    while i < size:
+        let val = val + a[i];
+        let i = i + 1
+    end;
+    
+    return val
+
+    
+calcmean(int array a, int size) -> int:
+    
+    int mean, sumvals;
+    
+    let sumvals = sum(a, size);
+    let mean = sumvals;
+    let mean = mean/size;
+    
+    if sumvals rem size > size/2:
+        let mean = mean + 1
+    end;
+    
+    return mean
+
+main:
+
+    int array a, b;
+    int size, i;
+    let size = 5;
+    let a = array size;
+    let b = array size;
+
+    let a[0] = 8;
+    let a[1] = 1;
+    let a[2] = 16;
+    let a[3] = 28;
+    let a[4] = 30;
+    
+    let b[0] = 32;
+    let b[1] = 14;
+    let b[2] = 0;
+    let b[3] = 9;
+    let b[4] = 12;
+    
+    let i = 0;
+    while i < size:
+        output("a[" .. i .. "] = " .. a[i] .. "\n");
+        let i = i + 1
+    end;
+    
+    output("\n");
+    
+    let i = 0;
+    while i < size:
+        output("b[" .. i .. "] = " .. b[i] .. "\n");
+        let i = i + 1
+    end;
+
+    output("\nThe dot product of a and b is: " .. dotprod(a, b, 5) .. "\n");
+    output("The sum of the values in a is: " .. sum(a, 5) .. "\n");
+    output("The mean of the values in a is approximately: " .. calcmean(a, 5) .. "\n");
+    output("The sum of the values in b is: " .. sum(b, 5) .. "\n");
+    output("The mean of the values in b is approximately: " .. calcmean(b, 5) .. "\n")

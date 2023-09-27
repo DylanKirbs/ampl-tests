@@ -1,0 +1,77 @@
+{Calculating median and using selection sort}
+program test56:
+    
+calcmedian(int array a, int size) -> int:
+    
+    int median;
+    
+    if size rem 2 = 0:
+        let median = (a[size/2 - 1] + a[size/2])/2
+    else:
+        let median = a[size/2]
+    end;
+    
+    return median
+    
+selectionsort(int array a, int size):
+    int i, j, temp, min;
+    
+    let i = 0;
+    while i < size-1:
+        let min = i;
+        let j = i + 1;
+        while j < size:
+            if a[j] < a[min]:
+                let min = j
+            end;
+            let j = j + 1
+        end;
+        
+        let temp = a[min];
+        let a[min] = a[i];
+        let a[i] = temp;
+        
+        let i = i + 1
+    end
+        
+main:
+
+    int array a, b;
+    int sizea, sizeb, i;
+    let sizea = 5;
+    let sizeb = 6;
+    let a = array sizea;
+    let b = array sizeb;
+
+    let a[0] = 8;
+    let a[1] = 1;
+    let a[2] = 16;
+    let a[3] = 28;
+    let a[4] = 30;
+    
+    let b[0] = 33;
+    let b[1] = 14;
+    let b[2] = 0;
+    let b[3] = 9;
+    let b[4] = 12;
+    let b[5] = 13;
+    
+    selectionsort(a, 5);
+    selectionsort(b, 6);
+    
+    let i = 0;
+    while i < sizea:
+        output("a[" .. i .. "] = " .. a[i] .. "\n");
+        let i = i + 1
+    end;
+    
+    output("\n");
+    
+    let i = 0;
+    while i < sizeb:
+        output("b[" .. i .. "] = " .. b[i] .. "\n");
+        let i = i + 1
+    end;
+
+    output("\nThe median of a is approximately: " .. calcmedian(a, 5) .. "\n");
+    output("The median of b is approximately: " .. calcmedian(b, 6) .. "\n")

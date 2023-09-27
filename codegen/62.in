@@ -1,0 +1,52 @@
+{Calculating triples and pythagorean triples}
+program test62:
+
+    square(int num) -> int:
+        return num*num
+
+    main:
+    
+        int array a;
+        int i, j, k, size;
+        let size = 10;
+        let a = array size;
+        
+        let a[0] = 1;
+        let a[1] = 3;
+        let a[2] = 5;
+        let a[3] = 2;
+        let a[4] = 4;
+        let a[5] = 9;
+        let a[6] = 0;
+        let a[7] = 6;
+        let a[8] = 8;
+        let a[9] = 7;
+        
+        let i = 0;
+        let j = 0;
+        let k = 0;
+        
+        output("here are some triples: \n");
+        
+        while i < size:
+        
+            let j = 0;
+            while j < size:
+            
+                let k = 0;
+                while k < size:
+                    {Uneccesary brackets cause why not}
+                    if (((((((a[i] + a[j]))) = a[k])))):
+                        output("normal triple: " .. a[i] .. " + " .. a[j] .. " = " .. a[k] .. "\n")
+                    end;
+                    if (((((((square(a[i]) + square(a[j])))) = square(a[k]))))):
+                        output("pythagorean triple: " .. square(a[i]) .. " + " .. square(a[j]) .. " = " .. square(a[k]) .. "\n")
+                    end;
+                    let k = k + 1
+
+                end;
+                let j = j + 1
+            end;
+            let i = i + 1
+        end
+

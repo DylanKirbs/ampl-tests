@@ -1,0 +1,57 @@
+{Checks if a year is a leap year} 
+program test59:
+
+    isLeap(int year) -> bool:
+        bool leap;
+        let leap = false;
+        
+        if (year rem 4) = 0:
+            
+            if (year rem 100) = 0:
+                
+                if (year rem 400) = 0:
+                    let leap = true
+                else:
+                    let leap = false
+                end
+                
+            else:
+                let leap = true
+            end
+
+        else:
+            let leap = false
+        end;
+        
+        return leap
+
+    main:
+    
+        int array a;
+        int i;
+        let a = array 10;
+    
+        let a[0] = 400;
+        let a[1] = 1;
+        let a[2] = 2;
+        let a[3] = 1500;
+        let a[4] = 800;
+        let a[5] = 2023;
+        let a[6] = 83;
+        let a[6] = 8;
+        let a[7] = 2024;
+        let a[8] = 100;
+        let a[9] = 2020;
+        
+        let i = 0;
+        
+        while i < 10:
+        
+            if isLeap(a[i]):
+                output("The year " .. a[i] .. " is a leap year\n")
+            else: 
+                output("The year " .. a[i] .. " is not a leap year\n")
+            end;
+            let i = i + 1
+            
+        end
