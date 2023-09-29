@@ -1,0 +1,1 @@
+amplc: 20.in:9:8: error: incompatible types (expected boolean, found integer) for 'elif' guard

@@ -1,0 +1,6 @@
+program error3101:
+main:
+    int a;
+    bool b;
+    
+    let a = -b

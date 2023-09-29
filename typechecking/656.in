@@ -1,0 +1,6 @@
+program error3133:
+main:
+    int array i;
+    
+    let i = array 10;
+    input(i )

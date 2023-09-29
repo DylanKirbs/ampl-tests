@@ -1,0 +1,21 @@
+program test3036:
+main:
+  int array I;
+  int i, n;
+
+  output("Enter a number: ");
+  input(n);
+  let I = array n;
+
+  let i = 0;
+  while i < n:
+    let I[i] = 7 * i;
+    let i = i + 1
+    end;
+
+  let i = 0;
+  while i < n:
+    output(I[i] .. " ");
+    let i = i + 1
+    end;
+  output("\n")

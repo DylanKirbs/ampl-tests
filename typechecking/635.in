@@ -1,0 +1,6 @@
+program error3112:
+main:
+    int array iarr;
+    int i;
+    
+    let iarr = array true

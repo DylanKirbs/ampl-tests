@@ -1,0 +1,26 @@
+program test3037:
+main:
+  int array seq;
+  int i, n;
+
+  output("Enter a sequence length: ");
+  input(n);
+  let seq = array n;
+
+  let i = 0;
+  while i < n:
+    output("Enter item " .. i .. ": ");
+    input(seq[i]);
+    let i = i + 1
+    end;
+
+  let i = 0;
+  while i < n:
+    output("Item " .. i .. ", which is " .. seq[i]);
+    if seq[i] rem 2 = 0:
+      output(", is even.\n")
+    elif seq[i] rem 2 = 1:
+      output(", is odd.\n")
+      end;
+    let i = i + 1
+    end

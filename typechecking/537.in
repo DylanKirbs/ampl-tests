@@ -1,0 +1,6 @@
+program error3014:
+
+main:
+  int array ilist;
+
+  input(ilist[false])

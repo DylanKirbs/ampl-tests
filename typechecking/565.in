@@ -1,0 +1,8 @@
+program error3042:
+
+main:
+  int i, j;
+  bool b;
+  int j;
+
+  chillax

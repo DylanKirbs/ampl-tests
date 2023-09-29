@@ -1,0 +1,15 @@
+program test3044:
+
+fact(int n) -> int:
+  if n <= 1:
+    return 1
+  else:
+    return n * fact(n - 1)
+  end
+
+main:
+  int n;
+
+  output("Factorial of? ");
+  input(n);
+  output(fact(n) .. "\n")

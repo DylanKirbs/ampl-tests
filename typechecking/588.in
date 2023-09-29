@@ -1,0 +1,8 @@
+program error3065:
+
+main:
+  int i, j;
+  int array I, J;
+  bool b;
+
+  let b = I <= J

@@ -1,0 +1,6 @@
+program test3052:
+main:
+    bool array barr;
+    
+    let barr = array 10;
+    output(barr [5] or true)

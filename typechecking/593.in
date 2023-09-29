@@ -1,0 +1,7 @@
+program error3070:
+
+foo(int p):
+  chillax
+
+main:
+  output(1 + 3 * 3 / foo(1))

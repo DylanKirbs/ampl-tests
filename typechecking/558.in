@@ -1,0 +1,7 @@
+program error3035:
+
+main:
+  int i, j;
+  bool b1;
+
+  let i = j rem b1

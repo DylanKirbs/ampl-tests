@@ -1,0 +1,10 @@
+program error3011:
+
+foo(int p1, int p2, int p3) -> int:
+  return p1 + p2 + p3
+
+main:
+  int i, j, k;
+  bool a, b, c;
+
+  let i = foo(a, j, k)

@@ -1,0 +1,12 @@
+program error3114:
+main:
+    int i;
+    
+    input(i );
+    if i > 1:
+        chillax
+    elif i:
+        chillax
+    else:
+        chillax
+    end

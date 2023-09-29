@@ -1,0 +1,6 @@
+program error3128:
+main:
+    bool b;
+    int i;
+    
+    let b = i and b

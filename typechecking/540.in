@@ -1,0 +1,10 @@
+program error3017:
+
+foo(int param) -> bool:
+  bool array list;
+  return list
+
+main:
+  int i;
+
+  let i = foo(1)

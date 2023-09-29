@@ -1,0 +1,6 @@
+program error3031:
+
+main:
+  int i;
+
+  let i = true - false

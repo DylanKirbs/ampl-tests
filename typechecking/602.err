@@ -1,0 +1,1 @@
+amplc: 79.in:5:13: error: incompatible types (expected boolean, found integer) for assignment to 'b'

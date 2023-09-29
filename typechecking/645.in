@@ -1,0 +1,6 @@
+program error3122:
+main:
+    bool b;
+    bool array arr1, arr2;
+    
+    let b = arr2 = b

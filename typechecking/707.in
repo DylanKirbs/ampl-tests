@@ -1,0 +1,10 @@
+program test3045:
+main:
+    int i, j;
+    
+    let i = 107;
+    let j = -i;
+    let i = j - i;
+    let j = -3 * j;
+    let i = 23;
+    let i = 100 + (j / 1000 + 20 * i) / 200

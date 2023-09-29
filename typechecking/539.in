@@ -1,0 +1,9 @@
+program error3016:
+
+foo(int param) -> int array:
+  return 3
+
+main:
+  int i;
+
+  let i = foo(1)

@@ -1,0 +1,7 @@
+program test3049:
+main:
+    int array iarr, iarrtwo;
+    
+    let iarr = array 10;
+    let iarrtwo = array 2;
+    let iarrtwo = iarr

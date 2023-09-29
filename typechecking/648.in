@@ -1,0 +1,6 @@
+program error3125:
+main:
+    int i;
+    int array a1, a2;
+    
+    let i = i * a1

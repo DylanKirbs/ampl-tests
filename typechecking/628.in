@@ -1,0 +1,6 @@
+program error3105:
+main:
+    int a;
+    bool b;
+    
+    let b = not a

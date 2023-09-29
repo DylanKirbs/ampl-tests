@@ -1,0 +1,9 @@
+program test3007:
+main:
+  int i, j;
+  int k;
+
+  input(i);
+  input(j);
+  let k = i rem j;
+  output(k)

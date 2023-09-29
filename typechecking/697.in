@@ -1,0 +1,7 @@
+program test3035:
+main:
+  int array I;
+  int i, j, k;
+
+  let I = array 5;
+  let I[j] = i rem k

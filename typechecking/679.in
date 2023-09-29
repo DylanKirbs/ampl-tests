@@ -1,0 +1,9 @@
+program test3017:
+main:
+  int a, b;
+  bool c;
+
+  input(a);
+  input(b);
+  let c = a < b
+

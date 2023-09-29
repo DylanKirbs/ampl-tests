@@ -1,0 +1,10 @@
+program test3058:
+
+inc(int i, int j, bool b) -> int:
+    chillax
+
+main:
+    int i;
+    int j;
+    
+    chillax

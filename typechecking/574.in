@@ -1,0 +1,7 @@
+program error3051:
+
+inc(int p1) -> int:
+  return p1 + 1
+
+main:
+  inc(1)

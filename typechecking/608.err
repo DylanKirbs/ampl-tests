@@ -1,0 +1,1 @@
+amplc: 85.in:8:14: error: incompatible types (expected integer, found boolean) for array index of 'iarr'

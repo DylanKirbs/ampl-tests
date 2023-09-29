@@ -1,0 +1,1 @@
+amplc: 111.in:20:34: error: incompatible types (expected integer, found integer array) for argument 3 of call to 'findmin'

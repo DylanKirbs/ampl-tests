@@ -1,0 +1,7 @@
+program test3039:
+
+  inc(int i) -> bool:
+    chillax
+
+main:
+  chillax

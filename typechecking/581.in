@@ -1,0 +1,7 @@
+program error3058:
+
+foo(int p1):
+  return p1 + 1
+
+main:
+  chillax

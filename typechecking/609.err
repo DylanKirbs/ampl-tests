@@ -1,0 +1,1 @@
+amplc: 86.in:8:19: error: incompatible types (expected boolean, found integer) for assignment to 'barr'

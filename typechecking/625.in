@@ -1,0 +1,6 @@
+program error3102:
+main:
+    int a, c;
+    bool b;
+    
+    let c = a * b

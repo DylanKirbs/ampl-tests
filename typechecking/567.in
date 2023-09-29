@@ -1,0 +1,10 @@
+program error3044:
+
+foo(int p1, int p2, bool p3):
+  chillax
+
+foo(bool p1):
+  chillax
+
+main:
+  chillax

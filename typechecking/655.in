@@ -1,0 +1,5 @@
+program error3132:
+main:
+    int array a;
+    
+    let a[1] = array 13

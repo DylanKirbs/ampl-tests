@@ -1,0 +1,7 @@
+program error3120:
+main:
+    bool b, c, d;
+    
+    let c = true;
+    let d = false;
+    let b = c > d

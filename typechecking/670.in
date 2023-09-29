@@ -1,0 +1,7 @@
+program test3008:
+main:
+  int i, j;
+
+  input(i);
+  let j = -i;
+  output(j)

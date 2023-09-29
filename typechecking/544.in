@@ -1,0 +1,9 @@
+program error3021:
+
+main:
+  int num;
+
+  while num:
+    output(num .. "\n");
+    let num = num -1
+    end

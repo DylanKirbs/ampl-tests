@@ -1,0 +1,1 @@
+amplc: 15.in:4:10: error: incompatible types (expected integer, found boolean) for 'return' statement

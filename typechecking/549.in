@@ -1,0 +1,7 @@
+program error3026:
+
+main:
+  int i, j;
+  bool b1, b2;
+
+  let i = b1 = j

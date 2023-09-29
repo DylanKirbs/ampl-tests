@@ -1,0 +1,4 @@
+program error3050:
+
+main:
+  foo(1)

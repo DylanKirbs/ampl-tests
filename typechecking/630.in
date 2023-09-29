@@ -1,0 +1,12 @@
+program error3107:
+
+inc(int i, int j, bool k) -> int:
+    int j;
+    
+    chillax
+
+main:
+    int i;
+    int j;
+    
+    chillax

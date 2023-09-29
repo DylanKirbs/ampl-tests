@@ -1,0 +1,9 @@
+program test3026:
+main:
+  bool array B;
+  int n;
+
+  let n = 5;
+  let B = array n;
+  let B[0] = true;
+  let B[3] = false

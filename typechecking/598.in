@@ -1,0 +1,16 @@
+program error3075:
+
+fact(int n) -> int:
+  int fact;
+  if n <= 1:
+    return 1
+  else:
+    return n * fact(n - 1)
+  end
+
+main:
+  int n;
+
+  output("Factorial of? ");
+  input(n);
+  output(fact(n) & "\n")

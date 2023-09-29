@@ -1,0 +1,7 @@
+program error3036:
+
+main:
+  int array nums;
+  int num;
+
+  let num = nums[(num > 0)]

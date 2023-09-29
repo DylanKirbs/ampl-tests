@@ -1,0 +1,7 @@
+program error3023:
+
+main:
+  int i;
+  bool b1, b2;
+
+  let i = b1 > b2

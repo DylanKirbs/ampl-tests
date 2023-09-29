@@ -1,0 +1,11 @@
+program test3050:
+main:
+    bool b, c;
+    int i, j;
+    
+    let j = 13;
+    let i = 107;
+    let b = i = 10;
+    let c = not b;
+    output(i + j);
+    output(b or c)

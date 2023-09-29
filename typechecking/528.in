@@ -1,0 +1,5 @@
+program error3005:
+main:
+  bool array bs;
+
+  let bs = array true;

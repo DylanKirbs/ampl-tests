@@ -1,0 +1,33 @@
+<program> at 1:1.
+  <body> at 3:5.
+    <vardef> at 3:5.
+      <type> at 3:5.
+      </type> at 3:16.
+    </vardef> at 5:5.
+    <statements> at 5:5.
+      <statement> at 5:5.
+        <while> at 5:5.
+          <expr> at 5:11.
+            <simple> at 5:11.
+              <term> at 5:11.
+                <factor> at 5:11.
+                  <index> at 5:16.
+                    <simple> at 5:17.
+                      <term> at 5:17.
+                        <factor> at 5:17.
+                        </factor> at 5:18.
+                      </term> at 5:18.
+                    </simple> at 5:18.
+                  </index> at 5:19.
+                </factor> at 5:19.
+              </term> at 5:19.
+            </simple> at 5:19.
+          </expr> at 5:19.
+          <statements> at 6:9.
+          </statements> at 7:5.
+        </while> at 7:7.
+      </statement> at 7:7.
+    </statements> at 7:7.
+  </body> at 7:7.
+</program> at 7:7.
+Success!

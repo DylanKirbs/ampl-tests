@@ -1,0 +1,7 @@
+program error3055:
+
+foo(int p1):
+  chillax
+
+main:
+  input(foo)

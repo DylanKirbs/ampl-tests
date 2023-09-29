@@ -1,0 +1,12 @@
+program test3053:
+main:
+    bool array barr;
+    
+    let barr = array 10;
+    if barr [1]:
+        chillax
+    elif barr [2]:
+        chillax
+    else:
+        chillax
+    end

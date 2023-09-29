@@ -1,0 +1,8 @@
+program error3060:
+
+main:
+  int i, j;
+  int array I, J;
+  bool b;
+
+  let b = i + J

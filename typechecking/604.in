@@ -1,0 +1,8 @@
+program error3081:
+main:
+    bool b;
+    int i;
+    
+    let i = 42;
+    let b = true;
+    let b = b or i < 3

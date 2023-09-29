@@ -1,0 +1,7 @@
+program error3100:
+main:
+    bool array barr;
+    
+    while barr:
+        chillax
+    end

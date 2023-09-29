@@ -1,0 +1,5 @@
+program error3115:
+main:
+    bool array b_arr;
+    
+    output(b_arr + b_arr)

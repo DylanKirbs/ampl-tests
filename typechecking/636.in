@@ -1,0 +1,10 @@
+program error3113:
+
+dummy(int i) :
+    chillax
+
+main:
+    int i;
+    
+    let i = 1;
+    let dummy = 1

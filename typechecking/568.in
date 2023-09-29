@@ -1,0 +1,6 @@
+program error3045:
+
+main:
+  int i;
+
+  let j = i

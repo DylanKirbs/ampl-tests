@@ -1,0 +1,9 @@
+program test3025:
+main:
+  int array I;
+  int n;
+
+  let n = 5;
+  let I = array n;
+  let I[1] = 4;
+  let I[4] = 1

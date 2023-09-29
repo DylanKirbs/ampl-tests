@@ -1,0 +1,9 @@
+program test3056:
+
+inc(int i) -> int:
+    chillax
+
+main:
+    int i;
+    
+    chillax

@@ -1,0 +1,7 @@
+program error3082:
+main:
+    bool a, b;
+    
+    let a = true;
+    let b = false;
+    let b = b + a

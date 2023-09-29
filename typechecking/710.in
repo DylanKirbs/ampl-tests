@@ -1,0 +1,8 @@
+program test3048:
+main:
+    bool array barr;
+    int N;
+    
+    let N = 5;
+    let barr = array N;
+    let barr[1] = true

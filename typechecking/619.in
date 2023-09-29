@@ -1,0 +1,5 @@
+program error3096:
+main:
+    int i;
+    
+    let i[10] = 99
