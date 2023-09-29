@@ -475,6 +475,14 @@ class TypecheckingTest(BaseTest):
     MAKE = 'testtypechecking'
     EXEC = 'amplc'
 
+    def make(self) -> bool:
+        if super().make():
+            return True
+        else:
+            self.MAKE = 'amplc'
+
+        return super().make()
+
 
 class CodegenTest(BaseTest):
 
