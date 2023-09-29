@@ -1,0 +1,6 @@
+program error3129:
+main:
+    bool b;
+    int i;
+    
+    let i = i / b

@@ -1,0 +1,1 @@
+amplc: 14.in:6:15: error: incompatible types (expected integer, found boolean) for array index of 'ilist'

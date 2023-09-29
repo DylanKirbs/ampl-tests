@@ -1,0 +1,14 @@
+program test3046:
+main:
+    bool b, c;
+    int i, j;
+    
+    let j = 13;
+    let i = 107;
+    let b = i = 10;
+    let b = i < 10;
+    let b = (i = 100) or (i <= j) and (7 > 10);
+    let b = (i = 10) or not ((i /= j) and not (20 >= 30));
+    let c = false;
+    let b = c or not b;
+    let c = b and true

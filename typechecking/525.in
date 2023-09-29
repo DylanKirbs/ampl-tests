@@ -1,0 +1,6 @@
+program error3002:
+main:
+  bool array B;
+  int array I;
+
+  let B[I] = true

@@ -1,0 +1,7 @@
+program test3011:
+main:
+  bool a;
+  bool b;
+
+  let a = false;
+  input(b)

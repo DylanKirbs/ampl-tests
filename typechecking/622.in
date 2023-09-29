@@ -1,0 +1,6 @@
+program error3099:
+main:
+    int array iarr;
+    int i;
+    
+    let iarr[i] = array 9

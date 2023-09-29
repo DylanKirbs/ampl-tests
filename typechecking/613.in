@@ -1,0 +1,8 @@
+program error3090:
+main:
+    int array iarr;
+    bool array barr;
+    
+    let barr = array 10;
+    let iarr = array 10;
+    let barr[1] = iarr [1]

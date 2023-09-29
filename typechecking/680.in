@@ -1,0 +1,8 @@
+program test3018:
+main:
+  bool a;
+  bool b, c;
+
+  input(a);
+  input(b);
+  let c = a or b

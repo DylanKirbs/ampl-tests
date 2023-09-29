@@ -1,0 +1,6 @@
+program error3123:
+main:
+    bool b;
+    bool array arr1, arr2;
+    
+    let b = b = arr1

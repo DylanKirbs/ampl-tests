@@ -1,0 +1,7 @@
+program error3118:
+main:
+    int i, j;
+    
+    let i = 1;
+    let j = 2;
+    let j = i or j

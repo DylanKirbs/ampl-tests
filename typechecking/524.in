@@ -1,0 +1,6 @@
+program error3001:
+main:
+  bool array B;
+  bool b;
+
+  let B[b] = true

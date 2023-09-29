@@ -1,0 +1,6 @@
+program error3069:
+
+main:
+  int num1, num2, num3;
+
+  let num1 = -num2 + num3[3] / num2

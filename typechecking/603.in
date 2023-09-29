@@ -1,0 +1,6 @@
+program error3080:
+main:
+    int i, j;
+    
+    let i = 11;
+    let j = i < 29

@@ -1,0 +1,9 @@
+program error3015:
+
+foo(int param) -> int:
+  return true
+
+main:
+  int i;
+
+  let i = foo(1)

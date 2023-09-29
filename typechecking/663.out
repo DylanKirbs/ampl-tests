@@ -1,0 +1,23 @@
+<program> at 1:1.
+  <body> at 3:3.
+    <vardef> at 3:3.
+      <type> at 3:3.
+      </type> at 3:7.
+    </vardef> at 5:3.
+    <statements> at 5:3.
+      <statement> at 5:3.
+        <assign> at 5:3.
+          <expr> at 5:11.
+            <simple> at 5:11.
+              <term> at 5:11.
+                <factor> at 5:11.
+                </factor> at 5:13.
+              </term> at 5:13.
+            </simple> at 5:13.
+          </expr> at 5:13.
+        </assign> at 5:13.
+      </statement> at 5:13.
+    </statements> at 5:13.
+  </body> at 5:13.
+</program> at 5:13.
+Success!

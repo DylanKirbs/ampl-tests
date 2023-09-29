@@ -1,0 +1,1 @@
+amplc: 12.in:10:19: error: incompatible types (expected integer, found boolean) for argument 2 of call to 'foo'

@@ -1,0 +1,5 @@
+program test3001:
+main:
+  int i;
+
+  let i = 17

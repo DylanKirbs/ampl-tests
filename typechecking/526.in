@@ -1,0 +1,5 @@
+program error3003:
+main:
+  int array I;
+
+  let I[0] = array 10

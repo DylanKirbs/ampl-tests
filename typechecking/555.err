@@ -1,0 +1,1 @@
+amplc: 32.in:6:13: error: incompatible types (expected boolean, found integer) for operator 'and'

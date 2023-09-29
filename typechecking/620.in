@@ -1,0 +1,6 @@
+program error3097:
+main:
+    bool b;
+    bool array barr;
+    
+    let b = barr

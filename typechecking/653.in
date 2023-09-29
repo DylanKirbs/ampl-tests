@@ -1,0 +1,9 @@
+program error3130:
+
+dummy(int i) :
+    chillax
+
+main:
+    int i;
+    
+    let i = 1 + dummy(i)

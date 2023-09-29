@@ -1,0 +1,10 @@
+program error3134:
+
+proc(int i) :
+    return i + 1
+
+main:
+    int i;
+    int j;
+    
+    chillax

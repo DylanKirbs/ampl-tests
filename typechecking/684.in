@@ -1,0 +1,8 @@
+program test3022:
+main:
+  int i, j;
+  bool b;
+
+  input(i);
+  input(j);
+  let b = i /= j

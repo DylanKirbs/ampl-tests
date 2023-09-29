@@ -1,0 +1,6 @@
+program error3006:
+main:
+  bool v;
+  int s, t;
+
+  let v = s/t

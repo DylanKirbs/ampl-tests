@@ -1,0 +1,7 @@
+program error3048:
+
+main:
+  int nums;
+  int index;
+
+  let nums[index] = 0

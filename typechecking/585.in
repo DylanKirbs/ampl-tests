@@ -1,0 +1,7 @@
+program error3062:
+
+main:
+  int i;
+  int array nums;
+
+  let i = -nums

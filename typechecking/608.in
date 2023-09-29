@@ -1,0 +1,8 @@
+program error3085:
+main:
+    int array iarr;
+    int N;
+    
+    let N = 5;
+    let iarr = array N;
+    let iarr[true] = 4

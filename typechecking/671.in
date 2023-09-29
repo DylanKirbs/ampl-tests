@@ -1,0 +1,5 @@
+program test3009:
+main:
+  bool b;
+
+  let b = true

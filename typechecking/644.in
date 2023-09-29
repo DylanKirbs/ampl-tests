@@ -1,0 +1,6 @@
+program error3121:
+main:
+    bool b;
+    bool array arr1, arr2;
+    
+    let b = arr1 = arr2

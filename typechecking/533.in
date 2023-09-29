@@ -1,0 +1,5 @@
+program error3010:
+main:
+  int array N;
+
+  let N = -1357;

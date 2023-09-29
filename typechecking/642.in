@@ -1,0 +1,8 @@
+program error3119:
+main:
+    int i, j;
+    bool b;
+    
+    let i = 1;
+    let j = 2;
+    let j = b or i

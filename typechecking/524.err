@@ -1,0 +1,1 @@
+amplc: 1.in:6:9: error: incompatible types (expected integer, found boolean) for array index of 'B'

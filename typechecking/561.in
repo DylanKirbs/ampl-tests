@@ -1,0 +1,10 @@
+program error3038:
+
+foo(int p1, int p2, int p3):
+  return
+
+main:
+  int i, j, k;
+  bool a, b, c;
+
+  foo(j, a, k)

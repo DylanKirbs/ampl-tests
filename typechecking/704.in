@@ -1,0 +1,7 @@
+program test3042:
+
+outputln(int i):
+  output(i .. "\n")
+
+main:
+  outputln(13)

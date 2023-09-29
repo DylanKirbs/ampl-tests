@@ -1,0 +1,10 @@
+program error3106:
+
+inc(int i, int j, bool i) -> int:
+    chillax
+
+main:
+    int i;
+    int j;
+    
+    chillax

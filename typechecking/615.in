@@ -1,0 +1,12 @@
+program error3092:
+main:
+    bool array barr;
+    
+    let barr = array 10;
+    if barr:
+        chillax
+    elif barr:
+        chillax
+    else:
+        chillax
+    end

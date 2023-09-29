@@ -1,0 +1,10 @@
+program error3019:
+
+main:
+  int i;
+
+  input(i);
+  if i:
+    chillax
+  elif i > 0:
+    chillax

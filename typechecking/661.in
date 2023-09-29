@@ -1,0 +1,10 @@
+program error3138:
+
+proc(int i) -> int:
+    return true
+
+main:
+    int i;
+    int j;
+    
+    chillax

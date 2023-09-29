@@ -1,0 +1,9 @@
+program test3047:
+main:
+    int array iarr;
+    int N;
+    
+    let N = 5;
+    let iarr = array N;
+    let iarr[1] = 4;
+    let iarr[4] = 1

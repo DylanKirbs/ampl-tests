@@ -1,0 +1,7 @@
+program error3131:
+
+inc(int i) -> int:
+    return i + 1
+
+main:
+    inc(1)

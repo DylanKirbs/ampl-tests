@@ -1,0 +1,12 @@
+program error3094:
+main:
+    int array iarr;
+    
+    let iarr = array 10;
+    if iarr [1]:
+        chillax
+    elif iarr [2]:
+        chillax
+    else:
+        chillax
+    end

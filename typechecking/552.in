@@ -1,0 +1,6 @@
+program error3029:
+
+main:
+  int i;
+
+  let i = 0 or 1

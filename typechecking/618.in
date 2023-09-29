@@ -1,0 +1,5 @@
+program error3095:
+main:
+    int i;
+    
+    let i = array 10

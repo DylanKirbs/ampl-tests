@@ -1,0 +1,1 @@
+amplc: 21.in:6:9: error: incompatible types (expected boolean, found integer) for 'while' guard

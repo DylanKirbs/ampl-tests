@@ -1,0 +1,31 @@
+<program> at 1:1.
+  <subdef> at 3:1.
+    <type> at 3:5.
+    </type> at 3:9.
+    <type> at 3:12.
+    </type> at 3:16.
+    <type> at 3:19.
+    </type> at 3:24.
+    <type> at 3:27.
+    </type> at 3:32.
+    <type> at 3:35.
+    </type> at 3:45.
+    <type> at 3:48.
+    </type> at 3:59.
+    <type> at 3:62.
+    </type> at 3:73.
+    <type> at 4:7.
+    </type> at 4:17.
+    <type> at 4:23.
+    </type> at 4:27.
+    <body> at 5:3.
+      <statements> at 5:3.
+      </statements> at 7:1.
+    </body> at 7:1.
+  </subdef> at 7:1.
+  <body> at 8:3.
+    <statements> at 8:3.
+    </statements> at 8:10.
+  </body> at 8:10.
+</program> at 8:10.
+Success!

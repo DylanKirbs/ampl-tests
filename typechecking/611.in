@@ -1,0 +1,6 @@
+program error3088:
+main:
+    int array iarr;
+    
+    let iarr = array 10;
+    let iarr[5] = iarr + 10

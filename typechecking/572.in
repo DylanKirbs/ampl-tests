@@ -1,0 +1,6 @@
+program error3049:
+
+main:
+  int nums;
+
+  let nums = array 50

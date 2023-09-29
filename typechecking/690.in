@@ -1,0 +1,7 @@
+program test3028:
+main:
+  bool array B;
+  bool b;
+
+  let B = array 5;
+  let b = B[1] and true

@@ -1,0 +1,18 @@
+program test3059:
+
+inc(int i) -> int:
+    int r;
+    
+    let r = i + 1
+ 
+dec(int i) -> int:
+    int r;
+    
+    let r = i - 1
+
+main:
+    int i;
+    
+    input(i );
+    output(inc(i));
+    output(dec(i))

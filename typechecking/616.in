@@ -1,0 +1,12 @@
+program error3093:
+main:
+    int array iarr;
+    
+    let iarr = array 10;
+    if iarr:
+        chillax
+    elif iarr:
+        chillax
+    else:
+        chillax
+    end

@@ -1,0 +1,15 @@
+program error3137:
+
+proc(int i) -> int:
+    return i + 2 + 1
+ 
+proc2(int i, int j) -> int:
+    if 1 < 2:
+        return
+    end
+
+main:
+    int i;
+    int j;
+    
+    chillax

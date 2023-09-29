@@ -1,0 +1,5 @@
+program error3117:
+main:
+    int array i_arr;
+    
+    output(-i_arr)

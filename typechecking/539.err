@@ -1,0 +1,1 @@
+amplc: 16.in:4:10: error: incompatible types (expected integer array, found integer) for 'return' statement

@@ -1,0 +1,6 @@
+program error3098:
+main:
+    bool b;
+    bool array barr;
+    
+    let barr[b] = true

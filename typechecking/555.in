@@ -1,0 +1,6 @@
+program error3032:
+
+main:
+  int i;
+
+  let i = 1 and 2

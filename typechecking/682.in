@@ -1,0 +1,7 @@
+program test3020:
+main:
+  bool a;
+  bool b;
+
+  input(a);
+  let b = not a

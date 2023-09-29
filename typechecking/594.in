@@ -1,0 +1,7 @@
+program error3071:
+
+add(int x1, int x2) -> int:
+  return x1 + x2
+
+main:
+  output(add(1))

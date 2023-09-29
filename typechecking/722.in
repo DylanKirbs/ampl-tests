@@ -1,0 +1,48 @@
+program test3060:
+
+findmin(int array L, int N, int i) -> int:
+    int j, min;
+    
+    let j = i;
+    let min = i;
+    while j < N:
+        if L [j] > L [min]:
+            let min = j
+        end
+    end;
+    return min
+ 
+sort(int array L, int N) :
+    int i, min, tmp;
+    
+    let i = 0;
+    while i < N:
+        let min = findmin(L, N, i);
+        let tmp = L [min];
+        let L[min] = L [i];
+        let L[i] = tmp;
+        let i = i + 1
+    end
+
+main:
+    int i, N;
+    int array L;
+    
+    input(N );
+    let L = array N;
+    let i = 0;
+    while i < N:
+        input(L[i]);
+        let i = i + 1
+    end;
+    sort(L, N);
+    output("[");
+    let i = 0;
+    while i < N:
+        output(L [i]);
+        let i = i + 1;
+        if i /= N:
+            output(", ")
+        end
+    end;
+    output("]\n")

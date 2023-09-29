@@ -1,0 +1,6 @@
+program error3104:
+main:
+    int a;
+    bool b;
+    
+    let b = b and a

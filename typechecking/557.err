@@ -1,0 +1,1 @@
+amplc: 34.in:7:13: error: incompatible types (expected integer, found boolean) for operator '/'

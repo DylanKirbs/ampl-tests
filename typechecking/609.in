@@ -1,0 +1,8 @@
+program error3086:
+main:
+    bool array barr;
+    int N;
+
+    let N = 5;
+    let barr = array N;
+    let barr[1] = 1

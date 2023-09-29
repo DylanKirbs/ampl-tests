@@ -1,0 +1,8 @@
+program error3067:
+
+main:
+  int i, j, k;
+  int array I, J, K;
+  bool a, b, c;
+
+  let b = i * j * k / J

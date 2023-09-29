@@ -1,0 +1,9 @@
+program test3005:
+main:
+  int i, j;
+  int k;
+
+  input(i);
+  input(j);
+  let k = i * j;
+  output(k)

@@ -1,0 +1,1 @@
+amplc: 8.in:6:11: error: incompatible types (expected integer array, found integer) for assignment to 'v'

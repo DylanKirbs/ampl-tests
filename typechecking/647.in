@@ -1,0 +1,6 @@
+program error3124:
+main:
+    bool b;
+    int i;
+    
+    let b = i = b

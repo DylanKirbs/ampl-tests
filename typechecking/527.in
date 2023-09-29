@@ -1,0 +1,5 @@
+program error3004:
+main:
+  bool array bs;
+
+  let bs[7] = array 10

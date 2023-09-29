@@ -1,0 +1,7 @@
+program error3040:
+
+main:
+  bool condition;
+  int j, k;
+
+  let condition = not (j + k / 3)

@@ -1,0 +1,5 @@
+program error3079:
+main:
+    bool b;
+    
+    let b = 1

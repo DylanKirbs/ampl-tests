@@ -1,0 +1,8 @@
+program error3084:
+main:
+    int i;
+    
+    let i = 10;
+    if i:
+        chillax
+    end

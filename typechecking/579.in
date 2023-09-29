@@ -1,0 +1,6 @@
+program error3056:
+
+main:
+  int i, num;
+
+  input(num[i])

@@ -1,0 +1,6 @@
+program error3007:
+main:
+  bool array v;
+  int s, t;
+
+  let v = s/t

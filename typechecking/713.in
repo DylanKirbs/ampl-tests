@@ -1,0 +1,6 @@
+program test3051:
+main:
+    int array iarr;
+    
+    let iarr = array 10;
+    output(iarr [5] + 10)

@@ -1,0 +1,15 @@
+program error3135:
+
+proc(int i) :
+    chillax
+ 
+proc2(int i, int j) :
+    if 1 < 2:
+        return i
+    end
+
+main:
+    int i;
+    int j;
+    
+    chillax

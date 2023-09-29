@@ -1,0 +1,9 @@
+program error3046:
+
+foo(int p):
+  chillax
+
+main:
+  int i;
+
+  let foo = i

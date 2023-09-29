@@ -1,0 +1,7 @@
+program error3052:
+
+inc(int p1, int p2, int p3):
+  chillax
+
+main:
+  inc(1)

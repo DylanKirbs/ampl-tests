@@ -1,0 +1,7 @@
+program error3089:
+main:
+    bool array barr, barrtwo;
+    
+    let barr = array 10;
+    let barrtwo = array 2;
+    let barrtwo = barr [2]

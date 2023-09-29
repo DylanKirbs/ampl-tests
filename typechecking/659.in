@@ -1,0 +1,10 @@
+program error3136:
+
+proc(int i) -> int:
+    return
+
+main:
+    int i;
+    int j;
+    
+    chillax

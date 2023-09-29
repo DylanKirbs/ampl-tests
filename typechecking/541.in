@@ -1,0 +1,9 @@
+program error3018:
+
+foo(int param) -> int:
+  return
+
+main:
+  int i;
+
+  let i = foo(1)

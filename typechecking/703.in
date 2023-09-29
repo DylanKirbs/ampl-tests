@@ -1,0 +1,13 @@
+program test3041:
+
+inc(int i, int j, bool b, bool c, int array I, bool array B, bool array C,
+      int array J) -> bool:
+  chillax
+
+main:
+  int mi, mj;
+  int array mI, mJ;
+  bool mb, mc, back;
+  bool array mB, mC;
+
+  let back = inc(mi, mj, mb, mc, mI, mB, mC, mJ)
