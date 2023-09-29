@@ -1,1 +1,1 @@
-amplc: 132.in:5:16: error: incompatible types (expected integer, found integer array) for allocation to indexed array 'a'
+amplc: 655.in:5:16: error: incompatible types (expected integer, found integer array) for allocation to indexed array 'a'

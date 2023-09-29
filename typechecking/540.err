@@ -1,1 +1,1 @@
-amplc: 17.in:5:10: error: incompatible types (expected boolean, found boolean array) for 'return' statement
+amplc: 540.in:5:10: error: incompatible types (expected boolean, found boolean array) for 'return' statement

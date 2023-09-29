@@ -1,1 +1,1 @@
-amplc: 87.in:6:16: error: incompatible types (expected integer array, found integer) for assignment to 'iarr'
+amplc: 610.in:6:16: error: incompatible types (expected integer array, found integer) for assignment to 'iarr'

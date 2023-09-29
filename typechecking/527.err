@@ -1,1 +1,1 @@
-amplc: 4.in:5:15: error: incompatible types (expected boolean, found boolean array) for allocation to indexed array 'bs'
+amplc: 527.in:5:15: error: incompatible types (expected boolean, found boolean array) for allocation to indexed array 'bs'

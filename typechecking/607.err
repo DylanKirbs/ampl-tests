@@ -1,1 +1,1 @@
-amplc: 84.in:6:8: error: incompatible types (expected boolean, found integer) for 'if' guard
+amplc: 607.in:6:8: error: incompatible types (expected boolean, found integer) for 'if' guard

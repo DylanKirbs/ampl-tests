@@ -1,1 +1,1 @@
-amplc: 80.in:6:13: error: incompatible types (expected integer, found boolean) for assignment to 'j'
+amplc: 603.in:6:13: error: incompatible types (expected integer, found boolean) for assignment to 'j'

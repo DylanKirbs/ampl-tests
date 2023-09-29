@@ -1,1 +1,1 @@
-amplc: 98.in:6:14: error: incompatible types (expected integer, found boolean) for array index of 'barr'
+amplc: 621.in:6:14: error: incompatible types (expected integer, found boolean) for array index of 'barr'

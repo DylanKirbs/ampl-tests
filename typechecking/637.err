@@ -1,1 +1,1 @@
-amplc: 114.in:8:10: error: incompatible types (expected boolean, found integer) for 'elif' guard
+amplc: 637.in:8:10: error: incompatible types (expected boolean, found integer) for 'elif' guard

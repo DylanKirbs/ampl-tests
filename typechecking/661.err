@@ -1,1 +1,1 @@
-amplc: 138.in:4:12: error: incompatible types (expected integer, found boolean) for 'return' statement
+amplc: 661.in:4:12: error: incompatible types (expected integer, found boolean) for 'return' statement

@@ -1,1 +1,1 @@
-amplc: 36.in:7:18: error: incompatible types (expected integer, found boolean) for array index of 'nums'
+amplc: 559.in:7:18: error: incompatible types (expected integer, found boolean) for array index of 'nums'

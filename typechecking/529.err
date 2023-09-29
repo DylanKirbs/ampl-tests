@@ -1,1 +1,1 @@
-amplc: 6.in:6:11: error: incompatible types (expected boolean, found integer) for assignment to 'v'
+amplc: 529.in:6:11: error: incompatible types (expected boolean, found integer) for assignment to 'v'

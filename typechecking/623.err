@@ -1,1 +1,1 @@
-amplc: 100.in:5:11: error: incompatible types (expected boolean, found boolean array) for 'while' guard
+amplc: 623.in:5:11: error: incompatible types (expected boolean, found boolean array) for 'while' guard

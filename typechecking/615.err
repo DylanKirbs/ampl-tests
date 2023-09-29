@@ -1,1 +1,1 @@
-amplc: 92.in:6:8: error: incompatible types (expected boolean, found boolean array) for 'if' guard
+amplc: 615.in:6:8: error: incompatible types (expected boolean, found boolean array) for 'if' guard

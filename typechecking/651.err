@@ -1,1 +1,1 @@
-amplc: 128.in:6:15: error: incompatible types (expected boolean, found integer) for operator 'and'
+amplc: 651.in:6:15: error: incompatible types (expected boolean, found integer) for operator 'and'

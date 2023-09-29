@@ -1,1 +1,1 @@
-amplc: 44.in:6:1: error: multiple definition of 'foo'
+amplc: 567.in:6:1: error: multiple definition of 'foo'

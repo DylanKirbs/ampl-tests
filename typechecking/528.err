@@ -1,1 +1,1 @@
-amplc: 5.in:5:18: error: incompatible types (expected integer, found boolean) for array size of 'bs'
+amplc: 528.in:5:18: error: incompatible types (expected integer, found boolean) for array size of 'bs'

@@ -1,1 +1,1 @@
-amplc: 40.in:7:23: error: incompatible types (expected boolean, found integer) for 'not'
+amplc: 563.in:7:23: error: incompatible types (expected boolean, found integer) for 'not'

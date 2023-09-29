@@ -1,1 +1,1 @@
-amplc: 112.in:6:22: error: incompatible types (expected integer, found boolean) for array size of 'iarr'
+amplc: 635.in:6:22: error: incompatible types (expected integer, found boolean) for array size of 'iarr'

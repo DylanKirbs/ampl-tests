@@ -1,1 +1,1 @@
-amplc: 52.in:7:8: error: too few arguments for call to 'inc'
+amplc: 575.in:7:8: error: too few arguments for call to 'inc'

@@ -1,1 +1,1 @@
-amplc: 26.in:7:14: error: incompatible types (expected boolean, found integer) for operator '='
+amplc: 549.in:7:14: error: incompatible types (expected boolean, found integer) for operator '='

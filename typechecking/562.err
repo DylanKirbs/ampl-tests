@@ -1,1 +1,1 @@
-amplc: 39.in:10:14: error: incompatible types (expected integer, found boolean) for argument 3 of call to 'foo'
+amplc: 562.in:10:14: error: incompatible types (expected integer, found boolean) for argument 3 of call to 'foo'
